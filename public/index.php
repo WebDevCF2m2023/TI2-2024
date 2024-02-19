@@ -36,6 +36,8 @@ try {
  * Si le formulaire a été soumis
  */
 
+
+
 // on appelle la fonction d'insertion dans la DB (addLivreOr())
 
 // si l'insertion a réussi
@@ -43,6 +45,17 @@ try {
 // on redirige vers la page actuelle
 
 // sinon, on affiche un message d'erreur
+
+if (isset($_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['usermail'])) {
+
+    $insert = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['usermail']);
+    if ($insert) {
+        header("Location: ./");
+        exit();
+    } else {
+        $message = "Erreur lors de l'insertion";
+    }
+}
 
 /*
  * On récupère les messages du livre d'or

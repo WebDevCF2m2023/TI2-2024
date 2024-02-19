@@ -35,5 +35,29 @@ function addLivreOr(
     string $usermail,
     string $message
 ): bool|string {
-    return false;
+
+    $firstname = htmlspecialchars(strip_tags($firstname), ENT_QUOTES);
+    $lastname = htmlspecialchars(strip_tags($lastname), ENT_QUOTES);
+    $message = htmlspecialchars(strip_tags($message), ENT_QUOTES);
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+
+    if ($usermail === false || empty($themmessageessage) || empty($firstname) || empty($lastname)) {
+        return false;
+    }
+
+    $sql = "INSERT INTO livreor (firstname, lastname, message, usermail) VALUES (:firstname, :lastname, :message, :usermail)";
+    try {
+        $stmt = $db->prepare($sql);
+        $stmt->execute([
+            ':firstname' => $firstname,
+            ':lastname' => $lastname,
+            ':message' => $message,
+            ':usermail' => $usermail
+        ]);
+        return true;
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+
+
 }
