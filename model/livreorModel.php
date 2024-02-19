@@ -2,7 +2,6 @@
 /*
  * Model de la page livre d'or
  */
-
 /**
  * @param PDO $db
  * @return array
