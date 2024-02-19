@@ -22,12 +22,12 @@ require_once "../model/livreorModel.php";
 /*
  * Si le formulaire a été soumis
  */
-    if(isset($_POST['themail'],$_POST['themessage'],$_POST['firstname'],$_POST['lastname'])){
+    if(isset($_POST['usermail'],$_POST['message'],$_POST['firstname'],$_POST['lastname'])){
 
     
 
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
-    $insert = addLivreOr($MyPDO,$_POST['themail'],$_POST['themessage'],$_POST['firstname'],$_POST['lastname']);
+    $insert = addLivreOr($MyPDO,$_POST['firstname'],$_POST['lastname'],$_POST['usermail'],$_POST['message']);
     // si l'insertion a réussi
     if($insert === true){
     // on redirige vers la page actuelle
@@ -38,16 +38,13 @@ require_once "../model/livreorModel.php";
         $message = $insert;
     }
     }
-
-/*
- * On récupère les messages du livre d'or
- */
+     
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 $informations = getAllLivreOr($MyPDO);
 $nbInformations = COUNT($informations);
 // fermeture de la connexion
-
+$MyPDO = null;
 // Appel de la vue
 
 include "../view/livreorView.php";

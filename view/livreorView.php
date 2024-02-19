@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
-    
+    <h3><?php if(isset($message))echo $message?></h3>
     <div>
             <?php 
             foreach($informations as $information):
@@ -23,7 +23,7 @@
             endforeach;
             ?>
         </div>
-        
+       
     <form action="" name="monForm" method="POST">
     
     <div id="lePrenom">
@@ -35,8 +35,8 @@
         <input name="lastname" type="text"  >
     </div>
         <div>
-    <input name="themail" type="email" placeholder="Votre email" required><br>
-    <textarea name="themessage" placeholder="Votre message" required></textarea><br>
+    <input name="usermail" type="email" placeholder="Votre email" required><br>
+    <textarea name="message" placeholder="Votre message" required></textarea><br>
                 <input type="submit" value="Envoyer">
                 </div>
      </form>
