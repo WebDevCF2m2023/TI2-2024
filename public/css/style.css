@@ -1,0 +1,186 @@
+/* fieldset{
+    background-color: rgb(30, 125, 233);
+    margin-right: 500px;
+    position: relative;
+    left: 500px;
+  
+}
+label{
+    display: flex;
+    text-transform: capitalize;
+    font-weight: bolder;
+}
+input{
+    top: -20px;
+    width: 800px;
+    position: relative;
+    left: 95px;
+}
+#sub{
+    width: 100px;
+    left: 400px;
+    top: 3px;
+}
+#themessage{
+    width: 800px;
+    height: 120px;
+    left: 95px;
+    position: relative;
+}
+h1{
+    color:  rgb(30, 125, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#msg{
+    top: 70px;
+    position: relative;
+}
+img{
+    width: 200px;
+    height: 200px;
+    top: 90px;
+    position: relative;
+    right: -200px;
+}
+form{
+    top: -200px;
+    position: relative;
+}
+#prenom{
+    background-color: wheat;
+}
+#nom{
+    background-color: wheat;
+}
+#email{
+    background-color: wheat;
+}
+#themessage{
+    background-color: wheat;
+} */
+/* Pierre j'aurais pue donner une class et faire sa en 1 seule fois mais j'ai la flemme et pas le temp pour faire des media screens qui sont tres facile a gérer aussi*/
+
+
+
+
+fieldset {
+    background-color: rgb(30, 125, 233);
+    margin-right: 10%;
+    position: relative;
+    left: 10%;
+}
+
+label {
+    display: flex;
+    text-transform: capitalize;
+    font-weight: bolder;
+}
+
+input {
+    top: -20px;
+    width: 80%;
+    position: relative;
+    left: 9%;
+}
+
+#sub {
+    width: 20%;
+    left: 40%;
+    top: 3px;
+}
+
+#themessage {
+    width: 80%;
+    height: 120px;
+    left: 9%;
+    position: relative;
+}
+
+h1 {
+    color: rgb(30, 125, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#msg {
+    top: 7vh;
+    position: relative;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    top: 30vh;
+    position: relative;
+    left: -10px;
+    /* right: -15vw; */
+
+}
+
+form {
+    top: -20vh;
+    position: relative;
+}
+
+#prenom, #nom, #email, #themessage {
+    background-color: wheat;
+}
+
+@media screen and (max-width: 768px) {
+    fieldset,img {
+        margin-right: 5%;
+        left: 5%;
+    }
+
+    input {
+        width: 90%;
+        left: 5%;
+    }
+
+    #sub {
+        width: 30%;
+        left: 35%;
+    }
+
+    img {
+        width: 30vw;
+        height: 30vw;
+        top: 20vh;
+        right: -30vw;
+    }
+
+    form {
+        top: -30vh;
+    }
+}
+.com{
+    border: black solid 1px;
+    border-radius: 15px;
+    width: 1600px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 90px;
+}
+#comm{
+    left: 190px;
+    position: relative;
+}
+/* j'ai quand meme pris mon temp et j'en ai fait 1 :) j'espere que tu seras content */ 
+/* j'aurais pue tres bien aller prendre un template deja tout pret */
