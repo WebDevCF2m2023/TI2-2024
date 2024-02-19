@@ -9,10 +9,10 @@ function getAllInformations(PDO $pdo): array{
 
     if($statement === false) return []; // Cas de figure qui ne devrais pas arriver
 
-    $informations = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);
     $statement->closeCursor(); // Bonne pratique
 
-    return $informations;
+    return $livreor;
     
 }
 
@@ -22,8 +22,8 @@ function getAllInformations(PDO $pdo): array{
  */
 function insertNewInformation(PDO $pdo, string $email, string $message): bool{
 
-    $sql = "INSERT INTO informations VALUES (null, ?, ?, null);";
-    //$sql = "INSERT INTO informations(themail, themessage) VALUES (?, ?);";
+    $sql = "INSERT INTO livreor VALUES (null, ?, ?, null);";
+    //$sql = "INSERT INTO livreor$livreor(themail, themessage) VALUES (?, ?);";
 
     $statement = $pdo->prepare($sql);
     if($statement === false) return false;
@@ -34,4 +34,34 @@ function insertNewInformation(PDO $pdo, string $email, string $message): bool{
     $statement->closeCursor(); // bonne pratique
 
     return true;
+}
+
+<?php
+
+
+
+    // On est super content , on a bien accès a Livre D'or car on est majeur
+    require_once "../config.php";
+    require_once "../models/livreor$livreorModel.php";
+
+    $db = DB_DRIVER . ":host=" . DB_HOST . ";port=" . DB_Port . ";dbname=".DB_NAME.";charset=".DB_CHARSET;
+    try{
+        $pdo = new PDO($db, DB_USER, DB_PASS);
+    }catch(Exception $e){
+        die($e->getMessage());
+    }
+
+    if(
+        isset($_POST['usermail'], $_POST['message']) 
+        && filter_var($_POST['usermail'], FILTER_VALIDATE_EMAIL) 
+        && !empty(trim($_POST['message']))
+    ){
+        $theEmail =  htmlspecialchars(strip_tags($_POST['usermail']));
+        $theMessage = htmlspecialchars(strip_tags($_POST['message']));
+        $success = insertNewInformation($pdo, $theEmail, $theMessage);
+    }
+    $livreor = getAlllivreor $livreor($pdo);
+
+}else{
+    $viewName = "form";
 }

@@ -15,10 +15,10 @@ if(isset($_GET["p"])){
 }
 
 if($vueNom == "livreor"){
-    require_once "../controllers/livreorController.php";
+    require_once "../Model/livreorModel.php";
 }
 
 
-require_once "../views/$vueNom.html.php";
+require_once "../view/$vueNom.html.php";
 
 

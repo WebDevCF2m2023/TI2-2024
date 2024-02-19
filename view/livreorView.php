@@ -38,17 +38,17 @@
             </div>
         </form>
 
-        <section id="informations">
+        <section id="livreor">
 
             <?php
-            foreach(array_reverse($informations) as $information):
+            foreach(array_reverse($livreor) as $livreore):
             ?>
-                <div class="information">
+                <div class="livreore">
                 <div>
-                    <p><?=$information["themail"]?></p>
-                    <p><?=(new DateTime($information["thedate"]))->format("d/m/Y H:i:s")?></p>
+                    <p><?=$livreore["usermail"]?></p>
+                    <p><?=(new DateTime($livreore["thedate"]))->format("d/m/Y H:i:s")?></p>
                 </div>
-                <p><?=$information["themessage"]?></p>
+                <p><?=$livreor["message"]?></p>
             </div>
             <?php
             endforeach;
@@ -59,6 +59,6 @@
     <footer>
 
     </footer>
-    <script src="js/livredor.js"></script>
+    <script src="js/livreor.js"></script>
 </body>
 </html>
