@@ -1,9 +1,9 @@
 
 
 function formVerify() {
-    let message = document.querySelector("#form-message").value;
-    let prenom = document.querySelector("#form-prenom").value;
     let nom = document.querySelector("#form-nom").value;
+    let prenom = document.querySelector("#form-prenom").value;
+    let message = document.querySelector("#form-message").value;
     let mail = document.querySelector("#form-mail").value;
 
 
@@ -24,10 +24,10 @@ function formVerify() {
         displayHelper("red", "Le nom ne peut pas contenir plus de 100 caractères");
         return false;
     } else if (mailCheck == false) {
-        displayHelper("red", "Le mail doit contenir un '@'");
+        displayHelper("red", " '@' c'est obligatoire");
         return false;
     } else {
-        displayHelper("green", "Bienvenue " + prenom + " " + nom + " !");
+        displayHelper("green", "Bienvenue " + prenom + " " + nom + " merci pour ton message !");
 
         return true
     }
@@ -60,5 +60,12 @@ form.addEventListener('submit', function(event) {
     } else {
         event.preventDefault();
     }
+
+
+
+
+
+
+
 
 }); 
