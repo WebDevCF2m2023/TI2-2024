@@ -11,31 +11,53 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
-    <form action="">
-        
+    <h1>Livre d'or</h1>
+    <div>
+        <img src="img/email.png" alt="">
+    </div>
+    <form action="" method="POST">
         <div id="leprenom">
-            <label for="prenom">Prénom</label>
+            <label for="prenom">Prénom *</label>
             <input type="text" name="prenom" id="prenom" required>
         </div>
         <div id="lenom">
             <label for="nom">Nom</label>
-            <input type="text" name="nom" id="nom">
+            <input type="text" name="nom" id="nom" required>
         </div>
         <div id="username">
-            <label for="username">Pseudo :</label>
-            <input type="text" id="username" name="username">
+            <label for="username">E-mail *</label>
+            <input type="text" id="username" name="username" required>
         </div>
         <div id="lemessage">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10" maxlength="600"></textarea>
+            <label for="message">Message *</label>
+            <textarea name="message" id="message" cols="30" rows="10" maxlength="600" required></textarea>
         </div>
+        <div id="envoi">
+        <input type="submit" value="Envoyer">
+        </div>
+    </form>
 
 
 
         
 
-        <section id="informations">
+
+
+    <div>
+        <?php
+        if (isset($message)) {
+            ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $message; ?>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+
+        
+
+    <section id="informations">
         <?php 
             foreach($informations as $information):
         ?>
