@@ -65,7 +65,14 @@
 
         <div class="message-container" style="display: flex; flex-direction: column;">
 
-            <h1 class="comment-title">Message precedents</h1>
+            <?php
+            $results = getAllLivreOr($db);
+
+
+
+            echo '<div class="comment-title">Message precedents <span style="font-size: 10px;">Il y a ' . count($results) . ' message(s)</span></div>';
+
+            ?>
 
             <?php
             foreach ($informations as $commentaire) {

@@ -36,10 +36,12 @@ body {
     font-size: clamp(30px, 50px, 4vw); /* font-size will be at least 30px, at most 4vw, and ideally 50px */
     left: 0;
     right: 0;
-    margin-left: clamp(-600px, -510px, -400px); /* margin-left will be at least -600px, at most -400px, and ideally -510px */
+    margin-left: clamp(-550px, -460px, -350px); /* Adjust these values to move the title to the right */
     margin-top: auto;
     margin-bottom: auto;
 }
+
+
 
 .main-container {
     display: flex;
@@ -239,7 +241,7 @@ body {
 
     .comment-title {
         font-size: clamp(15px, 20px, 2vw); /* font-size will be at least 15px, at most 2vw, and ideally 20px */
-        margin-left: clamp(-100px, -85px, -70px); /* margin-left will be at least -100px, at most -70px, and ideally -85px */
+        margin-left: clamp(-80px, -75px, -70px); /* margin-left will be at least -100px, at most -70px, and ideally -85px */
     }
 
     textarea {
