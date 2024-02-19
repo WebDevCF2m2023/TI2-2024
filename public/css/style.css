@@ -48,14 +48,19 @@ h2 {
 
 }
 .messageHolder {
-    display: flex;
-    flex-direction: row;
+
     border: 2px solid black;
     border-radius: 10px;
     margin-bottom: 10px;
     box-shadow: lightslategray 5px 5px 0;
     padding: 0 10px;
     width: 80%;
+}
+
+.sendDiv {
+    width: 280px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .italic {
