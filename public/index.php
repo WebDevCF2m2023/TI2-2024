@@ -36,7 +36,8 @@ require_once "../model/livreorModel.php";
  */
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
-
+$informations = getAllLivreOr($MyPDO);
+$nbInformations = COUNT($informations);
 // fermeture de la connexion
 
 // Appel de la vue

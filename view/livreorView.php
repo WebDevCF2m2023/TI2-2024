@@ -12,6 +12,16 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
+    <div>
+            <?php 
+            foreach($informations as $information):
+            ?>
+            <h4>Posté le <?=$information['datemessage']?></h4>
+            <p><?=$information['message']?></p>
+            <?php
+            endforeach;
+            ?>
+        </div>
     <form action="" class="container">
     <img src="../img/email.png" alt="">
     <div id="lePrenom">
