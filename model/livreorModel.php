@@ -47,7 +47,7 @@ function addLivreOr(PDO $db,
                         if ($usermail === false || empty($message) || empty($firstname)|| empty($lastname)) {
                             return false;
                         }
-                        $sql = "INSERT INTO livreor (firstname,lastname,usermail,` message`) VALUES (?,?,?,?)";
+                        $sql = "INSERT INTO livreor (firstname,lastname,usermail,`message`) VALUES (?,?,?,?)";
     try {
         // on exécute la requête
         $p = $db->prepare($sql);

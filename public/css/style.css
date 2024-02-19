@@ -1,6 +1,6 @@
 h1 {
     text-align: center;
-    color:blue ;
+    color:rgb(255, 255, 255) ;
 }
 #img{
 align-items: center;
@@ -24,8 +24,7 @@ form {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-
-    background-color: rgb(127, 80, 245);
+    background-color: blue;
     padding: 1em 0;
 }
 
@@ -96,13 +95,3 @@ input[type=text], textarea, select, input[type=submit], #subButton{
     }
 }
 
-@media screen and (min-width:1201px){
-
-#form1{
-    
-}
-    
-    #img{
-        align-items: flex-start;
-    }
-}

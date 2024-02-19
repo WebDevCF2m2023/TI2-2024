@@ -17,6 +17,7 @@
     </div>
     <form id="form1" action="" method="post">
         <div>
+            <h1>laissez nous un message</h1>
             <div id="lenom">
                 <label for="nom">Nom*</label>
                 <input type="text" name="firstname" id="firstname" require>
