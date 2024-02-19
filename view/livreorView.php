@@ -44,7 +44,7 @@
     
     
           
-          <input type="submit" value="Envoyer">
+          <input type="submit" value="Envoyer" >
          
         </form>
          <h4>Messages précédents</h4>
