@@ -12,6 +12,8 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
+<img src="../img/email.png" alt="email">
+
 <script src="js/validation.js"></script>
 </body>
 </html>
