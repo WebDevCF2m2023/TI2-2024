@@ -19,7 +19,8 @@
         padding-right: 60px;
     }
     h1{
-        color: rgb(66, 124, 160);;
+        color: rgb(66, 124, 160);
+        font-weight: 900;
     }
     .information{
         border-style: solid;

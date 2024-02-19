@@ -35,8 +35,8 @@ function getAllLivreOr(PDO $db): array
 function addLivreOr(PDO $db,
                     string $firstname,
                     string $lastname,
-                    string $usermail,
-                    string $message
+                    string $themail,
+                    string $themessage
                     ): bool|string
                     
                     {
