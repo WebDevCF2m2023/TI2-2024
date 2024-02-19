@@ -36,8 +36,9 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['m
     // sinon, on affiche un message d'erreur
     } else {
         $message = "Erreur lors de l'insertion";
-        }
+    }
 }
+
 
 /*  
  * On récupère les messages du livre d'or

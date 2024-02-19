@@ -37,7 +37,7 @@ form h1, form p {
     margin: 10px 10px;
 }
 
-#lenom input, #leprenom input, #lusername input,  #envoi input{
+#lenom input, #leprenom input, #lusername input,  #envoi input {
     
     border: 2px solid darkgray;
     padding: 7px;
@@ -93,10 +93,9 @@ textarea {
   
     #lenom, #leprenom, #lemessage, #lusername, input[type=submit] {
         flex-direction: row;
-        flex-wrap: nowrap;
-        
-        
+        flex-wrap: nowrap;      
     }
+    
     #lenom label, #leprenom label, #lemessage label, #lusername label {
         width: 150px;
         flex: 1 0 100px;
@@ -109,6 +108,7 @@ textarea {
         width: 40vw;
         font-size: 20px;
     }
+    
     #photo {
         float: left;
     }

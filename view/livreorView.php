@@ -23,19 +23,19 @@
         <h1>Laissez-nous un message</h1>
         <div id="leprenom">
             <label for="prenom">Prénom *</label>
-            <input type="text" name="prenom" id="prenom" required>
+            <input type="text" name="firstname" id="prenom" required>
         </div>
         <div id="lenom">
             <label for="nom">Nom</label>
-            <input type="text" name="nom" id="nom">
+            <input type="text" name="lastname" id="nom">
         </div>
         <div id="lusername">
             <label for="username">E-mail *</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="usermail">
         </div>
         <div id="lemessage">
             <label for="message">Message *</label>
-            <textarea name="message" id="message" cols="30" rows="10" maxlength="600" required></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" maxlength="600"></textarea>
         </div>
         <div>
             <p>(*)Ce champ est obligatoire</p>
