@@ -14,6 +14,13 @@ require_once "../config.php";
  * Connexion à la base de données en utilisant PDO
  * Avec un try catch pour gérer les erreurs de connexion
  */
+try {
+    $dsn = DB_DRIVER.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT.";charset=".DB_CHARSET;
+    $pdo = new PDO($dsn, DB_LOGIN, DB_PWD);
+}catch (Exception $e){
+    echo $e->getMessage();
+    die;
+}
 
 /*
  * Si le formulaire a été soumis
