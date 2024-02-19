@@ -26,11 +26,6 @@ body {
     height: 100vh;
 }
 
-.new-flex-container {
-    display: flex;
-    flex-direction: column;
-}
-
 .image-mail {
     width: 400px;
     height: 400px;
@@ -118,26 +113,16 @@ body {
 .message-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 20px;
-    border: 1px solid #0f0d0d;
-    margin-bottom: 20px;
-    width: 100%;
-    box-shadow: 0 0 10px 0px #0f0d0d;
 }
 
 .content-message {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    /* Your message styles here */
 }
 
 .message-header {
-    font-weight: bold;
-    margin-bottom: 10px;
+    /* Your message header styles here */
 }
 
 .message-body {
-    margin-top: 10px;
+    /* Your message body styles here */
 }

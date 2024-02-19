@@ -15,77 +15,65 @@
 <body>
     <h1 class="title">Livre d'or</h1>
 
-    <div class="parent-container">
-
-        <div class="new-flex-container">
-            <div class="main-container">
-                <img src="img/email.png" class="image-mail" alt="Image of a woman pointing at a mail">
+    <div class="main-container">
+        <img src="img/email.png" class="image-mail" alt="Image of a woman pointing at a mail">
 
 
-                <div class="form-container">
-                    <!-- Your form fields here -->
+        <div class="form-container">
+            <!-- Your form fields here -->
 
-                    <h2 id="top-form-message">Laissez-nous un message</h2>
+            <h2 id="top-form-message">Laissez-nous un message</h2>
 
-                    <form action="" method="POST">
+            <form action="" method="POST">
 
-                        <div class="input-group">
-                            <label for="name">Prenom *</label>
-                            <input type="text" name="firstname" id="firstname" placeholder="Prenom">
-                        </div>
-
-                        <div class="input-group">
-                            <label for="name">Nom *</label>
-                            <input type="text" name="lastname" id="lastname" placeholder="Nom">
-                        </div>
-
-                        <div class="input-group">
-                            <label for="name">E-mail *</label>
-                            <input type="email" name="mail" id="mail" placeholder="Mail">
-                        </div>
-
-                        <div class="input-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required placeholder="Write your message"></textarea>
-                        </div>
-
-                        <h2 id='obligatoire'>(*) Ce champ est obligatoire</h2>
-
-                        <div class="submit-container">
-                            <input type="submit" id="submit-form" value="Envoyer">
-                        </div>
-
+                <div class="input-group">
+                    <label for="name">Prenom *</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Prenom">
                 </div>
-                </form>
 
-            </div>
+                <div class="input-group">
+                    <label for="name">Nom *</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Nom">
+                </div>
 
+                <div class="input-group">
+                    <label for="name">E-mail *</label>
+                    <input type="email" name="mail" id="mail" placeholder="Mail">
+                </div>
 
-            <h1>Message precedents</h1>
+                <div class="input-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="Write your message"></textarea>
+                </div>
 
-            <?php
-            foreach ($informations as $commentaire) {
-                echo '<div class="message-container">';
-                echo '<div class="content-message">';
-                echo '<div class="message-header">';
-                echo $commentaire['firstname'] . ' ' . $commentaire['lastname'] . ' a envoyé ce message le ' . date('d-m-Y \à H:i', strtotime($commentaire['datemessage']));
-                echo '</div>';
-                echo '<div class="message-body">';
-                echo $commentaire['message'];
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-            }
+                <h2 id='obligatoire'>(*) Ce champ est obligatoire</h2>
 
-            ?>
-
-
+                <div class="submit-container">
+                    <input type="submit" id="submit-form" value="Envoyer">
+                </div>
 
         </div>
+        </form>
+
     </div>
 
-    <script src=" js/validation.js">
-    </script>
+    <h1>Message precedents</h1>
+
+
+    <div class="message-container" style="display: flex; flex-direction: column;">
+        <!-- This will be a loop that adds a new element every time -->
+        <div class="content-message">
+            <div class="message-header">
+                Name - Date
+            </div>
+            <div class="message-body">
+                Message
+            </div>
+        </div>
+
+
+        <script src=" js/validation.js">
+        </script>
 </body>
 
 </html>
