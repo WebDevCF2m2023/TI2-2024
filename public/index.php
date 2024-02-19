@@ -11,7 +11,7 @@ require_once "../model/livreorModel.php";
 
 // new permet de créer un NOUVEAU objet de la class PDO
 // Une nouvelle instance de PDO
-$dsn = DB_DRIVER . ":host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET . DB_LOGIN .";root=". DB_PWD . "";
+$dsn = DB_DRIVER . ":host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
 
 try{
     // Si une erreur se produit elle sera attrapé dans le catch en toute sécurité
@@ -28,20 +28,20 @@ try{
 // Adresse + ligne + type + value + length
 // var_dump($_GET["pg"]);
 
-$content = "livreorView.php";
+$content = "livreorView";
 // Si $_GET['pg'] existe et qu'il n'est PAS(!) vide
 if(!empty($_GET['pg'])){
     // Le switch permet de traiter des valeurs STATIC
     // Des valeurs fixes, qui ne bouge pas
     switch($_GET['pg']){
         case "pagination":
-            $allCountries = getAllLivreOr($myPDO);
-            $content = "pagination.php";
+            $alllivreor = getAllLivreOr($myPDO);
+            $content = "pagination";
             break; // Permet de ne pas lire default ou les autres cas si il y en a en dessous
 
         // Si aucun cas si dessus n'a été validé, le default est lu
         default:
-            $content = "error404.php";
+            $content = "error404";
             break;
     }
 }
@@ -50,4 +50,4 @@ if(!empty($_GET['pg'])){
 // On intégre/import le fichier HTML
 // On fusionne le fichier avec index.php
 // $content contient le nom du fichier php
-include "../livreorView/$content";
+include "../view/$content.html.php";

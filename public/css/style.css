@@ -1,19 +1,5 @@
 /*
-On veut construire un formulaire de contact avec les champs suivants :
-    -le nom
-    -le prénom
-    -un groupe de radio-boutons pour le genre (homme/femme)
-    -une zone de texte pour un message de maximum 1024 caractères
-    -une liste déroulate avce la langue parlée (français/néerlandais/anglais)
-    -une case à cocher pour valider le stockage des données (RGPD)
-    -un bouton d'envoi
-La mise en page va changer selon la largeur de l'écran:
-pour des écrans inférieurs à 640px, tous les éléments seront sur une colonne et les labels des champs seront au-dessus des champs
-pour des écrans entre 640px et 1200px, les éléments seont sur une colonne et les labels sont à côté des champs
-pour des écrans au-dessus de 1200px, les éléments sont sur 2 colonnes
-1ère colonne : nom, prénom, genre, langue
-2ème colonne : message, case à cocher
-le bouton en-dessous
+
 */
 
 /* Par default, les styles sont définis pour un smartphone
@@ -59,58 +45,4 @@ input[type="submit"] {
   background: hsla(170, 81%, 71%, 0.911);
   border-radius: 10px;
   width: 250px;
-}
-
-#lergpd {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1em;
-}
-#rgpd {
-  margin-right: 1em;
-}
-input[type="text"],
-textarea,
-select {
-  width: 70vw;
-}
-textarea {
-  resize: none;
-}
-
-/* OPTION  @media screen and (640px <= width <= 1200px) */
-
-@media screen and (min-width: 640px) and (max-width: 1199px) {
-  body {
-    background-color: rgb(138, 207, 253);
-  }
-  #lenom,
-  #leprenom,
-  #lalangue {
-    display: flex;
-    flex-direction: row;
-    width: 60vw;
-  }
-  #lenom label,
-  #leprenom label,
-  #lalangue label {
-    width: 8vw;
-    text-align: right;
-    margin-right: 0.5em;
-  }
-  input[type="text"],
-  textarea,
-  select {
-    width: 60vw;
-  }
-  input[type="submit"] {
-    background: hsla(170, 81%, 71%, 0.911);
-    border-radius: 10px;
-    width: 250px;
-  }
-}
-
-/* Pour les écrans au-dessous de 1200px (PC de bureau) */
-
-@media screen and (min-width: 1200) {
 }

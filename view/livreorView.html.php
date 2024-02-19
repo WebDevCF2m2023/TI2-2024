@@ -11,11 +11,37 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    
-<h1>Laissez-Nous un message</h1>
-    <form action="" method="post">
-   <a href="public\img\favicon.png"></a>
-      <div id="leprenom">
+    <div>
+  <img src="img\email.png" alt="logo page d'or"> 
+    </div>
+    <div>
+    <h1>Livre d'or</h1>
+    <div>
+        <h3><?php if(isset($message)) echo $message?></h3>
+        <h3><?php 
+        echo $nbMessages>1 ? "$nbmessage commentaires" : "$nbMessages commentaire";
+        ?></h3>
+        <div>
+        <?php
+    if(isset($pagination)) echo "$pagination<hr>"; 
+    echo $pagination ?? null;
+    ?>
+            <?php
+
+        foreach($messages as $message):
+            ?>
+        <h4>Posté le <?=$message['firstname']?></h4>
+        <p><?=$message['message']?></p>
+            <?php
+        endforeach;
+        //var_dump($_POST);
+            ?>
+        </div>
+        <div>
+            
+            <form action="" name="monForm" method="POST">
+            <form action="" method="post">
+     <div id="leprenom">
         <label for="Prénom">Prénom*</label>
         <input type="text" name="prenom" id="nom">
       </div>
@@ -32,28 +58,13 @@
         <label for="msg">Message</label>
         <textarea name="message" id="msg" cols="30" rows="10" maxlength="1024">
         </textarea>
-     
-      </div>
+     </div>
       <div id="lergpd">
-        <input type="checkbox" name="rgpd" id="rgpd"><label for="rgpd">(*) ce champs est obligatoire</label>
+        <p>(*) ce champs est obligatoire</p>
       </div>
-      <div id="envoi">
-          <input type="submit" value="Envoyer les données">
-      </div>
-    </form>
-  </body>
-</html>
-        
-        
-        ?>
+            <input type="submit" value="Envoyer">
+            </form>
         </div>
-    <?php
-    if(isset($pagination)) echo "$pagination<hr>"; 
-    ?>
-   
-<!-- Bootstrap core JS-->
-<script src="js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/MyJS.js"></script>
+    </div>
 </body>
 </html>
