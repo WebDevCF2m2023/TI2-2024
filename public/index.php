@@ -9,6 +9,13 @@
 // chargement de configuration
 require_once "../config.php";
 
+try {
+    // création d'une instance de PDO - Connexion à la base de données
+    $db = new PDO(DB_DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET . ";port=" . DB_PORT, DB_LOGIN, DB_PWD);
+} catch (Exception $e) {
+    die($e->getMessage());
+}
+
 // chargement du modèle de la table livreor
 $validation = "livreor";
 if(isset($_GET["p"])){

@@ -1,13 +1,27 @@
 body{
-    
+    background: #f8eaea;
+    font-family: Montserrat, "sans-serif";
+    display: flex;
+    justify-content: center;
+    color: #303030;
 }
 
 div{
     text-align: center;
+    margin-bottom: 1em;
     flex-direction: column;
     block-size: auto;
     background-position: 2px;
+    justify-content: center;
 }
+
+msg{
+    margin-bottom: 1em;
+    justify-content: space-between;
+    flex-direction: column;
+    border: #303030;
+} 
+
 label{
     text-align: center;
     background-color: rgb(140, 161, 230);
@@ -21,38 +35,61 @@ img{
 
 header {
     text-align: center;
-    background-color: rgb(95, 125, 223);
+    color: rgb(135, 135, 209);
     text-emphasis-color: rgb(95,125,223);
-
+    flex-flow:row nowrap;
+    border-color:rgb(140, 161, 230);
 }
+
+button{
+  min-width: 100px;
+  min-height: 50px;
+  background: white;
+  border: rgba(48, 48, 48, 0.5) solid 1px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+  color: #303030;
+}
+
+button:hover{
+    background: #f8f8ff;
+  }
 
 form {
     text-align: center;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    background: rgb(95,125,223);
+    flex-direction:center ;
+    background: rgb(102, 130, 223);
     flex: content;
+    justify-content: center;
+    justify-content: space-between;
 }
 
 nom, prenom {
     text-align: center;
+    justify-content: space-between;
     display: flex;
+    align-content: center;
     flex-direction: column;
     align-items: center;
     margin-bottom: 1em;
+    justify-content: space-between;
 }
 
 themessage{
     text-align: center;
     display: block;
     margin-bottom: 1em;
+    justify-content: space-between;
+    
 }
 
 email{
     text-align: center;
     display: block;
     margin-bottom: 1em;
+    justify-content: space-between;
 }
 
 input [type=submit]{
@@ -62,6 +99,7 @@ input [type=submit]{
     padding: .5rem 1rem .5rem 1rem;
     background-size: 300% 100%;
     background-position: -50% 0%;
+    
 }
 
 
