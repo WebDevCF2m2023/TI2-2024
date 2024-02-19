@@ -15,23 +15,29 @@
     <img src="img/Sign up-amico.png" alt="illustration" id="illustrations">
     <form action="" method="POST" id="formContainer" onsubmit="return submitForm()">
         <h2 id="titreForm">Laissez-nous un message</h2>
+
         <h3 id="erreur"><?php if (isset($message)) echo $message ?></h3>
+
             <div id="leprenom">
                 <label for="firstname">Prénom *</label>
                 <input type="text" name="firstname" id="firstname" required>
             </div>
+
             <div id="lenom">
                  <label for="lastname">Nom *</label>
                  <input type="text" name="lastname" id="lastname" required>
             </div>
+
             <div id="lemail">
                  <label for="usermail">E-mail *</label>
                 <input type="email" name="usermail" id="usermail" required>
             </div>
+
             <div id="lemessage">
                  <label for="message">Message *</label>
                    <textarea name="message" id="message" cols="30" rows="5" maxlength="600" required></textarea>
                 </div>
+                
             <div id="resultat"></div>
 
             <div id="bouton">
