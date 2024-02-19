@@ -61,6 +61,8 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['us
  * On récupère les messages du livre d'or
  */
 
+$informations = getAllLivreOr($db);
+
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 
 // fermeture de la connexion
