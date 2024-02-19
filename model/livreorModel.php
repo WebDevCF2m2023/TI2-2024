@@ -41,13 +41,13 @@ function addLivreOr(PDO $db,
 if ($themail === false || empty($themessage)) {
     return false;
 }
+
 $sql = "INSERT INTO livreor (usermail, `message`, firstname, lastname) VALUES ('$themail', '$themessage', '$thefirstname', '$thelastname')";
 
 try {
     $db->exec($sql);
     return true;
 } catch (Exception $e) {
-    var_dump($db);
     return $e->getMessage();
 }
 }

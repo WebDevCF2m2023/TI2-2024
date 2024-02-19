@@ -13,13 +13,13 @@
 <body>
     <h1>Livre d'or</h1>
 <div class="mainSection">
-     
-<!--        <p id="screenwidth"></p> -->
+
+    <!--  <p id="screenwidth"></p>  -->
         
         <img src="/img/email.png" alt="emailImage" id="emailImg">
         
     <div class="myFormDiv">
-        <form  action="" id="myForm">
+        <form action="" id="myForm" method="POST">
             <h2 id="myFormHead">Laissez-nous un message</h2>
             <div id="firstName" class="inputDiv">
                 <label for="prenomInput" id = "prenomLabel">Prénom *</label><input type="text" name="firstname" id="prenomInput">
@@ -34,9 +34,9 @@
                 <label for="yourMessage" id="messageLabel">Message *</label>
                 <textarea name="yourMessage"  id="yourMessageInput" cols="30" rows="10" maxlength="600"></textarea>
             </div>
-            <div class="sendDiv">
             <p class="obliged">(*) Ce champ est obligatoire</p>
-            <div class="inputDiv">
+            <div class="sendDiv">
+            
                 <button id="sendButton" class="sendBut">Envoyer</button>
             </div>
             </div>

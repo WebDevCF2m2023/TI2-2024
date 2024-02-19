@@ -1,4 +1,3 @@
-
 const myForm = document.getElementById("myForm");
 const prenomInput = document.getElementById("prenomInput");
 const nomInput = document.getElementById("nomInput");
@@ -15,14 +14,16 @@ myForm.addEventListener('submit', function(event) {
 });
 
 sendButton.addEventListener('click', validateInputs);
+
 /*
 function displayScreenWidth() {
     let theWidth = window.innerWidth;
     document.getElementById("screenwidth").innerHTML = 'The screen width is: ' + theWidth;
 }
     displayScreenWidth();
-  */  
-window.addEventListener('resize', displayScreenWidth);
+    window.addEventListener('resize', displayScreenWidth);
+   
+*/
 
 function validateInputs() {
     let preInp = prenomInput.value;

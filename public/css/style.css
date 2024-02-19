@@ -1,6 +1,7 @@
 .myFormDiv {
     width: 50%;
     background-color:  rgb(66, 124, 160);
+
 }
 
 h1 {
@@ -23,20 +24,28 @@ form {
 }
 
 .inputDiv {
-    width: 100%;
+    padding: 0 20px;
+    width: 95.8%;
 }
 label {
+
+    text-align: left;
     width: 72px;
 }
 
 .obliged {
     color: white;
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
 }
 input, textarea, button {
     background-color: rgb(245, 245, 220);
 }
 
 h2 {
+    text-align: center;
     color: rgb(245, 245, 220);
 }
 
@@ -52,17 +61,20 @@ h2 {
     border: 2px solid black;
     border-radius: 10px;
     margin-bottom: 10px;
-    box-shadow: lightslategray 5px 5px 0;
+    box-shadow: lightslategray 5px 5px;
     padding: 0 10px;
     width: 80%;
 }
 
 .sendDiv {
-    width: 280px;
+    width: 28%;
     text-align: center;
     margin: 0 auto;
 }
 
+.messageDiv {
+    padding: 0 20px;
+}
 .italic {
     font-style: italic;
 }
@@ -73,7 +85,7 @@ input{
 
 textarea {
     width: 80%;
-    height: 20vh;
+    height: 40%;
 }
 
 
@@ -102,7 +114,34 @@ body {
     .mainSection {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .prevMessages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .messageDiv {
+        width: 95.8%;
     }
 }
 
+
+@media screen and (min-width: 480px) and (max-width: 960px) {
+
+    #firstName, #lastName, #email, .messageDiv {
+        max-width: 80%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0.1em;
+    
+    }
+
+    .mainSection {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}

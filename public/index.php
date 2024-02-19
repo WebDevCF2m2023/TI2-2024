@@ -35,7 +35,9 @@ if (isset($_POST['id'], $_POST['firstname'], $_POST['lastname'], $_POST['message
         exit();
     } else {
         // sinon, on affiche un message d'erreur
-        $message = "Erreur avec l'insertion";
+        $messageError = "Erreur avec l'insertion";
+        var_dump($messageError);
+        exit();
     }
 
 }
