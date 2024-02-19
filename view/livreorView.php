@@ -60,12 +60,14 @@
                 else if($nombreDeMessages > 1) $messageNombreMessage = " : Il y a $nombreDeMessages messages écrits";
             ?>
             <h2>Message précedents<?=$messageNombreMessage?></h2>
+            <div><?=$pagination?></div>
             <?php foreach(array_reverse($livreOr) as $comment): ?>
             <div class="comment">
                 <p><span class="name"><?=$comment["firstname"]?></span> a envoyé ce message le <?=(new DateTime($comment["datemessage"]))->format("d-m-Y à H\hi")?></p>
                 <p><?=str_replace("\n", "<br>", $comment["message"])?></p>
             </div>
             <?php endforeach; ?>
+            <div><?=$pagination?></div>
         </section>
     </main>
     <footer>

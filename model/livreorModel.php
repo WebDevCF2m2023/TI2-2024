@@ -4,7 +4,7 @@
  */
 
 /**
- * @param PDO $db
+ * @param PDO $pdo
  * @return array
  * Fonction qui récupère tous les messages du livre d'or par ordre de date croissante
  * venant de la base de données 'ti2web2024' et de la table 'livreor'
@@ -20,7 +20,67 @@ function getAllLivreOr(PDO $pdo): array
 }
 
 /**
- * @param PDO $db
+ * @param PDO $pdo
+ * @param int $limit
+ * @param int $offset
+ * @return array
+ * Fonction qui récupère les messages du livre d'or dans une tranche fourni en argument
+ * venant de la base de données 'ti2web2024' et de la table 'livreor'
+ */
+function getLivreOrByLimit(PDO $pdo, int $limit, int $offset): array
+{
+    $sql = "SELECT * FROM livreor LIMIT $offset, $limit";
+    $statement = $pdo->query($sql);
+    // Permet de récupérer toute les lignes SQL en tableau associatif
+    $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor(); // bonne pratique
+    return $livreor;
+}
+
+/**
+ * @param PDO $pdo
+ * @return int
+ * Fonction qui récupère tous les messages du livre d'or par ordre de date croissante
+ * venant de la base de données 'ti2web2024' et de la table 'livreor'
+ */
+function getCountLivreOr(PDO $pdo): int
+{
+    $sql = "SELECT COUNT(*) as count FROM livreor";
+    $statement = $pdo->query($sql);
+    // Permet de récupérer toute les lignes SQL en tableau associatif
+    $livreor = $statement->fetch(PDO::FETCH_ASSOC);
+    $statement->closeCursor(); // bonne pratique
+    return (int)$livreor["count"];
+}
+
+/**
+ * @param int $currentPage page actuel
+ * @param int $maxpage max page
+ * @return string
+ * Fonction qui return le système de pagination a implémenter dans la vue.
+ */
+function getPaginationView(int $currentPage, int $maxpage): string{
+
+    if($currentPage != 1)
+        $goBack = '<a href="?p=1">«</a>&nbsp<a href="?'.PREFIX_PAGE.'='.($currentPage - 1).'"><</a>';
+    else $goBack = '<span>«</span><span><</span>';
+
+    if($currentPage != $maxpage)
+        $goAfter = '<a href="?'.PREFIX_PAGE.'='.($currentPage + 1).'">></a>&nbsp<a href="?'.PREFIX_PAGE.'='.$maxpage.'">»</a>';
+    else $goAfter = '<span>></span><span>»</span>';
+
+    $pagination = "";
+    for($i = 1; $i <= $maxpage; ++$i){
+        if($i != $currentPage)
+            $pagination .= '&nbsp<a href="?'.PREFIX_PAGE.'='.$i.'">'.$i.'</a>&nbsp';
+        else $pagination .= '&nbsp<span>'.$i.'</span>&nbsp';
+    }
+
+    return $goBack.$pagination.$goAfter;
+}
+
+/**
+ * @param PDO $pdo
  * @param string $firstname
  * @param string $lastname
  * @param string $usermail
