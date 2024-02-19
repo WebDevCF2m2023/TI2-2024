@@ -18,5 +18,16 @@
         padding-left: 60px;
         padding-right: 60px;
     }
+    h1{
+        color: rgb(66, 124, 160);;
+    }
+    .information{
+        border-style: solid;
+        border-radius: 25px;
+        box-shadow: 10px 10px 8px #000000;
+        padding: 1rem;
+    margin-bottom: 1rem;
+        
+    }
     
 }

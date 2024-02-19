@@ -47,7 +47,7 @@
         </main>
         </div>
     </form>
-    <h1>Message precedent</h1>
+    <h2>Message precedent</h2>
     <section id="informations">
         <?php 
             foreach(array_reverse($livreor) as $livreors):
