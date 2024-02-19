@@ -17,7 +17,10 @@
 
     <div class="main-container">
         <img src="img/email.png" class="image-mail" alt="Image of a woman pointing at a mail">
+
+
         <div class="form-container">
+            <!-- Your form fields here -->
 
             <h2 id="top-form-message">Laissez-nous un message</h2>
 
@@ -45,9 +48,13 @@
 
                 <h2 id='obligatoire'>(*) Ce champ est obligatoire</h2>
 
-            </form>
+                <div class="submit-container">
+                    <input type="submit" id="submit-form" value="Envoyer">
+                </div>
 
         </div>
+        </form>
+
     </div>
 
 

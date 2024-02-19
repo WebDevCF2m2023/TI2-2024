@@ -86,3 +86,28 @@ body {
     background-color:blanchedalmond; 
     font-weight: 800;
 }
+
+.submit-container {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#submit-form {
+    background-color: white;
+    font-size: 20px;
+    font-weight: 800;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#submit-form:hover {
+    box-shadow: 0 0 10px 0px white;    
+    text-shadow: 0 0 10px white;
+
+    
+}
