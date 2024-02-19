@@ -11,13 +11,13 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    {
-        $sql = "SELECT * FROM livreor ORDER BY firstname ASC";
-        $query = $db->query($sql);
-        $result = $query->fetchAll(PDO::FETCH_ASSOC);
-        $query->closeCursor();
-        return $result;
-    }
+    
+    $sql = "SELECT * FROM livreor ORDER BY firstname DESC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+    
 }
 
 /**
@@ -45,11 +45,13 @@ function addLivreOr(PDO $db,
     if ($usermail === false || empty($message) || empty($firstname) || empty($lastname)){
         return false;
     }
+
     // on prépare la requête
-    $sql = "INSERT INTO livreor (firstname, lastname, usermail, message) VALUES ('$firstname', '$lastname', '$usermail', '$message')";
+    $sql = "INSERT INTO `livreor` (`firstname`, `lastname`, `usermail`, `message`) VALUES (?, ?, ?, ?)";
     try {
         // on exécute la requête
-        $db->exec($sql);
+        $statement = $db->prepare($sql);
+        $statement->execute([$firstname, $lastname, $usermail, $message]);
         // si tout s'est bien passé, on renvoie true .
         return true;
     } catch (Exception $e) {

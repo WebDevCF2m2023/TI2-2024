@@ -19,7 +19,7 @@
         <img src="img/email.png" alt="">
     </div>
 
-    <form action="" method="POST" class="form">
+    <form action="" method="POST" class="form" onsubmit="return check()">
         <h1>Laissez-nous un message</h1>
         <div id="leprenom">
             <label for="prenom">Prénom *</label>
@@ -41,7 +41,7 @@
             <p>(*)Ce champ est obligatoire</p>
         </div>
         <div id="envoi">
-            <input type="submit" value="Envoyer" onclick="control()">
+            <input type="submit" value="Envoyer">
         </div>
     </form>  
 
@@ -60,7 +60,7 @@
     <section id="informations">
         <h2>Messages Précédents</h2>
         <?php 
-            foreach(array_reverse($informations) as $information):
+            foreach($informations as $information):
         ?>
         <div class="information">
             <div>                

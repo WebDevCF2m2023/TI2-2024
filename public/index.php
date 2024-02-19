@@ -25,7 +25,6 @@ require_once "../model/livreorModel.php";
  * Si le formulaire a été soumis
  */
 if (isset($_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['message'])) {
-
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
     $insert = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['message']);
     // si l'insertion a réussi
