@@ -12,22 +12,19 @@
 </head>
 <body>
     <h1>Livre d'or</h1>
-    <?php
 
-
-var_dump($_GET, $_POST);
-?>
     <div>
         <img src="img/email.png" alt="">
     </div>
     <form action="" method="POST" class="form">
+        <h1>Laissez-nous un message</h1>
         <div id="leprenom">
             <label for="prenom">Prénom *</label>
             <input type="text" name="prenom" id="prenom" required>
         </div>
         <div id="lenom">
             <label for="nom">Nom</label>
-            <input type="text" name="nom" id="nom" required>
+            <input type="text" name="nom" id="nom">
         </div>
         <div id="lusername">
             <label for="username">E-mail *</label>
@@ -36,6 +33,9 @@ var_dump($_GET, $_POST);
         <div id="lemessage">
             <label for="message">Message *</label>
             <textarea name="message" id="message" cols="30" rows="10" maxlength="600" required></textarea>
+        </div>
+        <div>
+            <p>(*)Ce champ est obligatoire</p>
         </div>
         <div id="envoi">
             <input type="submit" value="Envoyer" onclick="control()">

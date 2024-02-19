@@ -1,0 +1,55 @@
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+}
+
+h1, p {
+    text-align: center;
+}
+
+#lenom, #leprenom, #lusername, #lemessage, #envoi {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+textarea {
+    resize: none;
+}
+
+.information {
+    border: 2px solid black;
+    margin: 10px 5px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px black;
+}
+
+@media screen and (min-width:480px) and (max-width:959px) {
+    #lenom, #leprenom, #lemessage, #lusername input[type=submit] {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width:95vw;
+    }
+    #lenom label, #leprenom label, #lemessage label, #lusername label {
+        width:100px;
+        flex: 1 0 100px;
+    }
+    #nom, #prenom, #message, #username {
+        width:85vw;
+    }
+}
+
+@media screen and (min-width:960px) {
+  
+    form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    #col_gauche, #col_droite {
+        width: 45vw;
+    }
+}
