@@ -56,6 +56,17 @@ p{
     font-weight: 400;
     height: 3em;    
 }
+
+.post1{
+    font-size: 16px;
+    color: black;
+    text-align: left;
+    border: 2px solid black;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.42);
+}
+
 @media screen 
     and (min-width : 480px) 
     and (max-width : 959px) { 
@@ -64,19 +75,29 @@ p{
       width: auto;  
     }
     #labelPrenom, #labelNom, #labelEmail, #labelMessage{
+       display: inline-block;
+       width: 15%;
+    }
+    #prenom, #nom, #email, #message{
+        width: 80%;
+    }  
+
+}
+@media screen 
+    and (min-width : 960px){ 
+     img{
+        width: 20%;
         display: flex;
         flex-wrap: nowrap;
-        }
-    
-
-}
+        justify-content: start;
+     }   
 
 
+    }
 
 
-}
-#prenom, #nom, #email, #message{
- 
-}
+
+
+
 
 
