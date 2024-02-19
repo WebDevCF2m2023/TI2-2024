@@ -11,7 +11,13 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    return [];
+    {
+        $sql = "SELECT * FROM livreor ORDER BY thedate ASC";
+        $query = $db->query($sql);
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        $query->closeCursor();
+        return $result;
+    }
 }
 
 /**
@@ -30,5 +36,16 @@ function addLivreOr(PDO $db,
                     string $message
                     ): bool|string
 {
-    return false;
+
+    $firstname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
+    $lastname = htmlspecialchars(strip_tags(trim($lastname)), ENT_QUOTES);
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+    $message = htmlspecialchars(strip_tags($message), ENT_QUOTES);
+    /*// false si le courriel n'est pas valide, sinon on le garde
+    $courriel = filter_var($courriel, FILTER_VALIDATE_EMAIL);
+    $titre = htmlspecialchars(strip_tags($titre), ENT_QUOTES);
+    $texte = htmlspecialchars(strip_tags(trim($texte)), ENT_QUOTES);*/
+    if ($usermail === false || empty($message) || empty($firstname) || empty($lastname)){
+        return false;
+    }
 }
