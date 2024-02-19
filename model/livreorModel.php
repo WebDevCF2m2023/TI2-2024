@@ -10,8 +10,11 @@
  * venant de la base de données 'ti2web2024' et de la table 'livreor'
  */
 function getAllLivreOr(PDO $db): array
-{
-    return [];
+{   $sql = "SELECT * FROM livreor";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
 }
 
 /**
@@ -29,6 +32,18 @@ function addLivreOr(PDO $db,
                     string $usermail,
                     string $message
                     ): bool|string
-{
+{   
+    $message = htmlspecialchars(strip_tags(trim($message)), ENT_QUOTES);
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+    if (empty($message) || $usermail === false){
     return false;
+    }
+$sql = "INSERT INTO livreor (usermail, message) VALUES ('$usermail','$message')";
+try{
+    $db->exec($sql);
+    return true;
+}catch (Exception $e){
+    return $e->getMessage();
+}
+
 }
