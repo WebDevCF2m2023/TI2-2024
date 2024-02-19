@@ -65,6 +65,7 @@ main#livreor{
 
 #formSection textarea{
     height: 125px;
+    resize: none;
 }
 
 #formSection input[type='submit']{
@@ -115,9 +116,56 @@ h2{
 }
 
 @media screen and (480px < width < 960px){
-
+    #formSection{
+        flex-direction: column;
+    }
+    #formSection div:first-child{
+        text-align: center;
+    }
+    main#livreor{
+        margin: 0 0 0 10px;
+        width: 98%;
+    }
+    #formSection > div:not(:first-child){
+        margin-right: 0px;
+    }
+    
 }
 
 @media screen and (width <= 480px){
+    #formSection{
+        flex-direction: column;
+    }
+    #formSection div:first-child{
+        text-align: center;
+    }
+    main#livreor{
+        margin: 0 0 0 10px;
+        width: 98%;
+    }
+    #formSection > div:not(:first-child){
+        margin-right: 0px;
+    }
+    #formSection label{
+        padding: 0;
+        width: 100%;
+    }
     
+    #formSection label[for='message']{
+        position: static;
+    }
+    
+    #formSection input, #formSection textarea{
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+
+    #formSection input[type='submit']{
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    #formSection > div:not(:first-child){
+        padding: 1rem;
+    }
 }
