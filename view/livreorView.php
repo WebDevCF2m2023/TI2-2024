@@ -12,6 +12,7 @@
 </head>
 <body>
     <header>
+
         <p id="screenwidth"></p>
         <h1>Livre d'or</h1>
         <img src="/img/email.png" alt="emailImage" id="emailImg">
@@ -40,7 +41,16 @@
 
     <div class="prevMessages">
         <h3 id="prevMessHead">Messages précedents</h3>
-        <div class="messageHolder">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat obcaecati perspiciatis quibusdam, consequuntur eaque veniam necessitatibus facere recusandae ipsum provident natus in nisi sint sapiente nam. Harum, odio! Nemo repellendus vero molestias tenetur? Odio eius totam similique iusto dolorem maiores, ipsum libero nihil temporibus impedit ullam, vitae ea adipisci reprehenderit recusandae ipsam quasi doloribus? Ducimus aspernatur laboriosam maxime nisi itaque id, iure repudiandae tempore doloremque minus dolores alias mollitia voluptate nobis? Sapiente, explicabo recusandae. Provident facere earum eum ab, placeat nostrum illo ad numquam accusantium dignissimos voluptatum ipsa dolorum eveniet non dolore, hic sit totam? Labore mollitia enim maiores eos.</div>
+        <?php foreach ($messages as $mess) : ?>
+            <div class="messageHolder"><hr>
+                <h4><?= $mess["datemessage"] ?></h2>
+                <p><?= $mess["message"] ?></p>
+
+                            </div>
+<?php
+    endforeach;
+    ?>
+        </div>
     </div>
 <script src="js/validation.js"></script>
 </body>
