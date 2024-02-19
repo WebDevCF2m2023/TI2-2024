@@ -18,7 +18,6 @@ function getAllLivreOr(PDO $db): array
     return $result;
 
 }
-
 /**
  * @param PDO $db
  * @param string $firstname
