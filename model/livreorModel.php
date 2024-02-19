@@ -106,7 +106,7 @@ function addLivreOr(PDO $pdo,
     // Doit être un email valide
     if(!filter_var($usermail, FILTER_VALIDATE_EMAIL)) return "L'email n'est pas valide.";
     // Max 600 de long et ne peut pas être vide
-    if(strlen($message) > 600 || empty(trim($message))) return "Le message ne peut pas être vide et ne doit pas dépasser 600 caractère";
+    if(mb_strlen($message, "UTF-16") > 600 || empty(trim($message))) return "Le message ne peut pas être vide et ne doit pas dépasser 600 caractère";
 
     $sql = "INSERT INTO livreor(`firstname`, `lastname`, `usermail`, `message`) VALUES(?, ?, ?, ?)";
     try{
