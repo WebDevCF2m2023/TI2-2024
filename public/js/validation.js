@@ -9,7 +9,10 @@ formContainer.addEventListener("submit"), function(event) {
         var lengthCheck = names.lenght === 8;
         var funnyCharCheck = /[@+-*/"'()§!&^?]/.test(names);
 
-        
+        if (names === true) {
+            alert("Bienvenue !")
+            window.location.replace("")
+        }
     }
 
    
