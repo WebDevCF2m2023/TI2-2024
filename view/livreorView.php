@@ -14,4 +14,9 @@
     <h1>TI2 | Livre d'or</h1>
 <script src="js/validation.js"></script>
 </body>
+
+    <form action="" method="POST" name="or">
+
+    
+    </form>
 </html>

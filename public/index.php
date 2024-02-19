@@ -3,6 +3,8 @@
  * Front Controller de la gestion du livre d'or
  */
 
+ require_once "../view\livreorView.php";
+
 /*
  * Chargement des dépendances
  */
@@ -14,6 +16,12 @@ require_once "../config.php";
  * Connexion à la base de données en utilisant PDO
  * Avec un try catch pour gérer les erreurs de connexion
  */
+
+ try {
+    $MonPDO = new PDO(DB_DRIVER.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT.";charset=".DB_CHARSET, DB_LOGIN, DB_PWD);
+ }catch(Exception $e){
+    die($e->getMessage());
+ }
 
 /*
  * Si le formulaire a été soumis
