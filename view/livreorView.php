@@ -14,7 +14,7 @@
     <h1>TI2 | Livre d'or</h1>
     <div id="formulaire">
         <img src="img/email.png">
-        <form method="post" action="./">
+        <form method="post" action="./" onsubmit="return validate();">
             <h2>Laissez nous un message</h2>
             <!--message d'erreur ou de réussite-->
             <?php if (!empty($submit_message)):?>
