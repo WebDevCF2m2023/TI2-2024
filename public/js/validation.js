@@ -22,6 +22,7 @@ function validate(){
     else if (message.length>600)error_message("maximum 600 caractères pour le message");
     else if (!/@.*\./.test(mail))error_message("format de l'email non valide");
     else {
+        alert("Bienvenue "+prenom+" "+nom);
         return true;
     }
     return false;
