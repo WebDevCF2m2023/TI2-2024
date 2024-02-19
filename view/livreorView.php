@@ -17,7 +17,7 @@
 <img src="../img/email.png" alt="email">
 </div>
 
-<form action="" method="post">
+<form action="" method="post" id="myForm">
 
    <h2 class="leave">Laissez-nous un message</h2>
    

@@ -1,4 +1,3 @@
-
     const messages = document.querySelector('#msg');
     const prenoms = document.querySelector('#lePrenom');
     const noms = document.querySelector('#leNom');
@@ -9,7 +8,10 @@
     var nom = noms.value; 
     var email = emails.value;     
 
- 
+    myForm.addEventListener('submit', function(event) {                    
+        event.preventDefault();
+        validText();
+       });
 
     function validText(event){
      
@@ -22,7 +24,7 @@
              }else if(nom.length >=100){
                  nom.textContent = "Trop long";
             
-             }else if ((/[@], [/.]/.test(email)) === false){
+             }else if ((/[@], [\.]/.test(email)) === false){
                  email.textContent = "Il manque @ ou ."
                 
            

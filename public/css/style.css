@@ -96,6 +96,7 @@ div.messages {
         display: flex;
         flex-flow: row nowrap;  
         margin: 3%;
+        margin-top: 2%;
     }
 
     div#lemessage{
@@ -118,7 +119,7 @@ div.messages {
     }
     
     img{
-        width: 100%;
+        width: 80%;
         height: 70%;
     }
  
