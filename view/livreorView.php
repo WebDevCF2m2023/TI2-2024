@@ -21,11 +21,11 @@
            
             <div id="lenom">
                 <label for="nom">Nom*</label>
-                <input type="text" name="firstname" id="firstname" require>
+                <input type="text" name="lastname" id="firstname" require>
             </div>
             <div id="leprenom">
                 <label for="prenom">Prénom*</label>
-                <input type="text" name="lastname" id="lastname">
+                <input type="text" name="firstname" id="lastname">
             </div>
             <div id="mail">
                 <label for="email">Email* :</label>

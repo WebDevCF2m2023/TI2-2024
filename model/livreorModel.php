@@ -43,8 +43,11 @@ function addLivreOr(PDO $db,
                         $message = htmlspecialchars(strip_tags(trim($message)), ENT_QUOTES);
 
 
+                        if (strlen($firstname)> 100 || strlen($lastname)> 100|| strlen($message)>600){
+                            return false;
+                        }
 
-                        if ($usermail === false || empty($message) || empty($firstname)|| empty($lastname)) {
+                        if ($usermail === false || empty($message) || empty($firstname)) {
                             return false;
                         }
                         $sql = "INSERT INTO livreor (firstname,lastname,usermail,`message`) VALUES (?,?,?,?)";
