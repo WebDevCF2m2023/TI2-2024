@@ -146,7 +146,10 @@ h3{
                     0 0 25px #b867c7;
         
         background-color: #556168fc;
-       margin-bottom: 100px;
+       margin-top: 100px;
+      }
+      input{
+        width: 200px;
       }
  #leprenom,
 #lenom,
@@ -157,4 +160,42 @@ h3{
   flex-wrap: nowrap;
   margin: 13px auto;
 }
+#lenom input{
+    position: relative;
+    left: 0.1em;
+}
+#lemail input{
+    position: relative;
+    left: 0.1em;
+}
+textarea{
+    position: relative;
+    left: 0.5em;
+    width: 220px;
+}
+#lemessage label{
+    position: relative;
+    left: 0.5em;
+}
+#titrePrincipal{
+    position: relative;
+    top: 50px;
+    color: #ffff;
+  }
+  #illustrations{
+    position: relative;
+    left: 10px;
+    top: 60px;
+    width: 150px;
+    height: 150px;
+  }
+  .commentaires{
+    
+   width: 65%;
+   margin-top: 15px;
+   margin-bottom: 20px;
+   padding: 10px;
+   border-radius: 15px;
+}
+
 }
