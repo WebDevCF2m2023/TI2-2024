@@ -34,5 +34,6 @@ function validateForm(){
     }
     // Si true, le formulaire s'envoie
     // Si false, le formulaire ne s'envoie pas
+    if(checkOK) alert(`Bienvenue ${prenom.value} ${nom.value}`);
     return checkOK;
 }
