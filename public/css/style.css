@@ -1,0 +1,97 @@
+h1 {
+    text-align: center;
+    color:blue ;
+}
+#img{
+align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
+
+}
+p{
+    font-weight: bold;
+}
+
+label {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    background-color: rgb(127, 80, 245);
+    padding: 1em 0;
+}
+
+input, textarea, select {
+   
+}
+
+#lenom, #leprenom, #lemessage,#mail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+
+
+input[type=text], textarea, select, input[type=submit], #subButton{
+    width:90vw;
+}
+.information:nth-child(odd){
+    background-color: #d4d4d4;
+}
+
+.information{
+    padding: 1rem;
+    border: 1px solid #202020;
+    box-shadow: 10px 5px 5px black;
+    margin: 1.5rem 0;
+}
+
+.information > div{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
+    margin-bottom: 1rem;
+    padding: 0 2rem 1rem 2rem;
+}
+
+.information > div p{
+    flex-grow: 1;
+}
+
+.information > div p:first-child{
+    font-weight: bold;
+}
+
+.information > div p:not(:first-child){
+    text-align: right;
+}
+
+
+/*@media screen and (640px <= width <= 1200px) équivalent à */
+@media screen and (min-width:640px) and (max-width:1200px) {
+    form {
+        background-color: blue;
+    }
+
+    #lenom, #leprenom,#mail {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+    }
+
+    #lenom label, #leprenom label, #mail label{
+        width: 10vw;
+        text-align: right;
+        margin-right: 0.5em;
+    }
+}

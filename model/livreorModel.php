@@ -11,15 +11,11 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    $sql = "SELECT * FROM livreor";
-    $statement = $db->query($sql);
-
-    if($statement === false) return []; // Cas de figure qui ne devrais pas arriver
-
-    $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);
-    $statement->closeCursor(); // Bonne pratique
-
-    return $livreor;
+    $sql = "SELECT * FROM livreor ORDER BY datemessage ASC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
     
 }
 
@@ -43,12 +39,22 @@ function addLivreOr(PDO $db,
 
                         $firstname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
                         $lastname = htmlspecialchars(strip_tags(trim($lastname)), ENT_QUOTES);
-                        $usermail = filter_var($themail, FILTER_VALIDATE_EMAIL);
-                        $message = htmlspecialchars(strip_tags(trim($themessage)), ENT_QUOTES);
+                        $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+                        $message = htmlspecialchars(strip_tags(trim($message)), ENT_QUOTES);
 
 
 
                         if ($usermail === false || empty($message)) {
                             return false;
                         }
+                        $sql = "INSERT INTO livreor (firstname,lastname,usermail, message) VALUES ('$firstname','lastname' '$usermail', '$message')";
+    try {
+        // on exécute la requête
+        $db->exec($sql);
+        // si tout s'est bien passé, on renvoie true
+        return true;
+    } catch (Exception $e) {
+        // sinon, on renvoie le message d'erreur
+        return $e->getMessage();
                     }
+                }
