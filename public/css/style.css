@@ -59,7 +59,7 @@ p{
 
 .post1{
     font-size: 16px;
-    color: black;
+    color: rgb(0, 0, 0);
     text-align: left;
     border: 2px solid black;
     padding: 2em;
@@ -70,6 +70,8 @@ p{
 @media screen 
     and (min-width : 480px) 
     and (max-width : 959px) { 
+    
+
     
     #cadreForm{
       width: auto;  
@@ -87,11 +89,21 @@ p{
     and (min-width : 960px){ 
      img{
         width: 20%;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: start;
+        float: left;
      }   
+     #cadreForm{
+        width: 700px;
+        margin-left: 30% ;
+        margin-right: 5em;
+     }
 
+     #labelPrenom, #labelNom, #labelEmail, #labelMessage{
+        display: inline-block;
+        width: 15%;
+     }
+     #prenom, #nom, #email, #message{
+         width: 80%;
+     }  
 
     }
 

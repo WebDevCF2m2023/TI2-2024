@@ -12,7 +12,9 @@
 </head>
 <body>
     <h1>Livre d'or</h1>
-    <img src="/img/email.png">
+    <div id="img">
+        <img src="/img/email.png">
+    </div>
     <div id="cadreForm">
         <form action="" method="POST">
             <div>
@@ -30,15 +32,24 @@
             </div>
             <div>
                 <label for="message" id="labelMessage">Message *</label>
-                <textarea name="message" id="message" cols="30" rows="10" maxlength="1000" required></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" maxlength="600" required></textarea>
             </div>
             <p>(*) Ce champ est obligatoire</p>
             <div>
-            <input type="submit" value="Envoyer" id="envoyer">
+            <input type="submit" value="Envoyer" id="envoyer" onclick="return submitForm(event)">
             </div>
       </div>
         </form>
     </div>
+    <h3>Messages Précédents</h3>
+    <div id="allMessages">
+        <?php 
+        foreach ($messages as $commentaires):?>
+            <p class="post1"><?= $commentaires["firstname"]?> a envoyé ce message le <?=(new DateTime($commentaires["datemessage"]))->format('d/m/Y H:i:s')?><br><?= $commentaires["message"]?></p><br>
+        <?php endforeach; 
+        ?>
+    </div>
+       
 <script src="js/validation.js"></script>
 </body>
 </html>

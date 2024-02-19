@@ -33,14 +33,14 @@ function addLivreOr(PDO $db,
                     string $message
                     ): bool|string
 {   
-    $firstaname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
+    $firstname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
     $lastname = htmlspecialchars(strip_tags(trim($lastname)), ENT_QUOTES);
     $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
     $message = htmlspecialchars(strip_tags($message));
     if (empty($message) || $usermail === false){
     return false;
     }
-$sql = "INSERT INTO `livreor` (firstname, lastname, usermail, message) VALUES ('$firstname' '$lastname''$usermail','$message')";
+$sql = "INSERT INTO `livreor` (`firstname`, `lastname`, `usermail`, `message`) VALUES ('$firstname', '$lastname', '$usermail', '$message')";
 try{
     $db->exec($sql);
     return true;

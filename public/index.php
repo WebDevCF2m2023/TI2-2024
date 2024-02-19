@@ -23,13 +23,15 @@ try{
 /*
  * Si le formulaire a été soumis
  */
-if (isset($_POST['firstname'], $_POST['lastname'],$_POST['usermail'], $_POST['message'] )){
-    $insert = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST[ 'usermail'], $_POST['message']);
+
+if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['message']) ){
+    $insert = addLivreOr($db, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
     if ($insert === true){
-        header("location: ./?section=livredor");
+        //header("location: ./?section=livredor");
         exit();
     }else{
         $message = $insert;
+        echo $message;
     }
 }
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
