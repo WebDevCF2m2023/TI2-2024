@@ -9,7 +9,7 @@
 // chargement de configuration
 require_once "../config.php";
 // chargement du modèle de la table livreor
-
+require_once "../model/livreorModel.php";
 /*
  * Connexion à la base de données en utilisant PDO
  * Avec un try catch pour gérer les erreurs de connexion
