@@ -67,6 +67,19 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['us
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 
 $informations = getAllLivreOr($db);
+$nbInformations = getNbInformations($db);
+
+
+if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
+    $page = (int) $_GET[PAGINATION_GET_NAME];
+} else {
+    $page = 1;
+}
+
+
+$informations = getPaginationInformations($db, $page, PAGINATION_NB_PAGE);
+
+$pagination = PaginationModel("./", PAGINATION_GET_NAME, $nbInformations, $page, PAGINATION_NB_PAGE);
 
 
 require_once "../view/$content.php"; // Load the view

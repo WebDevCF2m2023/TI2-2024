@@ -65,6 +65,13 @@
 
         <div class="message-container" style="display: flex; flex-direction: column;">
 
+            <?php
+            if (isset($pagination)) {
+                echo '<div class="pagination">';
+                echo $pagination;
+                echo '</div>';
+            }
+            ?>
 
             <?php
             $results = getAllLivreOr($db);
