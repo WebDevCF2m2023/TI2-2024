@@ -43,7 +43,7 @@ function addLivreOr(
 
     if ($usermail === false || empty($message) || empty($firstname) || empty($lastname)) {
         return false;
-    }
+    } 
 
     $sql = "INSERT INTO livreor (firstname, lastname, usermail, message) VALUES (:firstname, :lastname, :usermail, :message)";
 
