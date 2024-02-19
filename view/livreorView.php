@@ -11,12 +11,13 @@
     <header>
         <h1>LIVRE D'OR</h1>
     </header>
-    <img src="img/email.png" alt="">
+    
     <main>
         <?php if(isset($success)): ?>
         <p><?=$success ? "Votre message a bien été enregistré" : "Une erreur s'est produite" ?></p>
         <?php endif; ?>
         <form action="" method="POST" onsubmit="return verif()">
+        <img src="img/email.png" alt="">
             <fieldset>
                 <h2>Laissez-nous un message</h2>
                 <p id="error-nom" class="error">* Le prenom et le nom doit faire au moins 5 caractères</p>
@@ -47,8 +48,9 @@
             foreach ($informations as $information){
             ?>
             <div id="BlockMessage">
+                <div class="com" id="comm">
             <h4>Posté le <?=$information['datemessage']?></h4>
-            <p><?=$information['message']?></p>
+            <p><?=$information['message']?></p></div>
             <?php
             }
             /*endforeach;*/
