@@ -1,0 +1,126 @@
+
+    body {
+        font-family: Arial, sans-serif;
+        
+    }
+    input[type=submit]{
+        color: rgb(2, 15, 38);
+        background-color: coral;
+     }
+    
+     input[type=submit]:hover {
+        background-color: #063309;
+      }
+    
+    h1 {
+        text-align: center;
+        color: rgb(63, 156, 243) ;
+    }
+    
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 250px;
+       
+    }
+    
+    form {
+        text-align: center;
+        background-color: rgb(17, 108, 193);
+
+    }
+    
+    label {
+        display: block;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    h3 {
+        text-align: center;
+    }
+    
+    h4 {
+        display: flex;
+        text-align:center;
+    }
+    
+    /* Styles spécifiques pour les écrans de moins de 480 pixels de largeur */
+    @media screen and (max-width: 480px) {
+        form  {
+      
+            display: flex;
+            flex-direction:column;
+            border: 5px;
+            border-width: 10px;
+            align-items: center;
+            width: 400px;
+            background-color: rgb(17, 108, 193);
+          } 
+          label {
+            order: -1;
+          }
+          h4{
+            align-items: center;
+          }
+          img {
+            width: 250px;
+          }
+    }
+    
+    /* Styles spécifiques pour les écrans entre 480 pixels et 960 pixels de largeur */
+    @media screen and (min-width: 481px) and (max-width: 960px) {
+        form {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            border: 10px;
+            width: 480px;
+            background-color: rgb(17, 108, 193);
+
+
+        
+        }
+    
+        label {
+            display: inline;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    
+        textarea {
+            width: 70%;
+        }
+        h4{
+            display: flex;
+            align-items: center;
+        }
+    
+    }
+    
+    /* Styles spécifiques pour les écrans de plus de 960 pixels de largeur */
+    @media screen and (min-width: 961px) {
+        img {
+            float: left;
+            margin-right: 20px;
+            
+        }
+        body{
+            align-items: center;
+        }
+    
+        form {
+          
+            border: 10px;
+            width: 680px;
+            background-color: rgb(17, 108, 193);
+        }
+    
+       
+        h4{
+            align-items: center;
+        }
+    }
