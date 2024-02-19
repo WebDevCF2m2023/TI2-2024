@@ -11,7 +11,32 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
+    <h1>Livre d'or</h1>
+    <img src="/img/email.png">
+    <div>
+        <form action="" method="POST">
+            <div>
+                <label for="prenom">Prénom *</label>
+                <input type="text" name="prenom" id="prenom">
+            </div>
+            <div>
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom">
+            </div>
+            <div>
+                <label for="email">Email *</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <textarea name="message" id="message" cols="30" rows="10" maxlength="1000">Message *</textarea>
+            </div>
+            <p>(*) Ce champ est obligatoire</p>
+            <div id="envoi">
+            <input type="submit" value="Envoyer">
+            </div>
+      </div>
+        </form>
+    </div>
 <script src="js/validation.js"></script>
 </body>
 </html>
