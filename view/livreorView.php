@@ -20,7 +20,7 @@
                 <img src="img/email.png" alt="Image Email" width="300px">
             </div>
             <div>
-                <form action="" method="POST" onsubmit="return validateForm()">
+                <form action="?p=1" method="POST" onsubmit="return validateForm()">
                     <h3>Laissez-nous un message</h3>
                     <?php if(isset($message, $error)): ?>
                         <p id="information-message" class="<?= $error ? "error" : "success" ?>"><?= $message ?></p>
@@ -54,14 +54,13 @@
         </section>
         <section>
             <?php
-                $nombreDeMessages = count($livreOr);
-                if($nombreDeMessages === 0) $messageNombreMessage = "Pas encore de message";
-                else if($nombreDeMessages === 1) $messageNombreMessage = " : Il y a un message écrit";
-                else if($nombreDeMessages > 1) $messageNombreMessage = " : Il y a $nombreDeMessages messages écrits";
+                if($totalComments === 0) $messageNombreMessage = "Pas encore de message";
+                else if($totalComments === 1) $messageNombreMessage = " : Il y a un message écrit";
+                else if($totalComments > 1) $messageNombreMessage = " : Il y a $totalComments messages écrits";
             ?>
             <h2>Message précedents<?=$messageNombreMessage?></h2>
             <div class="pagination"><?=$pagination?></div>
-            <?php foreach(array_reverse($livreOr) as $comment): ?>
+            <?php foreach($livreOr as $comment): ?>
             <div class="comment">
                 <p><span class="name"><?=$comment["firstname"]?></span> a envoyé ce message le <?=(new DateTime($comment["datemessage"]))->format("d-m-Y à H\hi")?></p>
                 <p><?=str_replace("\n", "<br>", $comment["message"])?></p>

@@ -27,9 +27,9 @@ function getAllLivreOr(PDO $pdo): array
  * Fonction qui récupère les messages du livre d'or dans une tranche fourni en argument
  * venant de la base de données 'ti2web2024' et de la table 'livreor'
  */
-function getLivreOrByLimit(PDO $pdo, int $limit, int $offset): array
+function getLivreOrByLimitDesc(PDO $pdo, int $limit, int $offset): array
 {
-    $sql = "SELECT * FROM livreor LIMIT $offset, $limit";
+    $sql = "SELECT * FROM livreor ORDER BY id DESC LIMIT $offset, $limit";
     $statement = $pdo->query($sql);
     // Permet de récupérer toute les lignes SQL en tableau associatif
     $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);

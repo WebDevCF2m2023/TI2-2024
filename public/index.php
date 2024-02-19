@@ -45,7 +45,8 @@ if(isset($_POST["nom"], $_POST["prenom"], $_POST["email"], $_POST["message"])){
  */
 
 $currentPage = 1;
-$maxPages = ceil(getCountLivreOr($pdo) / NUMBER_COMMENT_BY_PAGE);
+$totalComments = getCountLivreOr($pdo);
+$maxPages = ceil($totalComments / NUMBER_COMMENT_BY_PAGE);
 // Variable de pagination dans l'url 
 if(!empty($_GET[PREFIX_PAGE]) && ctype_digit($_GET[PREFIX_PAGE])){
     $currentPage = (int)$_GET[PREFIX_PAGE];
@@ -53,7 +54,7 @@ if(!empty($_GET[PREFIX_PAGE]) && ctype_digit($_GET[PREFIX_PAGE])){
         $currentPage = 1;
 }
 
-$livreOr = getLivreOrByLimit($pdo, NUMBER_COMMENT_BY_PAGE, ($currentPage - 1 ) * NUMBER_COMMENT_BY_PAGE);
+$livreOr = getLivreOrByLimitDesc($pdo, NUMBER_COMMENT_BY_PAGE, ($currentPage - 1 ) * NUMBER_COMMENT_BY_PAGE);
 $pagination = getPaginationView($currentPage, $maxPages);
 
 // fermeture de la connexion
