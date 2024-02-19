@@ -26,14 +26,23 @@ try {
 /*
  * Si le formulaire a été soumis
  */
-
+if (isset($_POST["prenom"],$_POST["nom"],$_POST["mail"],$_POST["message"])){
+    $prenom = $_POST["prenom"];
+    $nom = $_POST["nom"];
+    $mail = $_POST["mail"];
+    $message = $_POST["message"];
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
+    $result = addLivreOr($db, $prenom, $nom, $mail, $message);
 
     // si l'insertion a réussi
-
     // on redirige vers la page actuelle
-
+    if ($result===true){
+        header("Location: ./");
+        die;
+    }
     // sinon, on affiche un message d'erreur
+    $submit_message = $result;
+}
 
 /*
  * On récupère les messages du livre d'or
