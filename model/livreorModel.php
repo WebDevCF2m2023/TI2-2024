@@ -18,6 +18,22 @@ function getAllLivreOr(PDO $db): array{
 
 /**
  * @param PDO $db
+ * @param int $page
+ * @param int $nb_page
+ * @return array
+ * Fonction qui récupère les messages de la page du livre d'or par ordre de date croissante
+ * venant de la base de données 'ti2web2024' et de la table 'livreor'
+ */
+function getPageLivreOr(PDO $db, int $page, int $nb_page):array{
+    $first = ($page-1)*$nb_page;
+    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` DESC LIMIT $first,$nb_page;";
+    $query = $db->query($sql, PDO::FETCH_ASSOC);
+    $results = $query->fetchAll();
+    return $results;
+}
+
+/**
+ * @param PDO $db
  * @param string $firstname
  * @param string $lastname
  * @param string $usermail
