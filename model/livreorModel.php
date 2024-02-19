@@ -93,7 +93,7 @@ function addLivreOr(PDO $pdo,
                     string $lastname,
                     string $usermail,
                     string $message
-                    ): bool|string
+                    )
 {
     // On enleve les espaces inutile avec trim et on sécurise les données
     $firstname = htmlspecialchars(strip_tags(trim($firstname)));
