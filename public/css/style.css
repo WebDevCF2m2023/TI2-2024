@@ -65,7 +65,7 @@ a {
     margin-left: 10px;
 }
 .valid {
-    color: green;
+    color: rgb(0, 58, 0);
 }
 .not-valid {
     color: red;

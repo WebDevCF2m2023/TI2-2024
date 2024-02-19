@@ -23,6 +23,12 @@ try {
     die;
 }
 
+//check if submit sucessed
+if (isset($_GET["submit_succes"])){
+    $submit_message = "message enregistré";
+    $submit_status = "valid";
+}
+
 /*
  * Si le formulaire a été soumis
  */
@@ -41,11 +47,12 @@ if (isset($_POST["prenom"],$_POST["nom"],$_POST["mail"],$_POST["message"])){
     // si l'insertion a réussi
     // on redirige vers la page actuelle
     if ($result===true){
-        header("Location: ./");
+        header("Location: ./?submit_succes=true");
         die;
     }
     // sinon, on affiche un message d'erreur
     $submit_message = $result;
+    $submit_status = "not-valid";
 }
 
 /*

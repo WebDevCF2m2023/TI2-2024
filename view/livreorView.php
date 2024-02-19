@@ -18,7 +18,7 @@
             <h2>Laissez nous un message</h2>
             <!--message d'erreur ou de réussite-->
             <?php if (!empty($submit_message)):?>
-            <h2 class="not-valid" id="submit-message"><?=$submit_message?></h2>
+            <h2 class="<?=$submit_status?>" id="submit-message"><?=$submit_message?></h2>
             <?php endif;?>
             <div class="field">
                 <label for="prenom">Prenom *</label>
