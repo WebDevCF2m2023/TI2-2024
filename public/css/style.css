@@ -97,6 +97,21 @@ h2{
     margin-top: .5rem;
 }
 
+.pagination{
+    padding-left: 20px;
+    font-size: 1.25rem;
+    margin: 1rem
+}
+
+.pagination a{
+    color: #417397;
+}
+
+#currentPage{
+    color: #161616;
+    font-weight: bold;
+}
+
 .comment{
     border: 2px solid black;
     border-radius: .5rem;
