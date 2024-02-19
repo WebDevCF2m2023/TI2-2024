@@ -1,17 +1,61 @@
 form {
     display: flex;
     flex-direction: column;
-    background-color: lightblue;
+    background-color: steelblue;
 }
 
-h1, p {
+form div label {
+    font-size: 25px;
+}
+
+form h1, form p {
     text-align: center;
+    color: white;
+}
+
+#title {
+    color: steelblue;
+    text-align: center;
+    font-weight: bolder;
+}
+
+#title h1{
+    color: steelblue;
+    text-align: center;
+    font-size: 50px;
+}
+
+#photo{   
+    display: flex;
+    justify-content: center;    
 }
 
 #lenom, #leprenom, #lusername, #lemessage, #envoi {
     display: flex;
     flex-direction: column;
     margin-bottom: 1em;
+    margin: 10px 10px;
+}
+
+#lenom input, #leprenom input, #lusername input,  #envoi input{
+    
+    border: 2px solid darkgray;
+    padding: 7px;
+    background-color: blanchedalmond;
+}
+
+textarea {
+    background-color: blanchedalmond;
+}
+
+#envoi {
+    display: flex;
+    align-items: center;
+}
+
+input[type=submit] {
+    width: 90vw;
+    font-size: 20px;
 }
 
 textarea {
@@ -22,34 +66,58 @@ textarea {
     border: 2px solid black;
     margin: 10px 5px;
     border-radius: 10px;
-    box-shadow: 3px 3px 2px black;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 @media screen and (min-width:480px) and (max-width:959px) {
-    #lenom, #leprenom, #lemessage, #lusername input[type=submit] {
+    #lenom, #leprenom, #lemessage, #lusername, input[type=submit] {
         flex-direction: row;
         flex-wrap: nowrap;
-        width:95vw;
+        width:90vw;
     }
     #lenom label, #leprenom label, #lemessage label, #lusername label {
-        width:100px;
+        width: 150px;
         flex: 1 0 100px;
+        margin-right: 30px;
     }
     #nom, #prenom, #message, #username {
-        width:85vw;
+        width:75vw;
+    }
+    input[type=submit] {
+        width: 40vw;
+        font-size: 20px;
     }
 }
 
 @media screen and (min-width:960px) {
   
-    form {
-        display: flex;
+    #lenom, #leprenom, #lemessage, #lusername, input[type=submit] {
         flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        flex-wrap: nowrap;
+        
+        
+    }
+    #lenom label, #leprenom label, #lemessage label, #lusername label {
+        width: 150px;
+        flex: 1 0 100px;
+        margin-right: 10px;
+    }
+    #nom, #prenom, #message, #username {
+        width: 75vw;
+    }
+    input[type=submit] {
+        width: 40vw;
+        font-size: 20px;
+    }
+    #photo {
+        float: left;
     }
 
-    #col_gauche, #col_droite {
-        width: 45vw;
+    input[type=submit] {
+        width: 20vw;
+        font-size: 20px;
     }
 }
+
+
+    

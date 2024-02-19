@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
+    <div id="title">
     <h1>Livre d'or</h1>
+    </div>
 
-    <div>
+    <div id="photo">
         <img src="img/email.png" alt="">
     </div>
     <form action="" method="POST" class="form">
@@ -61,6 +63,7 @@
         
 
     <section id="informations">
+        <h2>Messages Précédents</h2>
         <?php 
             foreach($informations as $information):
         ?>
