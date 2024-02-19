@@ -15,8 +15,21 @@
 <script src="js/validation.js"></script>
 </body>
 
-    <form action="" method="POST" name="or">
-
-    
+<form action="" method="get" name="test">
+        <fieldset>
+            <label>Prenom : </label>
+            <input type="text" placeholder="" name="Prenom" id="nom" required>
+            <br>
+            <label>Nom : </label>
+            <input type="text" placeholder="" name="nom" id="nom" required>
+            <br>
+            <label for="email">Adresse mail</label>
+            <input type="text" name="email" id="" required>
+            <br>
+            <label>Message</label>
+            <input type="text" name="message" id="" required>
+        </fieldset>
+        
+        <button onclick = CheckPassword()>Envoyez les données</button>
     </form>
 </html>

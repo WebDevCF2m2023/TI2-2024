@@ -27,7 +27,11 @@ require_once "../config.php";
  * Si le formulaire a été soumis
  */
 
+ if(isset($_POST['complicating'], $_POST['theirMessage']));
+
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
+
+ 
 
     // si l'insertion a réussi
 
