@@ -23,15 +23,15 @@
             </div>
             <div id="leprenom">
                 <label for="prenom">Prénom*</label>
-                <input type="text" name="lastname" id="prenom">
+                <input type="text" name="lastname" id="lastname">
             </div>
             <div id="mail">
                 <label for="email">Email* :</label>
-                <input type="text" id="email" name="usermail" >
+                <input type="text" id="usermail" name="usermail" >
             </div>
             <div id="lemessage">
                 <label for="msg">Message*</label>
-                <textarea name="message" id="msg" cols="30" rows="5" maxlength="1024"></textarea>
+                <textarea name="message" id="message" cols="30" rows="5" maxlength="1024"></textarea>
             </div>
            <h4>(*) Ce champs est obligatoire </h4>
             <button type="submit" id="subButton" onclick="validateForm(event)">Envoyer</button>
@@ -53,6 +53,18 @@
             endforeach;
         ?>
     </section>
+    <script>
+        function validateForm(e){
+
+const nom = document.querySelector("#firstname").value;
+const email = document.querySelector("#usermail").value;
+const theMessage = document.querySelector("#message").value;
+
+const validNom = nom.length >= 100;
+const validEmail = /@/.test(usermail) && /\./.test(usermail);
+const validTheMessage = theMessage.trim().length > 600;
+}
+    </script>
     <script src="js/validation.js"></script>
 </body>
 </html>
