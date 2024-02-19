@@ -3,41 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="..//public/css/style.css">
     <title>Livre d'or</title>
 </head>
 <body>
     <header>
         <h1>LIVRE D'OR</h1>
     </header>
+    <img src="../public/img/email.png" alt="">
     <main>
         <?php if(isset($success)): ?>
         <p><?=$success ? "Votre message a bien été enregistré" : "Une erreur s'est produite" ?></p>
         <?php endif; ?>
         <form action="" method="POST" onsubmit="return verif()">
-            <p id="error-password" class="error">* Le password doit être/avoir 8 de long / une lettre majuscule / 1 caractère spécial et un chiffre</p>
-            <div>
-                <label for="password">Password : </label>
-                <input type="password" name="thepassword" id="password" required>
-                <img onclick="togglePassword(event)" id="btnShowPassword" src="images/eye-open.svg" alt="Voir le mot de passe" title="Voir le mot de passe">
-            </div>
-            <p id="error-nom" class="error">* Le nom doit faire au moins 5 caractère</p>
-            <div>
-                <label for="nom">Nom : </label>
-                <input type="text" name="thenom" id="nom" required>
-            </div>
+            <fieldset>
+                <h2>Laissez-nous un message</h2>
+                <p id="error-nom" class="error">* Le prenom et le nom doit faire au moins 5 caractères</p>
+                <div>
+                    <label for="prenom">prenom * </label>
+                    <input type="text" name="theprenom" id="prenom" required>
+                </div>
+                <div>
+                    <label for="nom">Nom : </label>
+                    <input type="text" name="thenom" id="nom" required>
+                </div>
+
             <p id="error-email" class="error">* L'email doit avoir un @ et un .</p>
             <div>
-                <label for="email">Votre email :</label>
+                <label for="email">Votre email *</label>
                 <input type="email" name="themail" id="email" required>
             </div>
-            <p id="error-themessage" class="error">* Le message ne doit pas être vide</p>
+            <p>* Le message ne doit pas être vide</p>
+            <label for="message" id="msg">Message *</label>
             <textarea name="themessage" id="themessage" maxlength="2050" required></textarea>
             <div>
-                <input type="submit" value="Envoyer">
+                <input type="submit" value="Envoyer" id="sub">
             </div>
         </form>
-
+        </fieldset>
         <section id="livreor">
 
             <?php

@@ -1,0 +1,68 @@
+fieldset{
+    background-color: rgb(30, 125, 233);
+    margin-right: 500px;
+    position: relative;
+    left: 500px;
+  
+}
+label{
+    display: flex;
+    text-transform: capitalize;
+    font-weight: bolder;
+}
+input{
+    top: -20px;
+    width: 800px;
+    position: relative;
+    left: 95px;
+}
+#sub{
+    width: 100px;
+    left: 400px;
+    top: 3px;
+}
+#themessage{
+    width: 800px;
+    height: 120px;
+    left: 95px;
+    position: relative;
+}
+h1{
+    color:  rgb(30, 125, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#msg{
+    top: 70px;
+    position: relative;
+}
+img{
+    width: 200px;
+    height: 200px;
+    top: 90px;
+    position: relative;
+    right: -200px;
+}
+form{
+    top: -200px;
+    position: relative;
+}
+#prenom{
+    background-color: wheat;
+}
+#nom{
+    background-color: wheat;
+}
+#email{
+    background-color: wheat;
+}
+#themessage{
+    background-color: wheat;
+}
