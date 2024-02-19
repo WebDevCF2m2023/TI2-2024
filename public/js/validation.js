@@ -4,8 +4,9 @@ formContainer.addEventListener("submit"), function(event) {
     event.preventDefault()
 
     function checking () {
-        var lengthCheck = document.getElementById("nom");
+        var names = document.getElementById("nom");
 
+        var lengthCheck = names.lenght === 8;
         
     }
 

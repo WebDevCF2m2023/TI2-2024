@@ -14,7 +14,7 @@
     <h1>TI2 | Livre d'or</h1>
 <script src="js/validation.js"></script>
 </body>
-
+    <fieldset class="blue">
     <form action="" method="POST" name="or" id="form">
             <label>Prenom : </label>
             <input type="text" placeholder="" name="Prenom" id="nom" required>
@@ -27,7 +27,8 @@
             <br>
             <label>Message</label>
             <input type="text" name="message" id="" required>
+    </fieldset>
         
-            <button type="submit" onclick = CheckThemUp()>Envoyez les données</button>
+            <button type="submit" onclick = checking()>Envoyez les données</button>
     </form>
 </html>

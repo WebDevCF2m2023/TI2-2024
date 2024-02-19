@@ -62,11 +62,6 @@ require_once "../config.php";
     }
 
 }
-
-    // on redirige vers la page actuelle
-
-    // sinon, on affiche un message d'erreur
-
 /*
 * On récupère les messages du livre d'or
 */
