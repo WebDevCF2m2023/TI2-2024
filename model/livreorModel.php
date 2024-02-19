@@ -22,6 +22,7 @@ function getAllInformations(PDO $pdo): array{
 }
 
 
+
 /**
  * Permet d'ajouter une nouvelle information en base de donnée
  * @return bool Si FALSE une erreur s'est produite
@@ -41,6 +42,9 @@ function insertNewInformation(PDO $pdo, string $email, string $message): bool{
 
     return true;
 }
+
+
+
 /**
  * @param PDO $db
  * @param string $firstname

@@ -16,7 +16,7 @@
         <h1>LIVRE D'OR</h1>
     </header>
     <main>
-        <img src="../public/img/favicon.png" alt="fig1">
+        <img src="img/email.png" alt="fig1">
         <form action="" method="POST" onsubmit="return verif()">
             <p id="error-password" class="error">
             <div>
@@ -40,10 +40,24 @@
                 <input type="submit" value="Envoyer">
             </div>
         </form>
-</body>
-</html>
+
     <script src="../public/js/validation.js"></script>
 
-    
+    </form>
+
+    <h3><?php if (empty($commentaires)) echo "Pas encore de message" ?></h3>
+    <?php
+
+foreach ($commentaires as $commentaire) :
+    ?>
+    <div class="commentaires">
+        <h4><?= $commentaire['firstname'] ?> a envoyé ce message le <?= $commentaire['datemessage'] ?></h4>
+        <p><?= $commentaire['message'] ?></p>
+        </div>
+    <?php
+    endforeach;
+//var_dump($_POST);
+?>
+
 </body>
 </html>
