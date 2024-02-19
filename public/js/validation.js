@@ -15,6 +15,6 @@ function control () {
     }else if(message.length > 600){
         alert("Votre message doit avoir maximum 600 caractères");
     }else {
-        alert("Bienvenue" + prenom);
+        alert("Bienvenue " + prenom +" "+ nom);
     }
 }

@@ -60,12 +60,12 @@
     <section id="informations">
         <h2>Messages Précédents</h2>
         <?php 
-            foreach($informations as $information):
+            foreach(array_reverse($informations) as $information):
         ?>
         <div class="information">
-            <div>
+            <div>                
+                <p><?= (new DateTime($information["datemessage"]))->format('d/m/Y H:i:s')?></p>
                 <p><?= $information["firstname"] ?></p>
-                <p><?=(new DateTime($information["datemessage"]))->format('d/m/Y H:i:s')?></p>
             </div>
             <p><?= $information["message"] ?></p>
         </div>
