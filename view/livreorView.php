@@ -12,12 +12,13 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
-    <div>
+    <div id="pic">
         <img id="img" src="img/email.png" alt="">
     </div>
     <form id="form1" action="" method="post">
-        <div>
+        <div id="lenght">
             <h1>laissez nous un message</h1>
+           
             <div id="lenom">
                 <label for="nom">Nom*</label>
                 <input type="text" name="firstname" id="firstname" require>
