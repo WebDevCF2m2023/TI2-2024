@@ -28,14 +28,14 @@
             </div>
             <div id="mail">
                 <label for="email">Email* :</label>
-                <input type="text" id="usermail" name="usermail" >
+                <input type="email" id="usermail" name="usermail" >
             </div>
             <div id="lemessage">
                 <label for="msg">Message*</label>
-                <textarea name="message" id="message" cols="30" rows="5" maxlength="1024"></textarea>
+                <textarea name="message" id="message" cols="30" rows="5" maxlength="600"></textarea>
             </div>
            <h4>(*) Ce champs est obligatoire </h4>
-           <button type="submit" id="subButton" onclick=" validateForm(event)">S'inscrire</button> 
+           <button type="submit" id="subButton" onclick="return validateForm(event)">S'inscrire</button> 
         </div>
     </form>
     <h1>message presedent</h1>

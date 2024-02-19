@@ -51,7 +51,7 @@ function addLivreOr(PDO $db,
     try {
         // on exécute la requête
         $p = $db->prepare($sql);
-        $p->execute([$firstname,$lastname,usermail,message]);
+        $p->execute([$firstname,$lastname,$usermail,$message]);
         // si tout s'est bien passé, on renvoie true
         return true;
     } catch (Exception $e) {

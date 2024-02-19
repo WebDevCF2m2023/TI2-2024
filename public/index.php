@@ -24,6 +24,8 @@ try {
 /*
  * Si le formulaire a été soumis
  */
+var_dump($_POST);
+
 if (isset($_POST['firstname'], $_POST['lastname'],$_POST['usermail'],$_POST['message'])) {
 
     // on appelle la fonction d'insertion dans la DB
