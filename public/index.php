@@ -23,10 +23,10 @@ try{
 /*
  * Si le formulaire a été soumis
  */
-if (isset($_GET['usermail'], $_GET['message'])){
-    $insert = addLivreOr($db, $_POST['usermail'], $_POST['message']);
+if (isset($_POST['firstname'], $_POST['lastname'],$_POST['usermail'], $_POST['message'] )){
+    $insert = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST[ 'usermail'], $_POST['message']);
     if ($insert === true){
-        header("location: ./");
+        header("location: ./?section=livredor");
         exit();
     }else{
         $message = $insert;
@@ -45,9 +45,11 @@ if (isset($_GET['usermail'], $_GET['message'])){
  */
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
-$livreDor = getAllLivreOr($db);
+$messages= getAllLivreOr($db);
+
+
 // fermeture de la connexion
-$db=null;
+$db = null;
 // Appel de la vue
 
 include "../view/livreorView.php";
