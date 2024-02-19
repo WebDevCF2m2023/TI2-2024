@@ -25,7 +25,7 @@ function getAllLivreOr(PDO $pdo): array
  * @param string $lastname
  * @param string $usermail
  * @param string $message
- * @return bool|string Une chaine de caractère si une erreur s'est produite, sinon TRUE
+ * @return bool|string Une chaine de caractère si une erreur s'est produite, sinon FALSE si les informations données sont invalides. TRUE si tout est bon
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
 function addLivreOr(PDO $pdo,
