@@ -21,18 +21,18 @@
    <div class="form1">
 
 
-   <div><label class="prenom"for="user_name">Prénom</label>                        
-   <input type="text" id="lePrenom" name="user_prenom" required /></div>    
+   <div><label class="prenom"for="firstname">Prénom</label>                        
+   <input type="text" id="lePrenom" name="firstname" required /></div>    
 
-   <div><label class="nom" for="user_prenom">Nom</label>
-   <input type="text" id="leNom" name="user_nom" /></div>
+   <div><label class="nom" for="lastname">Nom</label>
+   <input type="text" id="leNom" name="lastname" /></div>
 
-   <div><label class="mail" for="user_mdp">E-mail</label>
-       <input type="email" id="eMail" name="user_mail" required /></div>
+   <div><label class="mail" for="usermail">E-mail</label>
+       <input type="email" id="eMail" name="usermail" required /></div>
 
     <div id="lemessage">
-        <label for="msg">Message</label>
-        <textarea name="themessage" id="msg" cols="30" rows="5" maxlength="1024"></textarea> </div>
+        <label for="message">Message</label>
+        <textarea name="message" id="msg" cols="30" rows="5" maxlength="600"></textarea> </div>
            
        
        <input type="submit" value="Envoyer" id="subButton">
@@ -43,7 +43,22 @@
 
 </form>
 
-
+<h2>Messages présédents</h2>
+<section id="comments">
+        <?php 
+            foreach(array_reverse($addLivreOr) as $add):
+        ?>
+        <div class="information">
+            <div>
+                <p><?= $add["firstname"] ?></p>
+                <p><?=(new DateTime($add["datemessage"]))->format('d/m/Y H:i:s')?></p>
+            </div>
+            <p><?= $add["message"] ?></p>
+        </div>
+        <?php
+            endforeach;
+        ?>
+    </section>
 
 
 <script src="js/validation.js"></script>
