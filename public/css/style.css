@@ -1,22 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans-serif;
+    
+}
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* This will center the content vertically */
+    width: 100%;
+    margin-top: -150px; /* Adjust this value as needed */
 }
 
 
 
 .title {
-    position: absolute;
-    top: 0;
     width: 100%;
     text-align: center;
     font-weight: 800;
     font-size: 50px;
-    color:dodgerblue;
+    color: dodgerblue;
+    left: 0;
+    right: 0;
+}
+
+.comment-title {
+    width: 100%;
+    text-align: center;
+    font-weight: 800;
+    font-size: 50px;
+    left: 0;
+    right: 0;
+    margin-left: -510px; 
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .main-container {
@@ -30,7 +53,7 @@ body {
     width: 400px;
     height: 400px;
     flex: 0 0 auto;
-    margin-right: -80px;
+    margin-right: 10px;
     margin-bottom: 300px;
 }
 
@@ -39,7 +62,8 @@ body {
     background-color: rgb(112, 112, 168);
     width: 130vh;
     height: 70vh;
-    margin-left: 80px;
+    margin-left: 10px;
+    margin-right: 200px;
 }
 
 #top-form-message {
@@ -113,16 +137,25 @@ body {
 .message-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+
 }
 
 .content-message {
-    /* Your message styles here */
+    background-color: #f0f0f0; /* Light gray background */
+    margin-bottom: 20px; /* Space between messages */
+    padding: 10px; /* Space inside the message */
+    border-radius: 5px; /* Rounded corners */
+    width: 80%; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .message-header {
-    /* Your message header styles here */
+    font-weight: bold; /* Make the header bold */
+    margin-bottom: 10px; /* Space between the header and the body */
 }
 
 .message-body {
-    /* Your message body styles here */
+    /* No specific styles needed for the body, but you can add if you want */
 }
