@@ -12,6 +12,16 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
+    <?php
+
+foreach ($commentaires as $commentaire) :
+?>
+    <h4>Posté le <?= $commentaire['datemessage'] ?></h4>
+    <p><?= $commentaire['message'] ?></p>
+<?php
+endforeach;
+//var_dump($_POST);
+?>
 <script src="js/validation.js"></script>
 </body>
 </html>

@@ -30,20 +30,25 @@ if (isset($_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['me
     //Si on obtient une erreur
     if ($insert === true) $message = "Insertion réussie";
     else $message = $insert;
+
+
+ // si l'insertion a réussi
+    if ($insert) {
+        // on redirige vers la page actuelle
+        header("Location: ./");
+        exit();
+    } else {
+        // sinon, on affiche un message d'erreur
+        $message = "Erreur lors de l'insertion";
+    }
+    
 }
 
     
-
-    // si l'insertion a réussi
-
-    // on redirige vers la page actuelle
-
-    // sinon, on affiche un message d'erreur
-
 /*
  * On récupère les messages du livre d'or
  */
-
+$commentaires = getAllLivreOr($MyPDO);
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 
 // fermeture de la connexion
