@@ -5,7 +5,7 @@
 h1{
     margin: .5em 2em;
     font-weight: 900;
-    font-size: 2em;
+    font-size: 3em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     color: #427CA0;
@@ -16,10 +16,11 @@ img{
     margin-left: 6em;
 }
 #cadreForm{
-    margin: 1em;
+    margin: 2em;
     background-color: #427CA0;
-    padding: 1em;
+    padding: 2em;
     width: 310px;
+    
 }
 
 h2{
@@ -53,6 +54,7 @@ p{
     font-weight: 400;
     height: 3em;    
 }
+
 
 
 
