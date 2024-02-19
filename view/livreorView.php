@@ -11,7 +11,32 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
+    <h1>Livre d'or</h1>
+
+    
+        <form action="" method="get" name="formulaire">
+           <fieldset>
+           
+           
+            <label for="prenom">Prénom* </label>
+            <input type="text" placeholder="votre prenom" name="nom" id="firstname">
+            <label for="nom">Nom </label>
+            <input type="text" placeholder="votre nom" name="nom" id="lastname">
+            <label for="mail">Email*</label>
+             <input type="mail" placeholder="votre mail" name="mail" id="usermail">
+         <div>
+            <label for="message">Message*</label><br>
+            <textarea id="message" name="message" rows="6" cols="40" maxlength="1200"></textarea><br>
+        
+        </div>
+          </fieldset>
+          <h2>(*) Ce champ est obligatoire</h2>
+    
+    
+          
+          <input type="submit" value="Envoyer">
+    
+       
 <script src="js/validation.js"></script>
 </body>
 </html>
