@@ -17,27 +17,21 @@
     <div>
     <h1>Livre d'or</h1>
     <div>
-        <h3><?php if(isset($message)) echo $message?></h3>
-        <h3><?php 
-        echo $nbMessages>1 ? "$nbmessage commentaires" : "$nbMessages commentaire";
-        ?></h3>
-        <div>
-        <?php
-    if(isset($pagination)) echo "$pagination<hr>"; 
-    echo $pagination ?? null;
-    ?>
-            <?php
-
-        foreach($messages as $message):
-            ?>
-        <h4>Posté le <?=$message['firstname']?></h4>
-        <p><?=$message['message']?></p>
-            <?php
-        endforeach;
-        //var_dump($_POST);
-            ?>
+    <?php
+        foreach ($messages as $message):
+        ?>
+<div class="card">
+    <div class="card-header">
+<?php echo $message['message'];?>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><?php echo $message['firstname'];?></h5>
+        <p class="card-title"><?php echo $message['message'];?></h5>
         </div>
-        <div>
+
+        <?php
+        endforeach;
+        ?>
             
             <form action="" name="monForm" method="POST">
             <form action="" method="post">

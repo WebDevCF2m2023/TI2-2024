@@ -28,26 +28,15 @@ try{
 // Adresse + ligne + type + value + length
 // var_dump($_GET["pg"]);
 
-$content = "livreorView";
-// Si $_GET['pg'] existe et qu'il n'est PAS(!) vide
-if(!empty($_GET['pg'])){
-    // Le switch permet de traiter des valeurs STATIC
-    // Des valeurs fixes, qui ne bouge pas
-    switch($_GET['pg']){
-        case "pagination":
-            $alllivreor = getAllLivreOr($myPDO);
-            $content = "pagination";
-            break; // Permet de ne pas lire default ou les autres cas si il y en a en dessous
 
-        // Si aucun cas si dessus n'a été validé, le default est lu
-        default:
-            $content = "error404";
-            break;
-    }
-}
+
+            $messages = getAllLivreOr($myPDO);
+           
+        
+
 
 
 // On intégre/import le fichier HTML
 // On fusionne le fichier avec index.php
 // $content contient le nom du fichier php
-include "../view/$content.html.php";
+include "../view/livreorView.html.php";

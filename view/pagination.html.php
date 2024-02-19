@@ -8,14 +8,14 @@
     <title>Pagination</title>
 </head>
 <body>
-    <h1>Pagination 😊</h1>
+    <h1>Pagination </h1>
     <?php 
         // On var dump allCountries qui se situe dans index.php
         // Il connait la variable car il a fusionné avec index.php
         //var_dump($allCountries); 
 
         foreach($allLivreor as $value)
-            echo "<p>$value[firstnam]</p>";
+            echo "<p>$value[firstname]</p>";
     ?>
 </body>
 </html>

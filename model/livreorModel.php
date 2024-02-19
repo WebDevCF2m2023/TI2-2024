@@ -11,7 +11,7 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    $sql = "SELECT * FROM  messag ORDER BY datemessage ASC";
+    $sql = "SELECT * FROM  livreor ORDER BY datemessage ASC";
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
