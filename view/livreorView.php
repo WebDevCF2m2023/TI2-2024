@@ -16,22 +16,22 @@
     <h2 id="submit-message"><?=$submit_message?></h2>
     <?php endif;?>
     <div id="formulaire">
-        <img>
+        <img src="img/email.png">
         <form method="post" action="./">
             <h2>Laissez nous un message</h2>
-            <div>
+            <div class="field">
                 <label for="prenom">Prenom *</label>
                 <input type="text" name="prenom" id="prenom" required>
             </div>
-            <div>
+            <div class="field">
                 <label for="nom">Nom</label>
                 <input type="text" name="nom" id="nom">
             </div>
-            <div>
+            <div class="field">
                 <label for="mail">E-mail *</label>
                 <input type="email" name="mail" id="mail" required>
             </div>
-            <div>
+            <div class="field">
                 <label for="message">Message *</label>
                 <input type="text" name="message" id="message" required>
             </div>
@@ -50,7 +50,7 @@
         else echo "il y a ".count($messages)." messages";
         ?></h2>
         <?php foreach($messages as $message):?>
-        <div id="message">
+        <div class="message">
             <h3><span><?=$message["firstname"]?></span> a envoyé ce message le <?=$message["datemessage"]?></h3>
             <p><?=$message["message"]?></p>
         </div>
