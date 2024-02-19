@@ -12,13 +12,16 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
+    <?php if (!empty($submit_message)):?>
+    <h2 id="submit-message"><?=$submit_message?></h2>
+    <?php endif;?>
     <div id="formulaire">
         <img>
-        <form>
+        <form method="post" action="./">
             <h2>Laissez nous un message</h2>
             <div>
                 <label for="prenom">Prenom *</label>
-                <input type="text" name="prenom" id="prenom">
+                <input type="text" name="prenom" id="prenom" required>
             </div>
             <div>
                 <label for="nom">Nom</label>
@@ -26,11 +29,11 @@
             </div>
             <div>
                 <label for="mail">E-mail *</label>
-                <input type="email" name="mail" id="mail">
+                <input type="email" name="mail" id="mail" required>
             </div>
             <div>
                 <label for="message">Message *</label>
-                <input type="text" name="message" id="message">
+                <input type="text" name="message" id="message" required>
             </div>
             <p>(*) Ce champ est obligatoire</p>
             <div>
