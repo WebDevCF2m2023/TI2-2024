@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TI2 | Livre d'or</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/validation.css">
+</head>
+<body>
+    
+<div class="container">
+    <div class="text-center mt-5">
+    <h1>TI2 | Livre d'or</h1>
+        <p class="lead">Laissez-nous un message (<?=$nbComments?> commentaire.s)</p>
+    </div>
+    <div>
+        <?php
+        if (isset($message)) {
+            ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $message; ?>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+
+
+    <div class="col-8 offset-2">
+        <?php
+        foreach ($comments as $commentaire) {
+            ?>
+            <div class="card">
+                <div class="card-header">
+                    <?php echo $commentaire['date_heure']; ?> | <?php echo $commentaire['titre']; ?>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $commentaire['nom']; ?></h5>
+                    <p class="card-text"><?php echo $commentaire['texte']; ?></p>
+                </div>
+            </div>
+        
+        }
+        ?>
+        </div>
+    <?php
+    if(isset($pagination)) echo "$pagination<hr>"; 
+    ?>
+    <form action="" method="POST" name="or">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Prénom *</label>
+            <input name='nom' type="text" class="form-control" id="exampleFormControlInput1" placeholder="Votre nom"
+                   required>
+        </div> 
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nom</label>
+            <input name='nom' type="text" class="form-control" id="exampleFormControlInput1" placeholder="Votre nom"
+                   required>
+        </div> 
+        <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">E-mail *</label>
+            <input name='courriel' type="email" class="form-control" id="exampleFormControlInput2"
+                   placeholder="name@example.com" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message *</label>
+            <textarea name='texte' class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+        </div>
+        <div class="">(*)Ce champ est obligatoire</div>
+        <input class="btn btn-primary" type="submit" value="Envoyer">
+    </form>
+    </div>
+</div>
+</div>
+<!-- Bootstrap core JS-->
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/MyJS.js"></script>
+</body>
+</html>

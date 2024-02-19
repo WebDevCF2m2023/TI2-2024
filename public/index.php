@@ -18,7 +18,7 @@ require_once "../config.php";
 /*
  * Si le formulaire a été soumis
  */
-
+require_once "../controller/routerController.php";
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
 
     // si l'insertion a réussi
