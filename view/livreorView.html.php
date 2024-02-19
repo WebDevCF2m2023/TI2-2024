@@ -14,6 +14,7 @@
     
 <h1>Laissez-Nous un message</h1>
     <form action="" method="post">
+   <a href="public\img\favicon.png"></a>
       <div id="leprenom">
         <label for="Prénom">Prénom*</label>
         <input type="text" name="prenom" id="nom">
@@ -49,32 +50,7 @@
     <?php
     if(isset($pagination)) echo "$pagination<hr>"; 
     ?>
-    <form action="" method="POST" name="or">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Prénom *</label>
-            <input name='nom' type="text" class="form-control" id="exampleFormControlInput1" placeholder="Votre nom"
-                   required>
-        </div> 
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nom</label>
-            <input name='nom' type="text" class="form-control" id="exampleFormControlInput1" placeholder="Votre nom"
-                   required>
-        </div> 
-        <div class="mb-3">
-            <label for="exampleFormControlInput2" class="form-label">E-mail *</label>
-            <input name='courriel' type="email" class="form-control" id="exampleFormControlInput2"
-                   placeholder="name@example.com" required>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Message *</label>
-            <textarea name='texte' class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
-        </div>
-        <div class="">(*)Ce champ est obligatoire</div>
-        <input class="btn btn-primary" type="submit" value="Envoyer">
-    </form>
-    </div>
-</div>
-</div>
+   
 <!-- Bootstrap core JS-->
 <script src="js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->

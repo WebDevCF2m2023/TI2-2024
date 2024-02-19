@@ -27,13 +27,13 @@ function getAllLivreOr(PDO $db): array
  * @return bool|string
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
-function addLivreOr(PDO $db,string $firstname,string $lastname,string $usermail,string $message,): bool|string{
+function addLivreOr(PDO $db,string $firstname,string $lastname,string $usermail,string $message,) {
 
     $firstname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
     // false si le usermail n'est pas valide, sinon on le garde
     $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
     $message = htmlspecialchars(strip_tags(trim($message)), ENT_QUOTES);
 }                
-    if (empty(firstname) || $usermail === false || empty($message) || empty($texte)) {
+    if (empty($firstname) || $usermail === false || empty($message) || empty($texte)) {
         return false;
     }
