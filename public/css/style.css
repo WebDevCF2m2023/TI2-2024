@@ -33,6 +33,7 @@ div#formulaire {
 }
 .field > input {
     width: 80%;
+    margin-right: 10px;
 }
 input#message {
     height: 200px;
@@ -62,4 +63,25 @@ a {
 }
 .message > h3, .message > p {
     margin-left: 10px;
+}
+@media (max-width: 960px){
+    div#formulaire {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 480px){
+    #formulaire > form {
+        align-items: center;
+    }
+    .field {
+        flex-direction: column;
+        width: 90%;
+    }
+    .field > input{
+        margin-right: 0px;
+        border: none;
+        padding: none;
+        width: 100%;
+    }
 }

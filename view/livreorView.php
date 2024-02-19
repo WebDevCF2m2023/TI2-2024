@@ -12,13 +12,14 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
-    <?php if (!empty($submit_message)):?>
-    <h2 id="submit-message"><?=$submit_message?></h2>
-    <?php endif;?>
     <div id="formulaire">
         <img src="img/email.png">
         <form method="post" action="./">
             <h2>Laissez nous un message</h2>
+            <!--message d'erreur ou de réussite-->
+            <?php if (!empty($submit_message)):?>
+            <h2 id="submit-message"><?=$submit_message?></h2>
+            <?php endif;?>
             <div class="field">
                 <label for="prenom">Prenom *</label>
                 <input type="text" name="prenom" id="prenom" required>
