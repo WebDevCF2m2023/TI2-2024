@@ -159,3 +159,51 @@ body {
 .message-body {
     /* No specific styles needed for the body, but you can add if you want */
 }
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+    /* CSS rules for screens 480px or smaller go here */
+
+    body {
+        background-color: red;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 960px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title, .comment-title {
+        font-size: 30px; /* reduce font size for smaller screens */
+    }
+
+    .main-container {
+        flex-direction: column;
+     }
+
+    .image-mail {
+        width: 100%; /* make image take full width */
+        height: auto; /* maintain aspect ratio */
+        margin-bottom: 20px; /* reduce margin-bottom */
+    }
+
+    .form-container {
+        width: 100%; /* make form take full width */
+        height: auto; /* let height be determined by content */
+        margin-right: 0; /* remove right margin */
+    }
+
+    .input-group label {
+        margin-right: 20px; /* reduce margin-right */
+    }
+
+    .content-message {
+        width: 90%; /* increase width */
+    }
+}

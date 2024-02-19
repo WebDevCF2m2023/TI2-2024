@@ -39,7 +39,7 @@
 
                     <div class="input-group">
                         <label for="name">E-mail *</label>
-                        <input type="email" name="mail" id="mail" placeholder="Mail">
+                        <input type="email" name="usermail" id="mail" placeholder="Mail">
                     </div>
 
                     <div class="input-group">
@@ -52,6 +52,8 @@
                     <div class="submit-container">
                         <input type="submit" id="submit-form" value="Envoyer">
                     </div>
+
+                    <?php var_dump($_POST); ?>
 
             </div>
             </form>
@@ -76,7 +78,6 @@
                 echo $commentaire['message'];
                 echo '</div>';
                 echo '</div>';
-
             }
             ?>
 

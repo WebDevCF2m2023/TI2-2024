@@ -47,7 +47,7 @@ try {
 
 if (isset($_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['usermail'])) {
 
-    $insert = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['usermail']);
+    $insert = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['message']);
     if ($insert) {
         header("Location: ./");
         exit();
