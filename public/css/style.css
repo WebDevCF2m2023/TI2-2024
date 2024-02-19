@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin: .5em 2em;
+    font-weight: 900;
+    font-size: 2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: #427CA0;
+} 
+img{
+    height: 50%;
+    width: 50%;
+    margin-left: 6em;
+}
+#cadreForm{
+    margin: 1em;
+    background-color: #427CA0;
+    padding: 1em;
+    width: 310px;
+}
+
+h2{
+    text-align: center;
+    color: #F5F5DC;
+    font-size: large;
+    margin-bottom:  1em;
+}
+#labelPrenom, #labelNom, #labelEmail, #labelMessage{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5em;
+
+}
+#prenom, #nom, #email, #message{
+    background-color: #F5F5DC;
+    margin-bottom: .5em;
+    width: 100%;
+}
+p{
+    text-align: center;
+    color: white;
+    margin: 1em;
+}
+#envoyer{
+    background-color: #F5F5DC;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    height: 3em;    
+}
+
+
+
+
+

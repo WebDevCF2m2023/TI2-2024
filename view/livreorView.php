@@ -13,26 +13,28 @@
 <body>
     <h1>Livre d'or</h1>
     <img src="/img/email.png">
-    <div>
+    <div id="cadreForm">
         <form action="" method="POST">
             <div>
-                <label for="prenom">Prénom *</label>
-                <input type="text" name="prenom" id="prenom">
+                <h2>Laissez nous un message</h2>
+                <label id="labelPrenom" for="prenom">Prénom *</label>
+                <input type="text" name="prenom" id="prenom" required>
             </div>
             <div>
-                <label for="nom">Nom</label>
+                <label for="nom" id="labelNom">Nom</label>
                 <input type="text" name="nom" id="nom">
             </div>
             <div>
-                <label for="email">Email *</label>
-                <input type="email" name="email" id="email">
+                <label for="email" id="labelEmail">Email *</label>
+                <input type="email" name="email" id="email" required>
             </div>
             <div>
-                <textarea name="message" id="message" cols="30" rows="10" maxlength="1000">Message *</textarea>
+                <label for="message" id="labelMessage">Message *</label>
+                <textarea name="message" id="message" cols="30" rows="10" maxlength="1000" required></textarea>
             </div>
             <p>(*) Ce champ est obligatoire</p>
-            <div id="envoi">
-            <input type="submit" value="Envoyer">
+            <div>
+            <input type="submit" value="Envoyer" id="envoyer">
             </div>
       </div>
         </form>
