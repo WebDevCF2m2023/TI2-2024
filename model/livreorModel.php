@@ -11,7 +11,12 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    return [];
+    $sql = "SELECT * FROM livreor ORDER BY thedate ASC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+
 }
 
 /**
@@ -23,12 +28,12 @@ function getAllLivreOr(PDO $db): array
  * @return bool|string
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
-function addLivreOr(PDO $db,
-                    string $firstname,
-                    string $lastname,
-                    string $usermail,
-                    string $message
-                    ): bool|string
-{
+function addLivreOr(
+    PDO $db,
+    string $firstname,
+    string $lastname,
+    string $usermail,
+    string $message
+): bool|string {
     return false;
 }
