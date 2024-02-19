@@ -11,6 +11,10 @@
  */
 function getAllLivreOr(PDO $db): array
 {
+    $sql = "SELECT livreor FROM ti2web2024 ";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
     return [];
 }
 
