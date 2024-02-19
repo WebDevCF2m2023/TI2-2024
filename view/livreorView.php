@@ -40,7 +40,6 @@
                     </div>
 
                     <h2 id='obligatoire'>(*) Ce champ est obligatoire</h2>
-                    <h2 id='helper'>(*) Ce champ est obligatoire</h2>
 
                     <div class="submit-container">
                         <input type="submit" id="submit-form" value="Envoyer">

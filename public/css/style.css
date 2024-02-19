@@ -12,21 +12,18 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-    background-color: #343347;
-    font-size: 16px;
-    font-weight: bolder;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color:#f2f3f7;
+
 }
 
 
 .main-container {
     display: flex;
-    flex-direction: column;
-    width: 700px;
-    max-width: 900px; /* Adjust this value to your preference */
+    flex-direction: row;
+    width: 100%;
     margin: 0 auto; /* This will center your container */
-
-    background-color: #5f6a9898;
+    background-color: #34ddff98;
     border-radius: 20px;
     box-shadow: 1px 20px 50px 0 #fffffffb;
 }
@@ -312,6 +309,7 @@ hr {
 
     .main-container {
         flex-direction: column;
+        width: 80%;
      }
 
     .image-mail {
@@ -357,8 +355,12 @@ hr {
     }
 
     .content-message {
-        width: 90%; /* increase width */
+        width: 90%;
+        border: none;
+        resize: vertical;
+        overflow: hidden;
     }
+    
 
     .comment-title {
         font-size: clamp(15px, 20px, 2vw); /* font-size will be at least 15px, at most 2vw, and ideally 20px */
@@ -392,7 +394,7 @@ hr {
     }
 
     .main-container {
-        flex-direction: column;
+        flex-direction: row;
      }
 
     .image-mail {
@@ -413,7 +415,12 @@ hr {
     }
 
     .content-message {
-        width: 90%; /* increase width */
+        width: 90%; 
+        max-height: 70vh;
+        overflow-y: scroll;
+        padding: 10px;
+        border: none;
+        resize: vertical;
     }
 
     .comment-title {
