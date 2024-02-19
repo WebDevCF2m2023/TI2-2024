@@ -12,6 +12,32 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
-<script src="js/validation.js"></script>
+    <div id="formulaire">
+        <img>
+        <form>
+            <h2>Laissez nous un message</h2>
+            <div>
+                <label for="prenom">Prenom *</label>
+                <input type="text" name="prenom" id="prenom">
+            </div>
+            <div>
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom">
+            </div>
+            <div>
+                <label for="mail">E-mail *</label>
+                <input type="email" name="mail" id="mail">
+            </div>
+            <div>
+                <label for="message">Message *</label>
+                <input type="text" name="message" id="message">
+            </div>
+            <p>(*) Ce champ est obligatoire</p>
+            <div>
+                <input type="submit" value="Envoyer">
+            </div>
+        </form>
+    </div>
+    <script src="js/validation.js"></script>
 </body>
 </html>
