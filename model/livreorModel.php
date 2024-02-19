@@ -48,3 +48,6 @@ $MyPDO = null;
 // Appel de la vue
  
 include "../view/livreorView.php";
+
+
+// le stress me fait oublier tout ce que je connais par coeur je me suis mélée tt les pinceaux ya un petit truc qui cloche mais je ne suis pas arriver a le trouver 
