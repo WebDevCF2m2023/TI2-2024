@@ -64,8 +64,9 @@ textarea{
 #BlockMessage{
     border: 2px solid #000000 ;
     padding: 2%;
-    background-color: beige;
-    margin-bottom: 2px;
+    background-color: #5eb9ee;
+    margin-bottom: 4px;
+    border-radius: 10px;
 }
 
 @media screen and (min-width:480px) and (max-width:960px){
@@ -97,7 +98,7 @@ textarea{
     }
     #Envoyer {
         width:150px;
-       align-items: center;
+        align-items: center;
         margin-left: 40%;
         margin-top: 40px;
     }
@@ -108,66 +109,75 @@ textarea{
    }
    input{
     width:450px;
+
    }
 }
 
 @media screen and (min-width:960px){
+   
     #Madame{
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
+        /*flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;*/
         text-align: left;
         display: block;
-        margin-left: auto;
-        margin-right: 80%;
-        width: 255px;
+        /*margin-left: auto;*/
+        /*margin-right: 80%;*/
+        width: 200px;
+        float: left;
     }
     #lePrenom,
     #leNom,
     #email,
     #themessage,input[type=submit] {
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         width:150vw;
     }
     #leNom label, #lePrenom label, #email label, #themessage label {
-        width:100px;
+        width:200px;
         
     }
     .container {
         margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
         display: block;
-        flex-direction: column;
-        justify-content:center ;
-        align-items: center;
+/*        flex-direction: column;
+        justify-content:flex-end ;
+        align-items: center;*/
         background-color: #10699c;
         padding: 5px;
-        height: 25em;
-        width: 35em;
+        height: 30em;
+        width: 55em;
     }
     
     #Envoyer {
-        width:150px;
+        width:250px;
        align-items: center;
-        margin-left: 40%;
-        margin-top: 40px;
+        margin-left: 20px;
+        margin-top: 60px;
     }
     
     textarea {
-        width: 450px;
+        width: 650px;
    
    }
    input{
-    width:450px;
+    width:100%;
    }
 
-  #Madame,.container{
+   form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-  }
+}
 
-    .container {
-        width: 45vw;
-    }
+#col_gauche, #col_droite {
+    width: 45vw;
+}
+
+
+ 
 }
