@@ -28,9 +28,7 @@ form {
     padding: 1em 0;
 }
 
-input, textarea, select {
-   
-}
+
 
 #lenom, #leprenom, #lemessage,#mail {
     display: flex;
@@ -41,7 +39,7 @@ input, textarea, select {
 
 
 
-input[type=text], textarea, select, input[type=submit], #subButton{
+input[type=text], textarea, select,input[type=email], input[type=submit], #subButton{
     width:90vw;
 }
 .information:nth-child(odd){
