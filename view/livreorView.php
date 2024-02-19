@@ -64,20 +64,21 @@
             <h1>Message precedents</h1>
 
             <?php
-
+            foreach ($informations as $commentaire) {
+                echo '<div class="message-container">';
+                echo '<div class="content-message">';
+                echo '<div class="message-header">';
+                echo $commentaire['firstname'] . ' ' . $commentaire['lastname'] . ' a envoyé ce message le ' . date('d-m-Y \à H:i', strtotime($commentaire['datemessage']));
+                echo '</div>';
+                echo '<div class="message-body">';
+                echo $commentaire['message'];
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
 
             ?>
 
-            <div class="message-container">
-                <div class="content-message">
-                    <div class="message-header">
-                        Prenom Nom - a envoye ce message le date
-                    </div>
-                    <div class="message-body">
-                        Message
-                    </div>
-                </div>
-            </div>
 
 
         </div>
