@@ -14,10 +14,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center; /* This will center the content vertically */
-    width: 100%;
-    margin-top: -150px; /* Adjust this value as needed */
+    width: clamp(80%, 100%, 100vw); /* width will be at least 80%, at most 100vw, and ideally 100% */
+    margin-top: clamp(-200px, -150px, -100px); /* margin-top will be at least -200px, at most -100px, and ideally -150px */
 }
-
 
 
 .title {
@@ -46,22 +45,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: clamp(70vh, 100vh, 100vh); /* height will be at least 70vh, at most 100vh, and ideally 100vh */
 }
 
 .image-mail {
-    width: 400px;
-    height: 400px;
+    width: clamp(200px, 400px, 100%); /* width will be at least 200px, at most 100%, and ideally 400px */
+    height: clamp(200px, 400px, 100%); /* height will be at least 200px, at most 100%, and ideally 400px */
     flex: 0 0 auto;
     margin-right: 10px;
-    margin-bottom: 300px;
+    margin-bottom: clamp(150px, 300px, 100%); /* margin-bottom will be at least 150px, at most 100%, and ideally 300px */
 }
 
 
 .form-container {
     background-color: rgb(112, 112, 168);
-    width: 130vh;
-    height: 70vh;
+    width: clamp(100vh, 130vh, 100vw); /* width will be at least 100vh, at most 100vw, and ideally 130vh */
+    height: clamp(50vh, 70vh, 100vh); /* height will be at least 50vh, at most 100vh, and ideally 70vh */
     margin-left: 10px;
     margin-right: 200px;
 }
@@ -167,19 +166,14 @@ body {
 
 @media screen and (max-width: 480px) {
     /* CSS rules for screens 480px or smaller go here */
-
-    body {
-        background-color: red;
-    }
-}
-
-@media screen and (min-width: 481px) and (max-width: 960px) {
+    
     .content-wrapper {
         flex-direction: column;
         align-items: center;
     }
 
-    .title, .comment-title {
+    .title {
+        margin-bottom: 90px;
         font-size: 30px; /* reduce font size for smaller screens */
     }
 
@@ -188,22 +182,107 @@ body {
      }
 
     .image-mail {
-        width: 100%; /* make image take full width */
+        width: 40%; /* make image take full width */
         height: auto; /* maintain aspect ratio */
-        margin-bottom: 20px; /* reduce margin-bottom */
+        margin-bottom: 0px; /* reduce margin-bottom */
     }
 
     .form-container {
-        width: 100%; /* make form take full width */
-        height: auto; /* let height be determined by content */
+        width: clamp(70%, 90%, 100%); /* width will be at least 70%, at most 100%, and ideally 90% */
+        height: clamp(50%, 65%, 80%); /* height will be at least 50%, at most 80%, and ideally 65% */
         margin-right: 0; /* remove right margin */
+        padding-bottom: 30px; /* add some bottom padding */
+    }
+
+
+
+    .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px;
     }
 
     .input-group label {
-        margin-right: 20px; /* reduce margin-right */
+        margin-right: 0; /* remove right margin */
+        margin-left: 0; /* remove left margin */
+        font-size: 19px;
+    }
+
+    .input-group input {
+        flex: 1; /* This will take the remaining space */
+        font-weight: 800;
+        width: 95%; /* This will make the input wider */
+    }
+
+    .input-group textarea {
+        flex: 1; /* This will take the remaining space */
+        min-height: 80px; /* Ensure the textarea has at least this height */
+        max-height: 200px; /* Increase the max-height */
+    
+        font-weight: 800;
+        width: 95%; /* This will make the textarea wider */
     }
 
     .content-message {
         width: 90%; /* increase width */
     }
+
+    .comment-title {
+        font-size: 20px;
+        margin-left: -85px;
+    }
+
+    textarea {
+        resize: none;
+      }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 960px) {
+
+
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        margin-bottom: 120px;
+        font-size: 30px; /* reduce font size for smaller screens */
+    }
+
+    .main-container {
+        flex-direction: column;
+     }
+
+    .image-mail {
+        width: 40%; /* make image take full width */
+        height: auto; /* maintain aspect ratio */
+        margin-bottom: 0px; /* reduce margin-bottom */
+    }
+
+    .form-container {
+        width: clamp(100%, 145%, 100vw); /* width will be at least 100%, at most 100vw, and ideally 145% */
+        height: clamp(50%, 65%, 100vh); /* height will be at least 50%, at most 100vh, and ideally 65% */
+        margin-right: 0; /* remove right margin */
+    }
+
+    .input-group label {
+        margin-right: 20px; /* reduce margin-right */
+        font-size: 19px; /* reduce font size */
+    }
+
+    .content-message {
+        width: 90%; /* increase width */
+    }
+
+    .comment-title {
+        font-size: 20px;
+        margin-left: -260px;
+    }
+
+    textarea {
+        resize: none;
+      }
 }

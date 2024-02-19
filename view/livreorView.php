@@ -53,7 +53,6 @@
                         <input type="submit" id="submit-form" value="Envoyer">
                     </div>
 
-                    <?php var_dump($_POST); ?>
 
             </div>
             </form>
