@@ -11,16 +11,12 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    $sql = "SELECT * FROM livreor";
-    $statement = $db->query($sql);
+    $sql = "SELECT * FROM livreor ORDER BY datemessage ASC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
 
-    if($statement === false) return []; // Cas de figure qui ne devrais pas arriver
-
-    $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);
-    $statement->closeCursor(); // Bonne pratique
-
-    return $livreor;
-    
 }
 
 /**
@@ -32,23 +28,38 @@ function getAllLivreOr(PDO $db): array
  * @return bool|string
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
-function addLivreOr(PDO $db,
-                    string $firstname,
-                    string $lastname,
-                    string $themail,
-                    string $themessage
-                    ): bool|string
-                    
-                    {
+function addLivreOr(
+    PDO $db,
+    string $firstname,
+    string $lastname,
+    string $usermail,
+    string $message
+): bool|string {
 
-                        $firstname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
-                        $lastname = htmlspecialchars(strip_tags(trim($lastname)), ENT_QUOTES);
-                        $usermail = filter_var($themail, FILTER_VALIDATE_EMAIL);
-                        $message = htmlspecialchars(strip_tags(trim($themessage)), ENT_QUOTES);
+    $firstname = htmlspecialchars(strip_tags($firstname), ENT_QUOTES);
+    $lastname = htmlspecialchars(strip_tags($lastname), ENT_QUOTES);
+    $message = htmlspecialchars(strip_tags($message), ENT_QUOTES);
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
 
+    if ($usermail === false || empty($message) || empty($firstname) || empty($lastname)) {
+        return false;
+    }
 
+    $sql = "INSERT INTO livreor (firstname, lastname, usermail, message) VALUES (:firstname, :lastname, :usermail, :message)";
 
-                        if ($usermail === false || empty($message)) {
-                            return false;
-                        }
-                    }
+    $statement = $db->prepare($sql);
+    if ($statement === false)
+        return false;
+
+    $statement->bindParam(':firstname', $firstname);
+    $statement->bindParam(':lastname', $lastname);
+    $statement->bindParam(':message', $message);
+    $statement->bindParam(':usermail', $usermail);
+
+    try {
+        $statement->execute();
+        return true;
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
