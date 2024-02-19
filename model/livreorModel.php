@@ -11,7 +11,12 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    return [];
+    $sql = "SELECT * FROM livreor ORDER BY datemessage ASC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+
 }
 
 /**
@@ -23,12 +28,38 @@ function getAllLivreOr(PDO $db): array
  * @return bool|string
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
-function addLivreOr(PDO $db,
-                    string $firstname,
-                    string $lastname,
-                    string $usermail,
-                    string $message
-                    ): bool|string
-{
-    return false;
+function addLivreOr(
+    PDO $db,
+    string $firstname,
+    string $lastname,
+    string $usermail,
+    string $message
+): bool|string {
+
+    $firstname = htmlspecialchars(strip_tags($firstname), ENT_QUOTES);
+    $lastname = htmlspecialchars(strip_tags($lastname), ENT_QUOTES);
+    $message = htmlspecialchars(strip_tags($message), ENT_QUOTES);
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+
+    if ($usermail === false || empty($message) || empty($firstname) || empty($lastname)) {
+        return false;
+    }
+
+    $sql = "INSERT INTO livreor (firstname, lastname, usermail, message) VALUES (:firstname, :lastname, :usermail, :message)";
+
+    $statement = $db->prepare($sql);
+    if ($statement === false)
+        return false;
+
+    $statement->bindParam(':firstname', $firstname);
+    $statement->bindParam(':lastname', $lastname);
+    $statement->bindParam(':message', $message);
+    $statement->bindParam(':usermail', $usermail);
+
+    try {
+        $statement->execute();
+        return true;
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
 }
