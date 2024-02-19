@@ -21,7 +21,29 @@
 
             <h2 id="top-form-message">Laissez-nous un message</h2>
 
+            <form action="" method="POST">
 
+                <div class="input-group">
+                    <label for="name">Prenom *</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Prenom">
+                </div>
+
+                <div class="input-group">
+                    <label for="name">Nom *</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Nom">
+                </div>
+
+                <div class="input-group">
+                    <label for="name">E-mail *</label>
+                    <input type="email" name="mail" id="mail" placeholder="Mail">
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="Write your message"></textarea>
+                </div>
+
+            </form>
 
         </div>
     </div>
