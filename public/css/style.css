@@ -95,3 +95,14 @@ input[type=text], textarea, select, input[type=submit], #subButton{
         margin-right: 0.5em;
     }
 }
+
+@media screen and (min-width:1201px){
+
+#form1{
+    
+}
+    
+    #img{
+        align-items: flex-start;
+    }
+}

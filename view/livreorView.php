@@ -15,11 +15,11 @@
     <div>
         <img id="img" src="img/email.png" alt="">
     </div>
-    <form action="" method="post">
+    <form id="form1" action="" method="post">
         <div>
             <div id="lenom">
                 <label for="nom">Nom*</label>
-                <input type="text" name="firstname" id="nom" require>
+                <input type="text" name="firstname" id="firstname" require>
             </div>
             <div id="leprenom">
                 <label for="prenom">Prénom*</label>
@@ -34,37 +34,26 @@
                 <textarea name="message" id="message" cols="30" rows="5" maxlength="1024"></textarea>
             </div>
            <h4>(*) Ce champs est obligatoire </h4>
-            <button type="submit" id="subButton" onclick="validateForm(event)">Envoyer</button>
+           <button type="submit" id="subButton" onclick=" validateForm(event)">S'inscrire</button> 
         </div>
     </form>
     <h1>message presedent</h1>
     <section id="informations">
         <?php 
-            foreach(array_reverse($livreor) as $livreors):
+            foreach(array_reverse($livreor) as $coms):
         ?>
         <div class="information">
             <div>
-                <p><?= $livreors["firstname"] ?><?php echo " à Envoyer ce message le "; ?></p>
-                <p><?=(new DateTime($livreors["datemessage"]))->format('d/m/Y H:i:s')?></p>
+                <p><?= $coms["firstname"] ?><?php echo " à Envoyer ce message le "; ?></p>
+                <p><?=(new DateTime($coms["datemessage"]))->format('d/m/Y H:i:s')?></p>
             </div>
-            <p><?= $livreors["message"] ?></p>
+            <p><?= $coms["message"] ?></p>
         </div>
         <?php
             endforeach;
         ?>
     </section>
-    <script>
-        function validateForm(e){
-
-const nom = document.querySelector("#firstname").value;
-const email = document.querySelector("#usermail").value;
-const theMessage = document.querySelector("#message").value;
-
-const validNom = nom.length >= 100;
-const validEmail = /@/.test(usermail) && /\./.test(usermail);
-const validTheMessage = theMessage.trim().length > 600;
-}
-    </script>
+    
     <script src="js/validation.js"></script>
 </body>
 </html>
