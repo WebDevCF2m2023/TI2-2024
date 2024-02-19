@@ -38,6 +38,21 @@
             </div>
         </form>
     </div>
+    <div id="messages">
+        <?php
+        ?>
+        <h2><?php
+        if (count($messages)===0)echo "pas encore de message";
+        else if (count($messages)===1)echo "il y a un message écrit";
+        else echo "il y a ".count($messages)." messages";
+        ?></h2>
+        <?php foreach($messages as $message):?>
+        <div id="message">
+            <h3><span><?=$message["firstname"]?></span> a envoyé ce message le <?=$message["datemessage"]?></h3>
+            <p><?=$message["message"]?></p>
+        </div>
+        <?php endforeach;?>
+    </div>
     <script src="js/validation.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 // chargement de configuration
 require_once "../config.php";
 // chargement du modèle de la table livreor
+require_once "../model/livreorModel.php";
 
 /*
  * Connexion à la base de données en utilisant PDO
@@ -16,7 +17,7 @@ require_once "../config.php";
  */
 try {
     $dsn = DB_DRIVER.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT.";charset=".DB_CHARSET;
-    $pdo = new PDO($dsn, DB_LOGIN, DB_PWD);
+    $db = new PDO($dsn, DB_LOGIN, DB_PWD);
 }catch (Exception $e){
     echo $e->getMessage();
     die;
@@ -39,9 +40,9 @@ try {
  */
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
+$messages = getAllLivreOr($db);
 
 // fermeture de la connexion
-
+$db = null;
 // Appel de la vue
-
 include "../view/livreorView.php";
