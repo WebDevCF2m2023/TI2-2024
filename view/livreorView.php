@@ -20,8 +20,8 @@
     <input type="text" name="firstname" id="firstname" required>
 </div>
 <div id="lenom">
-    <label for="lastname">Nom</label>
-    <input type="text" name="lastname" id="lastname">
+    <label for="lastname">Nom *</label>
+    <input type="text" name="lastname" id="lastname" required>
 </div>
 <div id="lemail">
     <label for="usermail">E-mail *</label>
@@ -29,7 +29,7 @@
 </div>
 <div id="lemessage">
     <label for="message">Message *</label>
-    <textarea name="message" id="message" cols="30" rows="5" maxlength="600"></textarea>
+    <textarea name="message" id="message" cols="30" rows="5" maxlength="600" required></textarea>
 </div>
 <div id="bouton">
     <input type="submit" value="Envoyer">

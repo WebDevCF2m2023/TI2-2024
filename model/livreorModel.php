@@ -48,7 +48,7 @@ function addLivreOr(PDO $db,
     $message = htmlspecialchars(strip_tags(trim($message)), ENT_QUOTES);
 
     // si les données ne sont pas valides, on envoie false
-    if (empty($firstname) || $usermail === false || empty($message)) {
+    if (empty($firstname) || empty($lastname)  || $usermail === false || empty($message)) {
         return false;
     }
 
