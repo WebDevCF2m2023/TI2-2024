@@ -19,7 +19,7 @@
            
            
             <label for="prenom">Prénom* </label>
-            <input type="text" placeholder="votre prenom" name="nom" id="firstname">
+            <input type="text" placeholder="votre prenom" name="prenomnom" id="firstname">
             <label for="nom">Nom </label>
             <input type="text" placeholder="votre nom" name="nom" id="lastname">
             <label for="mail">Email*</label>
@@ -28,13 +28,26 @@
             <label for="message">Message*</label><br>
             <textarea id="message" name="message" rows="6" cols="40" maxlength="1200"></textarea><br>
         
-        </div>
+         </div>
           </fieldset>
           <h2>(*) Ce champ est obligatoire</h2>
     
     
           
           <input type="submit" value="Envoyer">
+        </form>
+         <h3>Messages précédents</h3>
+         <div id="messages">
+            
+         <?php foreach($informations as $information):?>
+         <div class="message">
+            <h4><?=$information['firstname']?> a envoyé ce message le <?=$information['datemessage']?></h4>
+            <p><?=$information['message']?></p>
+
+            
+         </div>
+         <?php endforeach?>
+         </div>
     
        
 <script src="js/validation.js"></script>

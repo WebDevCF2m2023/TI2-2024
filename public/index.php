@@ -25,7 +25,8 @@ try{
  */
 if(isset($_POST['firstname'],$_POST['lastname'],$_POST['usermail'], $_POST['message'])){
  // on appelle la fonction d'insertion dans la DB (addLivreOr())
-   $insert = addLivreOr($MyPDO,$_POST['firstname'],$_POST['lastname'],$_POST['usermail'],$_POST['message']);
+  $insert = addLivreOr($MyPDO,$_POST['firstname'],$_POST['lastname'],$_POST['usermail'],$_POST['message']);
+  $livreOr = getLivreOr($db_connect);
     // si l'insertion a réussi
    if($insert===true){
         $message = "Insertion réussie!";
