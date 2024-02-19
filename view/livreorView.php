@@ -11,58 +11,56 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/validation.css">
 </head>
-
 <body>
     <h1 class="title">Livre d'or</h1>
-
     <div class="content-wrapper">
         <div class="main-container">
             <img src="img/email.png" class="image-mail" alt="Image of a woman pointing at a mail">
-
-
             <div class="form-container">
-
                 <h2 id="top-form-message">Laissez-nous un message</h2>
-
-                <form action="" method="POST">
-
+                <form action="" id="form" method="POST">
                     <div class="input-group">
                         <label for="name">Prenom *</label>
-                        <input type="text" name="firstname" id="lasttname" placeholder="Nom">
+                        <input maxlength="100" type="text" name="firstname" id="form-prenom" placeholder="Prenom">
                     </div>
 
                     <div class="input-group">
                         <label for="name">Nom *</label>
-                        <input type="text" name="lastname" id="firstname" placeholder="Prénom">
+                        <input maxlength="100" type="text" name="lastname" id="form-nom" placeholder="Nom">
                     </div>
 
                     <div class="input-group">
                         <label for="name">E-mail *</label>
-                        <input type="email" name="usermail" id="mail" placeholder="Mail">
+                        <input type="text" name="usermail" id="form-mail" placeholder="Mail">
                     </div>
 
                     <div class="input-group">
                         <label for="message">Message *</label>
-                        <textarea id="message" name="message" required placeholder="Laissez un message"></textarea>
+                        <textarea maxlength="600" name="message" id="form-message" required placeholder="Write your message"></textarea>
                     </div>
 
                     <h2 id='obligatoire'>(*) Ce champ est obligatoire</h2>
+                    <h2 id='helper'>(*) Ce champ est obligatoire</h2>
 
                     <div class="submit-container">
                         <input type="submit" id="submit-form" value="Envoyer">
                     </div>
+
+
             </div>
             </form>
+
         </div>
         <div class="message-container" style="display: flex; flex-direction: column;">
-
-            <h1 class="comment-title">Message precedents</h1>
-
+            <?php
+            $results = getAllLivreOr($db);
+            echo '<div class="comment-title">Message precedents <span style="font-size: 10px;">Il y a ' . count($results) . ' message(s)</span></div>';
+            ?>
             <?php
             foreach ($informations as $commentaire) {
                 echo '<div class="content-message">';
                 echo '<div class="message-header">';
-                echo '' . $commentaire['lastname'] . ' ' . $commentaire['firstname'] . ' a envoyé ce message le ' .
+                echo '' . $commentaire['firstname'] . ' ' . $commentaire['lastname'] . ' a envoyé ce message le ' .
                     date('d-m-Y \à H\hi', strtotime($commentaire['datemessage']));
                 echo '</div>';
                 echo '<div class="message-body">';

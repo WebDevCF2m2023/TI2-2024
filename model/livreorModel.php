@@ -11,7 +11,7 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    $sql = "SELECT * FROM livreor ORDER BY datemessage ASC";
+    $sql = "SELECT * FROM livreor ORDER BY datemessage DESC";
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
@@ -32,29 +32,30 @@ function addLivreOr(
     PDO $db,
     string $firstname,
     string $lastname,
-    string $usermail,
-    string $message
+    string $message,
+    string $usermail
 ): bool|string {
 
     $firstname = htmlspecialchars(strip_tags($firstname), ENT_QUOTES);
     $lastname = htmlspecialchars(strip_tags($lastname), ENT_QUOTES);
     $message = htmlspecialchars(strip_tags($message), ENT_QUOTES);
-    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+    $lemail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
 
-    if ($usermail === false || empty($message) || empty($firstname) || empty($lastname)) {
+    if ($lemail === false || empty($message) || empty($firstname) || empty($lastname)) {
         return false;
     }
 
     $sql = "INSERT INTO livreor (firstname, lastname, usermail, message) VALUES (:firstname, :lastname, :usermail, :message)";
 
     $statement = $db->prepare($sql);
+
     if ($statement === false)
         return false;
 
     $statement->bindParam(':firstname', $firstname);
     $statement->bindParam(':lastname', $lastname);
     $statement->bindParam(':message', $message);
-    $statement->bindParam(':usermail', $usermail);
+    $statement->bindParam(':usermail', $lemail);
 
     try {
         $statement->execute();

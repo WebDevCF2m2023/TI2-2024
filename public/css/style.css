@@ -1,3 +1,4 @@
+
 * {
     margin: 0; padding: 0;
 }
@@ -11,8 +12,8 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: "Ubuntu", sans-serif;
-    background-color: #0067ab;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+    background-color: #343347;
     font-size: 16px;
     font-weight: bolder;
 }
@@ -25,7 +26,7 @@ body {
     max-width: 900px; /* Adjust this value to your preference */
     margin: 0 auto; /* This will center your container */
 
-    background-color: #0067ab;
+    background-color: #5f6a9898;
     border-radius: 20px;
     box-shadow: 1px 20px 50px 0 #fffffffb;
 }
@@ -49,17 +50,11 @@ body {
 .container-names {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 30px;
 }
 
 
 #lastname, #name, #password, #email {
     text-align: center;
-    font-size: 18px;
-    color: #4d4d4d;
-    outline: none;
-    transition: all .3s ease;
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
@@ -69,10 +64,7 @@ body {
 
 
 .input-group {
-    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -80,7 +72,6 @@ body {
 }
 
 input {
-    height: auto;
     width: 90%;
     box-sizing: border-box;
 }
@@ -89,17 +80,17 @@ input {
     width: 83%; /* Adjust this value to your preference */
     height: 100px; /* Adjust this value to your preference */
     max-width: 101%;
-    resize: vertical;
     max-height: 200px;
     min-width: 30%;
     min-height: 40px;
     
     padding: 10px;
-    border: 0.8px solid #ccc; 
+    border: 0.2px solid #ccc; /* Adjust this value to your preference */
+    border-radius: 5px;
 }
 
 #message:placeholder-shown {
-    font-size: 2em; 
+    font-size: 1em; /* Adjust this value to your preference */
     text-align: center;
     color: #ccc;
     
@@ -108,17 +99,16 @@ input {
 
 input[type="submit"] {
     background-color: #4CAF50; /* Green background */
-    border-style: outset;
+    border: none; /* No border */
     color: white; /* White text */
-    padding: 15px 32px; 
-    text-align: center; 
-    transition: all 0.3s ease; 
-    text-decoration: none;
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer;
-    transition-duration: 0.4s;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition-duration: 0.4s; /* Transition effects */
 }
 
 input[type="submit"]:hover {
@@ -202,12 +192,8 @@ input[type="submit"]:hover {
 }
 
 .content {
-    overflow: hidden;
-    transition: height 0.5s ease-in-out;
     display: flex;
-    flex-flow: column nowrap;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between; /* Distribute the space between the items in .content */
 
 }
@@ -275,7 +261,6 @@ hr {
 @media (max-width: 480px) {
 
     .form {
-        flex-direction: column;
         padding: 10px;
         margin: 10px;
         border-radius: 5px;
@@ -283,9 +268,8 @@ hr {
 
 
 
-    #lastname, #firstname, #themail{
+    #lastname, #name, #password, #email {
         text-align: center;
-        font-size: 1em;
         margin-bottom: 10px;
         padding: 5px;
         border-radius: 5px;
@@ -295,36 +279,30 @@ hr {
 
     input {
         width: 80%;
-        height: auto;
         box-sizing: border-box;
-        margin: 2.5% auto;
     }
 
     .second-container {
-        display: flex;
-        justify-content: space-around;
-        align-items: stretch;
-        flex-wrap: wrap;
+        justify-content: center; /* Center the containers horizontally */
         margin: 50px 0; /* Adjust the margin to only have vertical margin */
     }
 
     .answers-container {
-        width: 96%;
-        margin: 10px auto;
         flex-basis: 90%; /* Make the container take up 90% of the width */
         margin: 10px auto; /* Adjust the margin to auto for horizontal centering */
     }
     
 }
+
+
+
+
 @media screen and (max-width: 480px) {
     /* CSS rules for screens 480px or smaller go here */
     
     .content-wrapper {
-        max-width: 300px;
-        margin: 0 auto;
         flex-direction: column;
         align-items: center;
-
     }
 
     .title {
@@ -333,74 +311,49 @@ hr {
     }
 
     .main-container {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
         flex-direction: column;
-        align-self: center;
-    }
+     }
 
     .image-mail {
-        display: none;
-        width: 40%; 
-        height: auto; 
-        margin-bottom: 0px;
+        width: 40%; /* make image take full width */
+        height: auto; /* maintain aspect ratio */
+        margin-bottom: 0px; /* reduce margin-bottom */
     }
 
     .form-container {
-        width: clamp(70%, 90%, 100%);
-        text-align: center;
-        height: clamp(50%, 65%, 80%);
-        background-color: #f2f2f2;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-right: 0; /
-        padding-bottom: 30px;
+        width: clamp(70%, 90%, 100%); /* width will be at least 70%, at most 100%, and ideally 90% */
+        height: clamp(50%, 65%, 80%); /* height will be at least 50%, at most 80%, and ideally 65% */
+        margin-right: 0; /* remove right margin */
+        padding-bottom: 30px; /* add some bottom padding */
     }
 
 
 
     .input-group {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch;
-        width: 100%;
-        max-width: 380px;
-        margin: 10px auto;
         flex-direction: column;
-
+        align-items: flex-start;
+        margin: 10px;
     }
 
     .input-group label {
-        font-weight: bold;
-        margin-right: 0; 
-        margin-left: 0; 
+        margin-right: 0; /* remove right margin */
+        margin-left: 0; /* remove left margin */
         font-size: 19px;
     }
 
     .input-group input {
-        flex: 1; 
-        appearance: none;
-        outline: none;
-        border: 2px solid #bebec4;
+        flex: 1; /* This will take the remaining space */
         font-weight: 800;
-        font-family: 'Open Sans', sans-serif;
-        color: #3c3e43;
-        letter-spacing: 0.5px;
-        line-height: 40px;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        width: 95%; 
+        width: 95%; /* This will make the input wider */
     }
 
     .input-group textarea {
-        flex: 1; 
-        min-height: 80px; 
-        max-height: 200px; 
+        flex: 1; /* This will take the remaining space */
+        min-height: 80px; /* Ensure the textarea has at least this height */
+        max-height: 200px; /* Increase the max-height */
     
         font-weight: 800;
-        width: 95%;
+        width: 95%; /* This will make the textarea wider */
     }
 
     .content-message {
@@ -409,12 +362,18 @@ hr {
 
     .comment-title {
         font-size: clamp(15px, 20px, 2vw); /* font-size will be at least 15px, at most 2vw, and ideally 20px */
-        margin-left: clamp(-100px, -85px, -70px); /* margin-left will be at least -100px, at most -70px, and ideally -85px */
+        margin-left: clamp(-80px, -75px, -70px); /* margin-left will be at least -100px, at most -70px, and ideally -85px */
     }
 
     textarea {
         resize: none;
       }
+
+      #submit-form {
+
+        width: 300px;
+
+    }
 
 }
 

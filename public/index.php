@@ -27,8 +27,8 @@ try {
 // on redirige vers la page actuelle
 // sinon, on affiche un message d'erreur
 if (isset($_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['usermail'])) {
-
     $insert = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['usermail']);
+    
     if ($insert) {
         header("Location: ./");
         exit();
