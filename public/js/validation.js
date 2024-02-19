@@ -5,15 +5,16 @@ function control () {
     const username = document.querySelector("#username").value;
     const message = document.querySelector("#message").value;
 
-    form.addEventListener('submit', function(event) {  
-        event.preventDefault();});
+    form.addEventListener('submit', function(e) {  
+        e.preventDefault();});
 
     if(nom.length > 100 || prenom.length > 100) {
-        alert("Votre nom ou prénom est long");
-       
+        alert("Votre nom ou prénom est long");       
     }else if(!/[@.]/.test(username)){
         alert("Votre mail doit avoir @ et .");
-    }else if(username.length > 600){
+    }else if(message.length > 600){
         alert("Votre message doit avoir maximum 600 caractères");
+    }else {
+        alert("Bienvenue" + prenom);
     }
 }

@@ -18,6 +18,7 @@
     <div id="photo">
         <img src="img/email.png" alt="">
     </div>
+
     <form action="" method="POST" class="form">
         <h1>Laissez-nous un message</h1>
         <div id="leprenom">
@@ -42,11 +43,7 @@
         <div id="envoi">
             <input type="submit" value="Envoyer" onclick="control()">
         </div>
-    </form>
-
-
-    
-
+    </form>  
 
     <div>
         <?php
@@ -58,9 +55,7 @@
             <?php
         }
         ?>
-    </div>
-
-        
+    </div>        
 
     <section id="informations">
         <h2>Messages Précédents</h2>
