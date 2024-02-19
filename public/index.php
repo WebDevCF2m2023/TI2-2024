@@ -35,14 +35,14 @@ if (isset($_GET["submit_succes"])){
 $prenom = "";
 $nom = "";
 $mail = "";
-$message = "";
+$themessage = "";
 if (isset($_POST["prenom"],$_POST["nom"],$_POST["mail"],$_POST["message"])){
     $prenom = $_POST["prenom"];
     $nom = $_POST["nom"];
     $mail = $_POST["mail"];
-    $message = $_POST["message"];
+    $themessage = $_POST["message"];
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
-    $result = addLivreOr($db, $prenom, $nom, $mail, $message);
+    $result = addLivreOr($db, $prenom, $nom, $mail, $themessage);
 
     // si l'insertion a réussi
     // on redirige vers la page actuelle
@@ -60,7 +60,14 @@ if (isset($_POST["prenom"],$_POST["nom"],$_POST["mail"],$_POST["message"])){
  */
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
-$messages = getAllLivreOr($db);
+$page = 1;
+$message_by_page = 4;
+if (!empty($_GET["page"]) && ctype_digit($_GET["page"]) && (int)$_GET["page"]>1){
+    $page = (int)$_GET["page"];
+}
+$messages = getPageLivreOr($db, $page, $message_by_page);
+$nb_messages = getMessageNumber($db)[0];
+$pagination = getPagination($page, ceil($nb_messages/$message_by_page), "page");
 
 // fermeture de la connexion
 $db = null;

@@ -34,7 +34,7 @@
             </div>
             <div class="field">
                 <label for="message">Message *</label>
-                <textarea name="message" id="message" required><?=$message?></textarea>
+                <textarea name="message" id="message" required><?=$themessage?></textarea>
             </div>
             <p>(*) Ce champ est obligatoire</p>
             <div>
@@ -50,12 +50,14 @@
         else if (count($messages)===1)echo "Il y a un message écrit";
         else echo "Il y a ".count($messages)." messages";
         ?></h2>
+        <?=$pagination?>
         <?php foreach($messages as $message):?>
         <div class="message">
             <h3><a href="#"><?=$message["firstname"]?></a> a envoyé ce message le <?php echo (new DateTime($message["datemessage"]))->format("d-m-Y H:i")?></h3>
             <p><?=$message["message"]?></p>
         </div>
         <?php endforeach;?>
+        <?=$pagination?>
     </div>
     <script src="js/validation.js"></script>
 </body>

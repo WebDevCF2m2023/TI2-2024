@@ -32,6 +32,36 @@ function getPageLivreOr(PDO $db, int $page, int $nb_page):array{
     return $results;
 }
 
+function getMessageNumber(PDO $db):array{
+    $sql = "SELECT COUNT(*) FROM `livreor`;";
+    $query = $db->query($sql, PDO::FETCH_NUM);
+    $results = $query->fetch();
+    return $results;
+}
+
+function getPagination(int $current_page, int $nb_pages, string $page_get){
+    $next_page = $current_page+1;
+    $previous_page = $current_page-1;
+    $result = "<div>";
+    if ($current_page!==1){
+        $result.="<a href='./'><<</a><a href='./?$page_get=$previous_page'><</a>";
+    }else {
+        $result.="<a><<</a> <a><</a>";
+    }
+    for ($i=1;$i<=$nb_pages;$i++){
+        if ($current_page===$i)$result.="<a> $i </a>";
+        else if ($current_page!==1 || $current_page!==$i)$result.="<a href='./?$page_get=$i'> $i </a>";
+        else $result.="<a href='./'> 1 </a>";
+    }
+    if ($current_page!==$nb_pages){
+        $result.="<a href='./?$page_get=$nb_pages'>>></a> <a href='./?$page_get=$next_page'>></a>";
+    }else {
+        $result.="<a>>></a> <a>></a>";
+    }
+    $result.="</div>";
+    return $result;
+}
+
 /**
  * @param PDO $db
  * @param string $firstname
