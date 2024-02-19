@@ -25,29 +25,30 @@
 
                 <h2 id="top-form-message">Laissez-nous un message</h2>
 
-                <form action="" method="POST">
+                <form action="" id="form" method="POST">
 
                     <div class="input-group">
                         <label for="name">Prenom *</label>
-                        <input type="text" name="firstname" id="firstname" placeholder="Prenom">
+                        <input type="text" name="firstname" id="form-prenom" placeholder="Prenom">
                     </div>
 
                     <div class="input-group">
                         <label for="name">Nom *</label>
-                        <input type="text" name="lastname" id="lastname" placeholder="Nom">
+                        <input type="text" name="lastname" id="form-nom" placeholder="Nom">
                     </div>
 
                     <div class="input-group">
                         <label for="name">E-mail *</label>
-                        <input type="email" name="usermail" id="mail" placeholder="Mail">
+                        <input type="text" name="usermail" id="form-mail" placeholder="Mail">
                     </div>
 
                     <div class="input-group">
                         <label for="message">Message *</label>
-                        <textarea id="message" name="message" required placeholder="Write your message"></textarea>
+                        <textarea name="message" id="form-message" required placeholder="Write your message"></textarea>
                     </div>
 
                     <h2 id='obligatoire'>(*) Ce champ est obligatoire</h2>
+                    <h2 id='helper'>(*) Ce champ est obligatoire</h2>
 
                     <div class="submit-container">
                         <input type="submit" id="submit-form" value="Envoyer">

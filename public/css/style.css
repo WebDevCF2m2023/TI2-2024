@@ -81,6 +81,15 @@ body {
     padding-top: 20px;
 }
 
+#helper {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+    display: none;
+
+}
+
 .input-group {
     display: flex;
     justify-content: flex-start; /* This will align items to the start of the container */
@@ -92,7 +101,7 @@ body {
     width: 100px;
     margin-right: 100px; /* Adjust this value as needed */
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 800;
 }
 
@@ -134,10 +143,10 @@ body {
 }
 
 .message-container {
+    position: relative; /* Make this a positioning context for absolute positioning */
     display: flex;
     flex-direction: column;
     width: 100%;
-
 }
 
 .content-message {
@@ -236,6 +245,12 @@ body {
     textarea {
         resize: none;
       }
+
+      #submit-form {
+
+        width: 300px;
+
+    }
 
 }
 
