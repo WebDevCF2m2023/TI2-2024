@@ -41,9 +41,9 @@
             <textarea name="msg" id="msg" cols="30" rows="5" maxlength="1024"></textarea>
         </div>
         <p id="ceChamp">(*) Ce champ est obligatoire</p>
-        
+        <center>
         <button type="submit" id="subButton" onclick="return validateForm(event)">Envoyer</button>
-    
+        </center>
         </main>
         </div>
     </form>

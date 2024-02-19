@@ -4,15 +4,19 @@
         display: flex;
         justify-content: center;
     }
-    input, textarea{
+    input, textarea, #subButton{
         background-color:rgb(245, 245, 220) ;
     }
     h3{
         color: rgb(245, 245, 220);
     }
-    #ceChamp{
+    #ceChamp {
         color: white;
         font-size: .89em;
+    }
+    button{
+        padding-left: 60px;
+        padding-right: 60px;
     }
     
 }
