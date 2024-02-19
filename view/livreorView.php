@@ -43,6 +43,8 @@
                     <textarea id="message" name="message" required placeholder="Write your message"></textarea>
                 </div>
 
+                <h2 id='obligatoire'>(*) Ce champ est obligatoire</h2>
+
             </form>
 
         </div>

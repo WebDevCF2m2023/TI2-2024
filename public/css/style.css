@@ -50,3 +50,39 @@ body {
     padding-top: 20px;
 }
 
+#obligatoire {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+    padding-top: 20px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: flex-start; /* This will align items to the start of the container */
+    align-items: center;
+    margin-bottom: 20px; /* This will create a 20px gap between each .input-group */
+}
+
+.input-group label {
+    width: 100px;
+    margin-right: 100px; /* Adjust this value as needed */
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.input-group input {
+    flex: 0.95; /* This will take the remaining space */
+    background-color:blanchedalmond; 
+    font-weight: 800;
+}
+
+.input-group textarea {
+    flex: 0.95; /* This will take the remaining space */
+    height: 150px;
+    max-height: 200px;
+    background-color:blanchedalmond; 
+    font-weight: 800;
+}
