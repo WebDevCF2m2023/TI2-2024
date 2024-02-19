@@ -42,3 +42,24 @@ input[type=submit]{
     height: 40px;
     font-size: 1.2em;
 }
+a {
+    color: rgb(33, 119, 218);
+}
+#messages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#messages > h2{
+    align-self: flex-start;
+}
+.message {
+    width: 90%;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+}
+.message > h3, .message > p {
+    margin-left: 10px;
+}

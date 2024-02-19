@@ -46,12 +46,12 @@
         ?>
         <h2><?php
         if (count($messages)===0)echo "pas encore de message";
-        else if (count($messages)===1)echo "il y a un message écrit";
-        else echo "il y a ".count($messages)." messages";
+        else if (count($messages)===1)echo "Il y a un message écrit";
+        else echo "Il y a ".count($messages)." messages";
         ?></h2>
         <?php foreach($messages as $message):?>
         <div class="message">
-            <h3><span><?=$message["firstname"]?></span> a envoyé ce message le <?=$message["datemessage"]?></h3>
+            <h3><a href="#"><?=$message["firstname"]?></a> a envoyé ce message le <?=$message["datemessage"]?></h3>
             <p><?=$message["message"]?></p>
         </div>
         <?php endforeach;?>
