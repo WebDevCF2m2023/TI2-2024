@@ -1,16 +1,68 @@
 
 h1{
     text-align: center;
+   color: #089ef5;
 }
 
-
+#Madame{
+   
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 155px;
+}
 .container {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    background-color: #089ef5;
+    padding: 5px;
+    height: 30em;
+    width: 20em;
+}
+h2{
+color: #fff;
+font-size: 20px;
+
+}
+#lePrenom,
+#leNom,
+#email,
+#themessage
+{
     display: flex;
     flex-direction: column;
-    justify-content:flex-end ;
-    background-color: #1D2D44;
-    padding: 5px;
-    height: 40em;
-    width: 50em;
+    margin-bottom: 1em;
 }
 
+
+
+label {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 20%;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+input {
+    width: 90%;
+   justify-content: right;
+}
+@media screen and(max-width:480px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content:center ;
+        align-items: center;
+        background-color: #089ef5;
+        padding: 5px;
+        height: 28em;
+        width: 24em;
+    }
+}

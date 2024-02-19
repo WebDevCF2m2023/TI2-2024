@@ -11,20 +11,13 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
+    <h1>Livre d'or</h1>
+    <img id="Madame" src="../public/img/email.png" alt="">
+
     <h3><?php if(isset($message))echo $message?></h3>
-    <div>
-            <?php 
-            foreach($informations as $information):
-            ?>
-            <h4>Posté le <?=$information['datemessage']?></h4>
-            <p><?=$information['message']?></p>
-            <?php
-            endforeach;
-            ?>
-        </div>
-       
-    <form action="" name="monForm" method="POST">
+    <div class="container">
+    <h2>Laissez-nous un message </h2>
+    <form action=""  name="monForm" method="POST">
     
     <div id="lePrenom">
         <label for="prenom">Prénom:</label>
@@ -33,13 +26,28 @@
     <div  id="leNom">
         <label for="nom">Nom:</label>
         <input name="lastname" type="text"  >
-    </div>
-        <div>
+</div>
+        <div id="email">
     <input name="usermail" type="email" placeholder="Votre email" required><br>
+</div>
+    <div id="themessage">
     <textarea name="message" placeholder="Votre message" required></textarea><br>
                 <input type="submit" value="Envoyer">
-                </div>
+            </div>
      </form>
+     </div>
+     <div id="TheDateMessage">
+            <?php 
+            foreach($informations as $information):
+            ?>
+            
+            <h4>Posté le <?=$information['datemessage']?></h4>
+            <p><?=$information['message']?></p>
+            <?php
+            endforeach;
+            ?>
+        </div>
+    
 <script src="js/validation.js"></script>
 </body>
 </html>
