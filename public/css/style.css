@@ -11,15 +11,17 @@ h1{
     color: #427CA0;
 } 
 img{
-    height: 50%;
     width: 50%;
-    margin-left: 6em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
 }
 #cadreForm{
     margin: 2em;
     background-color: #427CA0;
     padding: 2em;
-    width: 310px;
+    width: auto;
     
 }
 
@@ -54,9 +56,27 @@ p{
     font-weight: 400;
     height: 3em;    
 }
+@media screen 
+    and (min-width : 480px) 
+    and (max-width : 959px) { 
+    
+    #cadreForm{
+      width: auto;  
+    }
+    #labelPrenom, #labelNom, #labelEmail, #labelMessage{
+        display: flex;
+        flex-wrap: nowrap;
+        }
+    
+
+}
 
 
 
 
+}
+#prenom, #nom, #email, #message{
+ 
+}
 
 
