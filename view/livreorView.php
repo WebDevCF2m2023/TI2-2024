@@ -22,19 +22,19 @@
             <?php endif;?>
             <div class="field">
                 <label for="prenom">Prenom *</label>
-                <input type="text" name="prenom" id="prenom" required>
+                <input type="text" name="prenom" id="prenom" value="<?=$prenom?>" required>
             </div>
             <div class="field">
                 <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom">
+                <input type="text" name="nom" id="nom" value="<?=$nom?>">
             </div>
             <div class="field">
                 <label for="mail">E-mail *</label>
-                <input type="email" name="mail" id="mail" required>
+                <input type="email" name="mail" id="mail" value="<?=$mail?>" required>
             </div>
             <div class="field">
                 <label for="message">Message *</label>
-                <textarea name="message" id="message" required></textarea>
+                <textarea name="message" id="message" required><?=$message?></textarea>
             </div>
             <p>(*) Ce champ est obligatoire</p>
             <div>

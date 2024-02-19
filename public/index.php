@@ -26,6 +26,10 @@ try {
 /*
  * Si le formulaire a été soumis
  */
+$prenom = "";
+$nom = "";
+$mail = "";
+$message = "";
 if (isset($_POST["prenom"],$_POST["nom"],$_POST["mail"],$_POST["message"])){
     $prenom = $_POST["prenom"];
     $nom = $_POST["nom"];
