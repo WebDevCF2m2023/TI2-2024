@@ -39,26 +39,26 @@ main{
     margin: auto;
 }
 
-.livreor:nth-child(odd){
+.information:nth-child(odd){
     background-color: rgb(225, 225, 225);
 }
 
-.livreor{
+.information{
     border: 1px solid #161616;
     padding: 1rem;
     margin: 1rem;
     box-shadow: 3px 3px 5px rgba(22, 22, 22, 0.5);
 }
 
-.livreor > div p:first-child{
+.information > div p:first-child{
     font-weight: bold;
 }
 
-.livreor> div p:not(:first-child){
+.information > div p:not(:first-child){
     font-style: italic;
 }
 
-.livreor > div{
+.information > div{
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;

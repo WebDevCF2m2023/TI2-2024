@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/validation.css">
     
     </head>
-<body>
+    <body>
     <header>
         <h1>LIVRE D'OR</h1>
     </header>
@@ -24,7 +24,6 @@
             <div>
                 <label for="password">Password : </label>
                 <input type="password" name="thepassword" id="password" required>
-                <img onclick="togglePassword(event)" id="btnShowPassword" src="images/eye-open.svg" alt="Voir le mot de passe" title="Voir le mot de passe">
             </div>
             <p id="error-nom" class="error">* Le nom doit faire au moins 5 caractère</p>
             <div>
@@ -43,7 +42,7 @@
             </div>
         </form>
 
-        <section id="livreor">
+        <section id="informations">
 </body>
 </html>
     <script src="js/livredor.js"></script>

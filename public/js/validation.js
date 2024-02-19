@@ -1,25 +1,3 @@
-function verifAge(event){
-    const age = document.querySelector("#age").value;
-    if(age <= 20){
-        document.querySelector("#error-mineur").style.display = "block";
-        // alert("Tu n'es pas majeur");
-        return false; // Lui est comme notre else, il stop le code ici
-    }
-
-    // Redirection si l'age est correct
-    window.location.href = "/?p=livredor&age=" + age;
-
-    return false; // Dans tout les cas, on utilise pas le form. On fait une redirection custom.
-}
-
-function togglePassword(event){
-    const eye = event.target;
-    const password = document.querySelector("#password");
-    password.type = password.type === "password" ? "text" : "password";
-    eye.src = eye.src.includes("images/eye-open.svg") ? "/images/eye-close.svg" : "/images/eye-open.svg";
-    eye.title = eye.title === "Voir le mot de passe" ? "Cacher le mot de passe" : "Voir le mot de passe";
- }
-
 function verif(){
     const errorPassword = document.querySelector("#error-password");
     const errorNom = document.querySelector("#error-nom");
