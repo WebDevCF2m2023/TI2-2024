@@ -34,8 +34,8 @@
                         <input type="text" name="prenom" id="prenom" required>
                     </div>
                     <div>
-                        <label for="nom">Nom *</label>
-                        <input type="text" name="nom" id="nom" required>
+                        <label for="nom">Nom</label>
+                        <input type="text" name="nom" id="nom">
                     </div>
                     <div>
                         <label for="email">E-mail *</label>
@@ -53,11 +53,17 @@
             </div>
         </section>
         <section>
-            <h2>Message précedents</h2>
-            <?php foreach($livreOr as $comment): ?>
+            <?php
+                $nombreDeMessages = count($livreOr);
+                if($nombreDeMessages === 0) $messageNombreMessage = "Pas encore de message";
+                else if($nombreDeMessages === 1) $messageNombreMessage = " : Il y a un message écrit";
+                else if($nombreDeMessages > 1) $messageNombreMessage = " : Il y a $nombreDeMessages messages écrits";
+            ?>
+            <h2>Message précedents<?=$messageNombreMessage?></h2>
+            <?php foreach(array_reverse($livreOr) as $comment): ?>
             <div class="comment">
-                <p><span class="name"><?=$comment["lastname"]?></span> a envoyé ce message le <?=(new DateTime($comment["datemessage"]))->format("d-m-Y à H\hi")?></p>
-                <p><?=$comment["message"]?></p>
+                <p><span class="name"><?=$comment["firstname"]?></span> a envoyé ce message le <?=(new DateTime($comment["datemessage"]))->format("d-m-Y à H\hi")?></p>
+                <p><?=str_replace("\n", "<br>", $comment["message"])?></p>
             </div>
             <?php endforeach; ?>
         </section>

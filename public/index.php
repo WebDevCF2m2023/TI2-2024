@@ -34,8 +34,9 @@ if(isset($_POST["nom"], $_POST["prenom"], $_POST["email"], $_POST["message"])){
         $error = true;
         $message = "Le message n'a pas pu être envoyé 😥";
         // Si une erreur côté PDO s'est produite
+        // On affichera l'erreur SQL
         if(gettype($success) === "string")
-            echo $success;
+            $message = $success;
     }
     
 }

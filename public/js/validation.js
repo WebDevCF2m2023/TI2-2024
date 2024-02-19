@@ -16,7 +16,7 @@ function validateForm(){
     emailError.style.display = "none";
 
     let checkOK = true;
-    if(nom.value.trim().length < 4 || nom.value.trim().length > 100){
+    if(nom.value.trim().length !== 0 && (nom.value.trim().length < 4 || nom.value.trim().length > 100)){
         checkOK = false;
         nomError.style.display = "block";
     }

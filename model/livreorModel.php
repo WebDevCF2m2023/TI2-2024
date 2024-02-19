@@ -25,7 +25,7 @@ function getAllLivreOr(PDO $pdo): array
  * @param string $lastname
  * @param string $usermail
  * @param string $message
- * @return bool|string Une chaine de caractère si une erreur s'est produite, sinon FALSE si les informations données sont invalides. TRUE si tout est bon
+ * @return bool|string Une chaine de caractère si une erreur s'est produite. TRUE si tout est bon
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
 function addLivreOr(PDO $pdo,
@@ -40,19 +40,18 @@ function addLivreOr(PDO $pdo,
     $lastname = htmlspecialchars(strip_tags(trim($lastname)));
     $usermail = htmlspecialchars(strip_tags(trim($usermail)));
     $message = htmlspecialchars(strip_tags($message));
-     // Max 100 de long
-    if(strlen($firstname) > 100 || strlen($lastname) > 100) return false;
-    // Minimum 4 de long
-    if(strlen($firstname) < 4|| strlen($lastname) < 4) return false;
+     // Max 100 de long && Minimum 4 de long
+    if(strlen($firstname) > 100 || strlen($firstname) < 4) return "Le prénom doit avoir minimum 4 caractère et maximum 100.";
+    if(strlen($lastname) !== 0 && (strlen($lastname) > 100 || strlen($lastname) < 4)) return "Le nom doit avoir minimum 4 caractère et maximum 100.";
     // Doit être un email valide
-    if(!filter_var($usermail, FILTER_VALIDATE_EMAIL)) return false;
+    if(!filter_var($usermail, FILTER_VALIDATE_EMAIL)) return "L'email n'est pas valide.";
     // Max 600 de long et ne peut pas être vide
-    if(strlen($message) > 600 || empty(trim($message))) return false;
+    if(strlen($message) > 600 || empty(trim($message))) return "Le message ne peut pas être vide et ne doit pas dépasser 600 caractère";
 
     $sql = "INSERT INTO livreor(`firstname`, `lastname`, `usermail`, `message`) VALUES(?, ?, ?, ?)";
-    $statement = $pdo->prepare($sql);
-    if($statement === false) return "Une erreur s'est produite lors de l'initialisation d'une requête préparer dans livreorModel";
     try{
+        $statement = $pdo->prepare($sql);
+        if($statement === false) return "Une erreur s'est produite lors de l'initialisation d'une requête préparer dans livreorModel";
         if($statement->execute([$firstname, $lastname, $usermail, $message]) === false)
             return "La requête préparer dans livreorModel n'a pas pu s'éxecuter";
     }catch(Exception $e){
