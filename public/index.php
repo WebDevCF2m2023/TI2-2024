@@ -1,40 +1,24 @@
 <?php
-/*
- * Front Controller de la gestion du livre d'or
- */
+// Front Controller
+$vueNom = "formage";
+if(isset($_GET["p"])){
+    switch($_GET["p"]){
+        case "livreor":
+            $vueNom = "livreor";
+            //require_once "../views/livreor.html.php";
+            break;
+        default:
+            $vueNom = "404";
+            //require_once "../views/404.html.php";
+            break;
+    }
+}
 
-/*
- * Chargement des dépendances
- */
-// chargement de configuration
-require_once "../config.php";
-// chargement du modèle de la table livreor
+if($vueNom == "livreor"){
+    require_once "../controllers/livreorController.php";
+}
 
-/*
- * Connexion à la base de données en utilisant PDO
- * Avec un try catch pour gérer les erreurs de connexion
- */
 
-/*
- * Si le formulaire a été soumis
- */
+require_once "../views/$vueNom.html.php";
 
-    // on appelle la fonction d'insertion dans la DB (addLivreOr())
 
-    // si l'insertion a réussi
-
-    // on redirige vers la page actuelle
-
-    // sinon, on affiche un message d'erreur
-
-/*
- * On récupère les messages du livre d'or
- */
-
-// on appelle la fonction de récupération de la DB (getAllLivreOr())
-
-// fermeture de la connexion
-
-// Appel de la vue
-
-include "../view/livreorView.php";
