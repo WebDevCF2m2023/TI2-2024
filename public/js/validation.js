@@ -8,11 +8,11 @@ const prenomLabel = document.getElementById("prenomLabel");
 const nomLabel = document.getElementById("nomLabel");
 const emailLabel = document.getElementById("emailLabel");
 const messageLabel = document.getElementById("messageLabel")
-
+/*
 myForm.addEventListener('submit', function(event) {
     event.preventDefault();
 });
-
+*/
 sendButton.addEventListener('click', validateInputs);
 
 function displayScreenWidth() {
@@ -32,29 +32,45 @@ function validateInputs() {
     let atSym = /@/;
     let periodTest = period.test(emailInp);
     let atSymTest = atSym.test(emailInp);
+    let goodPre = false;
+    let goodNom = false;
+    let goodEmail = false;
+    let goodMess = false;
 
     if (preInp === "" || /\d/.test(preInp) || /[!@#$%^'"/=:.?<>&,;*()_+-]/.test(preInp)) {
         prenomLabel.style.color = "red";
+        goodPre = false;
     }else {
         prenomLabel.style.color = "black";
+        goodPre = true;
     }
     
     if (nomInp === "" || /\d/.test(nomInp) || /[!@#$%^'"/=:.?<>&,;*()_+-]/.test(nomInp)) {
         nomLabel.style.color = "red";
+        goodNom = false;
     }else {
         nomLabel.style.color = "black";
+        goodNom = true;
     }
 
     if (emailInp === "" || !periodTest || !atSymTest) {
         emailLabel.style.color = "red";
+        goodEmail = false;
     }else {
         emailLabel.style.color = "black";
+        goodEmail = true;
     }
 
     if (messInp === "") {
         messageLabel.style.color = "red";
+        goodMess = false;
     }else {
         messageLabel.style.color = "black";
+        goodMess = true;
     }
 
+    if (goodPre && goodNom && goodEmail && goodMess){
+        // besoin de savoir comment lancer le POST maintenant
+        alert("all good");
+    }
 }

@@ -42,8 +42,8 @@
     <div class="prevMessages">
         <h3 id="prevMessHead">Messages précedents</h3>
         <?php foreach ($messages as $mess) : ?>
-            <div class="messageHolder"><hr>
-                <h4><?= $mess["datemessage"] ?></h2>
+            <div class="messageHolder">
+                <h4><?=$mess["firstname"]?> à envoyé ce message le <?=$mess["datemessage"] ?></h2>
                 <p><?= $mess["message"] ?></p>
 
                             </div>
