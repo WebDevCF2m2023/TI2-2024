@@ -22,8 +22,17 @@ try {
 /*
  * Si le formulaire a été soumis
  */
+if (isset($_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['message'])) {
 
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
+    $insert = addLivreOr($MyPDO,$_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['message']);
+
+    //Si on obtient une erreur
+    if ($insert === true) $message = "Insertion réussie";
+    else $message = $insert;
+}
+
+    
 
     // si l'insertion a réussi
 
@@ -38,7 +47,7 @@ try {
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 
 // fermeture de la connexion
-
+$MyPDO = null;
 // Appel de la vue
 
 include "../view/livreorView.php";
