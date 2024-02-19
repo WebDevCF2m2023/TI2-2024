@@ -11,33 +11,38 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
+    <h1>Livre d'or</h1>
     <div>
-        <img id="img" src="email.png" alt="">
+        <img id="img" src="../img/email.png" alt="">
     </div>
+    <main>
+        <h3>Laissez-nous un message</h3>
+
+
     <form action="" method="post">
-        <div>
-            <div id="lenom">
-                <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom">
-            </div>
-            <div id="leprenom">
-                <label for="prenom">Prénom</label>
-                <input type="text" name="prenom" id="prenom">
-            </div>
-            <div id="mail">
-                <label for="email">Email :</label>
-                <input type="text" id="email" name="email" >
-            </div>
-            <div id="lemessage">
-                <label for="msg">Message</label>
-                <textarea name="msg" id="msg" cols="30" rows="5" maxlength="1024"></textarea>
-            </div>
-           
-            <button type="submit" id="subButton" onclick="return validateForm(event)">S'inscrire</button>
+        <div id="lenom">
+            <div><label for="nom">Nom </label></div>
+            <input type="text" name="nom" id="nom">
+        </div>
+        <div id="leprenom">
+           <div><label for="prenom">Prénom *</label></div>
+            <input type="text" name="prenom" id="prenom">
+        </div>
+        <div id="mail">
+            <div><label for="email">Email *</label></div>
+            <input type="text" id="email" name="email" >
+        </div>
+        <div id="lemessage">
+           <div> <label for="msg">Message *</label></div>
+            <textarea name="msg" id="msg" cols="30" rows="5" maxlength="1024"></textarea>
+        </div>
+        
+    
+        </main>
+            <button type="submit" id="subButton" onclick="return validateForm(event)">Envoyer</button>
         </div>
     </form>
-    <h1>message presedent</h1>
+    <h1>Message precedent</h1>
     <section id="informations">
         <?php 
             foreach(array_reverse($livreor) as $livreors):

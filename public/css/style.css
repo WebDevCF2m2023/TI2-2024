@@ -1,0 +1,8 @@
+main{
+    background-color: rgb(66, 124, 160);
+    display: flex;
+    justify-content: center;
+}
+input, textarea{
+    background-color:rgb(245, 245, 220) ;
+}
