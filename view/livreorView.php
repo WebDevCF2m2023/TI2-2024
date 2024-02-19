@@ -16,13 +16,11 @@
         <h1>LIVRE D'OR</h1>
     </header>
     <main>
-        <?php if(isset($success)): ?>
-        <p><?=$success ? "Votre message a bien été enregistré" : "Une erreur s'est produite" ?></p>
-        <?php endif; ?>
-
+        <img src="../public/img/favicon.png" alt="fig1">
         <form action="" method="POST" onsubmit="return verif()">
             <p id="error-password" class="error">
             <div>
+                <h2> Laisse nous un message</h2>
                 <label for="password">Password : </label>
                 <input type="password" name="thepassword" id="password" required>
             </div>
@@ -44,7 +42,7 @@
         </form>
 </body>
 </html>
-    <script src="js/livredor.js"></script>
+    <script src="../public/js/validation.js"></script>
 
     
 </body>
