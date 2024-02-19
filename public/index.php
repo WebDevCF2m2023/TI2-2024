@@ -39,14 +39,14 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['m
         }
 }
 
-/*
+/*  
  * On récupère les messages du livre d'or
  */
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 $informations = getAllLivreOr($db);
 // fermeture de la connexion
-
+$db = null;
 // Appel de la vue
 
 include "../view/livreorView.php";

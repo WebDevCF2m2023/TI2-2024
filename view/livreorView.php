@@ -12,10 +12,15 @@
 </head>
 <body>
     <h1>Livre d'or</h1>
+    <?php
+
+
+var_dump($_GET, $_POST);
+?>
     <div>
         <img src="img/email.png" alt="">
     </div>
-    <form action="" method="POST">
+    <form action="" method="POST" class="form">
         <div id="leprenom">
             <label for="prenom">Prénom *</label>
             <input type="text" name="prenom" id="prenom" required>
@@ -24,7 +29,7 @@
             <label for="nom">Nom</label>
             <input type="text" name="nom" id="nom" required>
         </div>
-        <div id="username">
+        <div id="lusername">
             <label for="username">E-mail *</label>
             <input type="text" id="username" name="username" required>
         </div>
@@ -33,14 +38,12 @@
             <textarea name="message" id="message" cols="30" rows="10" maxlength="600" required></textarea>
         </div>
         <div id="envoi">
-        <input type="submit" value="Envoyer">
+            <input type="submit" value="Envoyer" onclick="control()">
         </div>
     </form>
 
 
-
-        
-
+    
 
 
     <div>
@@ -72,6 +75,7 @@
             endforeach;
         ?>
     </section>
+
 <script src="js/validation.js"></script>
 </body>
 </html>
