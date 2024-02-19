@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
-
+    <h1 id="titrePrincipal">TI2 | Livre d'or</h1>
+<img src="img/Sign up-amico.png" alt="illustration" id="illustrations">
 <form action="" method="POST" id="formContainer">
-<h2>Laissez-nous un message</h2>
+<h2 id="titreForm">Laissez-nous un message</h2>
 <div id="leprenom">
     <label for="firstname">Prénom *</label>
     <input type="text" name="firstname" id="firstname" required>

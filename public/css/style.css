@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+  }
+  
+  #illustrations{
+height: 250px;
+width: 250px;
+display: flex;
+position: relative;
+left: -430px;
+bottom: -200px;
+
+  }
+  #titrePrincipal{
+    position: relative;
+    top: 50px;
+  }
+  #formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 10px;
+    height: 28em;
+    width: 35em;
+    border: 3px solid purple;
+    position: relative;
+    bottom: 100px;
+   
+   
+  }
+  #titreForm{
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  #leprenom,
+#lenom,
+#lemail,#lemessage,
+#bouton {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 10px auto;
+  
+  
+}
+#lenom input{
+    position: relative;
+    left: 0.7em;
+}
+#lemail input{
+    position: relative;
+    left: 0.5em;
+}
+#lemessage label{
+    position: relative;
+    left: 2em;
+}
+label {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+margin-right: 50px;
+  
+}
+
+input{
+  
+    border-radius: 5px;
+}
