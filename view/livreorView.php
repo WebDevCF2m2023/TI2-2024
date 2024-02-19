@@ -11,16 +11,16 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>Livre d'or</h1>
+    <h1 id="firstTitle">Livre d'or</h1>
+
 <div id ="logo">
 <img src="../img/email.png" alt="email">
 </div>
 
-<form action="" method="post" id ="myForm">
+<form action="" method="post">
+
+   <h2 class="leave">Laissez-nous un message</h2>
    
-   <div class="form1">
-
-
    <div><label class="prenom"for="firstname">Prénom</label>                        
    <input type="text" id="lePrenom" name="firstname" required /></div>    
 
@@ -38,13 +38,13 @@
        <input type="submit" value="Envoyer" id="subButton">
 
 <div id="result"></div>
-</div>
+
 
 </br>
 
 </form>
 
-<h2>Messages précédents</h2>
+<h2 class='last'>Messages précédents</h2>
 <section id="comments">
         <?php 
             foreach(array_reverse($addLivreOr) as $add):
