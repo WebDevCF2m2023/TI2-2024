@@ -11,7 +11,7 @@
 
  
 
-    function validText(msg){
+    function validText(event){
      
              if (message.length > 600) {      
                  message.textContent = "Trop court";

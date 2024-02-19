@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1 id="firstTitle">Livre d'or</h1>
-
+<div id='superior'>
 <div id ="logo">
 <img src="../img/email.png" alt="email">
 </div>
@@ -21,13 +21,13 @@
 
    <h2 class="leave">Laissez-nous un message</h2>
    
-   <div><label class="prenom"for="firstname">Prénom</label>                        
+   <div id="lemessage"><label class="prenom"for="firstname">Prénom</label>                        
    <input type="text" id="lePrenom" name="firstname" required /></div>    
 
-   <div><label class="nom" for="lastname">Nom</label>
+   <div id="lemessage"><label class="nom" for="lastname">Nom</label>
    <input type="text" id="leNom" name="lastname" /></div>
 
-   <div><label class="mail" for="usermail">E-mail</label>
+   <div id="lemessage"><label class="mail" for="usermail">E-mail</label>
        <input type="email" id="eMail" name="usermail" required /></div>
 
     <div id="lemessage">
@@ -35,9 +35,11 @@
         <textarea name="message" id="msg" cols="30" rows="5" maxlength="600"></textarea> </div>
            
        
-       <input type="submit" value="Envoyer" id="subButton">
+       <input type="submit" onclick="validText(event)" value="Envoyer" id="subButton">
 
 <div id="result"></div>
+
+</div>
 
 
 </br>

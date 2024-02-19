@@ -69,7 +69,7 @@ textarea {
     display: flex;
     align-items: center;
     margin-top: 6%;
-    margin-bottom: 0;
+    margin-bottom: 2%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 95%;
     font-size: large;
@@ -88,4 +88,64 @@ div.messages {
     box-shadow: 5px 5px 5px #888888;
     padding: 2%;
 }
+
  
+@media screen and (min-width:960px) {
+ 
+    div#superior{
+        display: flex;
+        flex-flow: row nowrap;  
+        margin: 3%;
+    }
+
+    div#lemessage{
+        display: flex;
+        flex-flow: row nowrap;
+
+    }
+
+    div#logo{
+        width: 30%;
+        margin: 0;
+    }
+    form{
+        width: 65%;
+    }
+    label {
+        width: 150px;
+        flex: 1 0 100px;
+        margin-right: 10px;
+    }
+    
+    img{
+        width: 100%;
+        height: 70%;
+    }
+ 
+    input{
+        margin-right: 2%;
+        font-size: 20px;
+    }
+
+    h2.last{
+        margin-top: 10%;
+        margin-left: 2%;
+    }
+    
+    textarea#msg {
+        resize: none;
+        width: 94%;
+        margin-right: 2%;
+    }
+
+#subButton {
+    display: flex;
+    align-items: center;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    margin-left: 35%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 30%;
+    font-size: large;
+}
+}
