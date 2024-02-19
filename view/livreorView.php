@@ -20,24 +20,28 @@
                 <img src="img/email.png" alt="Image Email" width="300px">
             </div>
             <div>
-                <form action="" method="POST">
+                <form action="" method="POST" onsubmit="return validateForm()">
                     <h3>Laissez-nous un message</h3>
-                    <p id="information-message">Le message a bien été envoyé</p>
+                    <p id="information-message" class="success">Le message a bien été envoyé 🤗</p>
+                    <p id="prenom-error" class="error">* Le prénom doit avoir minimum 4 caractère et maximum 100.</p>
+                    <p id="nom-error" class="error">* Le nom doit avoir minimum 4 caractère et maximum 100.</p>
+                    <p id="email-error" class="error">* L'email n'est pas valide.</p>
+                    <p id="message-error" class="error">* Le message ne peut pas être vide et ne doit pas dépasser 600 caractère</p>
                     <div>
                         <label for="prenom">Prénom *</label>
-                        <input type="text" name="prenom" id="prenom">
+                        <input type="text" name="prenom" id="prenom" required>
                     </div>
                     <div>
                         <label for="nom">Nom *</label>
-                        <input type="text" name="nom" id="nom">
+                        <input type="text" name="nom" id="nom" required>
                     </div>
                     <div>
                         <label for="email">E-mail *</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" required>
                     </div>
                     <div>
                         <label for="message">Message *</label>
-                        <textarea name="message" id="message"></textarea>
+                        <textarea name="message" id="message" maxlength="600" required></textarea>
                     </div>
                     <p id="tips">(*) Ce champ est obligatoire</p>
                     <div id="containerSubmit">

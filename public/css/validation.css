@@ -1,3 +1,25 @@
 /*
     CSS pour les erreurs ou succès du formulaire
 */
+.error{
+    color: rgb(255, 62, 62);
+    text-shadow: 1px 1px 3px black;
+    font-weight: bold;
+    margin: .2rem 0;
+    padding-left: 10px;
+    display: none;
+}
+
+.success{
+    color: rgb(109, 255, 47);
+    text-shadow: 1px 1px 3px black;
+    font-weight: bold;
+}
+
+#information-message{
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 1rem;
+    font-weight: bold;
+    display: block;
+}

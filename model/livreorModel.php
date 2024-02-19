@@ -35,10 +35,15 @@ function addLivreOr(PDO $pdo,
                     string $message
                     ): bool|string
 {
-    // Max 100 de long
+    // On enleve les espaces inutile avec trim et on sécurise les données
+    $firstname = htmlspecialchars(strip_tags(trim($firstname)));
+    $lastname = htmlspecialchars(strip_tags(trim($lastname)));
+    $usermail = htmlspecialchars(strip_tags(trim($usermail)));
+    $message = htmlspecialchars(strip_tags($message));
+     // Max 100 de long
     if(strlen($firstname) > 100 || strlen($lastname) > 100) return false;
     // Minimum 4 de long
-    if(strlen($firstname) < 5|| strlen($lastname) < 5) return false;
+    if(strlen($firstname) < 4|| strlen($lastname) < 4) return false;
     // Doit être un email valide
     if(!filter_var($usermail, FILTER_VALIDATE_EMAIL)) return false;
     // Max 600 de long et ne peut pas être vide
