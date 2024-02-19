@@ -199,3 +199,28 @@ textarea{
 }
 
 }
+
+@media  screen and (min-width:480px) and (max-width:960px){
+    #titrePrincipal{
+        position: relative;
+        top: 50px;
+        color: #ffff;
+      }
+    
+    #illustrations{
+        position: relative;
+        left: 10px;
+        top: 60px;
+        width: 150px;
+        height: 150px;
+      }
+      #formContainer {
+       margin-top: 100px;
+       
+      }
+}
+
+#erreur{
+    text-align: center;
+    color: red;
+}

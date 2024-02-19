@@ -30,6 +30,7 @@ if (isset($_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['me
     //Si on obtient une erreur
     if ($insert === true) $message = "Insertion réussie";
     else $message = $insert;
+    
 
 
  // si l'insertion a réussi
