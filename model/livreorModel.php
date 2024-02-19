@@ -15,7 +15,7 @@ function getAllLivreOr(PDO $db): array
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
-    return []; // retourne un tableau
+    return $result; // retourne un tableau
 }
 
 /**
@@ -39,7 +39,7 @@ function addLivreOr(PDO $db, string $firstname, string $lastname, string $userma
          return false;
      } // si les données ne sont pas valides, on envoie false
      
-     $sql = "INSERT INTO 'livreor' ('firstname', 'lastname', 'ursermail','message') VALUES ('$firstname','$lastname','$usermail','$message')";
+     $sql = "INSERT INTO 'livreor' ('firstname', 'lastname', 'ursermail', 'message') VALUES ('$firstname','$lastname','$usermail','$message')";
      try {  // on prépare la requête
          
          $db->exec($sql); // on exécute la requête

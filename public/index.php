@@ -27,9 +27,9 @@ require_once "../model/livreorModel.php";
 /*
  * Si le formulaire a été soumis
  */
-if(isset($_POST['usermail'], $_POST['message'], $_POST['firstname'], $_POST['lastname'], $_POST['datemessage'])){
+if(isset($_POST['usermail'],$_POST['message'],$_POST['firstname'],$_POST['lastname'])){
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
-    $insert = addLivreOr($MyPDO,$_POST['usermail'],$_POST['message'], $_POST['firstname'], $_POST['lastname'], $_POST['datemessage']);
+    $insert = addLivreOr($MyPDO,$_POST['firstname'],$_POST['lastname'],$_POST['usermail'],$_POST['message']);
     // si l'insertion a réussi
     if($insert===true){
     // on redirige vers la page actuelle
@@ -47,10 +47,9 @@ if(isset($_POST['usermail'], $_POST['message'], $_POST['firstname'], $_POST['las
 $addLivreOr = getAllLivreOr($MyPDO);
 
 // fermeture de la connexion
-
+$MyPDO = null;
 
 // Appel de la vue
 
 include "../view/livreorView.php";
 
-$MyPDO = null;

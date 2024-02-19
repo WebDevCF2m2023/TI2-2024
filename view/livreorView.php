@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
-<div>
+    <h1>Livre d'or</h1>
+<div id ="logo">
 <img src="../img/email.png" alt="email">
 </div>
 
-<form action="" id ="myForm">
+<form action="" method="post" id ="myForm">
    
    <div class="form1">
 
@@ -38,20 +38,22 @@
        <input type="submit" value="Envoyer" id="subButton">
 
 <div id="result"></div>
+</div>
 
 </br>
 
 </form>
 
-<h2>Messages présédents</h2>
+<h2>Messages précédents</h2>
 <section id="comments">
         <?php 
             foreach(array_reverse($addLivreOr) as $add):
+                
         ?>
-        <div class="information">
+        <div class="messages">
             <div>
                 <p><?= $add["firstname"] ?></p>
-                <p><?=(new DateTime($add["datemessage"]))->format('d/m/Y H:i:s')?></p>
+                <p><?=(new DateTime($add["datemessage"]))->format('d-m-Y à H\hi')?></p>
             </div>
             <p><?= $add["message"] ?></p>
         </div>
