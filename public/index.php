@@ -38,7 +38,7 @@ try{
  */
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
-
+$livreOr = getAllLivreOr($pdo);
 // fermeture de la connexion
 $pdo = null;
 // Appel de la vue

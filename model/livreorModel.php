@@ -25,7 +25,7 @@ function getAllLivreOr(PDO $pdo): array
  * @param string $lastname
  * @param string $usermail
  * @param string $message
- * @return bool|string
+ * @return bool|string Une chaine de caractère si une erreur s'est produite, sinon TRUE
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
 function addLivreOr(PDO $pdo,
@@ -35,5 +35,15 @@ function addLivreOr(PDO $pdo,
                     string $message
                     ): bool|string
 {
-    return false;
+    $sql = "INSERT INTO livreor VALUES(null, ?, ?, ?, ?, null)";
+    $statement = $pdo->prepare($sql);
+    if($statement === false) return "Une erreur s'est produite lors de l'initialisation d'une requête préparer dans livreorModel";
+    try{
+        if($statement->execute([$firstname, $lastname, $usermail, $message]) === false)
+            return "La requête préparer dans livreorModel n'a pas pu s'éxecuter";
+    }catch(Exception $e){
+        return $e->getMessage();
+    }
+    $statement->closeCursor(); // bonne pratique
+    return true;
 }
