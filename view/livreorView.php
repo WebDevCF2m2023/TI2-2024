@@ -77,7 +77,7 @@
 
 
 
-            echo '<div class="comment-title">Message precedents <span style="font-size: 10px;">Il y a ' . count($results) . ' message(s)</span></div>';
+            echo '<div class="comment-title">Message precedents <span style="font-size: 15px;">Il y a ' . count($results) . ' message(s)</span></div>';
 
             ?>
 
