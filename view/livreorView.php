@@ -23,7 +23,7 @@
                 <form action="" method="POST">
                     <h3>Laissez-nous un message</h3>
                     <p id="information-message">Le message a bien été envoyé</p>
-                    <div id="firstDivForm">
+                    <div>
                         <label for="prenom">Prénom *</label>
                         <input type="text" name="prenom" id="prenom">
                     </div>
@@ -48,10 +48,12 @@
         </section>
         <section>
             <h2>Message précedents</h2>
+            <?php foreach($livreOr as $comment): ?>
             <div class="comment">
-                <p><span class="name">Lorem</span> a envoyé ce message le 01-02-2023 à 09h12</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus distinctio fugit laborum veritatis in amet ea eum. Illum, exercitationem quam qui repellendus ad nobis, beatae adipisci blanditiis autem facilis assumenda.</p>
+                <p><span class="name"><?=$comment["lastname"]?></span> a envoyé ce message le <?=(new DateTime($comment["datemessage"]))->format("d-m-Y à H\hi")?></p>
+                <p><?=$comment["message"]?></p>
             </div>
+            <?php endforeach; ?>
         </section>
     </main>
     <footer>
