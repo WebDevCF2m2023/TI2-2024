@@ -10,7 +10,7 @@
  * venant de la base de données 'ti2web2024' et de la table 'livreor'
  */
 function getAllLivreOr(PDO $db): array{
-    $sql = "SELECT * FROM `livreor`;";
+    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` DESC;";
     $query = $db->query($sql, PDO::FETCH_ASSOC);
     $results = $query->fetchAll();
     return $results;
