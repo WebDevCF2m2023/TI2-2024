@@ -1,54 +1,12 @@
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-input{
-    background-color: rgb(245, 245, 220);
-    width: 100%;
-    
-}
-
-.sendBut {
-    background-color: rgb(245, 245, 220);
-    width: 90%;
-    margin-top: 30px;
-
-}
-
-textarea {
-    background-color: rgb(245, 245, 220);
-    margin: 0 auto;
-    width: 80%;
-}
-
-.inputDiv {
-    padding: 0 15px;
-    width: 80%;
+.myFormDiv {
+    width: 50%;
+    background-color:  rgb(66, 124, 160);
 }
 
 h1 {
-    color: rgb(66, 124, 160);
-}
-h2 {
-   text-align: center;
-   font-size: smaller;
-    color: rgb(245, 245, 220);
-}
-
-.messageHolder {
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    color:  rgb(66, 124, 160);
 }
 
 img {
@@ -56,25 +14,90 @@ img {
     max-height: 40%;
 }
 
-#myForm {
-    background-color: rgb(66, 124, 160);
+
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 475px;
+
 }
 
-.messageHolder {
-    padding: 20px;
-    max-width: 400px;
+.inputDiv {
+    width: 100%;
+}
+label {
+    width: 72px;
 }
 
+.obliged {
+    color: white;
+}
+input, textarea, button {
+    background-color: rgb(245, 245, 220);
+}
 
+h2 {
+    color: rgb(245, 245, 220);
+}
 
 #firstName, #lastName, #email{
-    max-width: 50%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.1em;
+
+}
+.messageHolder {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: lightslategray 5px 5px 0;
+    padding: 0 10px;
+    width: 80%;
+}
+
+.italic {
+    font-style: italic;
+}
+
+input{
+    width: 80%;
+}
+
+textarea {
+    width: 80%;
+    height: 20vh;
+}
+
+
+body {
     display: flex;
     flex-direction: column;
-    margin-bottom: 0.1em;
-    align-items: flex-start;
+    justify-content: center;
 }
+
+.mainSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 480px) {
+
+    #firstName, #lastName, #email{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.1em;
+    
+    }
+
+    .mainSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+

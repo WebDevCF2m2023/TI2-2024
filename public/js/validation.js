@@ -1,3 +1,4 @@
+
 const myForm = document.getElementById("myForm");
 const prenomInput = document.getElementById("prenomInput");
 const nomInput = document.getElementById("nomInput");
@@ -8,19 +9,19 @@ const prenomLabel = document.getElementById("prenomLabel");
 const nomLabel = document.getElementById("nomLabel");
 const emailLabel = document.getElementById("emailLabel");
 const messageLabel = document.getElementById("messageLabel")
-/*
+
 myForm.addEventListener('submit', function(event) {
     event.preventDefault();
 });
-*/
-sendButton.addEventListener('click', validateInputs);
 
+sendButton.addEventListener('click', validateInputs);
+/*
 function displayScreenWidth() {
     let theWidth = window.innerWidth;
     document.getElementById("screenwidth").innerHTML = 'The screen width is: ' + theWidth;
 }
     displayScreenWidth();
-    
+  */  
 window.addEventListener('resize', displayScreenWidth);
 
 function validateInputs() {
@@ -37,7 +38,7 @@ function validateInputs() {
     let goodEmail = false;
     let goodMess = false;
 
-    if (preInp === "" || /\d/.test(preInp) || /[!@#$%^'"/=:.?<>&,;*()_+-]/.test(preInp)) {
+    if (preInp === "" || /\d/.test(preInp) || /[!@#$%^'"/=:.?<>&,;*()_+-]/.test(preInp) || preInp.length > 100) {
         prenomLabel.style.color = "red";
         goodPre = false;
     }else {
@@ -45,7 +46,7 @@ function validateInputs() {
         goodPre = true;
     }
     
-    if (nomInp === "" || /\d/.test(nomInp) || /[!@#$%^'"/=:.?<>&,;*()_+-]/.test(nomInp)) {
+    if (nomInp === "" || /\d/.test(nomInp) || /[!@#$%^'"/=:.?<>&,;*()_+-]/.test(nomInp) || nomInp.length > 100) {
         nomLabel.style.color = "red";
         goodNom = false;
     }else {

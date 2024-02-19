@@ -11,50 +11,49 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <header>
-
-        <p id="screenwidth"></p>
+    <div class="mainSection">
+     
+<!--        <p id="screenwidth"></p> -->
         <h1>Livre d'or</h1>
+        
         <img src="/img/email.png" alt="emailImage" id="emailImg">
-    </header>
+        
     <div class="myFormDiv">
-        <form action="" id="myForm">
+        <form  action="" id="myForm" method="POST">
             <h2 id="myFormHead">Laissez-nous un message</h2>
             <div id="firstName" class="inputDiv">
-                <label for="prenomInput" id = "prenomLabel">Prénom *</label><input type="text" name="prenomInput" id="prenomInput">
+                <label for="prenomInput" id = "prenomLabel">Prénom *</label><input type="text" name="firstname" id="prenomInput">
             </div>
             <div id="lastName" class="inputDiv">
-                <label for="nomInput" id="nomLabel">Nom</label><input type="text" name="nomInput" id="nomInput">
+                <label for="nomInput" id="nomLabel">Nom</label><input type="text" name="lastname" id="nomInput">
             </div>
             <div id="email" class="inputDiv">
-                <label for="emailInput" id="emailLabel">E-mail *</label><input type="text" name="emailInput" id="emailInput">
+                <label for="emailInput" id="emailLabel">E-mail *</label><input type="text" name="useremail" id="emailInput">
             </div>
-            <div class="inputDiv">
+            <div class="messageDiv">
                 <label for="yourMessage" id="messageLabel">Message *</label>
-            <textarea name="yourMessage" class="inputDiv" id="yourMessageInput" cols="30" rows="10"></textarea>
+                <textarea name="yourMessage"  id="yourMessageInput" cols="30" rows="10" maxlength="600"></textarea>
             </div>
+            <p class="obliged">(*) Ce champ est obligatoire</p>
             <div class="inputDiv">
                 <button id="sendButton" class="sendBut">Envoyer</button>
             </div>
         </form>
     </div>
 
-    <div class="prevMessages">
+</div>
+<div class="prevMessages">
         <h3 id="prevMessHead">Messages précedents</h3>
         <?php foreach ($messages as $mess) : ?>
             <div class="messageHolder">
-                <h4><?=$mess["firstname"]?> à envoyé ce message le <?=$mess["datemessage"] ?></h2>
+                <h4><span class="italic"><?=$mess["firstname"]?></span> à envoyé ce message le <?=$mess["datemessage"] ?></h2>
                 <p><?= $mess["message"] ?></p>
-
-                            </div>
+            </div>
 <?php
     endforeach;
     ?>
-        </div>
     </div>
 <script src="js/validation.js"></script>
 </body>
 </html>
 
-
-<!-- RGB 66 124 160
