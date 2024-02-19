@@ -83,19 +83,22 @@
             ?>
 
             <?php
-            foreach ($informations as $commentaire) {
-                echo '<div class="content-message">';
-                echo '<div class="message-header">';
-                echo '' . $commentaire['firstname'] . ' ' . $commentaire['lastname'] . ' a envoyé ce message le ' .
-                    date('d-m-Y \à H\hi', strtotime($commentaire['datemessage']));
-                echo '</div>';
-                echo '<div class="message-body">';
-                echo $commentaire['message'];
-                echo '</div>';
-                echo '</div>';
+            if (empty($informations)) {
+                echo 'There is nothing in the database.';
+            } else {
+                foreach ($informations as $commentaire) {
+                    echo '<div class="content-message">';
+                    echo '<div class="message-header">';
+                    echo '' . $commentaire['firstname'] . ' ' . $commentaire['lastname'] . ' a envoyé ce message le ' .
+                        date('d-m-Y \à H\hi', strtotime($commentaire['datemessage']));
+                    echo '</div>';
+                    echo '<div class="message-body">';
+                    echo nl2br($commentaire['message']);
+                    echo '</div>';
+                    echo '</div>';
+                }
             }
             ?>
-
 
         </div>
     </div>
