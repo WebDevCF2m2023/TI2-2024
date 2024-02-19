@@ -4,7 +4,6 @@
  */
 
 $content = "livreorView"; //Variable pour la page d'accueil
-require_once "../view/$content.php"; // Load the view
 
 
 
@@ -61,10 +60,13 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['us
  * On récupère les messages du livre d'or
  */
 
+// on appelle la fonction de récupération de la DB (getAllLivreOr())
+
 $informations = getAllLivreOr($db);
 
-// on appelle la fonction de récupération de la DB (getAllLivreOr())
+
+require_once "../view/$content.php"; // Load the view
 
 // fermeture de la connexion
 
-// Appel de la vue
+$db = null;
