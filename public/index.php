@@ -22,14 +22,22 @@ require_once "../model/livreorModel.php";
 /*
  * Si le formulaire a été soumis
  */
+    if(isset($_POST['themail'],$_POST['themessage'],$_POST['firstname'],$_POST['lastname'])){
+
+    
 
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
-
+    $insert = addLivreOr($MyPDO,$_POST['themail'],$_POST['themessage'],$_POST['firstname'],$_POST['lastname']);
     // si l'insertion a réussi
-
+    if($insert === true){
     // on redirige vers la page actuelle
-
+    $message = "Insertion réussie! ";
+    }
     // sinon, on affiche un message d'erreur
+    else{
+        $message = $insert;
+    }
+    }
 
 /*
  * On récupère les messages du livre d'or

@@ -35,7 +35,7 @@ function addLivreOr(PDO $db,
                     ): bool|string
 {
      //On protège les différentes entrées 
-     $usermail = filter_var($email, FILTER_VALIDATE_EMAIL);
+     $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
      $message = htmlspecialchars(strip_tags(trim($message)),ENT_QUOTES); 
      $firstname = htmlspecialchars(strip_tags(trim($firstname)),ENT_QUOTES); 
      $lastname = htmlspecialchars(strip_tags(trim($lastname)),ENT_QUOTES); 

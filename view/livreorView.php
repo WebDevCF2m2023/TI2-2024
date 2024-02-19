@@ -12,12 +12,7 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
-    <h3><?php 
-        if($nbInformation>1 ){ 
-            echo "$nbInformation commentaires";}
-            else{
-                echo"$nbInformation commentaire";
-            }?></h3>
+    
     <div>
             <?php 
             foreach($informations as $information):
@@ -28,22 +23,23 @@
             endforeach;
             ?>
         </div>
-    <form action="" class="container">
-    <img src="../img/email.png" alt="">
+        
+    <form action="" name="monForm" method="POST">
+    
     <div id="lePrenom">
         <label for="prenom">Prénom:</label>
-        <input type="text" name="prenom" id="prenom">
+        <input type="text" name="firstname" >
     </div>
-    <div id="leNom">
+    <div  id="leNom">
         <label for="nom">Nom:</label>
-        <input type="text" name="nom" id="nom">
+        <input name="lastname" type="text"  >
     </div>
-   
-    <form action="" name="monForm" method="POST">
-                <input name="themail" type="email" placeholder="Votre email" required><br>
-                <textarea name="themessage" placeholder="Votre message" required></textarea><br>
+        <div>
+    <input name="themail" type="email" placeholder="Votre email" required><br>
+    <textarea name="themessage" placeholder="Votre message" required></textarea><br>
                 <input type="submit" value="Envoyer">
-            </form>
+                </div>
+     </form>
 <script src="js/validation.js"></script>
 </body>
 </html>
