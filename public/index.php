@@ -9,11 +9,17 @@
 // chargement de configuration
 require_once "../config.php";
 // chargement du modèle de la table livreor
-
+require_once "../model/livreorModel.php";
 /*
  * Connexion à la base de données en utilisant PDO
  * Avec un try catch pour gérer les erreurs de connexion
  */
+try{
+    $dsn = DB_DRIVER . ":host=".DB_HOST.";dbname=".DB_NAME.";charset=".DB_CHARSET.";port=".DB_PORT;
+    $pdo = new PDO($dsn, DB_LOGIN, DB_PWD);
+}catch(Exception $e){
+    die($e->getMessage());
+}
 
 /*
  * Si le formulaire a été soumis
