@@ -12,6 +12,12 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
+    <h3><?php 
+        if($nbInformation>1 ){ 
+            echo "$nbInformation commentaires";}
+            else{
+                echo"$nbInformation commentaire";
+            }?></h3>
     <div>
             <?php 
             foreach($informations as $information):

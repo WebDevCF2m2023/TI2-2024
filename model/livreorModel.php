@@ -34,5 +34,21 @@ function addLivreOr(PDO $db,
                     string $message
                     ): bool|string
 {
-    return false;
+     //On protège les différentes entrées 
+     $usermail = filter_var($email, FILTER_VALIDATE_EMAIL);
+     $message = htmlspecialchars(strip_tags(trim($message)),ENT_QUOTES); 
+     $firstname = htmlspecialchars(strip_tags(trim($firstname)),ENT_QUOTES); 
+     $lastname = htmlspecialchars(strip_tags(trim($lastname)),ENT_QUOTES); 
+     // si un des champs est non valide 
+     if ($usermail===false||empty($message)||empty($firstname)||empty($lastname)){
+         // arrêt du script et envoi un texte
+         return "Au moins un des champs est non valide!";
+     }
+     $sql = "INSERT INTO `livreor`(`firstname`,`lastname`,`usermail`,`message`) VALUES('$firstname','$lastname','$usermail','$message')";
+    try{
+        $db->exec($sql);
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
+    }
 }
