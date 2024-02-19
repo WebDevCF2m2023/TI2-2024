@@ -3,8 +3,6 @@
  * Front Controller de la gestion du livre d'or
  */
 
-
-
 $content = "livreorView"; //Variable pour la page d'accueil
 require_once "../view/$content.php"; // Load the view
 
@@ -15,7 +13,10 @@ require_once "../view/$content.php"; // Load the view
  * Chargement des dépendances
  */
 // chargement de configuration
+
 require_once "../config.php"; // load the config with database
+require_once "../model/livreorModel.php";
+
 // chargement du modèle de la table livreor
 
 /*

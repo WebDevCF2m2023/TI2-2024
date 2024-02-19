@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 800;
+    font-size: 50px;
+    color:dodgerblue;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.image-mail {
+    width: 400px;
+    height: 400px;
+    flex: 0 0 auto;
+    margin-right: -80px;
+    margin-bottom: 300px;
+}
+
+
+.form-container {
+    background-color: rgb(112, 112, 168);
+    width: 130vh;
+    height: 70vh;
+    margin-left: 80px;
+}
+
+#top-form-message {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+    padding-top: 20px;
+}
+
