@@ -1,67 +1,50 @@
 <?php
-
-/**
- * Permet de récupérer toutes les informations stocké en base de données sous format de tableau associatif
+/*
+ * Front Controller de la gestion du livre d'or
  */
-function getAllInformations(PDO $pdo): array{
-    $sql = "SELECT * FROM livreor";
-    $statement = $pdo->query($sql);
-
-    if($statement === false) return []; // Cas de figure qui ne devrais pas arriver
-
-    $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);
-    $statement->closeCursor(); // Bonne pratique
-
-    return $livreor;
-    
-}
-
-/**
- * Permet d'ajouter une nouvelle information en base de donnée
- * @return bool Si FALSE une erreur s'est produite
+ 
+/*
+ * Chargement des dépendances
  */
-function insertNewInformation(PDO $pdo, string $email, string $message): bool{
-
-    $sql = "INSERT INTO livreor VALUES (null, ?, ?, null);";
-    //$sql = "INSERT INTO livreor$livreor(themail, themessage) VALUES (?, ?);";
-
-    $statement = $pdo->prepare($sql);
-    if($statement === false) return false;
-
-    $state = $statement->execute([$email, $message]);
-    if($state === false) return false;
-
-    $statement->closeCursor(); // bonne pratique
-
-    return true;
-}
-
-<?php
-
-
-
-    // On est super content , on a bien accès a Livre D'or car on est majeur
-    require_once "../config.php";
-    require_once "../models/livreor$livreorModel.php";
-
-    $db = DB_DRIVER . ":host=" . DB_HOST . ";port=" . DB_Port . ";dbname=".DB_NAME.";charset=".DB_CHARSET;
+// chargement de configuration
+require_once "../config.php";
+// chargement du modèle de la table livreor
+require_once "../model/livreorModel.php";
+/*
+ * Connexion à la base de données en utilisant PDO
+ * Avec un try catch pour gérer les erreurs de connexion
+ */
     try{
-        $pdo = new PDO($db, DB_USER, DB_PASS);
-    }catch(Exception $e){
-        die($e->getMessage());
+    $MyPDO = new PDO(DB_DRIVER.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT.";charset=".DB_CHARSET,DB_LOGIN,DB_PWD);
+        }catch(Exception $e){
+    die($e ->getMessage());
     }
-
-    if(
-        isset($_POST['usermail'], $_POST['message']) 
-        && filter_var($_POST['usermail'], FILTER_VALIDATE_EMAIL) 
-        && !empty(trim($_POST['message']))
-    ){
-        $theEmail =  htmlspecialchars(strip_tags($_POST['usermail']));
-        $theMessage = htmlspecialchars(strip_tags($_POST['message']));
-        $success = insertNewInformation($pdo, $theEmail, $theMessage);
+/*
+ * Si le formulaire a été soumis
+ */
+    if(isset($_POST['usermail'],$_POST['message'],$_POST['firstname'],$_POST['lastname'])){
+ 
+   
+ 
+    // on appelle la fonction d'insertion dans la DB (addLivreOr())
+    $insert = addLivreOr($MyPDO,$_POST['firstname'],$_POST['lastname'],$_POST['usermail'],$_POST['message']);
+    // si l'insertion a réussi
+    if($insert === true){
+    // on redirige vers la page actuelle
+    $message = "Insertion réussie! ";
     }
-    $livreor = getAlllivreor $livreor($pdo);
-
-}else{
-    $viewName = "form";
-}
+    // sinon, on affiche un message d'erreur
+    else{
+        $message = $insert;
+    }
+    }
+     
+ 
+// on appelle la fonction de récupération de la DB (getAllLivreOr())
+$informations = getAllLivreOr($MyPDO);
+$nbInformations = COUNT($informations);
+// fermeture de la connexion
+$MyPDO = null;
+// Appel de la vue
+ 
+include "../view/livreorView.php";

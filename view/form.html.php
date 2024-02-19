@@ -15,6 +15,6 @@
         </div>
         <input type="submit" value="Confirmer">
     </form>
-    <script src="js/form.js"></script>
+    <script src="js/livreor.js"></script>
 </body>
 </html>

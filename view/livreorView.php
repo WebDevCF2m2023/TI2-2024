@@ -42,19 +42,15 @@
         </form>
         </fieldset>
         <section id="livreor">
-
-            <?php
-            foreach(array_reverse($livreor) as $livreore):
+        <?php
+            foreach ($informations as $information){
             ?>
-                <div class="livreore">
-                <div>
-                    <p><?=$livreore["usermail"]?></p>
-                    <p><?=(new DateTime($livreore["thedate"]))->format("d/m/Y H:i:s")?></p>
-                </div>
-                <p><?=$livreor["message"]?></p>
-            </div>
+            <div id="BlockMessage">
+            <h4>Posté le <?=$information['datemessage']?></h4>
+            <p><?=$information['message']?></p>
             <?php
-            endforeach;
+            }
+            /*endforeach;*/
             ?>
         </section>
 
