@@ -11,7 +11,49 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
-<script src="js/validation.js"></script>
+    <header>
+        <h1>TI2 | Livre d'or</h1>
+    </header>
+    <main>
+        <section>
+            <div>
+                <img src="/img/email.png" alt="Image Email">
+            </div>
+            <div>
+                <form action="" method="POST">
+                    <h3>Laissez-nous un message</h3>
+                    <div>
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" name="prenom" id="prenom">
+                    </div>
+                    <div>
+                        <label for="nom">Nom *</label>
+                        <input type="text" name="nom" id="nom">
+                    </div>
+                    <div>
+                        <label for="email">E-mail *</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div>
+                        <label for="message">Message *</label>
+                        <textarea name="message" id="message"></textarea>
+                    </div>
+                    <p>(*) Ce champ est obligatoire</p>
+                    <input type="submit" value="Envoyer">
+                </form>
+            </div>
+        </section>
+        <section>
+            <h2>Message précedents</h2>
+            <div class="comment">
+                <p>Lorem a envoyé ce message le 01-02-2023 à 09h12</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus distinctio fugit laborum veritatis in amet ea eum. Illum, exercitationem quam qui repellendus ad nobis, beatae adipisci blanditiis autem facilis assumenda.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/validation.js"></script>
 </body>
 </html>

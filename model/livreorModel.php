@@ -35,6 +35,15 @@ function addLivreOr(PDO $pdo,
                     string $message
                     ): bool|string
 {
+    // Max 100 de long
+    if(strlen($firstname) > 100 || strlen($lastname) > 100) return false;
+    // Minimum 4 de long
+    if(strlen($firstname) < 5|| strlen($lastname) < 5) return false;
+    // Doit être un email valide
+    if(!filter_var($usermail, FILTER_VALIDATE_EMAIL)) return false;
+    // Max 600 de long et ne peut pas être vide
+    if(strlen($message) > 600 || empty(trim($message))) return false;
+
     $sql = "INSERT INTO livreor VALUES(null, ?, ?, ?, ?, null)";
     $statement = $pdo->prepare($sql);
     if($statement === false) return "Une erreur s'est produite lors de l'initialisation d'une requête préparer dans livreorModel";
