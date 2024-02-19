@@ -11,8 +11,12 @@
  */
 function getAllLivreOr(PDO $pdo): array
 {
-
-    return [];
+    $sql = "SELECT * FROM livreor";
+    $statement = $pdo->query($sql);
+    // Permet de récupérer toute les lignes SQL en tableau associatif
+    $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor(); // bonne pratique
+    return $livreor;
 }
 
 /**

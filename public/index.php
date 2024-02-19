@@ -40,7 +40,7 @@ try{
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 
 // fermeture de la connexion
-
+$pdo = null;
 // Appel de la vue
 
 include "../view/livreorView.php";
