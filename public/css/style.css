@@ -9,8 +9,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-   
+    
+    background-color: #556168fc;
   }
   
   #illustrations{
@@ -18,13 +18,14 @@ height: 250px;
 width: 250px;
 display: flex;
 position: relative;
-left: -430px;
-bottom: -200px;
+left: -470px;
+bottom: -300px;
 
   }
   #titrePrincipal{
     position: relative;
-    top: 50px;
+    top: 100px;
+    color: #ffff;
   }
   #formContainer {
     display: flex;
@@ -34,15 +35,18 @@ bottom: -200px;
     border-radius: 10px;
     height: 28em;
     width: 35em;
-    border: 3px solid purple;
-    position: relative;
-    bottom: 100px;
-   
-   
+    border: 3px solid #b867c7;
+    box-shadow: 0 0 10px #b867c7,
+                0 0 25px #b867c7;
+    
+    background-color: #556168fc;
+   margin-bottom: 100px;
   }
   #titreForm{
     text-align: center;
     margin-bottom: 25px;
+    color: #ffff;
+    
   }
   #leprenom,
 #lenom,
@@ -52,7 +56,7 @@ bottom: -200px;
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: nowrap;
-  margin: 10px auto;
+  margin: 13px auto;
   
   
 }
@@ -62,7 +66,7 @@ bottom: -200px;
 }
 #lemail input{
     position: relative;
-    left: 0.5em;
+    left: 0.4em;
 }
 #lemessage label{
     position: relative;
@@ -73,10 +77,58 @@ label {
   align-items: flex-end;
   justify-content: flex-end;
 margin-right: 50px;
+color: #ffff;
   
 }
 
 input{
-  
+ background-color: #aab0b4;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+input:hover{
+    border: 2px solid #b867c7;
+}
+textarea{
+    background-color: #aab0b4;
+    position: relative;
+    left: 15px;
     border-radius: 5px;
 }
+textarea:hover{
+    border: 2px solid #b867c7;
+}
+input[type=submit]{
+    padding: 5px;
+    width: 150px;
+    border-radius: 15px;
+}
+input[type=submit]:hover,.commentaires:hover{
+    
+    box-shadow: 0 0 10px #b867c7,
+    0 0 25px #b867c7;
+}
+
+.commentaires{
+    border: 1px solid #b867c7;
+   width: 40%;
+   margin-top: 15px;
+   margin-bottom: 20px;
+   padding: 10px;
+   border-radius: 15px;
+  
+}
+h3{
+    color: #ffff;
+    
+}
+.commentaires h4{
+    color: black;
+    font-weight: bold;
+}
+.commentaires p{
+ 
+    margin-top: 10px;
+}
+

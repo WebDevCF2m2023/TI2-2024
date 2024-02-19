@@ -44,8 +44,10 @@
 
 foreach ($commentaires as $commentaire) :
     ?>
+    <div class="commentaires">
         <h4><?= $commentaire['firstname'] ?> a envoyé ce message le <?= $commentaire['datemessage'] ?></h4>
         <p><?= $commentaire['message'] ?></p>
+        </div>
     <?php
     endforeach;
 //var_dump($_POST);
