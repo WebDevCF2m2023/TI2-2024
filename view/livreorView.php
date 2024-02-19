@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..//public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <title>Livre d'or</title>
 </head>
 <body>
     <header>
         <h1>LIVRE D'OR</h1>
     </header>
-    <img src="../public/img/email.png" alt="">
+    <img src="img/email.png" alt="">
     <main>
         <?php if(isset($success)): ?>
         <p><?=$success ? "Votre message a bien été enregistré" : "Une erreur s'est produite" ?></p>

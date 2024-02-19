@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
     <h1>Livre d'or</h1>
     <img id="Madame" src="../public/img/email.png" alt="">
  
@@ -41,4 +41,4 @@
        
    
 <script src="js/validation.js"></script>
-</body>
+</body> -->

@@ -1,53 +1,54 @@
 <?php
 /*
- * Front Controller de la gestion du livre d'or
+ * Model de la page livre d'or
  */
  
-/*
- * Chargement des dépendances
+/**
+ * @param PDO $db
+ * @return array
+ * Fonction qui récupère tous les messages du livre d'or par ordre de date croissante
+ * venant de la base de données 'ti2web2024' et de la table 'livreor'
  */
-// chargement de configuration
-require_once "../config.php";
-// chargement du modèle de la table livreor
-require_once "../model/livreorModel.php";
-/*
- * Connexion à la base de données en utilisant PDO
- * Avec un try catch pour gérer les erreurs de connexion
+function getAllLivreOr(PDO $db): array
+{  
+    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` ASC ";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
+ 
+/**
+ * @param PDO $db
+ * @param string $firstname
+ * @param string $lastname
+ * @param string $usermail
+ * @param string $message
+ * @return bool|string
+ * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
+function addLivreOr(PDO $db,
+                    string $firstname,
+                    string $lastname,
+                    string $usermail,
+                    string $message
+                    ): bool|string
+{
+     //On protège les différentes entrées
+     $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+     $message = htmlspecialchars(strip_tags(trim($message)),ENT_QUOTES);
+     $firstname = htmlspecialchars(strip_tags(trim($firstname)),ENT_QUOTES);
+     $lastname = htmlspecialchars(strip_tags(trim($lastname)),ENT_QUOTES);
+     // si un des champs est non valide
+     if ($usermail===false || empty($message) || empty($firstname) || empty($lastname)){
+         // arrêt du script et envoi un texte
+         return "Au moins un des champs est non valide!";
+     }
+     $sql = "INSERT INTO `livreor`(`firstname`,`lastname`,`usermail`,`message`) VALUES('$firstname','$lastname','$usermail','$message')";
     try{
-    $MyPDO = new PDO(DB_DRIVER.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT.";charset=".DB_CHARSET,DB_LOGIN,DB_PWD);
-        }catch(Exception $e){
-    die($e ->getMessage());
+        $db->exec($sql);
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
     }
-/*
- * Si le formulaire a été soumis
- */
-    if(isset($_POST['usermail'],$_POST['message'],$_POST['firstname'],$_POST['lastname'])){
- 
-   
- 
-    // on appelle la fonction d'insertion dans la DB (addLivreOr())
-    $insert = addLivreOr($MyPDO,$_POST['firstname'],$_POST['lastname'],$_POST['usermail'],$_POST['message']);
-    // si l'insertion a réussi
-    if($insert === true){
-    // on redirige vers la page actuelle
-    $message = "Insertion réussie! ";
-    }
-    // sinon, on affiche un message d'erreur
-    else{
-        $message = $insert;
-    }
-    }
-     
- 
-// on appelle la fonction de récupération de la DB (getAllLivreOr())
-$informations = getAllLivreOr($MyPDO);
-$nbInformations = COUNT($informations);
-// fermeture de la connexion
-$MyPDO = null;
-// Appel de la vue
- 
-include "../view/livreorView.php";
-
-
-// le stress me fait oublier tout ce que je connais par coeur je me suis mélée tt les pinceaux ya un petit truc qui cloche mais je ne suis pas arriver a le trouver 
+}
