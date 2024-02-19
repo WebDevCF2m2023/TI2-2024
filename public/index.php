@@ -50,7 +50,7 @@ if (isset($_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['me
  */
 $commentaires = getAllLivreOr($MyPDO);
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
-
+$nbInformations = getNbInformations($MyPDO);
 // fermeture de la connexion
 $MyPDO = null;
 // Appel de la vue

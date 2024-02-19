@@ -12,11 +12,12 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
+    <h3>Il y a <?= $nbInformations ?> messages écrits</h3>
     <?php
 
 foreach ($commentaires as $commentaire) :
 ?>
-    <h4>Posté le <?= $commentaire['datemessage'] ?></h4>
+    <h4><?= $commentaire['firstname'] ?> a envoyé ce message le <?= $commentaire['datemessage'] ?></h4>
     <p><?= $commentaire['message'] ?></p>
 <?php
 endforeach;

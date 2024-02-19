@@ -17,7 +17,15 @@ function getAllLivreOr(PDO $db): array
     $query->closeCursor();
     return $result;
 }
-
+//Fonction qui récupère le nombre de commentaires
+function getNbInformations(PDO $db): int
+{
+    $sql = "SELECT COUNT(*) as nb FROM `livreor` ORDER BY `datemessage` ASC";
+    $query = $db->query($sql);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result['nb'];
+}
 /**
  * @param PDO $db
  * @param string $firstname
