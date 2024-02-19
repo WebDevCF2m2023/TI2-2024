@@ -9,9 +9,11 @@
  * Fonction qui récupère tous les messages du livre d'or par ordre de date croissante
  * venant de la base de données 'ti2web2024' et de la table 'livreor'
  */
-function getAllLivreOr(PDO $db): array
-{
-    return [];
+function getAllLivreOr(PDO $db): array{
+    $sql = "SELECT * FROM `livreor`;";
+    $query = $db->query($sql, PDO::FETCH_ASSOC);
+    $results = $query->fetchAll();
+    return $results;
 }
 
 /**
