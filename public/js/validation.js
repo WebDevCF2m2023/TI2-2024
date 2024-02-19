@@ -10,31 +10,41 @@ function verif(){
     errorTheMessage.style.display = "none";
     
     const nom = document.querySelector("#nom").value;
-    const password = document.querySelector("#password").value;
     const email = document.querySelector("#email").value;
     const theMessage = document.querySelector("#themessage").value;
 
     const validNom = nom.length >= 5;
-    const validPassword = /[!@#$%^&*(),[.?":{}|<>]/.test(password) && password.length >= 8 && /[A-Z]/.test(password) && /\d/.test(password);
-    const validEmail = /@/.test(email) && /\./.test(email);
     const validTheMessage = theMessage.trim().length > 0;
 
-    let check = true;
+    
+    var messageAlerte = "Bienvenue " + prenom + " " + nom + " !";
+    if (prenom.length <= 100 && nom.length <= 100 && message.length <= 600 && /[@]/.test(email)&& /[.]/.test(email)) {
+        alert(messageAlerte);
+        
+        return true;
+    }
+
+
+     let check = true;
 
     if(!validEmail){
         errorEmail.style.display = "block";
+        console.log ("email valide");
         check = false;
     }
     if(!validPassword){
         errorPassword.style.display = "block";
+        console.log ("password valide");
         check = false;
     }
     if(!validNom){
         errorNom.style.display = "block";
+        console.log ("nom valide");
         check = false;
     }
     if(!validTheMessage){
         errorTheMessage.style.display = "block";
+        console.log ("message valide");
         check = false;
     }
 
