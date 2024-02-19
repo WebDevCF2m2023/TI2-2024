@@ -12,6 +12,7 @@ h1{
     margin-right: auto;
     width: 155px;
 }
+
 .container {
     margin-top: 20px;
     margin-left: auto;
@@ -20,15 +21,15 @@ h1{
     flex-direction: column;
     justify-content:center ;
     align-items: center;
-    background-color: #089ef5;
+    background-color: #10699c;
     padding: 5px;
-    height: 30em;
+    height: 28em;
     width: 20em;
 }
 h2{
 color: #fff;
 font-size: 20px;
-
+text-align: center;
 }
 #lePrenom,
 #leNom,
@@ -45,24 +46,48 @@ font-size: 20px;
 label {
     display: flex;
     align-items: flex-start;
-    margin: 10px 20%;
-    color: #fff;
+    margin: 10px ;
+    color: #070707;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
 input {
     width: 90%;
-   justify-content: right;
+ 
 }
-@media screen and(max-width:480px){
-    .container{
-        display: flex;
+
+
+@media screen and (min-width:480px){
+    #lePrenom,
+    #leNom,
+    #email,
+    #themessage,input[type=submit] {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width:95vw;
+    }
+    #leNom label, #lePrenom label, #email label, #themessage label {
+        width:100px;
+        flex: 1 0 100px;
+    }
+    #nom, #prenom, #langue, #message {
+        width:85vw;
+    }
+    .container {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
         flex-direction: column;
         justify-content:center ;
         align-items: center;
-        background-color: #089ef5;
+        background-color: #10699c;
         padding: 5px;
         height: 28em;
-        width: 24em;
+        width: 35em;
+    }
+    input {
+        width: 50%;
+       
     }
 }

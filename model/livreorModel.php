@@ -40,7 +40,7 @@ function addLivreOr(PDO $db,
      $firstname = htmlspecialchars(strip_tags(trim($firstname)),ENT_QUOTES); 
      $lastname = htmlspecialchars(strip_tags(trim($lastname)),ENT_QUOTES); 
      // si un des champs est non valide 
-     if ($usermail===false||empty($message)||empty($firstname)||empty($lastname)){
+     if ($usermail===false || empty($message) || empty($firstname) || empty($lastname)){
          // arrêt du script et envoi un texte
          return "Au moins un des champs est non valide!";
      }
