@@ -2,7 +2,7 @@
 /*
  * Model de la page livre d'or
  */
-
+require_once "../model/livreorModel.php";
 /**
  * @param PDO $db
  * @return array

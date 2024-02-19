@@ -1,0 +1,73 @@
+body{
+    
+}
+
+div{
+    text-align: center;
+    flex-direction: column;
+    block-size: auto;
+    background-position: 2px;
+}
+label{
+    text-align: center;
+    background-color: rgb(140, 161, 230);
+    flex-flow:row nowrap;
+}
+
+img{
+    background-position: left;
+
+}
+
+header {
+    text-align: center;
+    background-color: rgb(95, 125, 223);
+    text-emphasis-color: rgb(95,125,223);
+
+}
+
+form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background: rgb(95,125,223);
+    flex: content;
+}
+
+nom, prenom {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+themessage{
+    text-align: center;
+    display: block;
+    margin-bottom: 1em;
+}
+
+email{
+    text-align: center;
+    display: block;
+    margin-bottom: 1em;
+}
+
+input [type=submit]{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: .5rem 1rem .5rem 1rem;
+    background-size: 300% 100%;
+    background-position: -50% 0%;
+}
+
+
+
+textarea {
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+}
