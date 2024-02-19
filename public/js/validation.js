@@ -10,9 +10,9 @@ function submitForm() {
 
     var messageAlerte = "Bienvenue " + prenom + " " + nom + " !";
    
-    if (prenom.length <= 100 && nom.length <= 100 && message.length <= 600 && /[@.]/.test(email)&& /[.]/.test(email)) {
+    if (prenom.length <= 100 && nom.length <= 100 && message.length <= 600 && /[@]/.test(email)&& /[.]/.test(email)) {
         alert(messageAlerte);
-        console.log(messageAlerte);
+        
         return true;
     } else {
         resultDiv.textContent = "Veuillez remplir tous les critères.";
