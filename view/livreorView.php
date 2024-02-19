@@ -11,15 +11,19 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>Livre d'or</h1>
-    <div>
-        <img id="img" src="../img/email.png" alt="">
+    <div><center>
+        <h1>Livre d'or</h1>
+        <img id="imglogo" src="../img/email.png" alt="" width="400px">
+
+    </center>
     </div>
     <main>
+        
+        
+        
+        
+        <form action="" method="post">
         <h3>Laissez-nous un message</h3>
-
-
-    <form action="" method="post">
         <div id="lenom">
             <div><label for="nom">Nom </label></div>
             <input type="text" name="nom" id="nom">
@@ -36,10 +40,11 @@
            <div> <label for="msg">Message *</label></div>
             <textarea name="msg" id="msg" cols="30" rows="5" maxlength="1024"></textarea>
         </div>
+        <p id="ceChamp">(*) Ce champ est obligatoire</p>
         
+        <button type="submit" id="subButton" onclick="return validateForm(event)">Envoyer</button>
     
         </main>
-            <button type="submit" id="subButton" onclick="return validateForm(event)">Envoyer</button>
         </div>
     </form>
     <h1>Message precedent</h1>

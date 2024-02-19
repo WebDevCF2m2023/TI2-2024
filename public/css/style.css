@@ -1,8 +1,18 @@
-main{
-    background-color: rgb(66, 124, 160);
-    display: flex;
-    justify-content: center;
-}
-input, textarea{
-    background-color:rgb(245, 245, 220) ;
+@media only screen and (max-width: 480px){
+    main{
+        background-color: rgb(66, 124, 160);
+        display: flex;
+        justify-content: center;
+    }
+    input, textarea{
+        background-color:rgb(245, 245, 220) ;
+    }
+    h3{
+        color: rgb(245, 245, 220);
+    }
+    #ceChamp{
+        color: white;
+        font-size: .89em;
+    }
+    
 }
