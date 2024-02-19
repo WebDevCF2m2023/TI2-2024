@@ -10,7 +10,7 @@
 require_once "../config.php";
 // chargement du modèle de la table livreor
 
-require_once "../model/livreorModel.php"
+require_once "../model/livreorModel.php";
 
 /*
  * Connexion à la base de données en utilisant PDO
@@ -24,33 +24,30 @@ require_once "../model/livreorModel.php"
     die($e->getMessage());
 }
 
-const DB_DRIVER = "mysql";
-const DB_HOST = "localhost";
-const DB_LOGIN = "root";
-const DB_PWD = "";
-const DB_NAME = "ti2web2024";
-const DB_PORT = 3307;
-const DB_CHARSET = "utf8mb4";
-
 /*
  * Si le formulaire a été soumis
  */
-
+if(isset($_POST['usermail'], $_POST['message'])){
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
-
+    $insert = addLivreOr($MyPDO,$_POST['usermail'],$_POST['message']);
     // si l'insertion a réussi
-
+    if($insert===true){
     // on redirige vers la page actuelle
-
+    header("Location: ./");
+    exit();   
     // sinon, on affiche un message d'erreur
-
+    }else{
+        $message = "Erreur lors de l'insertion";
+      } }
 /*
  * On récupère les messages du livre d'or
  */
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
+$addLivreOr = getAllLivreOr($MyPDO);
 
 // fermeture de la connexion
+$MyPDO = null;
 
 // Appel de la vue
 
