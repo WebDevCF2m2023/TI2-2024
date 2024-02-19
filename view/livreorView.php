@@ -52,7 +52,7 @@
         ?></h2>
         <?php foreach($messages as $message):?>
         <div class="message">
-            <h3><a href="#"><?=$message["firstname"]?></a> a envoyé ce message le <?=$message["datemessage"]?></h3>
+            <h3><a href="#"><?=$message["firstname"]?></a> a envoyé ce message le <?php echo (new DateTime($message["datemessage"]))->format("d-m-Y H:i")?></h3>
             <p><?=$message["message"]?></p>
         </div>
         <?php endforeach;?>
