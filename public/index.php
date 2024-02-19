@@ -15,6 +15,7 @@ $content = "livreorView"; //Variable pour la page d'accueil
 
 require_once "../config.php"; // load the config with database
 require_once "../model/livreorModel.php";
+require_once "../model/paginationModel.php";
 
 // chargement du modèle de la table livreor
 
@@ -50,9 +51,10 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['us
     $insert = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['message']);
     if ($insert) {
         header("Location: ./");
+        $message = "Insertion Reussi";
         exit();
     } else {
-        $message = "Erreur lors de l'insertion";
+        $message = $insert;
     }
 }
 
