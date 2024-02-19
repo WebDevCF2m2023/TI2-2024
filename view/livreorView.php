@@ -34,7 +34,7 @@
             </div>
             <div class="field">
                 <label for="message">Message *</label>
-                <input type="text" name="message" id="message" required>
+                <textarea name="message" id="message" required></textarea>
             </div>
             <p>(*) Ce champ est obligatoire</p>
             <div>
