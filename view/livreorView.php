@@ -43,24 +43,7 @@
             </div>
         </form>
 
-        <section id="informations">
-
-            <?php
-            foreach(array_reverse($informations) as $information):
-            ?>
-                <div class="information">
-                <div>
-                    <p><?=$information["themail"]?></p>
-                    <p><?=(new DateTime($information["thedate"]))->format("d/m/Y H:i:s")?></p>
-                </div>
-                <p><?=$information["themessage"]?></p>
-            </div>
-            <?php
-            endforeach;
-            ?>
-        </section>
-
-        var_dump($mypdo)
+        <section id="livreor">
 </body>
 </html>
     <script src="js/livredor.js"></script>

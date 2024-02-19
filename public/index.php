@@ -48,9 +48,10 @@ if (isset($_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['me
 /*
  * On récupère les messages du livre d'or
  */
-$commentaires = getAllLivreOr($MyPDO);
+$commentaires =  getAllInformations($MyPDO);
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
+// fermeture de la connexion
 $MyPDO = null;
-
+// Appel de la vue
  
 include "../view/livreorView.php";

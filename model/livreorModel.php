@@ -9,18 +9,16 @@
  * Fonction qui récupère tous les messages du livre d'or par ordre de date croissante
  * venant de la base de données 'ti2web2024' et de la table 'livreor'
  */
-function getAllLivreOr(PDO $pdo): array{
-    $sql = "SELECT * FROM informations";
-    $MyPDO = $pdo->query($sql);
+function getAllInformations(PDO $pdo): array{
+    $sql = "SELECT * FROM livreor";
+    $statement = $pdo->query($sql);
 
-    if($MyPDO === false) return []; // Cas de figure qui ne devrais pas arriver
+    if($statement === false) return []; // Cas de figure qui ne devrais pas arriver
 
-    $informations = $MyPDO->fetchAll(PDO::FETCH_ASSOC);
-    $MyPDO->closeCursor(); // Bonne pratique
+    $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor(); // Bonne pratique
 
-    return $informations;
-    var_dump($MyPDO);
-    
+    return $livreor;  
 }
 
 
@@ -30,7 +28,7 @@ function getAllLivreOr(PDO $pdo): array{
  */
 function insertNewInformation(PDO $pdo, string $email, string $message): bool{
 
-    $sql = "INSERT INTO informations VALUES (null, ?, ?, null);";
+    $sql = "INSERT INTO livreor VALUES (null, ?, ?, null);";
     //$sql = "INSERT INTO informations(themail, themessage) VALUES (?, ?);";
 
     $statement = $pdo->prepare($sql);
