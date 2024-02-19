@@ -7,6 +7,8 @@ formContainer.addEventListener("submit"), function(event) {
         var names = document.getElementById("nom");
 
         var lengthCheck = names.lenght === 8;
+        var funnyCharCheck = /[@+-*/"'()§!&^?]/.test(names);
+
         
     }
 
