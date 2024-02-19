@@ -72,6 +72,6 @@ function validateInputs() {
 
     if (goodPre && goodNom && goodEmail && goodMess){
         // besoin de savoir comment lancer le POST maintenant
-        alert("all good");
+        alert("Bienvenue " + preInp + " " + nomInp);
     }
 }

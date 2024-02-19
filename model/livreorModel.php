@@ -27,6 +27,7 @@ function getAllLivreOr(PDO $db): array
  * @return bool|string
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
+
 function addLivreOr(PDO $db,
                     string $firstname,
                     string $lastname,
