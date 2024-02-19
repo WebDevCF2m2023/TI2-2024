@@ -12,6 +12,22 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
+    <form action="" class="container">
+    <img src="../img/email.png" alt="">
+    <div id="lePrenom">
+        <label for="prenom">Prénom:</label>
+        <input type="text" name="prenom" id="prenom">
+    </div>
+    <div id="leNom">
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" id="nom">
+    </div>
+   
+    <form action="" name="monForm" method="POST">
+                <input name="themail" type="email" placeholder="Votre email" required><br>
+                <textarea name="themessage" placeholder="Votre message" required></textarea><br>
+                <input type="submit" value="Envoyer">
+            </form>
 <script src="js/validation.js"></script>
 </body>
 </html>
