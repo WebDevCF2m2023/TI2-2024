@@ -8,7 +8,7 @@
  */
 // chargement de configuration
 require_once "../config.php";
-
+require_once "../Model/livreorModel.php";
 
 // chargement du modèle de la table livreor
 /*
@@ -27,7 +27,7 @@ try {
 if (isset($_POST['#'], $_POST['#'])) {
 
     // on appelle la fonction d'insertion dans la DB
-    $insert = addInformations($db, $_POST['#'], $_POST['#']);
+    $insert = addInformations($db, $_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['message']);
     // si l'insertion a réussi
     if ($insert) {
         // on redirige vers la page actuelle
@@ -51,7 +51,7 @@ if (isset($_POST['#'], $_POST['#'])) {
  */
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
-
+$livreor = getAllLivreOr($db);
 // fermeture de la connexion
 $db = null;
 // Appel de la vue

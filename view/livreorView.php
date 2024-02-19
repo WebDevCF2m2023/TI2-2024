@@ -12,6 +12,22 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
+    <section>
+
+<?php
+foreach(array_reverse($livreor) as $livreors):
+?>
+    <div class="information">
+    <div>
+        <p><?=$livreors["usermail"]?></p>
+        <p><?=(new DateTime($livreors["datemessage"]))->format("d/m/Y H:i:s")?></p>
+    </div>
+    <p><?=$livreors["message"]?></p>
+</div>
+<?php
+endforeach;
+?>
+</section>
 <script src="js/validation.js"></script>
 </body>
 </html>

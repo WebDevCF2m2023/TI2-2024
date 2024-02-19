@@ -12,11 +12,11 @@
 function getAllLivreOr(PDO $db): array
 {
     $sql = "SELECT * FROM livreor";
-    $statement = $pdo->query($sql);
+    $statement = $db->query($sql);
 
     if($statement === false) return []; // Cas de figure qui ne devrais pas arriver
 
-    $informations = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);
     $statement->closeCursor(); // Bonne pratique
 
     return $livreor;
@@ -37,10 +37,12 @@ function addLivreOr(PDO $db,
                     string $lastname,
                     string $usermail,
                     string $message
-                    ): bool|string{
+                    ): bool|string
+                    
+                    {
 
-                        $firstname = htmlspecialchars(strip_tags(trim($)), ENT_QUOTES);
-                        $lastname = htmlspecialchars(strip_tags(trim($)), ENT_QUOTES);
+                        $firstname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
+                        $lastname = htmlspecialchars(strip_tags(trim($lastname)), ENT_QUOTES);
                         $usermail = filter_var($themail, FILTER_VALIDATE_EMAIL);
                         $message = htmlspecialchars(strip_tags(trim($themessage)), ENT_QUOTES);
 
