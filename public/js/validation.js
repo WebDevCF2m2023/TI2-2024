@@ -8,9 +8,9 @@ function submitForm() {
     const message = document.querySelector("#message").value;
     resultDiv = document.querySelector("#resultat");
 
-    var messageAlerte = "Bienvenue  " + nom + prenom;
+    var messageAlerte = "Bienvenue " + prenom + " " + nom + " !";
    
-    if (prenom.length <= 100 && nom.length <= 100 && message.length <= 600 && /[@.]/.test(email)) {
+    if (prenom.length <= 100 && nom.length <= 100 && message.length <= 600 && /[@.]/.test(email)&& /[.]/.test(email)) {
         alert(messageAlerte);
         console.log(messageAlerte);
         return true;
