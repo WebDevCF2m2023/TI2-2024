@@ -12,6 +12,44 @@
 </head>
 <body>
     <h1>TI2 | Livre d'or</h1>
+    <form action="">
+        
+        <div id="leprenom">
+            <label for="prenom">Prénom</label>
+            <input type="text" name="prenom" id="prenom" required>
+        </div>
+        <div id="lenom">
+            <label for="nom">Nom</label>
+            <input type="text" name="nom" id="nom">
+        </div>
+        <div id="username">
+            <label for="username">Pseudo :</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div id="lemessage">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10" maxlength="600"></textarea>
+        </div>
+
+
+
+        
+
+        <section id="informations">
+        <?php 
+            foreach($informations as $information):
+        ?>
+        <div class="information">
+            <div>
+                <p><?= $information["firstname"] ?></p>
+                <p><?=(new DateTime($information["datemessage"]))->format('d/m/Y H:i:s')?></p>
+            </div>
+            <p><?= $information["message"] ?></p>
+        </div>
+        <?php
+            endforeach;
+        ?>
+    </section>
 <script src="js/validation.js"></script>
 </body>
 </html>

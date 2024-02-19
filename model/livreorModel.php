@@ -12,7 +12,7 @@
 function getAllLivreOr(PDO $db): array
 {
     {
-        $sql = "SELECT * FROM livreor ORDER BY thedate ASC";
+        $sql = "SELECT * FROM livreor ORDER BY firstname ASC";
         $query = $db->query($sql);
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         $query->closeCursor();
