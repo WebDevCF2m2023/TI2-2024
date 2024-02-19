@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Livre d'or</h1>
-<div class="mainSection">
+    <div class="mainSection">
 
     <!--  <p id="screenwidth"></p>  -->
         

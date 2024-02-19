@@ -22,7 +22,6 @@ function displayScreenWidth() {
 }
     displayScreenWidth();
     window.addEventListener('resize', displayScreenWidth);
-   
 */
 
 function validateInputs() {
