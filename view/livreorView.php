@@ -2,8 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TI2 | Livre d'or</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
@@ -17,14 +16,20 @@
     <main id="livreor">
         <section id="formSection">
             <div>
-                <img src="img/email.png" alt="Image Email" width="300px">
+                <img src="img/email.png" alt="Image Email" width="300">
             </div>
             <div>
                 <form action="?p=1" method="POST" onsubmit="return validateForm()">
                     <h3>Laissez-nous un message</h3>
-                    <?php if(isset($message, $error)): ?>
-                        <p id="information-message" class="<?= $error ? "error" : "success" ?>"><?= $message ?></p>
-                    <?php endif; ?>
+                    <?php 
+                    if(isset($message, $error)){
+                        $class = $error ? "error" : "success";
+                    }else{
+                        $class = "";
+                        $message = "";
+                    }
+                    ?>
+                    <p id="information-message" class="<?= $class ?>"><?= $message ?></p>
                     <p id="prenom-error" class="error">* Le prénom doit avoir minimum 4 caractère et maximum 100.</p>
                     <p id="nom-error" class="error">* Le nom doit avoir minimum 4 caractère et maximum 100.</p>
                     <p id="email-error" class="error">* L'email n'est pas valide.</p>
@@ -55,10 +60,10 @@
         <section>
             <?php
                 if($totalComments === 0) $messageNombreMessage = "Pas encore de message";
-                else if($totalComments === 1) $messageNombreMessage = " : Il y a un message écrit";
-                else if($totalComments > 1) $messageNombreMessage = " : Il y a $totalComments messages écrits";
+                else if($totalComments === 1) $messageNombreMessage = "Il y a un message écrit";
+                else if($totalComments > 1) $messageNombreMessage = "Il y a $totalComments messages écrits";
             ?>
-            <h2>Message précedents<?=$messageNombreMessage?></h2>
+            <h2>Message<?= $totalComments > 1 ? "s" : "" ?> précédent : <?=$messageNombreMessage?></h2>
             <div class="pagination"><?=$pagination?></div>
             <?php foreach($livreOr as $comment): ?>
             <div class="comment">
