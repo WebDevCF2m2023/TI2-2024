@@ -22,7 +22,7 @@ function submitForm(e) {
     if (firstName.length <= 100 && firstName.length != 0 && lastName.length <=100 && /@/.test(email) && /\./.test(email)) {
         alert("Envoie reussi !");
     } else {
-        alert("Veuillez remplir tous leshhhh critères");
+        alert("Veuillez remplir tous critères");
         return false;
     }
     return true;
