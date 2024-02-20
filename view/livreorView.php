@@ -18,28 +18,27 @@
     <form id="form1" action="" method="post">
         <div id="lenght">
             <h1>laissez nous un message</h1>
-           
             <div id="lenom">
                 <label for="nom">Nom*</label>
-                <input type="text" placeholder="nom" name="lastname" id="firstname" require>
+                <input type="text" placeholder="nom" name="lastname" id="firstname" required>
             </div>
             <div id="leprenom">
-                <label for="prenom">Prénom*</label>
+                <label for="prenom">Prénom</label>
                 <input type="text" placeholder="prénom" name="firstname" id="lastname">
             </div>
             <div id="mail">
                 <label for="email">Email* :</label>
-                <input type="email" placeholder="votre e-mail" id="usermail" name="usermail" >
+                <input type="email" placeholder="votre e-mail" id="usermail" name="usermail" required >
             </div>
             <div id="lemessage">
                 <label for="msg">Message*</label>
-                <textarea name="message" placeholder="votre message" id="message" cols="30" rows="5" maxlength="600"></textarea>
+                <textarea name="message" placeholder="votre message" id="message" cols="30" rows="5" maxlength="600" required></textarea>
             </div>
            <h4>(*) Ce champs est obligatoire </h4>
            <button type="submit" id="subButton" onclick="return validateForm(event)">Envoyer</button> 
         </div>
     </form>
-    <h1>message presedent</h1>
+    <h1>message précédent</h1>
     <section id="informations">
         <?php 
             foreach(array_reverse($livreor) as $coms):

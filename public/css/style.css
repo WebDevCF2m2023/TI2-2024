@@ -1,6 +1,7 @@
 h1 {
-    text-align: center;
-    color:rgb(3, 39, 243) ;
+text-align: center;
+color:rgb(3, 39, 243) ;
+
 }
 #img{
 display: flex;
@@ -10,7 +11,6 @@ display: block;
 margin-left: auto;
 margin-right: auto
 }
-
 
 #pic{
 display: flex;
@@ -39,8 +39,6 @@ form {
     padding: 1em 0;
 }
 
-
-
 #lenom, #leprenom, #lemessage,#mail {
     display: flex;
     flex-direction: column;
@@ -48,12 +46,9 @@ form {
     margin-bottom: 1em;
 }
 
-
-
 input[type=text], textarea, select,input[type=email], input[type=submit]{
     width:100%;
 }
-
 
 #subButton{
     align-items: center;
@@ -62,8 +57,6 @@ display: block;
 margin-left: auto;
 margin-right: auto
 }
-
-
 
 .information:nth-child(odd){
     background-color: #d4d4d4;
