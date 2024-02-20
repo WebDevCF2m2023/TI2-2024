@@ -24,10 +24,12 @@ try {
 /*
 * Si le formulaire a été soumis
 */
-if (isset($_POST['id'], $_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['datemessage'])) {
+if (isset($_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['message'])) {
+
     
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
-    $insert = addLivreOr($db, $_POST['id'], $_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['datemessage']);
+    $insert = addLivreOr($db,$_POST['firstname'],$_POST['lastname'],$_POST['usermail'],$_POST['message']);
+    
     // si l'insertion a réussi
     if ($insert) {
         // on redirige vers la page actuelle

@@ -19,7 +19,7 @@
         <img src="/img/email.png" alt="emailImage" id="emailImg">
         
     <div class="myFormDiv">
-        <form action="" id="myForm" method="POST">
+        <form action="" id="myForm" method="post">
             <h2 id="myFormHead">Laissez-nous un message</h2>
             <div id="firstName" class="inputDiv">
                 <label for="prenomInput" id = "prenomLabel">Prénom *</label><input type="text" name="firstname" id="prenomInput">
@@ -28,11 +28,11 @@
                 <label for="nomInput" id="nomLabel">Nom</label><input type="text" name="lastname" id="nomInput">
             </div>
             <div id="email" class="inputDiv">
-                <label for="emailInput" id="emailLabel">E-mail *</label><input type="text" name="useremail" id="emailInput">
+                <label for="emailInput" id="emailLabel">E-mail *</label><input type="text" name="usermail" id="emailInput">
             </div>
             <div class="messageDiv">
-                <label for="yourMessage" id="messageLabel">Message *</label>
-                <textarea name="yourMessage"  id="yourMessageInput" cols="30" rows="10" maxlength="600"></textarea>
+                <label for="message" id="messageLabel">Message *</label>
+                <textarea name="message"  id="yourMessageInput" cols="30" rows="10" maxlength="600"></textarea>
             </div>
             <p class="obliged">(*) Ce champ est obligatoire</p>
             <div class="sendDiv">
@@ -55,7 +55,7 @@
     endforeach;
     ?>
     </div>
-<script src="js/validation.js"></script>
+<!-- <script src="js/validation.js"></script> -->
 </body>
 </html>
 

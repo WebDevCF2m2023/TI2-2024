@@ -7,13 +7,11 @@ const sendButton = document.getElementById("sendButton");
 const prenomLabel = document.getElementById("prenomLabel");
 const nomLabel = document.getElementById("nomLabel");
 const emailLabel = document.getElementById("emailLabel");
-const messageLabel = document.getElementById("messageLabel")
+const messageLabel = document.getElementById("messageLabel");
 
-myForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-});
 
-sendButton.addEventListener('click', validateInputs);
+
+
 
 /*
 function displayScreenWidth() {
