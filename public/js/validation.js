@@ -91,7 +91,7 @@ function validateInputs() {
 
     if (goodPre && goodNom && goodEmail && goodMess){
         // besoin de savoir comment lancer le POST maintenant
-        myFormHead.style.color = "red";
+        myFormHead.style.color = "green";
         myFormHead.textContent = "Votre message a été ajouter. Bonne journée, " + preInp + " " + nomInp;
         setTimeout(function () {
         myForm.submit();

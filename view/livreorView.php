@@ -36,7 +36,7 @@
             </div>
             <p class="obliged">(*) Ce champ est obligatoire</p>
             <div class="sendDiv">
-            
+            <h3><?=$messageError?></h3>
                 <button id="sendButton" class="sendBut">Envoyer</button>
             </div>
             </div>
