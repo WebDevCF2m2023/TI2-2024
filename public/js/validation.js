@@ -9,16 +9,6 @@ const prenomError = document.querySelector("#prenom-error");
 const emailError = document.querySelector("#email-error");
 
 const comments = document.querySelectorAll(".comment");
-addEventListener("resize", (event) => {
-    comments.forEach(comment=>{
-        if(comment.scrollHeight <= 200){
-            comment.classList.remove("scrollY");
-            return;
-        }
-        comment.classList.add("scrollY");
-    })
-});
-
 
 const informationMessage = document.querySelector("#information-message");
 if(informationMessage.classList.length === 0)
@@ -53,3 +43,15 @@ function validateForm(){
     if(checkOK) alert(`Bienvenue ${prenom.value} ${nom.value}`);
     return checkOK;
 }
+
+addEventListener("resize", checkScrollY);
+function checkScrollY(){
+    comments.forEach(comment=>{
+        if(comment.scrollHeight <= 200){
+            comment.classList.remove("scrollY");
+            return;
+        }
+        comment.classList.add("scrollY");
+    })
+}
+checkScrollY();
