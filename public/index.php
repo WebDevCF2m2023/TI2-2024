@@ -8,7 +8,7 @@
  */
 // chargement de configuration
 require_once "../config.php";
-require_once "../Model/livreorModel.php";
+require_once "../model/livreorModel.php";
 
 // chargement du modèle de la table livreor
 /*

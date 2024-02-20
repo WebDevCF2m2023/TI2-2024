@@ -33,7 +33,7 @@ function addLivreOr(PDO $db,
                     string $lastname,
                     string $usermail,
                     string $message
-                    ): bool|string
+                    )
                     
                     {
 
