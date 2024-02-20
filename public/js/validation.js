@@ -6,7 +6,7 @@ function validateForm(e) {
   const mess = document.getElementById("message").value;
 
 
-  if (nom.length > 100 || prenom.length > 100) {
+  if (nom.length > 100 || prenom.length > 100||prenom.trim().length==0) {
     alert("Le nom ou prénom doit avoir au max 100 caractéres");
     return false;
   } else if (!/@.*\./.test(mail)) {
