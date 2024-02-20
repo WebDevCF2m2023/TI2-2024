@@ -13,7 +13,7 @@
 <body>
     <h1>Livre d'or</h1>
     <div id="img">
-        <img src="/img/email.png">
+        <img src="img/email.png">
     </div>
     <div id="cadreForm">
         <form action="" method="POST">
