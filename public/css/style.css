@@ -1,31 +1,173 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #556168fc;
-  }
-  
-  #illustrations{
-height: 250px;
-width: 250px;
-display: flex;
-position: relative;
-left: -470px;
-bottom: -300px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  }
-  #titrePrincipal{
-    position: relative;
-    top: 100px;
-    color: #ffff;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #263238ec;
+
+}
+
+#illustrations {
+  height: 250px;
+  width: 250px;
+  display: flex;
+  position: relative;
+  left: -490px;
+  bottom: -340px;
+
+}
+
+#titrePrincipal {
+  position: relative;
+  top: 100px;
+  color: #ffff;
+}
+
+#formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 10px;
+  height: 26em;
+  width: 31em;
+  border: 3px solid #b867c7;
+  box-shadow: 0 0 10px #b867c7,
+    0 0 25px #b867c7;
+  background-color: #5461687d;
+  margin-bottom: 100px;
+
+}
+
+#titreForm {
+  text-align: center;
+  margin-bottom: 22px;
+  color: #ffff;
+
+}
+
+#leprenom,
+#lenom,
+#lemail,
+#lemessage,
+#bouton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 14px auto;
+
+}
+
+#lenom input {
+  position: relative;
+  left: 0.7em;
+}
+
+#lemail input {
+  position: relative;
+  left: 0.3em;
+}
+
+#lemessage label {
+  position: relative;
+  left: 2em;
+}
+
+label {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 50px;
+  color: #ffff;
+
+}
+
+input {
+  background-color: #263238ec;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  color: #ffff;
+}
+
+input:hover {
+  border: 2px solid #b867c7;
+}
+
+textarea {
+  background-color: #263238ec;
+  color: #ffff;
+  border: none;
+  height: 70px;
+  position: relative;
+  left: 15px;
+  border-radius: 5px;
+}
+
+textarea:hover {
+  border: 2px solid #b867c7;
+}
+
+input[type=submit] {
+  padding: 5px;
+  width: 150px;
+  border-radius: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+
+  box-shadow: 0 0 10px #b867c7,
+    0 0 25px #b867c7;
+}
+
+.commentaires:hover {
+  box-shadow: 0 0 10px #ddb4e4,
+    0 0 25px #ddb4e4;
+}
+
+.commentaires {
+  border: none;
+  width: 40%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #5461687d;
+}
+
+#nbMessage {
+  margin-bottom: 20px;
+}
+
+span {
+
+  color: #ddb4e4;
+}
+
+h3 {
+  color: #ffff;
+
+}
+
+.commentaires h4 {
+  color: #ddb4e4c3;
+
+}
+
+.commentaires p {
+  color: #ffff;
+  margin-top: 10px;
+
+}
+
+@media screen and (max-width:480px) {
   #formContainer {
     display: flex;
     flex-direction: column;
@@ -33,194 +175,112 @@ bottom: -300px;
     padding: 5px;
     border-radius: 10px;
     height: 28em;
-    width: 35em;
+    width: 20em;
     border: 3px solid #b867c7;
     box-shadow: 0 0 10px #b867c7,
-                0 0 25px #b867c7;
-    
+      0 0 25px #b867c7;
+
     background-color: #556168fc;
-   margin-bottom: 100px;
+    margin-top: 100px;
   }
-  #titreForm{
-    text-align: center;
-    margin-bottom: 25px;
-    color: #ffff;
-    
+
+  input {
+    width: 200px;
   }
+
+  label {
+    margin-bottom: 5px;
+  }
+
   #leprenom,
-#lenom,
-#lemail,#lemessage,
-#bouton {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  margin: 13px auto;
-  
-  
-}
-#lenom input{
-    position: relative;
-    left: 0.7em;
-}
-#lemail input{
-    position: relative;
-    left: 0.4em;
-}
-#lemessage label{
-    position: relative;
-    left: 2em;
-}
-label {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-margin-right: 50px;
-color: #ffff;
-  
-}
+  #lenom,
+  #lemail,
+  #lemessage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 13px auto;
+  }
 
-input{
- background-color: #aab0b4;
-    border-radius: 5px;
-    border: 2px solid transparent;
-}
-
-input:hover{
-    border: 2px solid #b867c7;
-}
-textarea{
-    background-color: #aab0b4;
-    position: relative;
-    left: 15px;
-    border-radius: 5px;
-}
-textarea:hover{
-    border: 2px solid #b867c7;
-}
-input[type=submit]{
-    padding: 5px;
-    width: 150px;
-    border-radius: 15px;
-}
-input[type=submit]:hover,.commentaires:hover{
-    
-    box-shadow: 0 0 10px #b867c7,
-    0 0 25px #b867c7;
-}
-
-.commentaires{
-    border: 1px solid #b867c7;
-   width: 40%;
-   margin-top: 15px;
-   margin-bottom: 20px;
-   padding: 10px;
-   border-radius: 15px;
-  
-}
-h3{
-    color: #ffff;
-    
-}
-.commentaires h4{
-    color: #ffff;
-    font-weight: bold;
-}
-.commentaires p{
- color: black;
-    margin-top: 10px;
-  
-}
-
-@media  screen and (max-width:480px) {
-    #formContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 5px;
-        border-radius: 10px;
-        height: 28em;
-        width: 20em;
-        border: 3px solid #b867c7;
-        box-shadow: 0 0 10px #b867c7,
-                    0 0 25px #b867c7;
-        
-        background-color: #556168fc;
-       margin-top: 100px;
-      }
-      input{
-        width: 200px;
-      }
- #leprenom,
-#lenom,
-#lemail,#lemessage
- {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  margin: 13px auto;
-}
-#lenom input{
+  #lenom input {
     position: relative;
     left: 0.1em;
-}
-#lemail input{
+  }
+
+  #lemail input {
     position: relative;
     left: 0.1em;
-}
-textarea{
+  }
+
+  textarea {
     position: relative;
     left: 0.5em;
     width: 220px;
-}
-#lemessage label{
+  }
+
+  #leprenom label,
+  #lemessage label {
     position: relative;
-    left: 0.5em;
-}
-#titrePrincipal{
+    left: -2em;
+  }
+
+  #lenom label {
+    position: relative;
+    left: -2.5em;
+  }
+
+  #lemail label {
+    position: relative;
+    left: -2.2em;
+  }
+
+  #titrePrincipal {
     position: relative;
     top: 50px;
     color: #ffff;
   }
-  #illustrations{
+
+  #illustrations {
     position: relative;
     left: 10px;
     top: 60px;
     width: 150px;
     height: 150px;
   }
-  .commentaires{
-    
-   width: 65%;
-   margin-top: 15px;
-   margin-bottom: 20px;
-   padding: 10px;
-   border-radius: 15px;
-}
+
+  .commentaires {
+
+    width: 65%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+  }
 
 }
 
-@media  screen and (min-width:480px) and (max-width:960px){
-    #titrePrincipal{
-        position: relative;
-        top: 50px;
-        color: #ffff;
-      }
-    
-    #illustrations{
-        position: relative;
-        left: 10px;
-        top: 60px;
-        width: 150px;
-        height: 150px;
-      }
-      #formContainer {
-       margin-top: 100px;
-       
-      }
+@media screen and (min-width:480px) and (max-width:960px) {
+  #titrePrincipal {
+    position: relative;
+    top: 50px;
+    color: #ffff;
+  }
+
+  #illustrations {
+    position: relative;
+    left: 10px;
+    top: 60px;
+    width: 150px;
+    height: 150px;
+  }
+
+  #formContainer {
+    margin-top: 100px;
+
+  }
 }
 
-#erreur{
-    text-align: center;
-    color: red;
+#erreur {
+  text-align: center;
+  color: red;
 }
