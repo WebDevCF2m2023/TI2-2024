@@ -54,7 +54,7 @@
 foreach ($commentaires as $commentaire) :
     ?>
     <div class="commentaires">
-        <h4><?= $commentaire['firstname'] ?> a envoyé ce message le <?= $commentaire['datemessage'] ?></h4>
+        <h4><?= $commentaire['firstname'] ?> a envoyé ce message le <?= (new DateTime($commentaire['datemessage']))->format('d-m-Y à H\hi') ?></h4>
         <p><?= $commentaire['message'] ?></p>
         </div>
     <?php
