@@ -47,7 +47,7 @@ function validateForm(){
 addEventListener("resize", checkScrollY);
 function checkScrollY(){
     comments.forEach(comment=>{
-        if(comment.scrollHeight <= 200){
+        if(comment.scrollHeight <= 350){
             comment.classList.remove("scrollY");
             return;
         }
