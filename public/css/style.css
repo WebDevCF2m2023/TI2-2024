@@ -36,7 +36,6 @@ body {
     font-size: clamp(30px, 50px, 4vw); /* font-size will be at least 30px, at most 4vw, and ideally 50px */
     left: 0;
     right: 0;
-    margin-left: clamp(-550px, -460px, -350px); /* Adjust these values to move the title to the right */
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -63,8 +62,19 @@ body {
     background-color: rgb(112, 112, 168);
     width: clamp(100vh, 130vh, 100vw); /* width will be at least 100vh, at most 100vw, and ideally 130vh */
     height: clamp(50vh, 70vh, 100vh); /* height will be at least 50vh, at most 100vh, and ideally 70vh */
+    min-height: 600px;
+
     margin-left: 10px;
     margin-right: 200px;
+    display: flex; /* Add this */
+    flex-direction: column; /* Add this */
+    overflow: auto; /* Add this */
+}
+
+@media (max-height: 800px) {
+    .submit-container {
+        overflow-y: scroll;
+    }
 }
 
 #top-form-message {
@@ -149,6 +159,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: auto;
 }
 
 .content-message {
@@ -241,7 +252,6 @@ body {
 
     .comment-title {
         font-size: clamp(15px, 20px, 2vw); /* font-size will be at least 15px, at most 2vw, and ideally 20px */
-        margin-left: clamp(-80px, -75px, -70px); /* margin-left will be at least -100px, at most -70px, and ideally -85px */
     }
 
     textarea {
@@ -251,6 +261,7 @@ body {
       #submit-form {
 
         width: 300px;
+        max-width: 40%;
 
     }
 
@@ -297,7 +308,6 @@ body {
 
     .comment-title {
         font-size: clamp(15px, 20px, 2vw); /* font-size will be at least 15px, at most 2vw, and ideally 20px */
-        margin-left: clamp(-300px, -260px, -200px); /* margin-left will be at least -300px, at most -200px, and ideally -260px */
     }
 
     textarea {
@@ -310,6 +320,7 @@ body {
     justify-content: center;
     margin: 20px 0;
     border: 1px solid #ddd;
+    flex-wrap: wrap; /* Add this to allow the pagination items to wrap to a new line if necessary */
 }
 
 .pagination a {
