@@ -9,13 +9,13 @@
         align-self: center;
         width: 40%;
         padding: 10px;
-        border-style: dotted rgb(3, 3, 113);
+        
         border-radius: 15px;
         color:rgb(236, 229, 189);
         background-color: #384103;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: large;
-        box-shadow: 10px rgb(91, 24, 111);
+        
         animation: wiggle 2s linear infinite;
     }
     @keyframes wiggle {
