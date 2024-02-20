@@ -29,19 +29,15 @@
             <input type="text" placeholder="votre nom" name="lastname" id="lastname"><br>
             <label for="usermail">Email*</label>
             <input type="email" placeholder="votre mail" name="usermail" id="usermail" required><br>
-            
             <label for="message">Message*</label><br>
             <textarea id="message" name="message" rows="6" cols="40" maxlength="" required></textarea><br>
-            <!-- <button onclick="document.getElementById('formulaire').innerHTML =  validateForm()">Envoyer</button>-->
             <span class="error" aria-live="polite"></span>
             <h3>(*) Ce champ est obligatoire</h3>
-            
-            
             <input type="submit" value="Envoyer" >
-            
         </form>
         <h4>Messages précédents</h4>
-        <div id="pagination"><?=$pagination ?? null?> </div>
+        <div id="pagination"> <?=$pagination ?? null?></div>
+	    
         <div id="messages">
             
             <?php foreach($informations as $information):?>
