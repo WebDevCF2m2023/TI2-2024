@@ -73,7 +73,7 @@ function getPaginationView(int $currentPage, int $maxpage): string{
     for($i = 1; $i <= $maxpage; ++$i){
         if($i != $currentPage)
             $pagination .= '<a href="?'.PREFIX_PAGE.'='.$i.'">'.$i.'</a>';
-        else $pagination .= '<span id="currentPage">'.$i.'</span>';
+        else $pagination .= '<span class="currentPage">'.$i.'</span>';
     }
 
     return $goBack.$pagination.$goAfter;

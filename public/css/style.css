@@ -109,7 +109,7 @@ h2{
     color: #417397;
 }
 
-#currentPage{
+.currentPage{
     color: #161616;
     font-weight: bold;
 }
