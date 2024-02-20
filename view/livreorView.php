@@ -38,13 +38,13 @@
             <div>
             <input type="submit" value="Envoyer" id="envoyer" onclick="return submitForm(event)">
             </div>
-      </div>
+            </div>
         </form>
     </div>
     <h3>Messages Précédents</h3>
     <div id="allMessages">
         <?php 
-        foreach ($messages as $commentaires):?>
+        foreach (array_reverse($messages) as $commentaires):?>
             <p class="post1"><?= $commentaires["firstname"]?> a envoyé ce message le <?=(new DateTime($commentaires["datemessage"]))->format('d/m/Y H:i:s')?><br><?= $commentaires["message"]?></p><br>
         <?php endforeach; 
         ?>
