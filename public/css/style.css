@@ -30,6 +30,11 @@ form h1, form p {
     justify-content: center;    
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 #lenom, #leprenom, #lusername, #lemessage, #envoi {
     display: flex;
     flex-direction: column;
