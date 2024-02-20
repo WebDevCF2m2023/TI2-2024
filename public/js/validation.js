@@ -9,10 +9,16 @@ const prenomError = document.querySelector("#prenom-error");
 const emailError = document.querySelector("#email-error");
 
 const comments = document.querySelectorAll(".comment");
-comments.forEach(comment=>{
-    if(comment.scrollHeight <= 200) return;
-    comment.classList.add("scrollY");
-})
+addEventListener("resize", (event) => {
+    comments.forEach(comment=>{
+        if(comment.scrollHeight <= 200){
+            comment.classList.remove("scrollY");
+            return;
+        }
+        comment.classList.add("scrollY");
+    })
+});
+
 
 const informationMessage = document.querySelector("#information-message");
 if(informationMessage.classList.length === 0)
