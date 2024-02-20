@@ -123,12 +123,13 @@ h3{
     
 }
 .commentaires h4{
-    color: black;
+    color: #ffff;
     font-weight: bold;
 }
 .commentaires p{
- 
+ color: black;
     margin-top: 10px;
+  
 }
 
 @media  screen and (max-width:480px) {
