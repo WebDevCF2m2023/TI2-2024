@@ -60,7 +60,7 @@
         ?>
         <div class="information">
             <div>                
-                <p><?= (new DateTime($information["datemessage"]))->format('d/m/Y H:i:s')?></p>
+                <p><?= (new DateTime($information["datemessage"]))->format('d/m/Y à H:i')?></p>
                 <p><?= $information["firstname"] ?></p>
             </div>
             <p><?= $information["message"] ?></p>
