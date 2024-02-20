@@ -20,7 +20,7 @@ try {
 } catch (Exception $e) {
     die($e->getMessage());
 }
-$messageError = "test";
+$messageError = "";
 /*
 * Si le formulaire a été soumis
 */
