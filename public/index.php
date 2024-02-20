@@ -10,6 +10,7 @@
 require_once "../config.php";
 // chargement du modèle de la table livreor
 require_once "../model/livreorModel.php";
+require_once "../model/paginationModel.php";
 /*
  * Connexion à la base de données en utilisant PDO
  * Avec un try catch pour gérer les erreurs de connexion
@@ -43,10 +44,19 @@ if(isset($_POST['firstname'],$_POST['lastname'],$_POST['usermail'], $_POST['mess
 /*
  * On récupère les messages du livre d'or
  */
+$totalComments = getNbLivreOr($MyPDO);
+if(!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])){
+  $p = (int) $_GET[PAGINATION_GET_NAME];
+  if($p == 0 || $p > ceil($totalComments / PAGINATION_NB_PAGE)){
+    $p = 1;
+  }
+}else{
+  $p = 1;
+}
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
-$informations = getAllLivreOr($MyPDO);
-
+$informations = getPaginationLivreOr($MyPDO, $p, PAGINATION_NB_PAGE);
+$pagination = PaginationLivreOr("", PAGINATION_GET_NAME, $totalComments, $p, PAGINATION_NB_PAGE);
 // Appel de la vue
 
 include "../view/livreorView.php";
