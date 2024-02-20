@@ -20,7 +20,7 @@
             <div>
                 <h2>Laissez nous un message</h2>
                 <label id="labelPrenom" for="prenom">Prénom *</label>
-                <input type="text" name="prenom" id="prenom">
+                <input type="text" name="prenom" id="prenom" required>
             </div>
             <div>
                 <label for="nom" id="labelNom">Nom</label>
