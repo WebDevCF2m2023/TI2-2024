@@ -1,85 +1,44 @@
 
-document.addEventListener("DOMContentLoaded", function () {
-    var message = document.querySelector("#message");
-    var firstname = document.querySelector("#firstname");
-    var usermail = document.querySelector("#usermail");
-    var form = document.querySelector("form");
+  
+  document.addEventListener("DOMContentLoaded", function () {
     var error = document.querySelector(".error");
-  
-    message.addEventListener("input", function (event) {
-      if (message.validity.valid) {
-        error.innerHTML = "";
-        error.className = "error";
-      }
-    });
-  
-    firstname.addEventListener("input", function (event) {
-      if (firstname.validity.valid) {
-        error.innerHTML = "";
-        error.className = "error";
-      }
-    });
-  
-    usermail.addEventListener("input", function (event) {
-      if (usermail.validity.valid) {
-        error.innerHTML = "";
-        error.className = "error";
-      }
-    });
+    var form = document.querySelector('form[name="formulaire"]');
   
     form.addEventListener("submit", function (event) {
-      if (!usermail.validity.valid) {
-        error.innerHTML = "Veuillez saisir une adresse e-mail valide.";
-        error.className = "error active";
-        event.preventDefault();
-      }
-      if (!firstname.validity.valid) {
-        error.innerHTML =
-          "Le prénom et le nom ne doivent pas dépasser 100 caractères chacun.";
-        error.className = "error active";
-        event.preventDefault();
-      }
-      if (!message.validity.valid) {
+      var message = document.querySelector("#message").value;
+      var firstname = document.querySelector("#firstname").value;
+      var usermail = document.querySelector("#usermail").value;
+  
+      if (!verifMessage(message)) {
         error.innerHTML = "Le message ne doit pas dépasser 600 caractères.";
         error.className = "error active";
         event.preventDefault();
+        return;
+      }
+      if (!verifFirstName(firstname)) {
+        error.innerHTML = "Le prénom ne doit pas dépasser 100 caractères.";
+        error.className = "error active";
+        event.preventDefault();
+        return;
+      }
+      if (!verifEmail(usermail)) {
+        error.innerHTML = "Veuillez saisir une adresse e-mail valide.";
+        error.className = "error active";
+        event.preventDefault();
+        return;
       }
     });
   });
   
-  function validateForm() {
-    var message = document.querySelector("#message").value;
-    var firstname = document.querySelector("#firstname").value;
-    var usermail = document.querySelector("#usermail").value;
-  
-    if (!verifMessage(message)) return false;
-    if (!verifFirstName(firstname)) return false;
-    if (!verifEmail(usermail)) return false;
-  
-    return true;
-  }
-  
   function verifFirstName(firstname) {
-    if (firstname.length > 100) {
-      alert("Le prénom ne doit pas dépasser 100 caractères.");
-      return false;
-    }
-    return true;
+    return firstname.length <= 100;
   }
   
   function verifMessage(message) {
-    if (message.length > 600) {
-      alert("Le message ne doit pas dépasser 600 caractères.");
-      return false;
-    }
-    return true;
+    return message.length <= 600;
   }
   
   function verifEmail(usermail) {
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(usermail)) {
-      alert("Veuillez saisir une adresse e-mail valide.");
-      return false;
-    }
-    return true;
+    return emailRegex.test(usermail);
   }

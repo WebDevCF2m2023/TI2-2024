@@ -32,10 +32,10 @@
             <label for="lastname">Nom </label>
             <input type="text" placeholder="votre nom" name="lastname" id="lastname"><br>
             <label for="usermail">Email*</label>
-            <input type="mail" placeholder="votre mail" name="usermail" id="usermail" required><br>
+            <input type="email" placeholder="votre mail" name="usermail" id="usermail" required><br>
       
             <label for="message">Message*</label><br>
-            <textarea id="message" name="message" rows="6" cols="40" maxlength="600" required></textarea><br>
+            <textarea id="message" name="message" rows="6" cols="40" maxlength="" required></textarea><br>
            <!-- <button onclick="document.getElementById('formulaire').innerHTML =  validateForm()">Envoyer</button>-->
             <span class="error" aria-live="polite"></span>
          <h3>(*) Ce champ est obligatoire</h3>
