@@ -87,7 +87,6 @@ a {
     .field > input, textarea{
         margin-right: 0px;
         border: none;
-        padding: none;
         width: 100%;
     }
 }
