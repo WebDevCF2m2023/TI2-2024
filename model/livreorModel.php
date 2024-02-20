@@ -62,18 +62,18 @@ function getCountLivreOr(PDO $pdo): int
 function getPaginationView(int $currentPage, int $maxpage): string{
 
     if($currentPage != 1)
-        $goBack = '<a href="?p=1">«</a>&nbsp<a href="?'.PREFIX_PAGE.'='.($currentPage - 1).'"><</a>';
-    else $goBack = '<span>«</span><span><</span>';
+        $goBack = '<a href="?p=1">«</a><a href="?'.PREFIX_PAGE.'='.($currentPage - 1).'">&lt;</a>';
+    else $goBack = '<span>«</span><span>&lt;</span>';
 
     if($currentPage != $maxpage)
-        $goAfter = '<a href="?'.PREFIX_PAGE.'='.($currentPage + 1).'">></a>&nbsp<a href="?'.PREFIX_PAGE.'='.$maxpage.'">»</a>';
-    else $goAfter = '<span>></span><span>»</span>';
+        $goAfter = '<a href="?'.PREFIX_PAGE.'='.($currentPage + 1).'">&gt;</a><a href="?'.PREFIX_PAGE.'='.$maxpage.'">»</a>';
+    else $goAfter = '<span>&gt;</span><span>»</span>';
 
     $pagination = "";
     for($i = 1; $i <= $maxpage; ++$i){
         if($i != $currentPage)
-            $pagination .= '&nbsp<a href="?'.PREFIX_PAGE.'='.$i.'">'.$i.'</a>&nbsp';
-        else $pagination .= '&nbsp<span id="currentPage">'.$i.'</span>&nbsp';
+            $pagination .= '<a href="?'.PREFIX_PAGE.'='.$i.'">'.$i.'</a>';
+        else $pagination .= '<span id="currentPage">'.$i.'</span>';
     }
 
     return $goBack.$pagination.$goAfter;

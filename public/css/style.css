@@ -100,7 +100,9 @@ h2{
 .pagination{
     padding-left: 20px;
     font-size: 1.25rem;
-    margin: 1rem
+    margin: 1rem;
+    display: flex;
+    gap: 10px;
 }
 
 .pagination a{

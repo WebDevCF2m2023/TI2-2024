@@ -14,8 +14,12 @@ comments.forEach(comment=>{
     comment.classList.add("scrollY");
 })
 
-function validateForm(){
+const informationMessage = document.querySelector("#information-message");
+if(informationMessage.classList.length === 0)
+    informationMessage.style.display = "none";
 
+function validateForm(){
+    informationMessage.style.display = "none";
     messageError.style.display = "none";
     nomError.style.display = "none";
     prenomError.style.display = "none";

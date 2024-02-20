@@ -63,7 +63,7 @@
                 else if($totalComments === 1) $messageNombreMessage = "Il y a un message écrit";
                 else if($totalComments > 1) $messageNombreMessage = "Il y a $totalComments messages écrits";
             ?>
-            <h2>Message<?= $totalComments > 1 ? "s" : "" ?> précédent : <?=$messageNombreMessage?></h2>
+            <h2>Message<?= $totalComments > 1 ? "s" : "" ?> précédent<?= $totalComments > 1 ? "s" : "" ?> : <?=$messageNombreMessage?></h2>
             <div class="pagination"><?=$pagination?></div>
             <?php foreach($livreOr as $comment): ?>
             <div class="comment">
