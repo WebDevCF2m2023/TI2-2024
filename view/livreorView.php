@@ -12,13 +12,11 @@
 </head>
 <body>
     <div id="title">
-    <h1>Livre d'or</h1>
+        <h1>Livre d'or</h1>
     </div>
-
     <div id="photo">
         <img src="img/email.png" alt="">
     </div>
-
     <form action="" method="POST" class="form" onsubmit="return check()">
         <h1>Laissez-nous un message</h1>
         <div id="leprenom">
@@ -44,7 +42,6 @@
             <input type="submit" value="Envoyer">
         </div>
     </form>  
-
     <div>
         <?php
         if (isset($message)) {
@@ -55,8 +52,7 @@
             <?php
         }
         ?>
-    </div>        
-
+    </div>     
     <section id="informations">
         <h2>Messages Précédents</h2>
         <?php 
@@ -73,7 +69,6 @@
             endforeach;
         ?>
     </section>
-
 <script src="js/validation.js"></script>
 </body>
 </html>
