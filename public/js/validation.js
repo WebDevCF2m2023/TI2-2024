@@ -1,4 +1,5 @@
 const myForm = document.getElementById("myForm");
+const myFormHead = document.getElementById("myFormHead");
 const prenomInput = document.getElementById("prenomInput");
 const nomInput = document.getElementById("nomInput");
 const emailInput = document.getElementById("emailInput");
@@ -12,6 +13,10 @@ const messageLabel = document.getElementById("messageLabel");
 
 
 
+
+myForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+});
 
 /*
 function displayScreenWidth() {
@@ -38,7 +43,11 @@ function validateInputs() {
 
     if (preInp === "" || /\d/.test(preInp) || /[!@#$%^'"/=:.?<>&,;*()_+-]/.test(preInp) || preInp.length > 100) {
         prenomLabel.style.color = "red";
+        myFormHead.style.color = "red";
+        myFormHead.textContent = "Mettez votre prénom";
         goodPre = false;
+
+        return false;
     }else {
         prenomLabel.style.color = "black";
         goodPre = true;
@@ -46,7 +55,11 @@ function validateInputs() {
     
     if (nomInp === "" || /\d/.test(nomInp) || /[!@#$%^'"/=:.?<>&,;*()_+-]/.test(nomInp) || nomInp.length > 100) {
         nomLabel.style.color = "red";
+        myFormHead.style.color = "red";
+        myFormHead.textContent = "Mettez votre nom";
         goodNom = false;
+
+        return false;
     }else {
         nomLabel.style.color = "black";
         goodNom = true;
@@ -54,7 +67,11 @@ function validateInputs() {
 
     if (emailInp === "" || !periodTest || !atSymTest) {
         emailLabel.style.color = "red";
+        myFormHead.style.color = "red";
+        myFormHead.textContent = "Mettez votre email correctement";
         goodEmail = false;
+
+        return false;
     }else {
         emailLabel.style.color = "black";
         goodEmail = true;
@@ -62,7 +79,11 @@ function validateInputs() {
 
     if (messInp === "") {
         messageLabel.style.color = "red";
+        myFormHead.style.color = "red";
+        myFormHead.textContent = "N'oublie pas votre message!!!";
         goodMess = false;
+
+        return false;
     }else {
         messageLabel.style.color = "black";
         goodMess = true;
@@ -70,6 +91,10 @@ function validateInputs() {
 
     if (goodPre && goodNom && goodEmail && goodMess){
         // besoin de savoir comment lancer le POST maintenant
-        alert("Bienvenue " + preInp + " " + nomInp);
+        myFormHead.style.color = "red";
+        myFormHead.textContent = "Votre message a été ajouter. Bonne journée, " + preInp + " " + nomInp;
+        setTimeout(function () {
+        myForm.submit();
+    }, 1999.999999999999999999999999999999999999999999999999999999999);
     }
 }

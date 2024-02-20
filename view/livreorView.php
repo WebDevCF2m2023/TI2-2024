@@ -17,9 +17,9 @@
     <!--  <p id="screenwidth"></p>  -->
         
         <img src="/img/email.png" alt="emailImage" id="emailImg">
-        
+        <h3><?=$messageError?></h3>
     <div class="myFormDiv">
-        <form action="" id="myForm" method="post">
+        <form action="" id="myForm" method="post" onsubmit="validateInputs()">
             <h2 id="myFormHead">Laissez-nous un message</h2>
             <div id="firstName" class="inputDiv">
                 <label for="prenomInput" id = "prenomLabel">Prénom *</label><input type="text" name="firstname" id="prenomInput">
@@ -55,7 +55,7 @@
     endforeach;
     ?>
     </div>
-<!-- <script src="js/validation.js"></script> -->
+<script src="js/validation.js"></script> 
 </body>
 </html>
 

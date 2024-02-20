@@ -20,7 +20,7 @@ try {
 } catch (Exception $e) {
     die($e->getMessage());
 }
-
+$messageError = "test";
 /*
 * Si le formulaire a été soumis
 */
@@ -38,8 +38,6 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['m
     } else {
         // sinon, on affiche un message d'erreur
         $messageError = "Erreur avec l'insertion";
-        var_dump($messageError);
-        exit();
     }
 
 }
