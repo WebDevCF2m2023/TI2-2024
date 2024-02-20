@@ -3,7 +3,7 @@ function validateForm() {
     var message = document.getElementById("message").value;
     var firstname = document.getElementById("firstname").value;
     var lastname = document.getElementById("lastname").value;
-    var email = document.getElementById("email").value;
+    var usermail = document.getElementById("usermail").value;
 
     // Vérification de la longueur du message
     if (message.length > 600) {
@@ -19,7 +19,7 @@ function validateForm() {
 
     // Vérification de l'adresse e-mail
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(usermail)) {
         alert("Veuillez saisir une adresse e-mail valide.");
         return false;
     }

@@ -76,6 +76,13 @@ function addComments(PDO $db, string $usermail, string $message,string $firstnam
     if (empty($usermail) || $usermail === false || empty($message)) {
         return false;
     }
+     // Max 100 de long && Minimum 4 de long
+     if(strlen($firstname) > 100 || strlen($firstname) < 4) return "Le prénom doit avoir minimum 4 caractère et maximum 100.";
+     if(strlen($lastname) !== 0 && (strlen($lastname) > 100 || strlen($lastname) < 4)) return "Le nom doit avoir minimum 4 caractère et maximum 100.";
+    
+     // Max 600 de long et ne peut pas être vide
+     if(mb_strlen($message, "UTF-16") > 600 || empty(trim($message))) return "Le message ne peut pas être vide et ne doit pas dépasser 600 caractère";
+ 
     // on prépare la requête
     $sql = "INSERT INTO `livreor` (`usermail`, `message`,`firstname`,`lastname`) VALUES ('$usermail', '$message','$firstname','$lastname')";
     try {

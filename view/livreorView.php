@@ -27,24 +27,22 @@
         <form action="" method="post" name="formulaire">
            
            
-            <h2>Laissez-nous un message</h2>
+         <h2>Laissez-nous un message</h2>
             <label for="prenom">Prénom* </label>
             <input type="text" placeholder="votre prenom" name="firstname" id="firstname"><br>
             <label for="nom">Nom </label>
             <input type="text" placeholder="votre nom" name="lastname" id="lastname"><br>
             <label for="mail">Email*</label>
-             <input type="mail" placeholder="votre mail" name="usermail" id="usermail"><br>
+            <input type="mail" placeholder="votre mail" name="usermail" id="usermail"><br>
       
             <label for="message">Message*</label><br>
             <textarea id="message" name="message" rows="6" cols="40" maxlength="600"></textarea><br>
+           <!-- <button onclick="document.getElementById('formulaire').innerHTML =  validateForm()">Envoyer</button>-->
         
          <h3>(*) Ce champ est obligatoire</h3>
           
           
-    
-    
-          
-          <input type="submit" value="Envoyer" >
+         <input type="submit" value="Envoyer" >
          
         </form>
          <h4>Messages précédents</h4>
@@ -59,7 +57,7 @@
          </div>
          <?php endforeach?>
          </div>
-         <form onsubmit="return validateForm()"></form>
+         
        
 <script src="js/validation.js"></script>
 </body>
