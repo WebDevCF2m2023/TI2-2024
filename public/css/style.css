@@ -148,12 +148,19 @@ h2{
     }
     main#livreor{
         margin: 0 0 0 10px;
-        width: 98%;
+        width: 97.5%;
     }
     #formSection > div:not(:first-child){
         margin-right: 0px;
     }
     
+}
+
+/* Resize page a la main pour pas que les labels se cassent */
+@media screen and (480px < width < 620px){
+    label{
+        font-size: 0.75rem;
+    }
 }
 
 @media screen and (width <= 480px){
@@ -164,8 +171,8 @@ h2{
         text-align: center;
     }
     main#livreor{
-        margin: 0 0 0 10px;
-        width: 98%;
+        margin: 0;
+        width: 100%;
     }
     #formSection > div:not(:first-child){
         margin-right: 0px;
