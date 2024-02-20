@@ -71,7 +71,7 @@ body {
     overflow: auto; /* Add this */
 }
 
-@media (max-height: 800px) {
+@media (max-height: 600px) {
     .submit-container {
         overflow-y: scroll;
     }
@@ -321,6 +321,7 @@ body {
     margin: 20px 0;
     border: 1px solid #ddd;
     flex-wrap: wrap; /* Add this to allow the pagination items to wrap to a new line if necessary */
+    margin-top: 50px; /* Add a top margin */
 }
 
 .pagination a {
