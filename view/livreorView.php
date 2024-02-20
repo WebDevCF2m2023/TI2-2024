@@ -21,22 +21,22 @@
            
             <div id="lenom">
                 <label for="nom">Nom*</label>
-                <input type="text" name="lastname" id="firstname" require>
+                <input type="text" placeholder="nom" name="lastname" id="firstname" require>
             </div>
             <div id="leprenom">
                 <label for="prenom">Prénom*</label>
-                <input type="text" name="firstname" id="lastname">
+                <input type="text" placeholder="prénom" name="firstname" id="lastname">
             </div>
             <div id="mail">
                 <label for="email">Email* :</label>
-                <input type="email" id="usermail" name="usermail" >
+                <input type="email" placeholder="votre e-mail" id="usermail" name="usermail" >
             </div>
             <div id="lemessage">
                 <label for="msg">Message*</label>
-                <textarea name="message" id="message" cols="30" rows="5" maxlength="600"></textarea>
+                <textarea name="message" placeholder="votre message" id="message" cols="30" rows="5" maxlength="600"></textarea>
             </div>
            <h4>(*) Ce champs est obligatoire </h4>
-           <button type="submit" id="subButton" onclick="return validateForm(event)">S'inscrire</button> 
+           <button type="submit" id="subButton" onclick="return validateForm(event)">Envoyer</button> 
         </div>
     </form>
     <h1>message presedent</h1>
