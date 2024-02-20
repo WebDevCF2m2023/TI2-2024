@@ -14,14 +14,16 @@ function checkFistName() {
 }
 
 function submitForm(e) {
-    var firstName = document.getElementById('#prenom').value;
+    var firstName = document.getElementById('prenom').value;
     var  lastName = document.getElementById('nom').value;
     var email = document.getElementById("email").value;
-      e.preventDefault();
+      
 
-    if (firstName.length <= 100 && lastName.length <=100 && /@/.test(email) && /\./.test(email)) {
+    if (firstName.length <= 100 && firstName.length != 0 && lastName.length <=100 && /@/.test(email) && /\./.test(email)) {
         alert("Envoie reussi !");
     } else {
-        alert("Veuillez remplir tous les critères");
+        alert("Veuillez remplir tous leshhhh critères");
+        return false;
     }
+    return true;
 }

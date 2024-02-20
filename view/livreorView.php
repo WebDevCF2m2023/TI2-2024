@@ -20,7 +20,7 @@
             <div>
                 <h2>Laissez nous un message</h2>
                 <label id="labelPrenom" for="prenom">Prénom *</label>
-                <input type="text" name="prenom" id="prenom" required>
+                <input type="text" name="prenom" id="prenom">
             </div>
             <div>
                 <label for="nom" id="labelNom">Nom</label>
@@ -37,7 +37,6 @@
             <p>(*) Ce champ est obligatoire</p>
             <div>
             <input type="submit" value="Envoyer" id="envoyer" onclick="return submitForm(event)">
-            </div>
             </div>
         </form>
     </div>
