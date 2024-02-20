@@ -64,14 +64,14 @@
                 else if($totalComments > 1) $messageNombreMessage = "Il y a $totalComments messages écrits";
             ?>
             <h2>Message<?= $totalComments > 1 ? "s" : "" ?> précédent<?= $totalComments > 1 ? "s" : "" ?> : <?=$messageNombreMessage?></h2>
-            <div class="pagination"><?=$pagination?></div>
+            <div class="pagination"><?=$pagination/*Si false, echo du vide*/?></div>
             <?php foreach($livreOr as $comment): ?>
             <div class="comment">
-                <p><span class="name"><?=$comment["firstname"]?></span> a envoyé ce message le <?=(new DateTime($comment["datemessage"]))->format("d-m-Y à H\hi")?></p>
-                <p><?=str_replace("\n", "<br>", $comment["message"])?></p>
+                <p><span class="name"><?=htmlspecialchars($comment["firstname"])?></span> a envoyé ce message le <?=(new DateTime($comment["datemessage"]))->format("d-m-Y à H\hi")?></p>
+                <p><?=str_replace("\n", "<br>", htmlspecialchars($comment["message"]))?></p>
             </div>
             <?php endforeach; ?>
-            <div class="pagination"><?=$pagination?></div>
+            <div class="pagination"><?=$pagination/*Si false, echo du vide*/?></div>
         </section>
     </main>
     <footer>

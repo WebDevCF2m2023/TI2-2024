@@ -103,6 +103,7 @@ h2{
     margin: 1rem;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .pagination a{

@@ -60,7 +60,7 @@ function getCountLivreOr(PDO $pdo): int
  * Fonction qui return le système de pagination a implémenter dans la vue.
  */
 function getPaginationView(int $currentPage, int $maxpage): string{
-
+    if($maxpage <= 1) return false; // pas de pagination si il y a 1 page
     if($currentPage != 1)
         $goBack = '<a href="?p=1">«</a><a href="?'.PREFIX_PAGE.'='.($currentPage - 1).'">&lt;</a>';
     else $goBack = '<span>«</span><span>&lt;</span>';
