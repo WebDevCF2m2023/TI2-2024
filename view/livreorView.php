@@ -24,17 +24,20 @@
            
            
          <h2>Laissez-nous un message</h2>
+            <?php if (!empty($submit_message)):?>
+            <p class="<?=$submit_status?>" id="submit-message"><?=$submit_message?></p>
+            <?php endif;?>
             <label for="firstname">Prénom* </label>
-            <input type="text" placeholder="votre prenom" name="firstname" id="firstname"><br>
+            <input type="text" placeholder="votre prenom" name="firstname" id="firstname" required><br>
             <label for="lastname">Nom </label>
             <input type="text" placeholder="votre nom" name="lastname" id="lastname"><br>
             <label for="usermail">Email*</label>
-            <input type="mail" placeholder="votre mail" name="usermail" id="usermail"><br>
+            <input type="mail" placeholder="votre mail" name="usermail" id="usermail" required><br>
       
             <label for="message">Message*</label><br>
-            <textarea id="message" name="message" rows="6" cols="40" maxlength="600"></textarea><br>
+            <textarea id="message" name="message" rows="6" cols="40" maxlength="600" required></textarea><br>
            <!-- <button onclick="document.getElementById('formulaire').innerHTML =  validateForm()">Envoyer</button>-->
-        
+            <span class="error" aria-live="polite"></span>
          <h3>(*) Ce champ est obligatoire</h3>
           
           

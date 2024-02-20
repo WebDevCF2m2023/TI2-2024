@@ -14,7 +14,7 @@
 
 
 function getAllLivreOr(PDO $db):array{
-    $sql = "SELECT * FROM `livreor`";
+    $sql = "SELECT * FROM `livreor`ORDER BY `datemessage` DESC ";
     $query = $db->query($sql);
     $results = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
@@ -22,7 +22,7 @@ function getAllLivreOr(PDO $db):array{
 }
 function getNbLivreOr(PDO $db): int
 {
-    $sql = "SELECT COUNT(*) as nb FROM `livreor` ORDER BY `datemessage` ASC ";
+    $sql = "SELECT COUNT(*) as nb FROM `livreor` ORDER BY `datemessage` DESC ";
     $query = $db->query($sql);
     $result = $query->fetch(PDO::FETCH_ASSOC);
     $query->closeCursor();

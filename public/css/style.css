@@ -4,6 +4,7 @@
         align-items: center;
         background-image: radial-gradient(rgb(80, 79, 79), grey, rgb(238, 238, 152));
     }
+   
     input[type=submit] {
         cursor: pointer;
         align-self: center;
@@ -111,6 +112,8 @@
       
             display: flex;
             flex-direction:column;
+            justify-content: center;
+            padding: 5px;
             border: 5px;
             border-width: 10px;
             align-items: center;
@@ -131,6 +134,7 @@
             margin-right: 20px;
 
           }
+
     }
     
     /* Styles spécifiques pour les écrans entre 480 pixels et 960 pixels de largeur */
