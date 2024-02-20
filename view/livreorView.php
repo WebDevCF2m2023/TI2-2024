@@ -11,11 +11,7 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-      
-        <p><?php 
-       
-        ?></p>
-        <div>
+     
         <?php
     if(isset($pagination)) echo "$pagination<hr>"; 
     echo $pagination ?? null;
@@ -28,11 +24,11 @@
            
            
          <h2>Laissez-nous un message</h2>
-            <label for="prenom">Prénom* </label>
+            <label for="firstname">Prénom* </label>
             <input type="text" placeholder="votre prenom" name="firstname" id="firstname"><br>
-            <label for="nom">Nom </label>
+            <label for="lastname">Nom </label>
             <input type="text" placeholder="votre nom" name="lastname" id="lastname"><br>
-            <label for="mail">Email*</label>
+            <label for="usermail">Email*</label>
             <input type="mail" placeholder="votre mail" name="usermail" id="usermail"><br>
       
             <label for="message">Message*</label><br>

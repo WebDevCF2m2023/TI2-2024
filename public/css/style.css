@@ -82,12 +82,13 @@
     
     h3 {
         text-align: center;
+        color: antiquewhite;
     }
     
     h4 {
         display: flex;
         text-align:center;
-        color: antiquewhite;
+        
     }
     #messages {
     

@@ -32,7 +32,7 @@ function getNbLivreOr(PDO $db): int
 function getPaginationLivreOr(PDO $db, int $currentPage,int $nbPerPage): array
 {
     $offset = ($currentPage-1)*$nbPerPage;
-    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` ASC LIMIT $offset, $nbPerPage ";
+    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` DESC LIMIT $offset, $nbPerPage ";
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
