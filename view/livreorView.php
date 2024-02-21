@@ -31,7 +31,7 @@
                 <label for="emailInput" id="emailLabel">E-mail *</label><input type="text" name="usermail" id="emailInput">
             </div>
             <div class="messageDiv">
-                <label for="message" id="messageLabel">Message * </label>
+                <label for="yourMessageInput" id="messageLabel">Message * </label>
                 
                 <textarea name="message"  id="yourMessageInput" cols="30" rows="10"></textarea>
                 <p class = "messCount"><span id="messLenCount">0</span>/600</p>
@@ -41,21 +41,22 @@
             <h3><?=$messageError?></h3>
                 <button id="sendButton" class="sendBut">Envoyer</button>
             </div>
-            </div>
         </form>
+    </div>
     </div>
 
 
 <div class="prevMessages">
         <h3 id="prevMessHead"><?php if (isset($messageCount) && $messageCount < 1) {
                                         echo "Pas des messages précedent"; 
-                                    }else {
-                                        echo "Messages précedents :" . $messageCount;
-                                        }?> </h3>
+                                    }else if(isset($messageCount) && $messageCount == 1){
+                                        echo "Message précedent :" . $messageCount;
+                                        }else {
+                                            echo "Messages précedents :" . $messageCount;}?> </h3>
         <?php foreach ($messages as $mess) : ?>
             <div class="messageHolder">
                 <h4><span class="italic"><?=$mess["firstname"]?></span> à envoyé ce message le <?=$mess["datemessage"] ?></h4>
-                <p><?= $mess["message"] ?></p>
+                <p><?= wordwrap($mess["message"], 100, "\n", true) ?></p>
             </div>
 <?php
     endforeach;
