@@ -124,6 +124,8 @@ body {
     justify-content: center;
 }
 
+
+
 @media screen and (max-width: 480px) {
 
     #firstName, #lastName, #email{

@@ -10,7 +10,7 @@ const nomLabel = document.getElementById("nomLabel");
 const emailLabel = document.getElementById("emailLabel");
 const messageLabel = document.getElementById("messageLabel");
 const messLenCount = document.getElementById("messLenCount");
-
+const screenwidth = document.getElementById("screenwidth");
 
 
 
@@ -24,12 +24,12 @@ yourMessageInput.addEventListener("input", countLength);
 /*
 function displayScreenWidth() {
     let theWidth = window.innerWidth;
-    document.getElementById("screenwidth").innerHTML = 'The screen width is: ' + theWidth;
+    screenwidth.innerHTML = 'The screen width is: ' + theWidth;
 }
     displayScreenWidth();
     window.addEventListener('resize', displayScreenWidth);
-*/
 
+*/
 function countLength() {
     let messToTest = yourMessageInput.value;
     messLenCount.textContent = messToTest.length;
@@ -61,7 +61,7 @@ function validateInputs() {
     let goodEmail = false;
     let goodMess = false;
 
-    if (preInp === "" || /\d/.test(preInp) || /[!@#$%^'"/=:.?<>&,;*()_+]/.test(preInp) || preInp.length > 100) {
+    if (preInp === "" || /\d/.test(preInp) || /[!@#$%^"/=:.?<>&,;*()_+]/.test(preInp) || preInp.length > 100) {
         prenomLabel.style.color = "red";
         myFormHead.style.color = "red";
         myFormHead.textContent = "Mettez votre prénom";
@@ -73,7 +73,7 @@ function validateInputs() {
         goodPre = true;
     }
     
-    if (nomInp === "" || /\d/.test(nomInp) || /[!@#$%^'"/=:.?<>&,;*()_+]/.test(nomInp) || nomInp.length > 100) {
+    if (nomInp === "" || /\d/.test(nomInp) || /[!@#$%^"/=:.?<>&,;*()_+]/.test(nomInp) || nomInp.length > 100) {
         nomLabel.style.color = "red";
         myFormHead.style.color = "red";
         myFormHead.textContent = "Mettez votre nom";
