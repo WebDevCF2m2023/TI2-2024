@@ -44,7 +44,7 @@
         <div id="bouton">
             <input type="submit" value="Envoyer">
         </div>
-
+        
 
     </form>
 
@@ -60,8 +60,8 @@
     ?>
         <div class="commentaires">
             <h4><?= $commentaire['firstname'] ?> a envoyé ce message le <?= (new DateTime($commentaire['datemessage']))->format('d-m-Y à H\hi') ?></h4>
-            <p><?=$commentaire['message'] ?></p>
-
+            <p><?=wordwrap($commentaire['message'],100,"\n",true) ?></p>
+            
         </div>
     <?php
     endforeach;

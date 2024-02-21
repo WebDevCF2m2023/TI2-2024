@@ -1,5 +1,6 @@
 const formContainer = document.querySelector("#formContainer");
 
+
 function submitForm() {
    
     const prenom = document.querySelector("#firstname").value;
@@ -12,12 +13,20 @@ function submitForm() {
    
     if (prenom.length <= 100 && nom.length <= 100 && message.length <= 600 && /[@]/.test(email)&& /[.]/.test(email)) {
         alert(messageAlerte);
+        resultDiv.textContent = "Insertion réussie !";
+        resultDiv.style.textAlign = "center";
+        resultDiv.style.color = "lightgreen";
+        resultDiv.style.fontWeight = "bold";
+        setTimeout(function () {
+            formContainer.submit();
+        }, 1000);        
         
-        return true;
     } else {
         resultDiv.textContent = "Veuillez remplir tous les critères.";
         resultDiv.style.textAlign = "center";
         resultDiv.style.color = "red";
-        return false;
+        
     }
+
+    return false;
 }
