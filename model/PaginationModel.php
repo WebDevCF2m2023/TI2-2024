@@ -26,7 +26,7 @@ function PaginationModel(string $url, // url (pour garder les autres variables g
     // on commence par le bouton précédent
     if($currentPage===1){
         // pas de liens
-        $sortie.= "<< <";
+        $sortie.= "<span class = 'lienBlanc'><< < </span>";
     }elseif ($currentPage===2) {
         // liens vers l'accueil sans duplicate content (./ = ./?pg=1)
         $sortie.= "<a href='$url'><<</a> <a href='$url'><</a>";
@@ -47,7 +47,7 @@ function PaginationModel(string $url, // url (pour garder les autres variables g
     }
 
     // on termine par le bouton suivant, utilisation d'une ternaire pour remplacer un il et else
-    $sortie.= $currentPage === $nbPage ? "> >>" : "<a href='$url?&$getName=".($currentPage+1)."'>></a> <a href='$url?&$getName=$nbPage'>>></a>";
+    $sortie.= $currentPage === $nbPage ? "<span class = 'lienBlanc'>> >></span>" : "<a href='$url?&$getName=".($currentPage+1)."'>></a> <a href='$url?&$getName=$nbPage'>>></a>";
 
     return $sortie;
 }

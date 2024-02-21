@@ -60,7 +60,7 @@
     ?>
         <div class="commentaires">
             <h4><?= $commentaire['firstname'] ?> a envoyé ce message le <?= (new DateTime($commentaire['datemessage']))->format('d-m-Y à H\hi') ?></h4>
-            <p><?= $commentaire['message'] ?></p>
+            <p><?=$commentaire['message'] ?></p>
 
         </div>
     <?php

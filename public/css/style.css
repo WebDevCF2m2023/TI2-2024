@@ -48,9 +48,15 @@ p a{
   color: white;
   text-decoration: none;
 }
-p a::selection{
+
+p {
   color: #b867c7;
 }
+
+.lienBlanc {
+  color: white;
+}
+
 #titreForm {
   text-align: center;
   margin-bottom: 22px;
