@@ -41,6 +41,7 @@
         <div id="envoi">
             <input type="submit" value="Envoyer">
         </div>
+        <p id="insertmessage"></p>
     </form>  
     <div>
         <?php
@@ -52,9 +53,13 @@
             <?php
         }
         ?>
-    </div>     
-    <section id="informations">
+    </div> 
+    <?php
+    if(isset($pagination)) echo "$pagination<hr>"; 
+    ?>    
+    <section id="informations"> 
         <h2>Messages Précédents</h2>
+        <h2>Il y a <?=$nbComments ?> message(s)</h2>
         <?php 
             foreach($informations as $information):
         ?>
@@ -63,12 +68,15 @@
                 <p><?= (new DateTime($information["datemessage"]))->format('d/m/Y à H:i')?></p>
                 <p><?= $information["firstname"] ?></p>
             </div>
-            <p><?= $information["message"] ?></p>
+            <p><?= wordwrap($information["message"],100,"\n",true) ?></p>
         </div>
         <?php
             endforeach;
         ?>
     </section>
+    <?php
+    if(isset($pagination)) echo "$pagination<hr>"; 
+    ?>
 <script src="js/validation.js"></script>
 </body>
 </html>

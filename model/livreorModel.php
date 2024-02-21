@@ -9,7 +9,7 @@
  * Fonction qui récupère tous les messages du livre d'or par ordre de date croissante
  * venant de la base de données 'ti2web2024' et de la table 'livreor'
  */
-function getAllLivreOr(PDO $db): array
+/*function getAllLivreOr(PDO $db): array
 {
     
     $sql = "SELECT * FROM livreor ORDER BY datemessage DESC";
@@ -18,7 +18,30 @@ function getAllLivreOr(PDO $db): array
     $query->closeCursor();
     return $result;
     
+}*/
+
+// Chargement des commentaires via la pagination
+function getPaginationComments(PDO $db, int $currentPage, int $commentsByPage): array 
+{
+    $offset = ($currentPage-1)*$commentsByPage;
+    // ajouter ici
+    $sql = "SELECT * FROM livreor ORDER BY datemessage DESC LIMIT $offset,$commentsByPage";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+} 
+
+// Chargement de tous les commentaires
+function countComments(PDO $db): int 
+{
+    $sql = "SELECT COUNT(*) AS nb FROM livreor";
+    $query = $db->query($sql);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result['nb'];
 }
+
 
 /**
  * @param PDO $db
