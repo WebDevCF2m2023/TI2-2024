@@ -24,6 +24,6 @@ else if (mess.trim().length === 0 || mess.trim().length>600)
     return false;
   }
 
-  alert("Bienvenue " + nom);
+  alert("Bienvenue " + prenom);
   return true;
 }

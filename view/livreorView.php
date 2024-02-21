@@ -17,7 +17,7 @@
     <main id="livreor">
         <section id="Section1">
             <div>
-                <img src="img/formulairesweb-removebg-preview.png" alt="Image Email" width="400">
+                <img src="img/_124063425_alienwithletter-removebg-preview.png" alt="Image Email" width="450">
             </div>
             <div id="block">
                 <form action="" method="POST">
