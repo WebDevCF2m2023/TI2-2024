@@ -2,11 +2,13 @@
 
 // Front controller
 $content = "livreorView"; // Default page
-
 // Importation de fichiers
 require_once "../config.php"; 
 require_once "../model/livreorModel.php";
 
+// pagination
+require_once "../model/PaginationModel.php";
+// Connexion à la base de donnée en PDO
 // Se connecter à la base de données à l’aide de PDO
 try {
     $db = new PDO(

@@ -45,8 +45,12 @@
     <div class="message-container">
     <?php
 $results = getAllLivreOr($db);
-echo '<div class="comment-title">Message précédents <span style="font-size: 10px;">Il y a ' . count($results) . ' message(s)</span></div>';
 ?>
+
+<?php
+    if(isset($pagination)) echo "$pagination<hr>"; 
+    echo $pagination ?? null;
+    ?>
 <div class="prevMessages">
     <h3 id="prevMessHead">Messages précédents <?php if (isset($messageCount)) echo $messageCount?></h3>
     <?php foreach ($messages as $mess) : ?>
@@ -56,4 +60,4 @@ echo '<div class="comment-title">Message précédents <span style="font-size: 10
         </div>
     <?php endforeach; ?>
 </div>
-?>
+<script  src="/js/validation.js"></script>

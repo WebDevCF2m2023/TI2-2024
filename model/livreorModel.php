@@ -5,6 +5,17 @@ function getAllLivreOr(PDO $db): array
   $result = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
   return $result ?: []; // Return empty array on errors
 }
+
+// fonction qui charge les informations avec pagination
+function getPaginationInformations(PDO $db, int $currentPage,int $nbPerPage): array
+{
+    $offset = ($currentPage-1)*$nbPerPage;
+    $sql = "SELECT * FROM `livreor` ORDER BY `thedate` ASC LIMIT $offset, $nbPerPage ";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
 function addLivreOr(PDO $db, string $firstname, string $lastname, string $message, string $usermail): bool
 {
   $data = [
