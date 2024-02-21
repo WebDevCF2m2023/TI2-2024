@@ -44,10 +44,6 @@
 
     <div class="message-container">
     <?php
-// Define the nl2br() function
-function custom_nl2br($string) {
-    return nl2br($string);
-}
 $results = getAllLivreOr($db);
 echo '<div class="comment-title">Message précédents <span style="font-size: 10px;">Il y a ' . count($results) . ' message(s)</span></div>';
 ?>
