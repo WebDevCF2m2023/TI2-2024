@@ -1,0 +1,189 @@
+.myFormDiv {
+    margin: 0 auto;
+    width: 50%;
+    background-color:  rgb(66, 124, 160);
+
+}
+
+h1 {
+    margin: 0 auto;
+    text-align: center;
+    color:  rgb(66, 124, 160);
+}
+
+img {
+    max-width: 40%;
+    max-height: 40%;
+}
+
+
+form {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.inputDiv {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 0 20px;
+    width: 80%;
+}
+label {
+
+    text-align: left;
+    width: 14%;
+}
+
+.obliged {
+    color: white;
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+input, textarea, button {
+    background-color: rgb(245, 245, 220);
+}
+
+textarea {
+    margin-left: 3.35%;
+    width: 60%;
+    height: 40%;
+}
+
+.messageDiv {
+    width: 107%;  
+    padding: 0 20px;    
+}
+
+.messCount {
+    display: inline-block;
+    width: 45px;
+    margin: 0 0 0 65%;
+
+}
+
+h2 {
+    text-align: center;
+    color: rgb(245, 245, 220);
+}
+
+#firstName, #lastName, #email{
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.1em;
+
+}
+.messageHolder {
+
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: lightslategray 5px 5px;
+    padding: 0 10px;
+    width: 80%;
+}
+
+.prevMessages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sendDiv {
+    width: 28%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.italic {
+    font-style: italic;
+}
+
+input{
+    width: 80%;
+}
+
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mainSection {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+
+    #firstName, #lastName, #email{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.1em;
+    
+    }
+    textarea {
+        width: 80%;
+        height: 40%;
+        margin-left: 0;
+    }
+    .mainSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    label {
+        width: 100%;
+    }
+    *{
+    padding: 0;
+    }
+
+    .messageDiv {
+        width: 95.8%;
+    }
+
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 960px) {
+
+    #firstName, #lastName, #email {
+        max-width: 80%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0.1em;
+    }
+    
+    .mainSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .messageDiv {
+        padding: 0;
+    }
+
+    textarea {
+        margin: 0;
+        width: 60%;
+        height: 40%;
+    }
+    
+    #messageLabel {
+        width: 10%;
+    }
+
+}

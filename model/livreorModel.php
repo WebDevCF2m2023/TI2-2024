@@ -11,7 +11,11 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    return [];
+    $sql = "SELECT * FROM livreor ORDER BY datemessage ASC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result; 
 }
 
 /**
@@ -23,6 +27,7 @@ function getAllLivreOr(PDO $db): array
  * @return bool|string
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
+
 function addLivreOr(PDO $db,
                     string $firstname,
                     string $lastname,
@@ -30,5 +35,29 @@ function addLivreOr(PDO $db,
                     string $message
                     ): bool|string
 {
-    return false;
+    $firstN = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
+    $lastN = htmlspecialchars(strip_tags(trim($lastname)), ENT_QUOTES);
+    $email = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+    $texte = htmlspecialchars(strip_tags(trim($message)),ENT_QUOTES);
+    if (empty($firstN) || empty($lastN) || $email === false || empty($texte)) {
+        return false;
+    }
+
+    $sql = "INSERT INTO `livreor` (`firstname`, `lastname`, `usermail`, `message`) VALUES ('$firstN', '$lastN', '$email', '$texte')";
+    try {
+    $db->exec($sql);
+    return true;
+} catch (Exception $e) {
+    return $e->getMessage();
 }
+}
+
+function countMessages($db){
+
+    $query = $db->query("SELECT COUNT('message') AS nb FROM livreor");
+    $messageCount = $query->fetch();
+    return $messageCount['nb'];
+
+}
+
+
