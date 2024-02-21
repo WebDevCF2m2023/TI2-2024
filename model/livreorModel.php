@@ -9,15 +9,17 @@
  * Fonction qui récupère tous les messages du livre d'or par ordre de date croissante
  * venant de la base de données 'ti2web2024' et de la table 'livreor'
  */
+
+ /* ce function n'est plus utiliser car tout est gerer dans paginationModel()
 function getAllLivreOr(PDO $db): array
 {
-    $sql = "SELECT * FROM livreor ORDER BY datemessage ASC";
+    $sql = "SELECT * FROM livreor ORDER BY datemessage DESC"; 
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
     return $result; 
 }
-
+*/
 /**
  * @param PDO $db
  * @param string $firstname
@@ -63,7 +65,7 @@ function countMessages($db){
 
 
 // fonction utilisateur de pagination au format texte
-function PaginationModel(string $url, // url (pour garder les autres variables get)
+function paginationModel(string $url, // url (pour garder les autres variables get)   - moi, je n'aime pas PascalCase :D
                         string $getName, // le nom de notre variable get de pagination
                         int $nbTotalItem, // le nombre total d'item à afficher
                         int $currentPage=1,  // la page actuelle
@@ -115,7 +117,7 @@ function PaginationModel(string $url, // url (pour garder les autres variables g
 function getPaginationInformations(PDO $db, int $currentPage, int $nbPerPage)
 {
     $offset = ($currentPage - 1) * $nbPerPage;
-    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` ASC LIMIT $offset,$nbPerPage";
+    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` DESC LIMIT $offset,$nbPerPage"; // DESC mis par préférence car ASC mettre toujours le commentaire plus recent sur le dernier page et ça n'est pas user-friendly (avant version pagination, ASC est acceptable car on doit pas navigé pour voir notre nouvelle commentaire) - désolé que vos commentaires ne sont pas en premier ;)
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();

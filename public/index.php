@@ -48,7 +48,7 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['m
 
 
 $messageCount = intval(countMessages($db));
-$messages = getAllLivreOr($db);
+// $messages = getAllLivreOr($db);
 
 if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
     $page = (int) $_GET[PAGINATION_GET_NAME];
@@ -58,7 +58,7 @@ if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME]
 
 $showMessages = getPaginationInformations($db, $page, PAGINATION_NB_PAGE);
 
-$pagination = PaginationModel("./", PAGINATION_GET_NAME, $messageCount, $page, PAGINATION_NB_PAGE);
+$pagination = paginationModel("./", PAGINATION_GET_NAME, $messageCount, $page, PAGINATION_NB_PAGE);
 // var_dump($messageCount);
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 
