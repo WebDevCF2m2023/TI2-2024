@@ -4,12 +4,21 @@
     box-sizing: border-box;
 }
 
+
 body{
     background-color: #FAFAFA;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    background-image: url(../img/space-art-5626853_1280.jpg);
 
 }
+
+#pic{
+    width: 400px;
+    display: flex;
+    flex-direction: space-between;
+   
+}
+
 #block{
     box-shadow: 25px 20px 15px rgba( 108, 196, 23,0.7);
     border: 2px solid rgba( 108, 196, 23);
@@ -21,11 +30,13 @@ body{
     font-weight: bold;
     box-shadow: rgba( 108, 196, 23,0.3);
     padding: .25rem .5rem;
+    margin-bottom: 10px;
 }
 
 .pagination a{
     color: white;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 h1{
@@ -116,6 +127,7 @@ main#livreor{
     text-align: center;
     margin: .5rem 0;
 }
+
 
 h2{
     font-size: 1.2rem;

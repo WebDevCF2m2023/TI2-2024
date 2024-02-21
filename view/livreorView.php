@@ -17,10 +17,10 @@
     <main id="livreor">
         <section id="Section1">
             <div>
-                <img src="img/_124063425_alienwithletter-removebg-preview.png" alt="Image Email" width="450">
+                <img id="pic" src="img/_124063425_alienwithletter-removebg-preview.png" alt="Image Email">
             </div>
             <div id="block">
-                <form action="" method="POST">
+                <form id="myForm" action="" method="POST">
                     <h3>Laissez-nous un message</h3>
 
                     <p id="prenom-error" class="error">* Le prénom doit avoir minimum 4 caractère et maximum 100.</p>
@@ -28,24 +28,24 @@
                     <p id="email-error" class="error">* L'email n'est pas valide.</p>
                     <p id="message-error" class="error">* Le message ne peut pas être vide et ne doit pas dépasser 600 caractère</p>
                     <div>
-                        <label for="prenom">Prénom *</label>
-                        <input type="text" name="prenom" id="prenom">
+                        <label id="prenomColor" for="prenom">Prénom *</label>
+                        <input type="text" placeholder="votre Prenom :" name="prenom" id="prenom" oninput="validateField(this.id, this.value)" required>
                     </div>
                     <div>
-                        <label for="nom">Nom</label>
-                        <input type="text" name="nom" id="nom">
+                        <label id="nomColor" for="nom">Nom</label>
+                        <input type="text" placeholder="Votre Nom :" name="nom" id="nom" oninput="validateField(this.id, this.value)" required>
                     </div>
                     <div>
-                        <label for="email">E-mail *</label>
-                        <input type="email" name="email" id="email" >
+                        <label id="mailColor" for="email">E-mail *</label>
+                        <input type="email" placeholder="Votre email :" name="email" id="email" oninput="validateField(this.id, this.value)" required >
                     </div>
                     <div>
-                        <label for="message">Message *</label>
-                        <textarea name="message" id="message" maxlength="600" ></textarea>
+                        <label id="messageColor" for="message">Message *</label>
+                        <textarea name="message" placeholder="Votre text :" id="message" maxlength="600" oninput="validateField(this.id, this.value)" required></textarea>
                     </div>
                     <p id="obligatoire">(*) Ce champ est obligatoire</p>
                     <div id="Submit">
-                    <button class="btn-donate" type="submit" id="subButton" onclick="return validateForm(event)">Envoyer</button> 
+                    <button class="btn-donate" type="submit" id="subButton" value="submit" onclick="return validateForm(event)">Envoyer</button> 
                     </div>
                     <h3><?php if (empty($livreor)) echo "Pas encore de message" ?></h3>
                     <h3>Il y a <?= $nbInformations ?> messages écrits</h3>
