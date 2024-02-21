@@ -11,47 +11,11 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-<<<<<<< HEAD
     <header>
         <h1>Livre d'or</h1>
     </header>
     <main id="livreor">
         <section id="Section1">
-=======
-    <h1>TI2 | Livre d'or</h1>
-    <div id="pic">
-        <img id="img" src="img/email.png" alt="">
-    </div>
-    <form id="form1" action="" method="post">
-        <div id="lenght">
-            <h1>laissez nous un message</h1>
-            <div id="lenom">
-                <label for="nom">Nom*</label>
-                <input type="text" placeholder="nom" name="lastname" id="firstname" required>
-            </div>
-            <div id="leprenom">
-                <label for="prenom">Prénom</label>
-                <input type="text" placeholder="prénom" name="firstname" id="lastname">
-            </div>
-            <div id="mail">
-                <label for="email">Email* :</label>
-                <input type="email" placeholder="votre e-mail" id="usermail" name="usermail" required >
-            </div>
-            <div id="lemessage">
-                <label for="msg">Message*</label>
-                <textarea name="message" placeholder="votre message" id="message" cols="30" rows="5" maxlength="600" required></textarea>
-            </div>
-           <h4>(*) Ce champs est obligatoire </h4>
-           <button type="submit" id="subButton" onclick="return validateForm(event)">Envoyer</button> 
-        </div>
-    </form>
-    <h1>message précédent</h1>
-    <section id="informations">
-        <?php 
-            foreach(array_reverse($livreor) as $coms):
-        ?>
-        <div class="information">
->>>>>>> c218836432b81a35efc369ef855b4a76896caea7
             <div>
                 <img src="img/formulairesweb-removebg-preview.png" alt="Image Email" width="400">
             </div>
@@ -96,7 +60,7 @@
         endif;
         ?>
         <section>
-            <?php foreach(array_reverse($livreor) as $coms): ?>
+            <?php foreach($livreor as $coms): ?>
             <div class="comment">
                 <p><span class="name"><?=$coms["firstname"]?></span> a envoyé ce message le <?=(new DateTime($coms["datemessage"]))->format("d-m-Y à H\hi")?></p>
                 <p><span id="usercoms"><?=str_replace("\n", "<br>", $coms["message"])?></span></p>

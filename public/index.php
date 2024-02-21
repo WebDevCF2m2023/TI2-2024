@@ -8,13 +8,8 @@
  */
 // chargement de configuration
 require_once "../config.php";
-<<<<<<< HEAD
 require_once "../Model/livreorModel.php";
 require_once "../Model/PaginationModel.php";
-=======
-require_once "../model/livreorModel.php";
-
->>>>>>> c218836432b81a35efc369ef855b4a76896caea7
 // chargement du modèle de la table livreor
 /*
  * Connexion à la base de données en utilisant PDO
