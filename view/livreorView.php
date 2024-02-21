@@ -49,6 +49,15 @@
                     </div>
                     <h3><?php if (empty($livreor)) echo "Pas encore de message" ?></h3>
                     <h3>Il y a <?= $nbInformations ?> messages écrits</h3>
+                    <?php 
+                        if (isset($insert)) {
+                            if ($insert === true) {
+                                echo '<div class="message" id="messageEnregistre">Le message a été enregistré avec succès.</div>';
+                            } else {
+                                echo '<div class="message" id="messageNonEnregistre">Le message n\'a pas été enregistré.</div>';
+                            }
+                        }
+                    ?>
                 </form>
             </div>
         </section>

@@ -190,6 +190,26 @@ h2{
     outline: none;
     box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
   }
+  /* Style de base pour les messages */
+.message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Couleur pour le message enregistré */
+#messageEnregistre {
+   color: rgba( 108, 196, 23);
+   font-size: large;
+}
+
+/* Couleur pour le message non enregistré */
+#messageNonEnregistre {
+   color: red;
+}
+
   
   @media (prefers-reduced-motion: reduce) {
     .btn-donate {

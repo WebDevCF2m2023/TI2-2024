@@ -26,18 +26,8 @@ try {
  */
 
  if (isset($_POST['nom'], $_POST['prenom'],$_POST['email'],$_POST['message'])) {
-
     // on appelle la fonction d'insertion dans la DB
-    $insert = addLivreOr($db, $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['message']);
-    // si l'insertion a réussi
-    if ($insert) {
-        // on redirige vers la page actuelle
-        header("Location: ./");
-        exit();
-    } else {
-        // sinon, on affiche un message d'erreur
-        $message = "Erreur lors de l'insertion";
-    }
+    $insert = addLivreOr($db, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
 }
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
 
