@@ -48,15 +48,20 @@
 
     </form>
 
-    <h3><?php if (empty($commentaires)) echo "Pas encore de message" ?></h3>
+    <h3><?php if (empty($informations)) echo "Pas encore de message" ?></h3>
+
     <h3 id="nbMessage">Il y a <span><?= $nbInformations ?></span> messages écrits</h3>
     <?php
+            if (isset($pagination)) echo "<p>$pagination</p>";
+            ?>
+    <?php
 
-    foreach ($commentaires as $commentaire) :
+    foreach ($informations as $commentaire) :
     ?>
         <div class="commentaires">
             <h4><?= $commentaire['firstname'] ?> a envoyé ce message le <?= (new DateTime($commentaire['datemessage']))->format('d-m-Y à H\hi') ?></h4>
             <p><?= $commentaire['message'] ?></p>
+
         </div>
     <?php
     endforeach;

@@ -63,3 +63,13 @@ function addLivreOr(PDO $db,
     }
    
 }
+
+function getPaginationInformations(PDO $db, int $currentPage, int $nbPerPage): array
+{
+    $offset = ($currentPage - 1) * $nbPerPage;
+    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` ASC LIMIT $offset,$nbPerPage";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
