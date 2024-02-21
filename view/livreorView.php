@@ -37,7 +37,7 @@
         </form>
         <h4>Messages précédents</h4>
         <div id="pagination"> <?=$pagination ?? null?></div>
-	    
+	    >
         <div id="messages">
             
             <?php foreach($informations as $information):?>
