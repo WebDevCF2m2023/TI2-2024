@@ -99,14 +99,14 @@ function addLivreOr(PDO $pdo,
     $firstname = htmlspecialchars(strip_tags(trim($firstname)));
     $lastname = htmlspecialchars(strip_tags(trim($lastname)));
     $usermail = htmlspecialchars(strip_tags(trim($usermail)));
-    $message = htmlspecialchars(strip_tags($message));
+    $message = str_replace("\r", "", htmlspecialchars(strip_tags($message)));
      // Max 100 de long && Minimum 4 de long
     if(strlen($firstname) > 100 || strlen($firstname) < 4) return "Le prénom doit avoir minimum 4 caractère et maximum 100.";
     if(strlen($lastname) !== 0 && (strlen($lastname) > 100 || strlen($lastname) < 4)) return "Le nom doit avoir minimum 4 caractère et maximum 100.";
     // Doit être un email valide
     if(!filter_var($usermail, FILTER_VALIDATE_EMAIL)) return "L'email n'est pas valide.";
     // Max 600 de long et ne peut pas être vide
-    if(mb_strlen($message, "UTF-16") > 600 || empty(trim($message))) return "Le message ne peut pas être vide et ne doit pas dépasser 600 caractère";
+    if(mb_strlen($message, "UTF-8") > 600 || empty(trim($message))) return "Le message ne peut pas être vide et ne doit pas dépasser 600 caractère";
 
     $sql = "INSERT INTO livreor(`firstname`, `lastname`, `usermail`, `message`) VALUES(?, ?, ?, ?)";
     try{
