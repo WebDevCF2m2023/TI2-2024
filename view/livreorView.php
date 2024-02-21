@@ -11,7 +11,47 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
-<script src="js/validation.js"></script>
-</body>
-</html>
+
+    <h1>Livre d'or</h1>
+    <img src="..\img\email.png"  >
+
+    
+    <form action="" method="post" name="formulaire">
+        
+        
+        <h2>Laissez-nous un message</h2>
+        <?php if (!empty($submit_message)):?>
+            <p class="<?=$submit_status?>" id="submit-message"><?=$submit_message?></p>
+            <?php endif;?>
+            <label for="firstname">Prénom* </label>
+            <input type="text" placeholder="votre prenom" name="firstname" id="firstname" required><br>
+            <label for="lastname">Nom </label>
+            <input type="text" placeholder="votre nom" name="lastname" id="lastname"><br>
+            <label for="usermail">Email*</label>
+            <input type="email" placeholder="votre mail" name="usermail" id="usermail" required><br>
+            <label for="message">Message*</label><br>
+            <textarea id="message" name="message" rows="6" cols="40" maxlength="" required></textarea><br>
+            <span class="error" aria-live="polite"></span>
+            <h3>(*) Ce champ est obligatoire</h3>
+            <input type="submit" value="Envoyer" >
+        </form>
+        <h4>Messages précédents</h4>
+        <div id="pagination"> <?=$pagination ?? null?></div>
+	    >
+        <div id="messages">
+            
+            <?php foreach($informations as $information):?>
+                <div class="message">
+                    <h5><?=$information['firstname']?> <?=$information['lastname']?> a envoyé ce message le <?=$information['datemessage']?></h5>
+                    <p><?=$information['message']?></p>
+                    
+                    
+                </div>
+                <?php endforeach?>
+            </div>
+            
+            
+            
+            <script src="js/validation.js"></script>
+        </body>
+        </html>
