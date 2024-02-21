@@ -33,7 +33,7 @@
             <div class="messageDiv">
                 <label for="message" id="messageLabel">Message * </label>
                 
-                <textarea name="message"  id="yourMessageInput" cols="30" rows="10" maxlength="600"></textarea>
+                <textarea name="message"  id="yourMessageInput" cols="30" rows="10"></textarea>
                 <p class = "messCount"><span id="messLenCount">0</span>/600</p>
             </div>
             <p class="obliged">(*) Ce champ est obligatoire</p>
