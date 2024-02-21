@@ -1,111 +1,168 @@
+h1 {
+text-align: center;
+color:rgb(77, 64, 129) ;
+}
+
 body{
-    background: #f8eaea;
-    font-family: Montserrat, "sans-serif";
-    display: flex;
-    justify-content: center;
-    color: #303030;
+    background-color: rgb(236, 203, 151);
 }
 
-div{
-    text-align: center;
-    margin-bottom: 1em;
-    flex-direction: column;
-    block-size: auto;
-    background-position: 2px;
-    justify-content: center;
+
+
+#img{
+display: flex;
+align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
 }
 
-msg{
-    margin-bottom: 1em;
-    justify-content: space-between;
-    flex-direction: column;
-    border: #303030;
-} 
-
-label{
-    text-align: center;
-    background-color: rgb(140, 161, 230);
-    flex-flow:row nowrap;
+form .error{
+    width: 370px;
+    position: relative;
+    font-weight: lighter;
+    bottom: -33px;
+}
+#pic{
+display: flex;
+align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
 }
 
-img{
-    background-position: left;
-
+p{
+    font-weight: bold;
 }
 
-header {
-    text-align: center;
-    color: rgb(135, 135, 209);
-    text-emphasis-color: rgb(95,125,223);
-    flex-flow:row nowrap;
-    border-color:rgb(140, 161, 230);
+label {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
 }
 
-button{
-  min-width: 100px;
-  min-height: 50px;
-  background: white;
-  border: rgba(48, 48, 48, 0.5) solid 1px;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
-  color: #303030;
-}
-
-button:hover{
-    background: #f8f8ff;
-  }
-
-form {
-    text-align: center;
+#form1 {
     display: flex;
     flex-direction: column;
-    flex-direction:center ;
-    background: rgb(102, 130, 223);
-    flex: content;
-    justify-content: center;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: rgb(24, 31, 45);
+    padding: 1em 0;
+    
+   
 }
 
-nom, prenom {
-    text-align: center;
-    justify-content: space-between;
+#lenom, #leprenom, #lemessage,#mail {
     display: flex;
-    align-content: center;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1em;
-    justify-content: space-between;
+    margin-bottom: .5em;
+    align-items: center;
 }
 
-themessage{
-    text-align: center;
-    display: block;
-    margin-bottom: 1em;
-    justify-content: space-between;
+input[type=text], textarea, select,input[type=email], input[type=submit]{
+    width:100%;
     
 }
 
-email{
-    text-align: center;
-    display: block;
-    margin-bottom: 1em;
-    justify-content: space-between;
+#subButton{
+    align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
 }
 
-input [type=submit]{
-    text-align: center;
-    margin-top: 1rem;
+.information:nth-child(odd){
+    background-color: #d4d4d4;
+}
+
+.information{
+    padding: 1rem;
+    border: 1px solid #202020;
+    margin: 2.5rem 0;
+   
+}
+
+.information > div{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
     margin-bottom: 1rem;
-    padding: .5rem 1rem .5rem 1rem;
-    background-size: 300% 100%;
-    background-position: -50% 0%;
-    
+    padding: 0 2rem 1rem 2rem;
+    border-radius: 20px;
+}
+
+.information > div p{
+    flex-grow: 1;
+}
+
+.information > div p:first-child{
+    font-weight: bold;
+}
+
+.information > div p:not(:first-child){
+    text-align: right;
 }
 
 
+/*@media screen and (640px <= width <= 1200px) équivalent à */
+@media screen and (min-width:640px) and (max-width:1200px) {
+    #form1 {
+        background-color: rgb(188, 182, 206);
+    }
+    
+    #lenom, #leprenom,#mail,#lemessage {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+    }
+    
+    #lenom label, #leprenom label, #mail label,#lemessage label{
+        width: 5vw;
+        
+        
+    }
+}
 
-textarea {
-    font: 1em sans-serif;
-    width: 300px;
-    box-sizing: border-box;
+@media screen and (min-width:1201px){
+    #form1 {
+        background-color: rgb(193, 178, 214);
+        
+    }
+    #pic{
+        float: left;
+    }
+    #lenght{
+        width: 80%;
+    }
+    #lenom, #leprenom,#mail,#lemessage {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        text-align: center;
+    }
+    
+    #lenom label, #leprenom label, #mail label, #lemessage label{
+        width: 10vw;
+        text-align: right;
+        margin-right: 0.5em;
+        padding: 0.5em;
+        text-align: center;
+    }
+    
+    #informations{
+        width: clamp(640px , 100% , 1200px);
+        margin: auto;
+        border-radius: 10px;
+}
+h4{
+    text-align: center;
+}
+input[type=text], textarea, select,input[type=email], input[type=submit]{
+    align-items: center;
+    
+}
 }

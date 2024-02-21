@@ -1,27 +1,23 @@
-//syncronisation nom,prenon ,email, message
-fonction verif(){
-    const errorNom = document.querySelector("#error-nom");
-    const errorPrenom = document.querySelector("#error-prenom");
-    const errorEmail = document.querySelector("#error-email");
-    const errorTheMessage = document.querySelector("#error-themessage");
-
-    const nom = document.querySelector("#nom").value;
-    const prenom = document.querySelector("#prenom").value;
-    const email = document.querySelector("#email").value;
-    const themessage = document.querySelector("#themessage").value;
+function validateForm(e) {
+  const form = document.querySelector(".form");
+  const nom = document.getElementById("firstname").value;
+  const prenom = document.getElementById("lastname").value;
+  const mail = document.getElementById("usermail").value;
+  const mess = document.getElementById("message").value;
 
 
+  if (nom.length > 100 || prenom.length > 100||prenom.trim().length==0) {
+    alert("Le nom ou prénom doit avoir au max 100 caractéres");
+    return false;
+  } else if (!/@.*\./.test(mail)) {
+    alert("email doit contenir un @ ");
+    return false;
+  }else if (mess.trim().length === 0 || mess.trim().length>600)
+  {
+    alert("faut au moins 1 character et max 600")
+    return false;
+  }
 
-    const validNom = nom.length > 5;
-    const validePrenom = prenom.length > 5;
-    const validEmail = /@/.test(email)&& /\./test(email);
-
-    let toutestok = true
-//validation de l'email
-if(!validEmail){
-    errorEmail.computedStyleMap.display ="block";
-    toutestok = false;
-
-}
-    
+  alert("Bienvenue " + nom);
+  return true;
 }
