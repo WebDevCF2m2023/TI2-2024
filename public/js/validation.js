@@ -7,6 +7,7 @@
     form.addEventListener("submit", function (event) {
       var message = document.querySelector("#message").value;
       var firstname = document.querySelector("#firstname").value;
+      var lastname = document.querySelector("#lastname").value;
       var usermail = document.querySelector("#usermail").value;
    
       if (!verifMessage(message)) {
@@ -27,6 +28,15 @@
         event.preventDefault();
         return;
       }
+      
+       var fullName = firstname + " " + lastname; // Concaténer prénom et nom
+       if(firstname.length <= 100 && message.length <= 600 &&  /[.]/.test(useremail) && /[@]/.test(useremail) ){
+       alert("Bienvenue " + fullName); // Afficher un message de bienvenue avec le nom complet
+       return true;
+       } else{
+        event.preventDefault();
+       }
+
     
     });
     });
@@ -45,10 +55,11 @@
     return emailRegex.test(usermail);
   }
  // Si toutes les conditions sont respectées
- var fullName = firstname + " " + lastname; // Concaténer prénom et nom
- if(firstname.length <= 100 && message.length <= 600 &&  /[.]/.test(useremail) && /[@]/.test(useremail) ){
- alert("Bienvenue " + fullName); // Afficher un message de bienvenue avec le nom complet
- return true;
-} else{
-  return false;
-}
+ function valideForm(form){
+  if(firstname.length <= 100 && message.length <= 600 &&  /[.]/.test(useremail) && /[@]/.test(useremail) ){
+    alert("Bienvenue " + fullName); // Afficher un message de bienvenue avec le nom complet
+    return true;
+    } else{
+    return false;
+    }
+ }
