@@ -49,13 +49,16 @@
             ?>
             <div id="BlockMessage">
                 <div class="com" id="comm">
-            <h4>Posté le <?=$information['datemessage']?></h4>
-            <p><?=wordwrap($information['message'],100,"\n",true)?></p></div>
+                <h4><?= $information['firstname'] ?> a envoyé ce message le <?= (new DateTime($information['datemessage']))->format('d-m-Y à H\hi') ?></h4>
+            <p> :    <?=wordwrap($information['message'],100,"\n",true)?></p></div></div>
             <?php
             }
             /*endforeach;*/
             ?>
         </section>
+        <?php
+    if(isset($pagination)) echo "$pagination<hr>";
+    ?>
 
     </main>
     <footer>

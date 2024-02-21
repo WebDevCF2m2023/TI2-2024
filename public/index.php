@@ -11,6 +11,7 @@ require_once "../config.php";
 
 // chargement du modèle de la table livreor
 require_once "../model/livreorModel.php";
+require_once "../model/pagination.php";
 /*
  * Connexion à la base de données en utilisant PDO
  * Avec un try catch pour gérer les erreurs de connexion
@@ -30,27 +31,36 @@ require_once "../model/livreorModel.php";
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
     $insert = addLivreOr($MyPDO,$_POST['firstname'],$_POST['lastname'],$_POST['usermail'],$_POST['message']);
     // si l'insertion a réussi
-    if($insert === true){
-    // on redirige vers la page actuelle
-    $message = "Insertion réussie! ";
+ 
+    
+    if ($insert) {
+        // on redirige vers la page actuelle
+        header("Location: ./");
+        exit();
+    } else {
+        // sinon, on affiche un message d'erreur
+        $message = "Erreur lors de l'insertion";
     }
     // sinon, on affiche un message d'erreur
-    else{
-        $message = $insert;
-    }
-    }
      
- 
-// on appelle la fonction de récupération de la DB (getAllLivreOr())
-$informations = getAllLivreOr($MyPDO);
+}
 
-$nbInformations = COUNT($informations);
+
+if(!empty($_GET[PAGE_VAR_GET]) && ctype_digit($_GET[PAGE_VAR_GET])){
+    $page = (int) $_GET[PAGE_VAR_GET];
+}else{
+    $page = 1;
+}
+$nbComments = countComments($MyPDO) ;
+ 
+$pagination = PaginationModel("./",PAGE_VAR_GET,$nbComments,$page,PAGE_BY_PG);
+ 
+// on récupère les commentaires par page
+$informations = getPaginationComments($MyPDO,$page,PAGE_BY_PG);
+
 // fermeture de la connexion
 $MyPDO = null;
 // Appel de la vue
  
 include "../view/livreorView.php";
-
-
-// le stress me fait oublier tout ce que je connais par coeur je me suis mélée tt les pinceaux ya un petit truc qui cloche mais je ne suis pas arriver a le trouver 
-
+    
