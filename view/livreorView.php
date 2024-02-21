@@ -33,17 +33,26 @@
             <div>
                 <label for="message" id="labelMessage">Message *</label>
                 <textarea name="message" id="message" cols="30" rows="10" maxlength="600" required></textarea>
-            </div id="envoi">
+            </div>
             <p>(*) Ce champ est obligatoire</p>
             <div>
             <input type="submit" value="Envoyer" id="envoyer" onclick="return submitForm(event)">
             </div>
         </form>
     </div>
-    <h3>Messages Précédents</h3>
+    <h3 id="listMessages">Messages Précédents - Total de messages <?php echo count($messages); ?></h3>
     <div id="allMessages">
+    
+    <?php
+    if(isset($pagination)) echo "$pagination<hr>"; 
+    echo $pagination ?? null;
+    ?>
+    <?php
+
+if(isset($pagination)) echo "<hr>$pagination"; 
+?>
         <?php 
-        foreach (array_reverse($messages) as $commentaires):?>
+        foreach ($messagesByPage as $commentaires):?>
             <p class="post1"><?= $commentaires["firstname"]?> a envoyé ce message le <?=(new DateTime($commentaires["datemessage"]))->format('d/m/Y H:i:s')?><br><?= $commentaires["message"]?></p><br>
         <?php endforeach; 
         ?>

@@ -21,8 +21,7 @@ img{
     margin: 2em;
     background-color: #427CA0;
     padding: 2em;
-    width: auto;
-    
+    width: auto; 
 }
 
 h2{
@@ -39,6 +38,10 @@ h2{
     margin-top: 0.5em;
 
 }
+#message{
+    resize: none;
+}
+
 #prenom, #nom, #email, #message{
     background-color: #F5F5DC;
     margin-bottom: .5em;
@@ -46,19 +49,29 @@ h2{
 }
 p{
     text-align: center;
-    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
     margin: 1em;
 }
 #envoyer{
     background-color: #F5F5DC;
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     height: 3em;    
+}
+#listMessages{
+    text-align: left;
+    margin-left: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    color: #427CA0;
 }
 
 .post1{
     font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: italic;
     color: rgb(0, 0, 0);
     text-align: left;
     border: 2px solid black;

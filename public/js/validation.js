@@ -27,10 +27,10 @@ function submitForm(e) {
         alert(messageAlerte);
         return true;
     } else {
-        envoyer.textContent = "Veuillez remplir tous les critères";
-        envoyer.style.textAlign = "center";
-        envoyer.style.color = "red";
-        envoyer.styles.fontSize= "25px";
+        envoi.textContent = "Veuillez remplir tous les critères";
+        envoi.style.textAlign = "center";
+        envoi.style.color = "red";
+        envoi.styles.fontSize= "25px";
         return false;
     }
    

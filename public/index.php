@@ -9,6 +9,7 @@
 // chargement de configuration
 require_once ("../config.php");
 require_once ("../model/livreorModel.php");
+require_once ("../model/modelPagination.php");
 // chargement du modèle de la table livreor
 
 /*
@@ -48,6 +49,32 @@ if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) &&
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 $messages= getAllLivreOr($db);
+
+
+$nbMessages = getNumberMessages($db);
+
+/* si il existe une variable $_GET nommée comme MY_PAGINATION_GET et qu'elle
+est un string contenant que les symboles numériques 0123456789 [0-9]* 
+*/
+
+
+if(!empty($_GET[MY_PAGINATION_GET]) && ctype_digit($_GET[MY_PAGINATION_GET])){
+    $page = (int) $_GET[MY_PAGINATION_GET];
+}else{
+    $page = 1;
+}
+
+
+$pagination = ModelPagination("index.php",MY_PAGINATION_GET,$nbMessages,$page,MY_PAGINATION_BY_PAGE);
+
+
+// requête sur la DB (se trouve dans le dossier model car gestion de données)
+// A remplacer par getCountriesByPage
+//$allCountries = getAllCountries($db); // remplacement par getCountriesByPage
+
+$messagesByPage = getMessagesByPage($db,$page,MY_PAGINATION_BY_PAGE);
+
+
 
 
 // fermeture de la connexion
