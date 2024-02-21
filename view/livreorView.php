@@ -59,7 +59,7 @@
                 <p><?= $add["firstname"] ?></p>
                 <p><?=(new DateTime($add["datemessage"]))->format('d-m-Y à H\hi')?></p>
             </div>
-            <p><?= $add["message"] ?></p>
+            <p><?= wordwrap($add["message"], 100, "\r\n", true ) ?></p>
         </div>
         <?php
             endforeach;
