@@ -1,328 +1,234 @@
-
 body {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-    
-}
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* This will center the content vertically */
-    width: clamp(80%, 100%, 100vw); /* width will be at least 80%, at most 100vw, and ideally 100% */
-    margin-top: clamp(-200px, -150px, -100px); /* margin-top will be at least -200px, at most -100px, and ideally -150px */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 
-
+/* Header - Title */
 .title {
-    width: 100%;
-    text-align: center;
-    font-weight: 800;
-    font-size: 50px;
-    color: rgb(59, 65, 70);
-    left: 0;
-    right: 0;
+  text-align: center;
+  padding: 20px;
+  font-size: 5em;
+  color: #0079be;
 }
 
-.comment-title {
-    width: 100%;
-    text-align: center;
-    font-weight: 800;
-    font-size: clamp(30px, 50px, 4vw); /* font-size will be at least 30px, at most 4vw, and ideally 50px */
-    left: 0;
-    right: 0;
-    margin-left: clamp(-550px, -460px, -350px); /* Adjust these values to move the title to the right */
-    margin-top: auto;
-    margin-bottom: auto;
+/* Content Wrapper - Main Sections */
+.content-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
 }
 
-
-
+/* Main Container - Form & Messages */
 .main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: clamp(70vh, 100vh, 100vh); /* height will be at least 70vh, at most 100vh, and ideally 100vh */
+  background-color: #0079be;
+  border-radius: 5px;
+  padding: 20px;
+  width: calc(100% / 3); /* Equal size for all columns
+  (100% / number of columns) */
+  box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.4);
+  width: 50%;
+  
 }
 
+/* Image - Optional Mail Icon */
 .image-mail {
-    width: clamp(200px, 400px, 100%); /* width will be at least 200px, at most 100%, and ideally 400px */
-    height: clamp(200px, 400px, 100%); /* height will be at least 200px, at most 100%, and ideally 400px */
-    flex: 0 0 auto;
-    margin-right: 10px;
-    margin-bottom: clamp(150px, 300px, 100%); /* margin-bottom will be at least 150px, at most 100%, and ideally 300px */
+  width: 100px;
+  max-width: 150px;
+  width: auto; /* Allow proportional scaling */
+  margin: 0 auto 20px; /* Center & maintain margin on wider screens */
 }
 
-
-.form-container {
-    background-color: rgb(65, 64, 63);
-    width: clamp(100vh, 130vh, 100vw); /* width will be at least 100vh, at most 100vw, and ideally 130vh */
-    height: clamp(50vh, 70vh, 100vh); /* height will be at least 50vh, at most 100vh, and ideally 70vh */
-    margin-left: 10px;
-    margin-right: 200px;
+/* Form Container - Contact Form */
+.form-container input[type="text"],
+.form-container input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Form Heading */
 #top-form-message {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 800;
-    color: white;
-    padding-top: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: white;
 }
 
+.h4  {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px black;
+}
+
+/* Submit Button */
 #obligatoire {
-    text-align: center;
-    font-size: 15px;
-    font-weight: 800;
-    color: white;
-    padding-top: 20px;
+  color: red;
+  font-size: 0.8em;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-#helper {
-    text-align: center;
-    font-size: 15px;
-    font-weight: 800;
-    color: white;
-    display: none;
-
-}
-
+/* Input Groups - Form Fields */
 .input-group {
-    display: flex;
-    justify-content: flex-start; /* This will align items to the start of the container */
-    align-items: center;
-    margin-bottom: 20px; /* This will create a 20px gap between each .input-group */
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-.input-group label {
-    width: 100px;
-    margin-right: 100px; /* Adjust this value as needed */
-    margin-left: 20px;
-    font-size: 19px;
-    font-weight: 800;
+label {
+  order: -1;
+  flex: 1 1 auto;
+  font-size: larger;
+  padding: auto;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.input-group input {
-    flex: 0.95; /* This will take the remaining space */
-    background-color:blanchedalmond; 
-    font-weight: 800;
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1em;
 }
 
-.input-group textarea {
-    flex: 0.95; /* This will take the remaining space */
-    height: 150px;
-    max-height: 200px;
-    background-color:blanchedalmond; 
-    font-weight: 800;
+/* Form Textarea */
+.form-container textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  height: 150px;
 }
 
-.submit-container {
-    margin-top: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.messageHolder p  {
+  word-break: break-word;
+  font-size: 1.2em; /* Use relative units for better accessibility */
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  padding: 1rem; /* Use rem units for consistent spacing */
+  margin-bottom: 1rem;
+  color: #333;
+  border-radius: 0.5rem;
+  max-width: 70vw;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Add a subtle box-shadow */
 }
 
+
+
+Scroll to bottom
+
+Copy Link to Shar
+}
+
+/* Submit Button - Form Submission */
 #submit-form {
-    background-color: white;
-    font-size: 20px;
-    font-weight: 800;
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+  background-color: #768286;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+  float: right;
 }
 
-#submit-form:hover {
-    box-shadow: 0 0 10px 0px white;    
-    text-shadow: 0 0 10px white;   
+
+
+/* Responsive Styles (Optional Media Queries) */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  .main-container {
+    width: 100%;
+  }
+  .image-mail {
+    margin: 0 auto;
+  }
+  /* Additional responsive adjustments as needed */
 }
 
 .message-container {
-    position: relative; /* Make this a positioning context for absolute positioning */
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.message-header,
+.message-body {
+  overflow-wrap: break-word;
+  border: 1px solid black;
+  /* Styles for specific parts within the comment box */
+}
+.comment-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
 .content-message {
-    background-color: #f0f0f0; /* Light gray background */
-    margin-bottom: clamp(10px, 20px, 2vw); /* margin-bottom will be at least 10px, at most 2vw, and ideally 20px */
-    padding: 10px; /* Space inside the message */
-    border-radius: 5px; /* Rounded corners */
-    width: clamp(60%, 80%, 90%); /* width will be at least 60%, at most 90%, and ideally 80% */
-    margin-left: auto;
-    margin-right: auto;
-
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .message-header {
-    font-weight: bold; /* Make the header bold */
-    margin-bottom: 10px; /* Space between the header and the body */
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .message-body {
-    word-wrap: break-word;
-    line-height: 1.5em; 
-    /* No specific styles needed for the body, but you can add if you want */
+  font-size: 1em;
 }
-
-
-
-
-
 
 @media screen and (max-width: 480px) {
-    /* CSS rules for screens 480px or smaller go here */
-    
-    .content-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .title {
-        margin-bottom: 90px;
-        font-size: 30px; /* reduce font size for smaller screens */
-    }
-
-    .main-container {
-        flex-direction: column;
-     }
-
-    .image-mail {
-        width: 40%; /* make image take full width */
-        height: auto; /* maintain aspect ratio */
-        margin-bottom: 0px; /* reduce margin-bottom */
-    }
-
-    .form-container {
-        width: clamp(70%, 90%, 100%); /* width will be at least 70%, at most 100%, and ideally 90% */
-        height: clamp(50%, 65%, 80%); /* height will be at least 50%, at most 80%, and ideally 65% */
-        margin-right: 0; /* remove right margin */
-        padding-bottom: 30px; /* add some bottom padding */
-    }
-
-
-
-    .input-group {
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 10px;
-    }
-
-    .input-group label {
-        margin-right: 0; /* remove right margin */
-        margin-left: 0; /* remove left margin */
-        font-size: 19px;
-    }
-
-    .input-group input {
-        flex: 1; /* This will take the remaining space */
-        font-weight: 800;
-        width: 95%; /* This will make the input wider */
-    }
-
-    .input-group textarea {
-        flex: 1; /* This will take the remaining space */
-        min-height: 80px; /* Ensure the textarea has at least this height */
-        max-height: 200px; /* Increase the max-height */
-    
-        font-weight: 800;
-        width: 95%; /* This will make the textarea wider */
-    }
-
-    .content-message {
-        width: 90%; /* increase width */
-    }
-
-    .comment-title {
-        font-size: clamp(15px, 20px, 2vw); /* font-size will be at least 15px, at most 2vw, and ideally 20px */
-        margin-left: clamp(-80px, -75px, -70px); /* margin-left will be at least -100px, at most -70px, and ideally -85px */
-    }
-
-    textarea {
-        resize: none;
-      }
-
-      #submit-form {
-
-        width: 300px;
-
-    }
-
-}
-
-@media screen and (min-width: 481px) and (max-width: 960px) {
-
-
-
-    .content-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .title {
-        margin-bottom: 120px;
-        font-size: 30px; /* reduce font size for smaller screens */
-    }
-
-    .main-container {
-        flex-direction: column;
-     }
-
-    .image-mail {
-        width: 40%; /* make image take full width */
-        height: auto; /* maintain aspect ratio */
-        margin-bottom: 0px; /* reduce margin-bottom */
-    }
-
-    .form-container {
-        width: clamp(100%, 145%, 100vw); /* width will be at least 100%, at most 100vw, and ideally 145% */
-        height: clamp(50%, 65%, 100vh); /* height will be at least 50%, at most 100vh, and ideally 65% */
-        margin-right: 0; /* remove right margin */
-    }
-
-    .input-group label {
-        margin-right: 20px; /* reduce margin-right */
-        font-size: 19px; /* reduce font size */
-    }
-
-    .content-message {
-        width: 90%; /* increase width */
-    }
-
-    .comment-title {
-        font-size: clamp(15px, 20px, 2vw); /* font-size will be at least 15px, at most 2vw, and ideally 20px */
-        margin-left: clamp(-300px, -260px, -200px); /* margin-left will be at least -300px, at most -200px, and ideally -260px */
-    }
-
-    textarea {
-        resize: none;
-      }
-}
-
-.pagination {
+  #firstName, #lastName, #email {
+    max-width: 100%;
     display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    border: 1px solid #ddd;
+    flex-direction: column;
+    margin-bottom: 0.1em;
+  }
+
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  * {
+    padding: 0;
+  }
+
+  .messageDiv {
+    width: 95.8%;
+  }
 }
 
-.pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    margin: 0 4px;
-}
+@media screen and (min-width: 480px) and (max-width: 960px) {
 
-.pagination a.active {
-    background-color: #4CAF50;
-    color: white !important;
-    border: 1px solid #4CAF50;
+  #firstName, #lastName, #email, .messageDiv {
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.1em;
+  }
+
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
