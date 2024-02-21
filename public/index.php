@@ -11,6 +11,9 @@ require_once "../config.php";
 // chargement du modèle de la table livreor
 
 require_once "../model/livreorModel.php";
+require_once "../model/commentsModel.php";
+require_once "../model/paginationModel.php";
+
 
 /*
  * Connexion à la base de données en utilisant PDO
@@ -39,6 +42,18 @@ if(isset($_POST['usermail'],$_POST['message'],$_POST['firstname'],$_POST['lastna
     }else{
         $message = "Erreur lors de l'insertion";
       } }
+
+// on récupère le nombre total de pays
+$nbComments = getNumberComments($MyPDO);
+
+if (!empty($_GET[MY_PAGINATION_BY_PAGE]) && ctype_digit($_GET[MY_PAGINATION_BY_PAGE])) {
+    $page = (int) $_GET[MY_PAGINATION_BY_PAGE];
+} else {
+    $page = 1;
+}
+
+// remplacement par getCommentsByPage
+$pagination = getAllComments($MyPDO); 
 /*
  * On récupère les messages du livre d'or
  */

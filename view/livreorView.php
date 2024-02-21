@@ -48,6 +48,13 @@
 
 </form>
 
+<h3><?php if (empty($comments)) echo "Pas encore de message" ?></h3>
+
+    <h3 id="nbMessage">Il y a <span><?= $nbComments?></span> messages écrits</h3>
+    <?php
+            if (isset($pagination)) echo "<p>$pagination</p>";
+            ?>
+
 <h2 class='last'>Messages précédents</h2>
 <section id="comments">
         <?php 
