@@ -19,7 +19,7 @@
         <img src="/img/email.png" alt="emailImage" id="emailImg">
         <h3><?=$messageError?></h3>
     <div class="myFormDiv">
-        <form action="" id="myForm" method="post" onsubmit="validateInputs()">
+        <form id="myForm" method="post" onsubmit="validateInputs()">
             <h2 id="myFormHead">Laissez-nous un message</h2>
             <div id="firstName" class="inputDiv">
                 <label for="prenomInput" id = "prenomLabel">Prénom *</label><input type="text" name="firstname" id="prenomInput">
@@ -45,7 +45,7 @@
         </form>
     </div>
 
-</div>
+
 <div class="prevMessages">
         <h3 id="prevMessHead"><?php if (isset($messageCount) && $messageCount < 1) {
                                         echo "Pas des messages précedent"; 
@@ -54,7 +54,7 @@
                                         }?> </h3>
         <?php foreach ($messages as $mess) : ?>
             <div class="messageHolder">
-                <h4><span class="italic"><?=$mess["firstname"]?></span> à envoyé ce message le <?=$mess["datemessage"] ?></h2>
+                <h4><span class="italic"><?=$mess["firstname"]?></span> à envoyé ce message le <?=$mess["datemessage"] ?></h4>
                 <p><?= $mess["message"] ?></p>
             </div>
 <?php
