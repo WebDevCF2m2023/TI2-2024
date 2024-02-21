@@ -23,21 +23,21 @@
                 <p id="error-nom" class="error">* Le prenom et le nom doit faire au moins 5 caractères</p>
                 <div>
                     <label for="prenom">prenom * </label>
-                    <input type="text" name="theprenom" id="prenom" required>
+                    <input type="text" name="firstname" id="firstname" required>
                 </div>
                 <div>
                     <label for="nom">Nom : </label>
-                    <input type="text" name="thenom" id="nom" required>
+                    <input type="text" name="lastname" id="lastname" required>
                 </div>
 
             <p id="error-email" class="error">* L'email doit avoir un @ et un .</p>
             <div>
                 <label for="email">Votre email *</label>
-                <input type="email" name="themail" id="email" required>
+                <input type="email" name="usermail" id="usermail" required>
             </div>
             <p>* Le message ne doit pas être vide</p>
             <label for="message" id="msg">Message *</label>
-            <textarea name="themessage" id="themessage" maxlength="2050" required></textarea>
+            <textarea name="message" id="message" maxlength="2050" required></textarea>
             <div>
                 <input type="submit" value="Envoyer" id="sub">
             </div>
@@ -50,7 +50,7 @@
             <div id="BlockMessage">
                 <div class="com" id="comm">
             <h4>Posté le <?=$information['datemessage']?></h4>
-            <p><?=$information['message']?></p></div>
+            <p><?=wordwrap($information['message'],100,"\n",true)?></p></div>
             <?php
             }
             /*endforeach;*/

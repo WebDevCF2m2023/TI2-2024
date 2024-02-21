@@ -11,7 +11,7 @@
         <p id="error" class="error">* completer les champs</p>
         <div>
             <label for="nom">Votre email :</label>
-            <input type="email" name="email" id="mail" min="0" max="120">
+            <input type="email" name="usermail" id="usermail" min="0" max="120">
         </div>
         <input type="submit" value="Confirmer">
     </form>
