@@ -16,8 +16,15 @@
         <h1>LIVRE D'OR</h1>
     </header>
     <main>
+        <?php 
+        if (isset($message)):
+        ?>
+        <p><?php echo $message;?>
+        <?php
+        endif
+        ?>
         <img src="img/email.png" alt="fig1">
-        <form action="" method="POST" onsubmit="return verif()">
+        <form action="" method="POST" onsubmit="return submitForm()">
             <p id="error-password" class="error">
             <div>
                 <h2> Laisse nous un message</h2>
@@ -41,7 +48,7 @@
             </div>
         </form>
 
-    <script src="../public/js/validation.js"></script>
+    <script src="/js/validation.js"></script>
 
     </form>
 

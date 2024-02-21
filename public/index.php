@@ -22,10 +22,10 @@ try {
 /*
  * Si le formulaire a été soumis
  */
-if (isset($_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['message'])) {
+if (isset($_POST['thepassword'],$_POST['thenom'] ,$_POST['themail'], $_POST['themessage'])) {
  
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
-    $insert = addLivreOr($MyPDO,$_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['message']);
+    $insert = addLivreOr($MyPDO,$_POST['thepassword'],$_POST['thenom'] ,$_POST['themail'], $_POST['themessage']);
  
     //Si on obtient une erreur
     if ($insert === true) $message = "Insertion réussie";
@@ -48,7 +48,7 @@ if (isset($_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['me
 /*
  * On récupère les messages du livre d'or
  */
-$commentaires =  getAllInformations($MyPDO);
+$commentaires =   getAllLivreOr($MyPDO);
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 // fermeture de la connexion
 $MyPDO = null;

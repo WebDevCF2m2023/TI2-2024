@@ -9,18 +9,14 @@
  * Fonction qui récupère tous les messages du livre d'or par ordre de date croissante
  * venant de la base de données 'ti2web2024' et de la table 'livreor'
  */
-function getAllInformations(PDO $pdo): array{
-    $sql = "SELECT * FROM livreor";
-    $statement = $pdo->query($sql);
-
-    if($statement === false) return []; // Cas de figure qui ne devrais pas arriver
-
-    $livreor = $statement->fetchAll(PDO::FETCH_ASSOC);
-    $statement->closeCursor(); // Bonne pratique
-
-    return $livreor;  
+function getAllLivreOr(PDO $db): array
+{
+    $sql = "SELECT * FROM livreor ORDER BY datemessage DESC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
 }
-
 
 
 /**
@@ -61,5 +57,24 @@ function addLivreOr(PDO $db,
                     string $message
                     ): bool|string
 {
-    return false;
+    $firstname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
+    $lastname = htmlspecialchars(strip_tags(trim($lastname)), ENT_QUOTES);
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+    $message = htmlspecialchars(strip_tags(trim($message)), ENT_QUOTES);
+
+    // si les données ne sont pas valides ou vide, cela retourne une erreur
+    if (empty($firstname) || empty($lastname)  || $usermail === false || empty($message)) {
+        return false;
+    }
+//requete sql pour insérer dans les données dans la table livreor
+    $sql = "INSERT INTO `livreor` (`firstname`,`lastname`,`usermail`,`message`) VALUES ('$firstname','$lastname','$usermail','$message')";
+
+    //Cela tente d'executer la requete sql, si ça réussit, ça retourne true sinon, cela retourne un message d'erreur
+    try {
+        $db->exec($sql);
+        return true;
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+   
 }
