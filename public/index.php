@@ -66,7 +66,7 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['us
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 
-$informations = getAllLivreOr($db);
+$informationsAll = getAllLivreOr($db);
 $nbInformations = getNbInformations($db);
 
 
