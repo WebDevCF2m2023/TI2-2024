@@ -38,7 +38,10 @@
             <div class="error"></div>
         <h4>Messages précédents</h4>
         <div id="nbMessages">Il y a <?=$totalComments?> messages écrits.</div>
-        <div id="pagination"> <?=$pagination ?? null?></div>
+        <div id="pagination">
+        <?=$pagination ?? null?>
+        </div>
+         
 	    
 
         <div id="messages">
