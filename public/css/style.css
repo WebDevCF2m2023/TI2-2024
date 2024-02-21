@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     margin: 0;
     padding: 0;
@@ -13,6 +14,29 @@ body{
 #block{
     box-shadow: 25px 20px 15px rgba(61, 49, 49, 0.7);
     border: 2px solid rgb(9, 216, 168);
+=======
+h1 {
+text-align: center;
+color:rgb(3, 39, 243) ;
+
+}
+#img{
+display: flex;
+align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+#pic{
+display: flex;
+align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
+>>>>>>> c218836432b81a35efc369ef855b4a76896caea7
 }
 
 .pagination{
@@ -159,6 +183,7 @@ h2{
     font-size: medium;
 }
 
+<<<<<<< HEAD
 .btn-donate {
     --clr-font-main: hsla(0 0% 20% / 100);
     --btn-bg-1: hsla(235 100% 90% /1);
@@ -283,6 +308,29 @@ h2{
     margin: .2rem 0;
     padding-left: 10px;
     display: none;
+=======
+#lenom, #leprenom, #lemessage,#mail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+input[type=text], textarea, select,input[type=email], input[type=submit]{
+    width:100%;
+}
+
+#subButton{
+    align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+.information:nth-child(odd){
+    background-color: #d4d4d4;
+>>>>>>> c218836432b81a35efc369ef855b4a76896caea7
 }
 
 .success{
