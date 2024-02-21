@@ -33,7 +33,7 @@
             <div>
                 <label for="message" id="labelMessage">Message *</label>
                 <textarea name="message" id="message" cols="30" rows="10" maxlength="600" required></textarea>
-            </div>
+            </div id="envoi">
             <p>(*) Ce champ est obligatoire</p>
             <div>
             <input type="submit" value="Envoyer" id="envoyer" onclick="return submitForm(event)">
