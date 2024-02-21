@@ -89,7 +89,15 @@
         h4 {
         display: flex;
         text-align:center;
+        font-size: 1.3em;
         
+       }
+       #nbMessages{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.3em;
+        color: #0d1001;
+        font-style: oblique;
+        font-weight: bold;
        }
        #messages {
     

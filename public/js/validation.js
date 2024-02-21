@@ -30,7 +30,7 @@
       }
       
        var fullName = firstname + " " + lastname; // Concaténer prénom et nom
-       if(firstname.length <= 100 && message.length <= 600 &&  /[.]/.test(useremail) && /[@]/.test(useremail) ){
+       if(firstname.length <= 100 && message.length <= 600 &&  /[.]/.test(usermail) && /[@]/.test(usermail) ){
        alert("Bienvenue " + fullName); // Afficher un message de bienvenue avec le nom complet
        return true;
        } else{
