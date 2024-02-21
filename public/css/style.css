@@ -1,0 +1,92 @@
+h1 {
+    text-align: center;
+    color: rgb(33, 119, 218);
+}
+div#formulaire {
+    display: flex;
+    flex-direction: row;
+}
+#formulaire > img {
+    width: 400px;
+    height: 400px;
+}
+#formulaire > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 800px;
+    background-color: rgb(33, 119, 218);
+    color: white;
+}
+.field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.field > label {
+    width: 150px;
+    color: black;
+    font-size: 1.5em;
+}
+.field > input, textarea {
+    width: 80%;
+    margin-right: 10px;
+}
+textarea {
+    height: 200px;
+}
+input[type=submit]{
+    width: 300px;
+    height: 40px;
+    font-size: 1.2em;
+}
+a {
+    color: rgb(33, 119, 218);
+}
+#messages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#messages > h2{
+    align-self: flex-start;
+}
+.message {
+    width: 90%;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+}
+.message > h3, .message > p {
+    margin-left: 10px;
+}
+.valid {
+    color: rgb(0, 58, 0);
+}
+.not-valid {
+    color: red;
+}
+@media (max-width: 960px){
+    div#formulaire {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 480px){
+    #formulaire > form {
+        align-items: center;
+    }
+    .field {
+        flex-direction: column;
+        width: 90%;
+    }
+    .field > input, textarea{
+        margin-right: 0px;
+        border: none;
+        width: 100%;
+    }
+}
