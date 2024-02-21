@@ -42,7 +42,7 @@ function addLivreOr(PDO $db,
     if (empty($firstN) || empty($lastN) || $email === false || empty($texte)) {
         return false;
     }
-    // on prépare la requête
+
     $sql = "INSERT INTO `livreor` (`firstname`, `lastname`, `usermail`, `message`) VALUES ('$firstN', '$lastN', '$email', '$texte')";
     try {
     $db->exec($sql);
@@ -51,3 +51,13 @@ function addLivreOr(PDO $db,
     return $e->getMessage();
 }
 }
+
+function countMessages($db){
+
+    $query = $db->query("SELECT COUNT('message') AS nb FROM livreor");
+    $messageCount = $query->fetch();
+    return $messageCount['nb'];
+
+}
+
+

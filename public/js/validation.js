@@ -9,6 +9,7 @@ const prenomLabel = document.getElementById("prenomLabel");
 const nomLabel = document.getElementById("nomLabel");
 const emailLabel = document.getElementById("emailLabel");
 const messageLabel = document.getElementById("messageLabel");
+const messLenCount = document.getElementById("messLenCount");
 
 
 
@@ -18,14 +19,33 @@ myForm.addEventListener('submit', function(event) {
     event.preventDefault();
 });
 
-/*
+yourMessageInput.addEventListener("input", countLength);
+
+
 function displayScreenWidth() {
     let theWidth = window.innerWidth;
     document.getElementById("screenwidth").innerHTML = 'The screen width is: ' + theWidth;
 }
     displayScreenWidth();
     window.addEventListener('resize', displayScreenWidth);
-*/
+
+
+function countLength() {
+    let messToTest = yourMessageInput.value;
+    messLenCount.textContent = messToTest.length;
+    if (messToTest.length > 6){
+        messageLabel.style.color = "red";
+        myFormHead.style.color = "red";
+        myFormHead.textContent = "Votre Message est trop long";
+        sendButton.style.display = "none";
+    }
+    else {
+        messageLabel.style.color = "";
+        myFormHead.style.color = "";
+        myFormHead.textContent = "Laissez-nous un message";
+        sendButton.style.display = "initial";
+    }
+}
 
 function validateInputs() {
     let preInp = prenomInput.value;
