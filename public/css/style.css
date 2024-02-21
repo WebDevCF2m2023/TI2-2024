@@ -18,17 +18,21 @@ body{
     flex-direction: space-between;
    
 }
+#Section1 #nomColor{
+    color: rgba( 108, 196, 23);
+}
 
 #block{
-    box-shadow: 25px 20px 15px rgba( 108, 196, 23,0.7);
+    box-shadow: 25px 10px 15px rgba( 108, 196, 23,0.5);
     border: 2px solid rgba( 108, 196, 23);
+    
 }
 
 .pagination{
     display: flex;
     gap: 10px;
     font-weight: bold;
-    box-shadow: rgba( 108, 196, 23,0.3);
+    box-shadow: rgba( 108, 196, 23);
     padding: .25rem .5rem;
     margin-bottom: 10px;
 }
@@ -56,6 +60,7 @@ main#livreor{
 
 #Section1{
     display: flex;
+
     
    
 }
@@ -70,7 +75,7 @@ main#livreor{
 #Section1 h3{
     text-align: center;
     color: #ffffff;
-    font-weight: bold;
+    font-weight: bolder;
     margin: .5rem 0;
 }
 
@@ -79,7 +84,7 @@ main#livreor{
 }
 
 #Section1 label{
-    color: #ffffff;
+    color:red;
     display: inline-block;
     width: 15%;
     padding-left: 10px;
@@ -106,7 +111,7 @@ main#livreor{
 }
 
 #Section1 button[type='submit']{
-    border: 1px solid rgb(75, 85, 188);
+    border: 1px solid rgba( 108, 196, 23);
     color: #fffefe;
     width: 190px;
     font-size: 1rem;
@@ -143,7 +148,7 @@ h2{
 }
 
 .comment{
-    border: 2px solid rgb(75, 85, 188);
+    border: 2px solid rgba( 108, 196, 23);
    /* box-shadow: 10px 10px 10px rgba(75, 85, 188,0.5);*/
     margin: 1rem;
     padding: 1rem .5rem;
@@ -252,7 +257,7 @@ h2{
     }
     #block{
         border-radius: 15px;
-        margin: 10px  ;
+       
     }
 }
 
@@ -269,6 +274,7 @@ h2{
     }
     #Section1 div:first-child{
         text-align: center;
+        
     }
     main#livreor{
         margin: 0;
@@ -305,7 +311,7 @@ h2{
     }
     #block{
         border-radius: 15px;
-        margin: 10px  ;
+        
     }
 }
 

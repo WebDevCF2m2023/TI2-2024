@@ -28,21 +28,21 @@
 }*/
 
 
-function validateField(fieldId, value) {
-  let label = document.querySelector('label[for="' + fieldId + '"]');
+function changeColor(Id, value) {
+  let label = document.querySelector('label[for="' + Id + '"]');
   let isValid = false; 
   
  
-  if (fieldId === 'nom' || fieldId === 'prenom') {
-    isValid = value.length > 1 && value.length <= 100;
+  if ( Id === 'prenom') {
+    isValid = value.length >= 1 && value.length <= 100;
   }
   
-  else if (fieldId === 'email') {
+  else if (Id === 'email') {
     isValid = value.includes('@') && value.includes('.') && value.length > 0;
   }
   
-  else if (fieldId === 'message') {
-    isValid = value.length > 1 && value.length <= 600;
+  else if (Id === 'message') {
+    isValid = value.length >= 1 && value.length <= 600;
   }
   
   

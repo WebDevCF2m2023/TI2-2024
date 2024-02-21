@@ -28,20 +28,20 @@
                     <p id="email-error" class="error">* L'email n'est pas valide.</p>
                     <p id="message-error" class="error">* Le message ne peut pas être vide et ne doit pas dépasser 600 caractère</p>
                     <div>
-                        <label id="prenomColor" for="prenom">Prénom *</label>
-                        <input type="text" placeholder="votre Prenom :" name="prenom" id="prenom" oninput="validateField(this.id, this.value)" required>
+                        <label id="prenomColor" for="prenom">Prenom *</label>
+                        <input type="text" placeholder="votre Prenom :" name="prenom" id="prenom" oninput="changeColor(this.id, this.value)" required>
                     </div>
                     <div>
                         <label id="nomColor" for="nom">Nom</label>
-                        <input type="text" placeholder="Votre Nom :" name="nom" id="nom" oninput="validateField(this.id, this.value)" required>
+                        <input type="text" placeholder="Votre Nom :" name="nom" id="nom" >
                     </div>
                     <div>
                         <label id="mailColor" for="email">E-mail *</label>
-                        <input type="email" placeholder="Votre email :" name="email" id="email" oninput="validateField(this.id, this.value)" required >
+                        <input type="email" placeholder="Votre email :" name="email" id="email" oninput="changeColor(this.id, this.value)" required >
                     </div>
                     <div>
                         <label id="messageColor" for="message">Message *</label>
-                        <textarea name="message" placeholder="Votre text :" id="message" maxlength="600" oninput="validateField(this.id, this.value)" required></textarea>
+                        <textarea name="message" placeholder="Votre text :" id="message" maxlength="600" oninput="changeColor(this.id, this.value)" required></textarea>
                     </div>
                     <p id="obligatoire">(*) Ce champ est obligatoire</p>
                     <div id="Submit">
