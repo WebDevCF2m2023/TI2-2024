@@ -1,0 +1,168 @@
+h1 {
+text-align: center;
+color:rgb(77, 64, 129) ;
+}
+
+body{
+    background-color: rgb(236, 203, 151);
+}
+
+
+
+#img{
+display: flex;
+align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+form .error{
+    width: 370px;
+    position: relative;
+    font-weight: lighter;
+    bottom: -33px;
+}
+#pic{
+display: flex;
+align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+p{
+    font-weight: bold;
+}
+
+label {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+
+#form1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: rgb(24, 31, 45);
+    padding: 1em 0;
+    
+   
+}
+
+#lenom, #leprenom, #lemessage,#mail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: .5em;
+    align-items: center;
+}
+
+input[type=text], textarea, select,input[type=email], input[type=submit]{
+    width:100%;
+    
+}
+
+#subButton{
+    align-items: center;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+.information:nth-child(odd){
+    background-color: #d4d4d4;
+}
+
+.information{
+    padding: 1rem;
+    border: 1px solid #202020;
+    margin: 2.5rem 0;
+   
+}
+
+.information > div{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
+    margin-bottom: 1rem;
+    padding: 0 2rem 1rem 2rem;
+    border-radius: 20px;
+}
+
+.information > div p{
+    flex-grow: 1;
+}
+
+.information > div p:first-child{
+    font-weight: bold;
+}
+
+.information > div p:not(:first-child){
+    text-align: right;
+}
+
+
+/*@media screen and (640px <= width <= 1200px) équivalent à */
+@media screen and (min-width:640px) and (max-width:1200px) {
+    #form1 {
+        background-color: rgb(188, 182, 206);
+    }
+    
+    #lenom, #leprenom,#mail,#lemessage {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+    }
+    
+    #lenom label, #leprenom label, #mail label,#lemessage label{
+        width: 5vw;
+        
+        
+    }
+}
+
+@media screen and (min-width:1201px){
+    #form1 {
+        background-color: rgb(193, 178, 214);
+        
+    }
+    #pic{
+        float: left;
+    }
+    #lenght{
+        width: 80%;
+    }
+    #lenom, #leprenom,#mail,#lemessage {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        text-align: center;
+    }
+    
+    #lenom label, #leprenom label, #mail label, #lemessage label{
+        width: 10vw;
+        text-align: right;
+        margin-right: 0.5em;
+        padding: 0.5em;
+        text-align: center;
+    }
+    
+    #informations{
+        width: clamp(640px , 100% , 1200px);
+        margin: auto;
+        border-radius: 10px;
+}
+h4{
+    text-align: center;
+}
+input[type=text], textarea, select,input[type=email], input[type=submit]{
+    align-items: center;
+    
+}
+}
