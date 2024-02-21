@@ -8,8 +8,8 @@
  */
 // chargement de configuration
 require_once "../config.php";
-require_once "../Model/livreorModel.php";
-require_once "../Model/PaginationModel.php";
+require_once "../model/livreorModel.php";
+
 // chargement du modèle de la table livreor
 /*
  * Connexion à la base de données en utilisant PDO
@@ -25,10 +25,10 @@ try {
  * Si le formulaire a été soumis
  */
 
- if (isset($_POST['nom'], $_POST['prenom'],$_POST['email'],$_POST['message'])) {
+if (isset($_POST['firstname'], $_POST['lastname'],$_POST['usermail'],$_POST['message'])) {
 
     // on appelle la fonction d'insertion dans la DB
-    $insert = addLivreOr($db, $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['message']);
+    $insert = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['message']);
     // si l'insertion a réussi
     if ($insert) {
         // on redirige vers la page actuelle
@@ -51,22 +51,8 @@ try {
  * On récupère les messages du livre d'or
  */
 
- // on veut une pagination
-if(!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])){
-    $page = (int) $_GET[PAGINATION_GET_NAME];
-}else{
-    $page = 1;
-}
-
-$nbInformations = getNbInformations($db);
-// on récupère toutes les entrées de la table
-// `informations` avec Pagination
-$livreor = getPaginationInformations($db,$page,PAGINATION_NB_PAGE);
-
-
-$pagination = PaginationModel("./",PAGINATION_GET_NAME,$nbInformations,$page,PAGINATION_NB_PAGE);
-
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
+$livreor = getAllLivreOr($db);
 // fermeture de la connexion
 $db = null;
 // Appel de la vue

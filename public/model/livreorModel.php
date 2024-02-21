@@ -16,26 +16,7 @@ function getAllLivreOr(PDO $db): array
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
     return $result;
-
-}
-//Fonction qui récupère le nombre de commentaires
-function getNbInformations(PDO $db): int
-{
-    $sql = "SELECT COUNT(*) as nb FROM `livreor` ORDER BY `datemessage` ASC";
-    $query = $db->query($sql);
-    $result = $query->fetch(PDO::FETCH_ASSOC);
-    $query->closeCursor();
-    return $result['nb'];
-}
-
-function getPaginationInformations(PDO $db, int $currentPage,int $nbPerPage): array
-{
-    $offset = ($currentPage-1)*$nbPerPage;
-    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` desc LIMIT $offset, $nbPerPage ";
-    $query = $db->query($sql);
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    $query->closeCursor();
-    return $result;
+    
 }
 
 /**
@@ -52,7 +33,7 @@ function addLivreOr(PDO $db,
                     string $lastname,
                     string $usermail,
                     string $message
-                    ): bool|string
+                    )
                     
                     {
 
@@ -66,7 +47,7 @@ function addLivreOr(PDO $db,
                             return false;
                         }
 
-                        if ($usermail === false || empty($message) || empty($lastname)) {
+                        if ($usermail === false || empty($message) || empty($firstname)) {
                             return false;
                         }
                         $sql = "INSERT INTO livreor (firstname,lastname,usermail,`message`) VALUES (?,?,?,?)";

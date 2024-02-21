@@ -1,146 +1,300 @@
-h1 {
-    text-align: center;
-    color:rgb(255, 255, 255) ;
-}
-#img{
-display: flex;
-align-items: center;
-width: 200px;
-display: block;
-margin-left: auto;
-margin-right: auto
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body{
+    background-color: #FAFAFA;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   background-image: url(../img/space-art-5626853_1280.jpg);
 
-#pic{
-display: flex;
-align-items: center;
-width: 200px;
-display: block;
-margin-left: auto;
-margin-right: auto
+}
+#block{
+    box-shadow: 25px 20px 15px rgba(61, 49, 49, 0.7);
+    border: 2px solid rgb(9, 216, 168);
 }
 
-p{
+.pagination{
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    background-color: rgba(0,0,0,0.3);
+    padding: .25rem .5rem;
+}
+
+.pagination a{
+    color: white;
     font-weight: bold;
 }
 
-label {
-    font-size: 1em;
+h1{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: .5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+main#livreor{
+    width: clamp(960px, 100%, 1200px);
+    margin: auto;
+   
+}
+
+#Section1{
+    display: flex;
+    
+   
+}
+
+#Section1 > div:not(:first-child){
+ 
+    flex-grow: 1;
+    margin-right: 10px;
+    
+}
+
+#Section1 h3{
+    text-align: center;
+    color: #ffffff;
+    margin: .5rem 0;
+}
+
+#Section1 form div:nth-child(3){
+    margin-top: 40px;
+}
+
+#Section1 label{
+    color: #ffffff;
+    display: inline-block;
+    width: 15%;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#Section1 label[for='message']{
+    position: relative;
+    bottom: 70px;
+}
+
+#Section1 input, #Section1 textarea{
+    background-color: #fad9d9;
+    width: 82%;
+    border: 1px solid rgb(0, 0, 0);
+    padding: .25rem .5rem;
+    margin: 0.8rem 0;
+}
+
+#Section1 textarea{
+    height: 125px;
+    resize: none;
+}
+
+#Section1 button[type='submit']{
+    border: 1px solid rgb(75, 85, 188);
+    color: #fffefe;
+    width: 190px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 2px 0;
+    margin: 1em;
+    cursor: pointer;
+}
+
+#Submit{
+    text-align: center;
+}
+
+#obligatoire{
+    color: rgb(255, 255, 255);
+    font-size: .8rem;
+    font-style: italic;
+    text-align: center;
+    margin: .5rem 0;
+}
+
+h2{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    margin-left: .3rem;
+    margin-top: .5rem;
+}
+
+
+.currentPage{
+    color: #f90505;
+    font-weight: bold;
+}
+
+.comment{
+    border: 2px solid rgb(75, 85, 188);
+   /* box-shadow: 10px 10px 10px rgba(75, 85, 188,0.5);*/
+    margin: 1rem;
+    padding: 1rem .5rem;
+    margin-bottom: 1rem;
+    max-height: 350px;
+    background-color: #FAFAFA;
+   
+    
+    
+}
+
+
+
+.comment p:first-child{
+    font-style: oblique;
+    margin-bottom: 1rem;
+    font-size: x-small;
+    color: rgb(0, 0, 0);
+}
+
+#usercoms{
     font-family: Arial, Helvetica, sans-serif;
 }
-
-form {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    background-color: blue;
-    padding: 1em 0;
+.name{
+    color: rgb(75, 85, 188);
+    font-size: medium;
 }
 
+.btn-donate {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: hsla(235 100% 90% /1);
+    --btn-bg-2: hsla(233 48% 59% /1);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 0.5em;
+    cursor: pointer;
+    padding: 0.9em 1.4em;
+    min-width: 120px;
+    min-height: 44px;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+  }
+  
+  .btn-donate:hover {
+    background-position: right top;
+  }
+  
+  .btn-donate:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .btn-donate {
+      transition: linear;
+    }
+  }
+  
 
-
-#lenom, #leprenom, #lemessage,#mail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1em;
+@media screen and (480px < width < 960px){
+    #Section1{
+        flex-direction: column;
+    }
+    #Section1 div:first-child{
+        text-align: center;
+    }
+    main#livreor{
+        margin: 0 0 0 10px;
+        width: 97.5%;
+    }
+    #Section1 label{
+        font-size: 13px;
+    }
+    #Section1 > div:not(:first-child){
+        margin-right: 0px;
+    }
+      .comment{
+        border-radius: 15px;
+    }
+    #block{
+        border-radius: 15px;
+        margin: 10px  ;
+    }
 }
 
-
-
-input[type=text], textarea, select,input[type=email], input[type=submit]{
-    width:100%;
+/* Resize page a la main pour pas que les labels se cassent */
+@media screen and (480px < width < 620px){
+    label{
+        font-size: 0.75rem;
+    }
 }
 
+@media screen and (width <= 480px){
+    #Section1{
+        flex-direction: column;
+    }
+    #Section1 div:first-child{
+        text-align: center;
+    }
+    main#livreor{
+        margin: 0;
+        width: 100%;
+    }
+    #Section1 > div:not(:first-child){
+        margin-right: 0px;
+    }
+    #Section1 label{
+        padding: 0;
+        width: 100%;
+        font-size: 20px;
+    }
+    
+    #Section1 label[for='message']{
+        position: static;
+    }
+    
+    #Section1 input, #formSection textarea{
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
 
-#subButton{
-    align-items: center;
-width: 200px;
-display: block;
-margin-left: auto;
-margin-right: auto
+    #Section1 input[type='submit']{
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    #Section1 > div:not(:first-child){
+        padding: 1rem;
+    }
+    .comment{
+        border-radius: 15px;
+    }
+    #block{
+        border-radius: 15px;
+        margin: 10px  ;
+    }
 }
 
-
-
-.information:nth-child(odd){
-    background-color: #d4d4d4;
+.error{
+    color: rgb(251, 0, 0);
+    text-shadow: 1px 1px 3px black;
+    font-weight: bold;
+    margin: .2rem 0;
+    padding-left: 10px;
+    display: none;
 }
 
-.information{
-    padding: 1rem;
-    border: 1px solid #202020;
-    box-shadow: 10px 5px 5px black;
-    margin: 2.5rem 0;
-    border-radius: 10px;
-}
-
-.information > div{
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid gray;
-    margin-bottom: 1rem;
-    padding: 0 2rem 1rem 2rem;
-}
-
-.information > div p{
-    flex-grow: 1;
-}
-
-.information > div p:first-child{
+.success{
+    color: yellowgreen;
+    text-shadow: 1px 1px 3px black;
     font-weight: bold;
 }
 
-.information > div p:not(:first-child){
-    text-align: right;
-}
-
-
-/*@media screen and (640px <= width <= 1200px) équivalent à */
-@media screen and (min-width:640px) and (max-width:1200px) {
-    form {
-        background-color: blue;
-    }
-
-    #lenom, #leprenom,#mail,#lemessage {
-        display: flex;
-        flex-direction: row;
-        width: 90vw;
-    }
-
-    #lenom label, #leprenom label, #mail label,#lemessage label{
-        width: 5vw;
-        text-align: right;
-        
-    }
-}
-@media screen and (min-width:1201px){
- #pic{
-    float: left;
- }
- #lenght{
-    width: 80%;
- }
- #lenom, #leprenom,#mail,#lemessage {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-}
-
-#lenom label, #leprenom label, #mail label, #lemessage label{
-    width: 10vw;
-    text-align: right;
-    margin-right: 0.5em;
-    padding: 0.5em;
-}
-
-#informations{
-    width: clamp(640px , 100% , 1200px);
-    margin: auto;
-}
-h4{
+#information-message{
     text-align: center;
-}
+    font-size: 1.25rem;
+    margin: 1rem;
+    font-weight: bold;
+    display: block;
 }
