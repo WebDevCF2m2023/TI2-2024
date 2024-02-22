@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+
 }
 h1{
     margin: .5em 2em;
@@ -30,6 +31,13 @@ h2{
     font-size: large;
     margin-bottom:  1em;
 }
+#envoi{
+    font-size: 18px;
+    color: darkgreen;
+    text-align: center;
+    height: 30px;
+    width: auto;    
+}
 #labelPrenom, #labelNom, #labelEmail, #labelMessage{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
@@ -43,7 +51,7 @@ h2{
 }
 
 #prenom, #nom, #email, #message{
-    background-color: #F5F5DC;
+    background-color: #fafacf;
     margin-bottom: .5em;
     width: 100%;
 }
@@ -53,14 +61,17 @@ p{
     color: rgb(0, 0, 0);
     margin: 1em;
 }
+#champObligatoire{
+    color: white;
+}
 #envoyer{
-    background-color: #F5F5DC;
+    background-color: #fafacf;
     width: 100%;
     font-weight: 400;
     height: 3em;    
 }
 #listMessages{
-    text-align: left;
+    text-align: center;
     margin-left: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 300;
@@ -68,16 +79,16 @@ p{
 }
 
 .post1{
-    font-size: 16px;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-style: italic;
     color: rgb(0, 0, 0);
     text-align: left;
     border: 2px solid black;
     padding: 2em;
     border-radius: 1em;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.42);
+    background-color: #d3eeff;
 }
 
 @media screen 

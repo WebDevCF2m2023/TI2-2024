@@ -19,9 +19,13 @@
         <form action="" method="POST">
             <div>
                 <h2>Laissez nous un message</h2>
+            </div>    
+            <div id="envoi"></div>
+            <div>
                 <label id="labelPrenom" for="prenom">Prénom *</label>
                 <input type="text" name="prenom" id="prenom" required>
             </div>
+            
             <div>
                 <label for="nom" id="labelNom">Nom</label>
                 <input type="text" name="nom" id="nom">
@@ -34,7 +38,7 @@
                 <label for="message" id="labelMessage">Message *</label>
                 <textarea name="message" id="message" cols="30" rows="10" maxlength="600" required></textarea>
             </div>
-            <p>(*) Ce champ est obligatoire</p>
+            <p id="champObligatoire">(*) Ce champ est obligatoire</p>
             <div>
             <input type="submit" value="Envoyer" id="envoyer" onclick="return submitForm(event)">
             </div>
@@ -44,18 +48,16 @@
     <div id="allMessages">
     
     <?php
-    if(isset($pagination)) echo "$pagination<hr>"; 
-    echo $pagination ?? null;
+    if(isset($pagination)) echo "$pagination<br><br>"; 
     ?>
-    <?php
-
-if(isset($pagination)) echo "<hr>$pagination"; 
-?>
         <?php 
         foreach ($messagesByPage as $commentaires):?>
-            <p class="post1"><?= $commentaires["firstname"]?> a envoyé ce message le <?=(new DateTime($commentaires["datemessage"]))->format('d/m/Y H:i:s')?><br><?= $commentaires["message"]?></p><br>
+            <p class="post1"><?= $commentaires["firstname"]?> a envoyé ce message le <?=(new DateTime($commentaires["datemessage"]))->format('d/m/Y H:i:s')?><br><?= nl2br($commentaires["message"])?></p><br>
         <?php endforeach; 
         ?>
+    <?php
+    if(isset($pagination)) echo "<br>$pagination<br><br>"; 
+    ?>
     </div>
        
 <script src="js/validation.js"></script>
