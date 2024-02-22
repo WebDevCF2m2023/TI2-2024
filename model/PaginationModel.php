@@ -39,7 +39,7 @@ function PaginationModel(string $url, // url (pour garder les autres variables g
     for($i=1;$i<=$nbPage;$i++)
     {
         // si on est sur la page en cours, on affiche un texte
-        if($i===$currentPage) $sortie.= " $i ";
+        if($i===$currentPage) $sortie.= "<span> $i </span> ";
         // sinon si on affiche la page 1, on évite le duplicate content
         else if($i===1) $sortie.= " <a href='$url'>$i</a> ";
         // sinon on affiche un lien

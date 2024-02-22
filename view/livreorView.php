@@ -15,6 +15,15 @@
         <h1>Livre d'or</h1>
     </header>
     <main id="livreor">
+    <?php 
+                        if (isset($success)) {
+                            if ($success === true) {
+                                echo '<img id="alien" src="img/istockphoto-1173828830-612x612-removebg-preview-removebg-preview(1).png" alt="" > </div>';
+                            } else {
+                                echo '<div class="message" >'.$message.'</div>';
+                            }
+                        }
+                    ?>
         <section id="Section1">
             <div>
                 <img id="pic" src="img/_124063425_alienwithletter-removebg-preview.png" alt="Image Email">
