@@ -46,9 +46,9 @@
         <?php
         ?>
         <h2><?php
-        if (count($messages)===0)echo "pas encore de message";
-        else if (count($messages)===1)echo "Il y a un message écrit";
-        else echo "Il y a ".count($messages)." messages";
+        if (!$nb_messages)echo "pas encore de message";
+        else if ($nb_messages===1)echo "Il y a un message écrit";
+        else echo "Il y a ".$nb_messages." messages";
         ?></h2>
         <?=$pagination?>
         <?php foreach($messages as $message):?>
