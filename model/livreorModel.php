@@ -12,16 +12,21 @@
 
  function getComments(PDO $db): array
  {
-     $sql = "SELECT * FROM comments ORDER BY date_heure ASC";
+     $sql = "SELECT * FROM livreor ORDER BY datemessage ASC;";
      $query = $db->query($sql);
      $result = $query->fetchAll(PDO::FETCH_ASSOC);
      $query->closeCursor();
+     
      return $result;
  }
 
 function getAllLivreOr(PDO $db): array
 {
-    return [];
+    return [$comments];
+}
+
+function page () {
+    
 }
 
 /**
@@ -40,10 +45,28 @@ function addLivreOr(PDO $db,
                     string $message
                     ): bool|string
 {
-    return false;
+
+    $firstname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
+    $lastname = htmlspecialchars(strip_tags($lastname), ENT_QUOTES);
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+    $message = htmlspecialchars(strip_tags(trim($message)), ENT_QUOTES);
+    
+    if (empty($firstname) || empty($lastname)  || $usermail === false || empty($message)) {
+        return false;
+    }
+
+    // on prépare la requête
+    $sql = "INSERT INTO livreor (firstname, lastname, usermail, `message`) VALUES ('$firstname', '$lastname', '$usermail', '$message')";
+    try {
+        // on exécute la requête
+        $db->exec($sql);
+        // si tout s'est bien passé, on renvoie true
+        return true;
+    } catch (Exception $e) {
+        // sinon, on renvoie le message d'erreur
+        return $e->getMessage();
+    }
 }
 
-$nom = htmlspecialchars(strip_tags(trim($nom)), ENT_QUOTES);
-$courriel = filter_var($courriel, FILTER_VALIDATE_EMAIL);
-$titre = htmlspecialchars(strip_tags($titre), ENT_QUOTES);
-$texte = htmlspecialchars(strip_tags(trim($texte)), ENT_QUOTES);
+
+
