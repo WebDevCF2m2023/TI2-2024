@@ -78,7 +78,9 @@
                 </form>
             </div>
         </section>
+
         <?php
+        if (isset($success) && $success === true):
         if(isset($pagination)):
         ?>
             <div class="pagination"><?=$pagination?></div>
@@ -99,6 +101,7 @@
             <div class="pagination"><?=$pagination?></div>
         <?php
         endif;
+    endif;
         ?>
     </main>
     <script src="js/validation.js"></script>
