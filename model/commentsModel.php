@@ -17,10 +17,10 @@ function getCommentsByPage(PDO $dbConnect,
                             int $nbByPage): array
 {
     // pour avoir le offset, donc le démmarage du LIMIT 
-    $offset = ($currentPage-1)*$nbPerPage;
+    $offset = ($currentPage-1)*$nbByPage;
 
     // création de la requête
-    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` ASC LIMIT $offset, $nbPerPage ";
+    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` ASC LIMIT $offset, $nbByPage ";
     // exécution de la requête
     $query = $dbConnect->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);

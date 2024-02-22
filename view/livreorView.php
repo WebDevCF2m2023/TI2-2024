@@ -57,7 +57,7 @@
 
 <section id="comments">
         <?php 
-            foreach(array_reverse($addLivreOr) as $add):
+            foreach(array_reverse($viewComments) as $add):
                 
         ?>
         <div class="messages">
