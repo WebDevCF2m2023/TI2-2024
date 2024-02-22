@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body{
     background-color: #FAFAFA;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -38,14 +37,17 @@ span{
     color: rgba( 108, 196, 23);
 }
 
+
+
 #alien{
-    width: 120px;
+    width: 115px;
     position: absolute; /* ou `fixed` si vous voulez qu'elle reste en place lors du défilement */
-    left: 60%; /* Centrer horizontalement par rapport à l'écran/parent */
-    top: -25px; /* Au tout début de la page, en haut */
+    left: 52%; /* Centrer horizontalement par rapport à l'écran/parent */
+    top: 37px; /* Au tout début de la page, en haut */
     transform: translateX(-50%); /* Compenser la largeur de l'image pour un centrage précis */
     /* Ajoutez des propriétés supplémentaires selon vos besoins, comme la largeur, etc. */
   }
+
   
 
 .pagination{
@@ -240,11 +242,14 @@ h2{
 #messageEnregistre {
    color: rgba( 108, 196, 23);
    font-size: large;
+   text-align: center;
 }
 
 /* Couleur pour le message non enregistré */
 #messageNonEnregistre {
    color: red;
+   font-size: large;
+   text-align: center;
 }
 
   
@@ -267,7 +272,7 @@ h2{
         width: 97.5%;
     }
     #Section1 label{
-        font-size: 13px;
+        font-size: 18px;
     }
     #Section1 > div:not(:first-child){
         margin-right: 0px;
@@ -279,6 +284,10 @@ h2{
         border-radius: 15px;
        
     }
+    #alien{
+        display: none;
+          }
+    
 }
 
 /* Resize page a la main pour pas que les labels se cassent */
@@ -286,6 +295,9 @@ h2{
     label{
         font-size: 0.75rem;
     }
+    #alien{
+        display: none;
+          }
 }
 
 @media screen and (width <= 480px){
@@ -333,6 +345,9 @@ h2{
         border-radius: 15px;
         
     }
+    #alien{
+        display: none;
+          }
 }
 
 .error{

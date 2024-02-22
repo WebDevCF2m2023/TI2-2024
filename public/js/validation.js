@@ -48,3 +48,6 @@ function changeColor(Id, value) {
   
   label.style.color = isValid ? 'rgba( 108, 196, 23)' : 'red';
 }
+
+
+

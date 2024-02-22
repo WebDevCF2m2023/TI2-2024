@@ -29,11 +29,11 @@ try {
     // on appelle la fonction d'insertion dans la DB
     $success = addLivreOr($db, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
     $error = false;
-    $message = "Le message a bien été envoyé 🤗";
+    $message = "Le message a bien été envoyé";
     // Si une erreur s'est produite
     if($success !== true){
         $error = true;
-        $message = "Le message n'a pas pu être envoyé 😥";
+        $message = "Le message n'a pas pu être envoyé";
         // Si une erreur côté PDO s'est produite
         // On affichera l'erreur SQL
         if(gettype($success) === "string")

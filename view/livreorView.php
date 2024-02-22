@@ -28,13 +28,14 @@
             <div>
                 <img id="pic" src="img/_124063425_alienwithletter-removebg-preview.png" alt="Image Email">
             </div>
+            
             <div id="block">
                 <form id="myForm" action="" method="POST">
                     <h3>Laissez-nous un message</h3>
                     <?php 
                         if (isset($success)) {
                             if ($success === true) {
-                                echo '<div class="message" id="welkom" >Bienvenu sur mon site '.$firstname.' '.$lastname.' </div>';
+                                echo '<div class="message" id="welkom" >Merci le message à bien été réceptionné  '.$firstname.' '.$lastname.' </div>';
                             } else {
                                 echo '<div class="message" >'.$message.'</div>';
                             }
@@ -80,13 +81,11 @@
         </section>
 
         <?php
-        if (isset($success) && $success === true):
+     
         if(isset($pagination)):
         ?>
             <div class="pagination"><?=$pagination?></div>
-        <?php
-        endif;
-        ?>
+     
         <section>
             <?php foreach($livreor as $coms): ?>
             <div class="comment">
@@ -103,7 +102,8 @@
         endif;
     endif;
         ?>
-    </main>
+    </main> 
     <script src="js/validation.js"></script>
+
 </body>
 </html>
