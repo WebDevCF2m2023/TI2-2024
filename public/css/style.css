@@ -10,7 +10,7 @@ form {
     border: 15px solid black;
     border-radius: 20px;
     background-color:rgba(231, 218, 186, 1);
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 5px 5px 5px #00000082;
     
     
 }
@@ -97,7 +97,7 @@ div.messages {
     border: 8px solid black;
     margin: 2%;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 5px 5px 5px #00000082;
     padding: 2%;
     background-color: rgba(231, 218, 186, 1);
 }

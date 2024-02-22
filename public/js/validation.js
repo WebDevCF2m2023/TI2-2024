@@ -53,7 +53,7 @@
         }else{
             resultInput.textContent =  prenom + " " + nom + " " + "votre message est en cours d'envoi, vous allez être redirigé.";
             resultInput.style.textAlign = "center";
-            resultInput.style.color = "greenyellow";
+            resultInput.style.color = "green";
 
             setTimeout (function (){
                 formulaire.submit();
