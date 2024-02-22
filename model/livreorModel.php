@@ -13,6 +13,7 @@ function getAllLivreOr(PDO $db): array{
     $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` DESC;";
     $query = $db->query($sql, PDO::FETCH_ASSOC);
     $results = $query->fetchAll();
+    $query->closeCursor();
     return $results;
 }
 
@@ -29,6 +30,7 @@ function getPageLivreOr(PDO $db, int $page, int $nb_page):array{
     $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` DESC LIMIT $first,$nb_page;";
     $query = $db->query($sql, PDO::FETCH_ASSOC);
     $results = $query->fetchAll();
+    $query->closeCursor();
     return $results;
 }
 
@@ -41,6 +43,7 @@ function getMessageNumber(PDO $db):array{
     $sql = "SELECT COUNT(*) FROM `livreor`;";
     $query = $db->query($sql, PDO::FETCH_NUM);
     $results = $query->fetch();
+    $query->closeCursor();
     return $results;
 }
 
