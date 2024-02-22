@@ -51,14 +51,16 @@ if (!empty($_GET[MY_PAGINATION_BY_PAGE]) && ctype_digit($_GET[MY_PAGINATION_BY_P
 } else {
     $page = 1;
 }
-$viewComments = getCommentsByPage($MyPDO, $page, MY_PAGINATION_GET);
+
 
 // remplacement par getCommentsByPage
 $pagination = PaginationModel("./", MY_PAGINATION_BY_PAGE, $nbComments, $page, MY_PAGINATION_GET);
 
 /*
  * On récupère les messages du livre d'or
+ * 
  */
+$viewComments = getCommentsByPage($MyPDO, $page, MY_PAGINATION_GET);
 
 
 // fermeture de la connexion

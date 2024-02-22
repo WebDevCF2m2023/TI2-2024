@@ -14,7 +14,7 @@
     <h1 id="firstTitle">Livre d'or</h1>
 <div id='superior'>
 <div id ="logo">
-<img src="../img/email.png" alt="email">
+<img src="../img/shichan.png" alt="form">
 </div>
 
 <form action="./" method="POST" id="myForm">
@@ -48,9 +48,9 @@
 
 </form>
 
-<h2 class='last'>Messages précédents</h2>
+<h2 class='last'>Commentaires précédents</h2>
 
-<h3 id="nbMessage">Il y a <span><?= $nbComments?></span> messages écrits</h3>
+<h3 id="nbMessage">Il y a <span><?= $nbComments?></span> commentaires</h3>
       <?php
             if (isset($pagination)) echo "<p>$pagination</p>";
             ?>
