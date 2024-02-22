@@ -10,6 +10,7 @@ form {
     border: 15px solid black;
     border-radius: 20px;
     background-color:rgba(231, 218, 186, 1);
+    box-shadow: 5px 5px 5px #888888;
     
     
 }
@@ -30,7 +31,7 @@ form div label {
 }
  
 .leave{
-    color: blanchedalmond;
+    color: rgba(169, 28, 10, 0.72);
     font-size: medium;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
