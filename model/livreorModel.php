@@ -59,20 +59,23 @@ function getPagination(int $current_page, int $nb_pages, string $page_get):strin
     $previous_page = $current_page-1;
     $result = "<div>";
     //first and previous page
-    if ($current_page!==1){
-        $result.="<a href='./'><<</a><a href='./?$page_get=$previous_page'><</a>";
-    }else {
+    if ($current_page===1){
         $result.="<a><<</a> <a><</a>";
+    }
+    else if ($current_page===2){
+        $result.="<a href='./'><<</a><a href='./'><</a>";
+    }else {
+        $result.="<a href='./'><<</a><a href='./?$page_get=$previous_page'><</a>";
     }
     //all pages
     for ($i=1;$i<=$nb_pages;$i++){
         if ($current_page===$i)$result.="<a> $i </a>";
-        else if ($current_page!==1 || $current_page!==$i)$result.="<a href='./?$page_get=$i'> $i </a>";
-        else $result.="<a href='./'> 1 </a>";
+        else if ($i!==1)$result.="<a href='./?$page_get=$i'> $i </a>";
+        else $result.="<a href='./'> $i </a>";
     }
     //last and next page
     if ($current_page!==$nb_pages){
-        $result.="<a href='./?$page_get=$nb_pages'>>></a> <a href='./?$page_get=$next_page'>></a>";
+        $result.="<a href='./?$page_get=$next_page'>></a> <a href='./?$page_get=$nb_pages'>>></a>";
     }else {
         $result.="<a>>></a> <a>></a>";
     }
