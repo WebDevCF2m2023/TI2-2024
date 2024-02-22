@@ -49,7 +49,7 @@ $results = getAllLivreOr($db);
 
 <?php
     if(isset($pagination)) echo "$pagination<hr>"; 
-    echo $pagination ?? null;
+    
     ?>
 <div class="prevMessages">
     <h3 id="prevMessHead">Messages précédents <?php if (isset($messageCount)) echo $messageCount?></h3>
@@ -57,6 +57,10 @@ $results = getAllLivreOr($db);
         <div class="messageHolder">
             <h4><span class="italic"><?= $mess["firstname"] ?></span> à envoyé ce message le <?= $mess["datemessage"] ?></h4>
             <p><?= nl2br($mess["message"]) ?></p>
+            <?php
+    if(isset($pagination)) echo "<hr>$pagination"; 
+    
+    ?>
         </div>
     <?php endforeach; ?>
 </div>

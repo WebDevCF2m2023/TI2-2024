@@ -22,16 +22,30 @@ try {
 
 // Gérer l’envoi des formulaires
 if (isset($_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['usermail'])) {
-    $insertResult = addLivreOr($db, $_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['usermail']);
+    $insertResult = addInformations($db, $_POST['firstname'], $_POST['lastname'], $_POST['message'], $_POST['usermail']);
 
-    if ($insertResult) {
+    if ($insertResult === true)  {
         header("Location: ./");
         exit();
     } else {
         $errorMessage = "Error while inserting";
+        echo $insertResult;
     }
 }
-$messages = getAllLivreOr($db);
+
+$nbMessages = getNumberMessages($db);
+if(!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])){
+    $page = (int) $_GET[PAGINATION_GET_NAME];
+}else{
+    $page = 1;
+}
+// on récupère toutes les entrées de la table
+// `informations` avec Pagination
+$pagination = PaginationModel("./",PAGINATION_GET_NAME,$nbMessages,$page,PAGINATION_NB_PAGE);
+
+
+$messages = getPaginationInformations($db, $page, PAGINATION_NB_PAGE);
 require_once "../view/$content.php"; 
 // fermeture de la connexion
+
 $db = null;

@@ -6,40 +6,42 @@ function getAllLivreOr(PDO $db): array
   return $result ?: []; // Return empty array on errors
 }
 
-// fonction qui charge les informations avec pagination
-function getPaginationInformations(PDO $db, int $currentPage,int $nbPerPage): array
+function addInformations(PDO $db,string $firstname, string $name, string $message, string $usermail): bool|string
+{
+    // gestion du format des variables
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL); // vérifie le mail, le garde en sortie en cas de validité, renvoi false en cas de mail non valide
+    $message = htmlspecialchars(strip_tags(trim($message)),ENT_QUOTES);
+
+    // si un des champs est non valide
+    if($usermail===false || empty($message)){
+        // arrêt du script et envoi du texte
+        return "Au moins un des champs invalide";
+    }
+
+    $sql = "INSERT INTO `livreor` (`firstname`, `lastname`, `message`, `usermail`) VALUES ('$firstname', '$name', '$message', '$usermail')";
+    try{
+        $db->exec($sql);
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage(); 
+    }
+  }
+  function getNumberMessages(PDO $db): int
+  {
+      $sql = "SELECT COUNT(*) as nb FROM `livreor`";
+      $query = $db->query($sql);
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      $query->closeCursor();
+      return $result['nb'];
+   
+  }
+
+  function getPaginationInformations(PDO $db, int $currentPage,int $nbPerPage): array
 {
     $offset = ($currentPage-1)*$nbPerPage;
-    $sql = "SELECT * FROM `livreor` ORDER BY `thedate` ASC LIMIT $offset, $nbPerPage ";
+    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` DESC LIMIT $offset, $nbPerPage ";
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
     return $result;
-}
-function addLivreOr(PDO $db, string $firstname, string $lastname, string $message, string $usermail): bool
-{
-  $data = [
-    ":firstname" => htmlspecialchars(strip_tags($firstname), ENT_QUOTES),
-    ":lastname" => htmlspecialchars(strip_tags($lastname), ENT_QUOTES),
-    ":message" => htmlspecialchars(strip_tags($message), ENT_QUOTES),
-    ":usermail" => filter_var($usermail, FILTER_VALIDATE_EMAIL),
-  ];
-
-  if (empty($data[":message"]) || empty($data[":firstname"]) || empty($data[":lastname"]) || $data[":usermail"] === false) {
-    return false; // Indicate validation failure
-  }
-
-  $sql = "INSERT INTO livreor (firstname, lastname, usermail, message) VALUES (:firstname, :lastname, :usermail, :message)";
-  $statement = $db->prepare($sql);
-
-  if (!$statement) {
-    return false; // Indicate prepare error
-  }
-
-  try {
-    $statement->execute($data);
-    return true;
-  } catch (Exception $e) {
-    throw $e; // Re-throw exception for external handling
-  }
 }
