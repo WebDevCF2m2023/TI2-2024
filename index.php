@@ -8,8 +8,8 @@
  */
 // chargement de configuration
 require_once "../config.php";
-require_once "../model/livreorModel.php";
-require_once "../model/PaginationModel.php";
+require_once "../Model/livreorModel.php";
+require_once "../Model/PaginationModel.php";
 // chargement du modèle de la table livreor
 /*
  * Connexion à la base de données en utilisant PDO
@@ -27,24 +27,8 @@ try {
 
  if (isset($_POST['nom'], $_POST['prenom'],$_POST['email'],$_POST['message'])) {
     // on appelle la fonction d'insertion dans la DB
-    $success = addLivreOr($db, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
-    $error = false;
-    $message = "Le message a bien été envoyé 🤗";
-    // Si une erreur s'est produite
-    if($success !== true){
-        $error = true;
-        $message = "Le message n'a pas pu être envoyé 😥";
-        // Si une erreur côté PDO s'est produite
-        // On affichera l'erreur SQL
-        if(gettype($success) === "string")
-            $message = $success;
-    }else{
-        $firstname = htmlspecialchars(strip_tags(trim($_POST['prenom'])), ENT_QUOTES);
-        $lastname = htmlspecialchars(strip_tags(trim($_POST['nom'])), ENT_QUOTES);
-    }
-    
+    $insert = addLivreOr($db, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
 }
-
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
 
     // si l'insertion a réussi

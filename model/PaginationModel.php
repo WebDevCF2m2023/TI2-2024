@@ -8,7 +8,7 @@ function PaginationModel(string $url, // url (pour garder les autres variables g
                         int $nbTotalItem, // le nombre total d'item à afficher
                         int $currentPage=1,  // la page actuelle
                         int $nbByPage=10 // la nombre d'item par page
-                        ): string|null 
+                        )
 {
     // pas d'item, pas de pagination
     if($nbTotalItem===0) return null;
@@ -32,7 +32,7 @@ function PaginationModel(string $url, // url (pour garder les autres variables g
         $sortie.= "<a href='$url'><<</a> <a href='$url'><</a>";
     }else{
         // liens vers l'accueil et la page précédente
-        $sortie.= "<a href='$url'><<</a> <a href='$url?&$getName=".($currentPage-1)."'><</a>";
+        $sortie.= "<a  href='$url'><<</a> <a href='$url?&$getName=".($currentPage-1)."'><</a>";
     }
 
     // on boucle sur le nombre de pages

@@ -22,7 +22,15 @@
             <div id="block">
                 <form id="myForm" action="" method="POST">
                     <h3>Laissez-nous un message</h3>
-
+                    <?php 
+                        if (isset($success)) {
+                            if ($success === true) {
+                                echo '<div class="message" id="welkom" >Bienvenu sur mon site '.$firstname.' '.$lastname.' </div>';
+                            } else {
+                                echo '<div class="message" >'.$message.'</div>';
+                            }
+                        }
+                    ?>
                     <p id="prenom-error" class="error">* Le prénom doit avoir minimum 4 caractère et maximum 100.</p>
                     <p id="nom-error" class="error">* Le nom doit avoir minimum 4 caractère et maximum 100.</p>
                     <p id="email-error" class="error">* L'email n'est pas valide.</p>
@@ -50,8 +58,8 @@
                     <h3><?php if (empty($livreor)) echo "Pas encore de message" ?></h3>
                     <h3>Il y a <?= $nbInformations ?> messages écrits</h3>
                     <?php 
-                        if (isset($insert)) {
-                            if ($insert === true) {
+                        if (isset($success)) {
+                            if ($success === true) {
                                 echo '<div class="message" id="messageEnregistre">Le message a été enregistré avec succès.</div>';
                             } else {
                                 echo '<div class="message" id="messageNonEnregistre">Le message n\'a pas été enregistré.</div>';
@@ -71,7 +79,7 @@
         <section>
             <?php foreach($livreor as $coms): ?>
             <div class="comment">
-                <p><span class="name"><?=$coms["firstname"]?></span> a envoyé ce message le <?=(new DateTime($coms["datemessage"]))->format("d-m-Y à H\hi")?></p>
+                <p><span class="name"><?=$coms["firstname"]?></span> a envoyé ce message le <?=(new DateTime($coms["datemessage"]))->format("d-m-Y à H\hi")?></p><hr>
                 <p><span id="usercoms"><?=str_replace("\n", "<br>", $coms["message"])?></span></p>
             </div>
             <?php endforeach; ?>
