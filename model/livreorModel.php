@@ -11,8 +11,14 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    return [];
+    $sql = "SELECT * FROM livreor ORDER BY datemessage DESC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+
 }
+
 
 /**
  * @param PDO $db
@@ -23,12 +29,58 @@ function getAllLivreOr(PDO $db): array
  * @return bool|string
  * Fonction qui insère un message dans la base de données 'ti2web2024' et sa table 'livreor'
  */
-function addLivreOr(PDO $db,
-                    string $firstname,
-                    string $lastname,
-                    string $usermail,
-                    string $message
-                    ): bool|string
+function addLivreOr(
+    PDO $db,
+    string $firstname,
+    string $lastname,
+    string $usermail,
+    string $message
+): bool|string {
+
+    $firstname = htmlspecialchars(strip_tags($firstname), ENT_QUOTES);
+    $lastname = htmlspecialchars(strip_tags($lastname), ENT_QUOTES);
+    $message = htmlspecialchars(strip_tags($message), ENT_QUOTES);
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+
+    if ($usermail === false || empty($message) || empty($firstname) || empty($lastname)) {
+        return false;
+    }
+
+    $sql = "INSERT INTO livreor (firstname, lastname, usermail, message) VALUES (:firstname, :lastname, :usermail, :message)";
+
+    $statement = $db->prepare($sql);
+    if ($statement === false)
+        return false;
+
+    $statement->bindParam(':firstname', $firstname);
+    $statement->bindParam(':lastname', $lastname);
+    $statement->bindParam(':message', $message);
+    $statement->bindParam(':usermail', $usermail);
+
+    try {
+        $statement->execute();
+        return true;
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
+
+
+function getNbInformations(PDO $db): int
 {
-    return false;
+    $sql = "SELECT COUNT(*) as nb FROM `livreor` ORDER BY `datemessage` DESC ";
+    $query = $db->query($sql);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result['nb'];
+}
+
+function getPaginationInformations(PDO $db, int $currentPage, int $nbPerPage): array
+{
+    $offset = ($currentPage - 1) * $nbPerPage;
+    $sql = "SELECT * FROM `livreor` ORDER BY `datemessage` DESC LIMIT $offset, $nbPerPage ";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
 }
