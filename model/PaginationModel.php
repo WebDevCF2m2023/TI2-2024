@@ -8,7 +8,7 @@ function PaginationModel(string $url, // url (pour garder les autres variables g
                         int $nbTotalItem, // le nombre total d'item à afficher
                         int $currentPage=1,  // la page actuelle
                         int $nbByPage=10 // la nombre d'item par page
-                        ): string|null 
+                        )
 {
     // pas d'item, pas de pagination
     if($nbTotalItem===0) return null;

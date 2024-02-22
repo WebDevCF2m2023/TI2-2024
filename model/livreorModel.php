@@ -6,7 +6,7 @@ function getAllLivreOr(PDO $db): array
   return $result ?: []; // Return empty array on errors
 }
 
-function addInformations(PDO $db,string $firstname, string $name, string $message, string $usermail): bool|string
+function addInformations(PDO $db,string $firstname, string $name, string $message, string $usermail)
 {
     // gestion du format des variables
     $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL); // vérifie le mail, le garde en sortie en cas de validité, renvoi false en cas de mail non valide
