@@ -51,7 +51,7 @@
 <h2 class='last'>Messages précédents</h2>
 
 <h3 id="nbMessage">Il y a <span><?= $nbComments?></span> messages écrits</h3>
-    <?php
+      <?php
             if (isset($pagination)) echo "<p>$pagination</p>";
             ?>
 

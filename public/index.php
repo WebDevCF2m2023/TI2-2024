@@ -43,7 +43,7 @@ if(isset($_POST['usermail'],$_POST['message'],$_POST['firstname'],$_POST['lastna
         $message = "Erreur lors de l'insertion";
       } }
 
-// on récupère le nombre total de pays
+// on récupère le nombre total de commentaires
 $nbComments = getNumberComments($MyPDO);
 
 if (!empty($_GET[MY_PAGINATION_BY_PAGE]) && ctype_digit($_GET[MY_PAGINATION_BY_PAGE])) {
