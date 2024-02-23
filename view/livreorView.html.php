@@ -11,54 +11,62 @@
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <div>
-  <img src="img\email.png" alt="logo page d'or"> 
-    </div>
-    <div>
-    <h1>Livre d'or</h1>
-    <div>
-    <?php
-        foreach ($messages as $message):
-        ?>
-<div class="card">
-    <div class="card-header">
-<?php echo $message['message'];?>
-    </div>
-    <div class="card-body">
-        <h5 class="card-title"><?php echo $message['firstname'];?></h5>
-        <p class="card-title"><?php echo $message['message'];?></h5>
-        </div>
 
-        <?php
-        endforeach;
-        ?>
-            
-            <form action="" name="monForm" method="POST">
-            <form action="" method="post">
-     <div id="leprenom">
-        <label for="Prénom">Prénom*</label>
-        <input type="text" name="prenom" id="nom">
-      </div>
-      <div id="lenom">
-        <label for="Nom">Nom</label>
-        <input type="text" name="nom" id="prenom">
-      </div>
-      <div id="lemail">
-        <fieldset>
-          <label for="email">E-mail*</label>
-          <input type="text" name="email" id="prenom">
-      </fieldset>
-      <div id="lemessage">
-        <label for="msg">Message</label>
-        <textarea name="message" id="msg" cols="30" rows="10" maxlength="1024">
-        </textarea>
-     </div>
-      <div id="lergpd">
-        <p>(*) ce champs est obligatoire</p>
-      </div>
-            <input type="submit" value="Envoyer">
-            </form>
+<div id="container">
+<h1>Livre d'or</h1>
+    <div id="imge">
+        <img src="img/email.png">
+    </div>
+    <form action="" method="POST" >
+           <div>
+                <h2>Laissez nous un message</h2>
+                <label id="labelPrenom" for="prenom">Prénom *</label>
+                <input type="text" name="prenom" id="prenom"  required>
+            </div>
+            <div>
+                <label for="nom" id="labelNom">Nom</label>
+                <input type="text" name="nom" id="nom"  >
+            </div>
+            <div>
+                <label for="email" id="labelEmail">Email *</label>
+                <input type="text" name="email" id="email" required>
+            </div>
+            <div>
+                <label for="message" id="labelMessage">Message *</label>
+                <textarea name="message" id="message" cols="5" rows="10"  required></textarea>
+            </div>
+
+            <div id="score">
+
+            </div>
+            <div>
+            <br>
+            <p>(*) Ce champ est obligatoire</p>
+            <div><br>
+            <div id="envoi"></div>
+            <input type="submit" value="Envoyer"><br><br>
+            </div>
+        </form>
         </div>
     </div>
+    <h3 id="listMessages">Messages Précédents - Total de messages <?php echo count($messages); ?></h3>
+    <div id="allMessages">
+        <?php
+        foreach ($messages as $messages):?>
+            <p class="post1"><?= $messages["firstname"]?> a envoyé ce message le <?=(new DateTime($messages["datemessage"]))->format('d/m/Y H:i:s')?><br><?= $messages["message"]?></p><br>
+        <?php endforeach;
+        ?>
+        <?php
+        if(isset($pagination)):
+        ?>
+            <div class="pagination"><?=$pagination?></div>
+        <?php
+    
+    endif;
+        ?>
+    </div>
+<script src="js/validation.js"></script>
 </body>
 </html>
+
+    

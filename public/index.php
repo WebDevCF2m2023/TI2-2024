@@ -8,14 +8,14 @@
 require_once "../config.php";
 // On incorpore notre model countries afin de pouvoir accèder a sa/ses functions
 require_once "../model/livreorModel.php";
-
+require_once "../model/paginationModel.html.php";
 // new permet de créer un NOUVEAU objet de la class PDO
 // Une nouvelle instance de PDO
-$dsn = DB_DRIVER . ":host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+
 
 try{
     // Si une erreur se produit elle sera attrapé dans le catch en toute sécurité
-    $myPDO = new PDO($dsn, DB_LOGIN, DB_PWD);
+    $myPDO = new PDO( DB_DRIVER . ":host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET, DB_LOGIN , DB_PWD  );
 }catch(Exception $e){
     // Si une erreur PDO se produit, on arrête tout en affichant le message d'erreur
     die($e->getMessage());
@@ -28,12 +28,33 @@ try{
 // Adresse + ligne + type + value + length
 // var_dump($_GET["pg"]);
 
+if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['message']) ){
+    $insert = addLivreOr($myPDO, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
+    if ($insert === true){
+        header("Location: /");
+        exit();
+    }else{
+        $message = $insert;
+        echo $message;
+    }
+}
+$nbMessages = getNbMessages($myPDO);
+// on veut une pagination
+if(!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])){
+    $page = (int) $_GET[PAGINATION_GET_NAME];
+}else{
+    $page = 1;
+}
+
+// on récupère toutes les entrées de la table
+// `informations` avec Pagination
+$messages = getPaginationInformations($myPDO,$page,PAGINATION_NB_PAGE);
+ //var_dump($_GET);
+
+$pagination = PaginationModel("./",PAGINATION_GET_NAME,$nbMessages,$page,PAGINATION_NB_PAGE);
 
 
-            $messages = getAllLivreOr($myPDO);
-           
-        
-
+/*$messages= getAllLivreOr($myPDO);*/
 
 
 // On intégre/import le fichier HTML
