@@ -27,16 +27,26 @@
             <br>
             <label for="email">Adresse mail *</label>
             <input type="text" name="email" id="email" required>
+            <div id="mailControl"><p>Il manque soit @ ou .</p></div>
             <br>
             <label>Message *</label>
-            <input type="text" name="message" id="message" required>
+            <input type="text" name="message" id="message" cols="30" rows="5" maxlength="600" required>
+            <div id="msgControl"><p>Doit comporter au minimum 100 characters</p></div>
             <br>
             <p>(*) Ce champ est obligatoire</p>
             <button id=submeat type="submit" onclick = checking()>Envoyez</button>
     </form>
+    
     </div>
 
+    <h3><?php if (empty($informations)) echo "Pas encore de message" ?></h3>
+
+    <h3 id="nbMessage">Il y a <span><?= $nbInformations ?></span> messages écrits</h3>
     <?php
+            if (isset($pagination)) echo "<p>$pagination</p>";
+            ?>
+    <?php
+
     if (isset($message)) {
         ?>
         <div>

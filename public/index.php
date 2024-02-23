@@ -12,6 +12,7 @@
 require_once "../config.php";
 // chargement du modèle de la table livreor
 require_once "../model/livreorModel.php";
+require_once "../model/PaginationModel.php";
 
 /*
  * Connexion à la base de données en utilisant PDO
@@ -46,13 +47,30 @@ require_once "../model/livreorModel.php";
     }
 
 }
-/*
-* On récupère les messages du livre d'or
-*/
-$comments = getComments($MonPDO);
+
 
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
 /* $nbInformations = getNbInformations($MonPDO); */
+
+
+//$commentaires = getAllLivreOr($MyPDO);  Fonction remplacé par le modèle de pagination
+// on appelle la fonction de récupération de la DB (getAllLivreOr())
+$nbInformations = getNbInformations($MonPDO);
+
+if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
+    $page = (int) $_GET[PAGINATION_GET_NAME];
+} else {
+    $page = 1;
+}
+
+$informations = getPaginationInformations($MonPDO, $page, PAGINATION_NB_PAGE);
+
+/*
+* On récupère les messages du livre d'or avec pagination
+*/
+$comments = getPaginationInformations($MonPDO, $page, PAGINATION_NB_PAGE);
+
+$pagination = PaginationModel("./", PAGINATION_GET_NAME, $nbInformations, $page, PAGINATION_NB_PAGE);
 
 // fermeture de la connexion
 $db = null;

@@ -25,8 +25,13 @@ function getAllLivreOr(PDO $db): array
     return [$comments];
 }
 
-function page () {
-    
+function getNbInformations(PDO $db): int
+{
+    $sql = "SELECT COUNT(*) as nb FROM `livreor`";
+    $query = $db->query($sql);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result['nb'];
 }
 
 /**

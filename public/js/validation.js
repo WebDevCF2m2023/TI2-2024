@@ -1,21 +1,21 @@
 const formContainer = document.getElementById("form");
-    
-formContainer.addEventListener("submit"), function(event) {
+
+formContainer.addEventListener("submit", function(event) {
     event.preventDefault();
 
     function checking () {
-        var firstName = document.getElementById("#prenom");
-        var secondName = document.getElementById("#nom");
-        var mail = document.getElementById("#email");
-        var msg = document.getElementById("#message");
+        var firstName = document.getElementById("prenom").value;
+        var secondName = document.getElementById("nom").value;
+        var mail = document.getElementById("email").value;
+        var msg = document.getElementById("message").value;
 
-        if (firstName.lenght < 10 && secondName.lenght < 10 && mail && /[!@#$%^&*(),.?":{}|<>'-+/]/.test(mail) && msg.lenght < 100)
-        alert("les conditions n'ont pas été respectées.");
+        if (firstName.length >= 10 || secondName.length >= 10 || msg.length >= 100 || !/@/.test(mail) || !/\./.test(mail)) {
+            alert("Maybe.");
+        } else {
+            alert("Nope.");
+            
+        }
+    }
 
-        else
-        alert("Bienvenu !");
-        window.location.replace("http://2023.webdev-cf2m.be/");
-}
-
-        checking();
-}
+    checking();
+});
