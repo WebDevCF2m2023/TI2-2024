@@ -21,18 +21,19 @@
 
    <h2 class="leave">Laissez-nous un message</h2>
    
-   <div id="lemessage"><label class="prenom"for="firstname">Prénom*</label>                        
+   <div id="leprenom"><label class="prenom"for="firstname">Prénom*</label>                        
    <input type="text" id="lePrenom" name="firstname" required /></div>    
 
-   <div id="lemessage"><label class="nom" for="lastname">Nom</label>
+   <div id="lenom"><label class="nom" for="lastname">Nom</label>
    <input type="text" id="leNom" name="lastname" /></div>
 
-   <div id="lemessage"><label class="mail" for="usermail">E-mail*</label>
+   <div id="lemail"><label class="mail" for="usermail">E-mail*</label>
        <input type="text" id="eMail" name="usermail" required /></div>
 
     <div id="lemessage">
-        <label for="message">Message</label>
+        <label for="message">Message*</label>
         <textarea name="message" id="msg" cols="30" rows="5" maxlength="600"></textarea> </div>
+        <p class="champ">(*)Champ obligatoire.</p>
 
         <div id="result"></div>
            
