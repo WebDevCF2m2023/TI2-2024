@@ -8,8 +8,11 @@ function check(){
 
     const insert = document.querySelector("#insertmessage");
 
-    if(nom.length > 5 || prenom.length > 5) {
-        alert("Votre nom ou prénom est long");
+    if(nom.length > 100) {
+        alert("Votre nom est long");
+        return false;       
+    }else if(prenom.length > 100) {
+        alert("Votre prénom est long");
         return false;       
     }else if(!/[@]/.test(username)){
         alert("Votre mail doit avoir '@'");
@@ -24,7 +27,7 @@ function check(){
         alert("Bienvenue " + prenom +" "+ nom);
         insert.textContent = "Message registered";
         insert.style.color = "green";
-        insert.style.display = 'block';
+        insert.style.display = "block";
         insert.style.textAlign = "center";
         return true;
     }

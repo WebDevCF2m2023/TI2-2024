@@ -1,7 +1,17 @@
 form {
-    display: flex;
-    flex-direction: column;
-    background-color: steelblue;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 3em;
+  padding-left: 2.8em;
+  padding-right: 2.8em;
+  padding-bottom: 2.1em;
+  border: 2px dashed #DAA06D;
+  border-radius: 15px;
+  background-color: #3a5a40;
+  box-shadow: 0 0 0 8px #344e41, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+  transition: .4s ease-in-out;
+  color: white;
 }
 
 form div label {
@@ -14,25 +24,27 @@ form h1, form p {
 }
 
 #title {
-    color: steelblue;
     text-align: center;
     font-weight: bolder;
 }
 
 #title h1{
-    color: steelblue;
+    color: #3a5a40;
     text-align: center;
     font-size: 50px;
 }
 
 #photo{   
     display: flex;
-    justify-content: center;    
+    justify-content: center; 
+    align-items: center;
+    height: 50vh;
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;
+#photo img {
+    border-radius: 50px;   
+    max-width: 90%;
+    max-height: 90%; 
 }
 
 #lenom, #leprenom, #lusername, #lemessage, #envoi {
@@ -44,13 +56,13 @@ img {
 
 #lenom input, #leprenom input, #lusername input,  #envoi input {
     
-    border: 2px solid darkgray;
+    border: 2px solid white;
     padding: 7px;
-    background-color: blanchedalmond;
+    background-color: #fefae0;
 }
 
 textarea {
-    background-color: blanchedalmond;
+    background-color: #fefae0;
 }
 
 #envoi {
@@ -59,7 +71,7 @@ textarea {
 }
 
 input[type=submit] {
-    width: 90vw;
+    width: 60vw;
     font-size: 20px;
 }
 
@@ -69,9 +81,23 @@ textarea {
 
 .information {
     border: 2px solid black;
-    margin: 10px 5px;
+    margin: 15px 10px;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 0 0 0 1px #344e41, 2px 2px 4px 2px rgba(3, 54, 39, 0.5);
+    padding: 10px;
+    font-size: 1.3rem;
+    color: #3a5a40;
+}
+
+#informations {
+    border: 3px dashed #3a5a40;
+    margin: 40px 40px;
+    padding: 20px;
+}
+
+#informations h2, #informations h1{
+    text-align: center;
+    color: #3a5a40;
 }
 
 .alert {
@@ -79,11 +105,31 @@ textarea {
     font-size: 50px;
 }
 
+#pagination {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#pagination a{
+    gap: 2rem;
+    color: white;
+    border: 1px solid #3a5a40;
+    padding: 4px;
+    background-color: #3a5a40;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#pagination a:hover{
+    cursor: pointer;
+}
+
 @media screen and (min-width:480px) and (max-width:959px) {
+
     #lenom, #leprenom, #lemessage, #lusername, input[type=submit] {
         flex-direction: row;
         flex-wrap: nowrap;
-        width:90vw;
+        width: 85vw;
     }
     #lenom label, #leprenom label, #lemessage label, #lusername label {
         width: 150px;
@@ -91,15 +137,24 @@ textarea {
         margin-right: 30px;
     }
     #nom, #prenom, #message, #username {
-        width:75vw;
+        width: 75vw;
     }
     input[type=submit] {
         width: 40vw;
         font-size: 20px;
+        color: #3a5a40;
+    }
+
+    #photo {  
+        margin-bottom: 40px;
     }
 }
 
 @media screen and (min-width:960px) {
+
+    form {
+        margin-right: 60px;
+    }
   
     #lenom, #leprenom, #lemessage, #lusername, input[type=submit] {
         flex-direction: row;
@@ -126,6 +181,7 @@ textarea {
     input[type=submit] {
         width: 20vw;
         font-size: 20px;
+        color: #3a5a40;
     }
 }
 

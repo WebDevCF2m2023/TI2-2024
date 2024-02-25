@@ -12,10 +12,10 @@
 </head>
 <body>
     <div id="title">
-        <h1>Livre d'or</h1>
+        <h1>Formulaire</h1>
     </div>
     <div id="photo">
-        <img src="img/email.png" alt="">
+        <img src="img/contact-7239360_640.jpg" alt="">
     </div>
     <form action="" method="POST" class="form" onsubmit="return check()">
         <h1>Laissez-nous un message</h1>
@@ -36,7 +36,7 @@
             <textarea name="message" id="message" cols="30" rows="10" maxlength="600"></textarea>
         </div>
         <div>
-            <p>(*)Ce champ est obligatoire</p>
+            <p>(*) Ce champ est obligatoire</p>
         </div>
         <div id="envoi">
             <input type="submit" value="Envoyer">
@@ -54,11 +54,9 @@
         }
         ?>
     </div> 
-    <?php
-    if(isset($pagination)) echo "$pagination<hr>"; 
-    ?>    
+       
     <section id="informations"> 
-        <h2>Messages Précédents</h2>
+        <h1>Messages Précédents</h1>
         <h2>Il y a <?=$nbComments ?> message(s)</h2>
         <?php 
             foreach($informations as $information):
@@ -67,16 +65,20 @@
             <div>                
                 <p><?= (new DateTime($information["datemessage"]))->format('d/m/Y à H:i')?></p>
                 <p><?= $information["firstname"] ?></p>
+                <p><?= wordwrap($information["message"],100,"\n",true) ?></p>
             </div>
-            <p><?= wordwrap($information["message"],100,"\n",true) ?></p>
+            
         </div>
         <?php
             endforeach;
         ?>
+        <div id="pagination">
+        <?php
+        if(isset($pagination)) echo "$pagination"; 
+        ?>
+        </div>
     </section>
-    <?php
-    if(isset($pagination)) echo "$pagination<hr>"; 
-    ?>
+    
 <script src="js/validation.js"></script>
 </body>
 </html>
