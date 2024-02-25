@@ -22,14 +22,14 @@
                 <form action="?p=1" method="POST" onsubmit="return validateForm()">
                     <h3>Laissez-nous un message</h3>
                     <?php 
-                    if(isset($message, $error)){
-                        $class = $error ? "error" : "success";
+                    if(isset($message)){
+                        $class = $success !== true ? "error" : "success";
                     }else{
                         $class = "";
                         $message = "";
                     }
                     ?>
-                    <p id="information-message" class="<?= $class ?>"><?= $message ?></p>
+                    <p id="information-message" style="<?=$class === "" ? "display: none;" : ""?>" class="<?= $class ?>"><?= $message ?></p>
                     <p id="prenom-error" class="error">* Le prénom doit avoir minimum 4 caractère et maximum 100.</p>
                     <p id="nom-error" class="error">* Le nom doit avoir minimum 4 caractère et maximum 100.</p>
                     <p id="email-error" class="error">* L'email n'est pas valide.</p>
@@ -48,7 +48,8 @@
                     </div>
                     <div>
                         <label for="message">Message *</label>
-                        <textarea name="message" id="message" maxlength="600" required></textarea>
+                        <textarea name="message" id="message" required></textarea>
+                        <span id="infosLengthMessage">0 / 600</span>
                     </div>
                     <p id="tips">(*) Ce champ est obligatoire</p>
                     <div id="containerSubmit">

@@ -27,11 +27,9 @@ try{
 if(isset($_POST["nom"], $_POST["prenom"], $_POST["email"], $_POST["message"])){
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
     $success = addLivreOr($pdo, $_POST["prenom"], $_POST["nom"], $_POST["email"], $_POST["message"]);
-    $error = false;
     $message = "Le message a bien été envoyé 🤗";
     // Si une erreur s'est produite
     if($success !== true){
-        $error = true;
         $message = "Le message n'a pas pu être envoyé 😥";
         // Si une erreur côté PDO s'est produite
         // On affichera l'erreur SQL
