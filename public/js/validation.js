@@ -30,7 +30,8 @@ function validateForm(){
         checkOK = false;
         prenomError.style.display = "block";
     }
-    if(message.value.trim().length == 0 || message.value.trim().length > 600){
+    const messageLength = Array.from(message.value.trim()).length;
+    if(messageLength == 0 || messageLength > 600){
         checkOK = false;
         messageError.style.display = "block";
     }
