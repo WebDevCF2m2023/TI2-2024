@@ -71,7 +71,7 @@
             <?php foreach($livreOr as $comment): ?>
             <div class="comment">
                 <p><span class="name"><?=htmlspecialchars($comment["firstname"])?></span> a envoyé ce message le <?=(new DateTime($comment["datemessage"]))->format("d-m-Y à H\hi")?></p>
-                <p><?=str_replace("\n", "<br>", htmlspecialchars($comment["message"]))?></p>
+                <p><?=nl2br(htmlspecialchars($comment["message"]))?></p>
             </div>
             <?php endforeach; ?>
             <div class="pagination"><?=$pagination/*Si false, echo du vide*/?></div>
