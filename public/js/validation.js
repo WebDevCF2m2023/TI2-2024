@@ -12,7 +12,7 @@ function submitForm(e) {
     envoi.style.color = "red";
     envoi.style.fontSize= "25px";
 
-    if (firstName.length===0){
+    if (firstName.length === 0){
         envoi.textContent = "Veuillez introduire votre prénom";
     }else if (firstName.length >100){
         envoi.textContent = "Maximum 100 characters";

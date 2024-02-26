@@ -23,7 +23,7 @@
             <div id="envoi"></div>
             <div>
                 <label id="labelPrenom" for="prenom">Prénom *</label>
-                <input type="text" name="prenom" id="prenom" required>
+                <input type="text" name="prenom" id="prenom">
             </div>
             
             <div>
@@ -32,11 +32,11 @@
             </div>
             <div>
                 <label for="email" id="labelEmail">Email *</label>
-                <input type="email" name="email" id="email" required>
+                <input type="text" name="email" id="email" >
             </div>
             <div>
                 <label for="message" id="labelMessage">Message *</label>
-                <textarea name="message" id="message" cols="30" rows="10" maxlength="600" required></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" maxlength="600"></textarea>
             </div>
             <p id="champObligatoire">(*) Ce champ est obligatoire</p>
             <div>
