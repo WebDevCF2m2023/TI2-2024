@@ -112,15 +112,18 @@ p{
 @media screen 
     and (min-width : 960px){ 
      img{
-        width: 30%;
+        width: 20%;
         float: left;
+        margin-left: 20px;
      }   
      #cadreForm{
         width: 700px;
         margin-left: 30% ;
         margin-right: 5em;
      }
-
+     p{
+        font-size: 2em;
+     }
      #labelPrenom, #labelNom, #labelEmail, #labelMessage{
         display: inline-block;
         width: 15%;
