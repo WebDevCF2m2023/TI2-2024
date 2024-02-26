@@ -7,10 +7,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+   
 }
 
 header {
-    background-color: #0abefa;
+    background-color:  #0abefa;
     color: #333;
     padding: 20px 0;
     text-align: center;
@@ -20,12 +22,14 @@ header {
 }
 
 main {
-    max-width: 800px;
+    width: 800px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
+    border:2px solid #0abefa;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #0abefa;
+    box-shadow: #0abefa;
 }
 
 form {
@@ -67,10 +71,11 @@ input[type="submit"]:hover {
 
 .commentaires {
 color: rgb(0, 4, 4);
-border: 2px solid black;
+border: 2px solid #0abefa;
 width: 40%;
 padding: 15px;
 margin-bottom: 20px;
+box-shadow: #0a2afa;
 
 }
 
@@ -88,22 +93,6 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: #0abefa;
-    color: #333;
-    padding: 20px 0;
-    text-align: center;
-}
-
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -143,7 +132,6 @@ input[type="submit"]:hover {
     background-color: #0abefa;
 }
 
-
 .commentaires {
     margin-bottom: 20px;
 }
@@ -160,41 +148,78 @@ input[type="submit"]:hover {
 
 @media screen and (max-width: 480px) {
     main {
-        padding: 10px;
+        width: 90%; 
+        margin: 10px auto; 
+        padding: 15px; 
     }
-    form {
-        margin-bottom: 10px;
+
+    form div {
+        margin-bottom: 10px; 
     }
+
+    input[type="password"],
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%; 
+    }
+
     input[type="submit"] {
-        padding: 8px 15px;
+        padding: 8px 16px; 
     }
+
     .commentaires {
-        margin-bottom: 10px;
+        width: 90%; 
+        padding: 10px; 
+        margin-bottom: 10px; /
     }
-    .commentaires h4 {
-        font-size: 14px;
-        margin-bottom: 3px;
-    }
-    .commentaires p {
-        font-size: 12px;
-        line-height: 1.5;
-    }
+}
+header {
+    background-color:  #0abefa;
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    
 }
 
 @media screen and (min-width: 480px) and (max-width: 960px) {
     main {
-        max-width: 600px;
+        width: 90%; 
+        margin: 10px auto; 
+        padding: 15px; 
     }
-    form {
-        margin-bottom: 15px;
+
+    form div {
+        margin-bottom: 10px; 
     }
+
+    input[type="password"],
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%; 
+    }
+
     input[type="submit"] {
-        padding: 10px 16px;
+        padding: 8px 16px; 
     }
-    .commentaires h4 {
-        font-size: 14px;
+
+    .commentaires {
+        width: 90%; 
+        padding: 10px; 
+        margin-bottom: 10px; 
     }
-    .commentaires p {
-        font-size: 13px;
+
+    header {
+        background-color:  #fa0a0e;
+        color: #333;
+        padding: 20px 0;
+        text-align: center;
+        border-radius: 10px;
+        width: 100%;
+        
     }
 }
+

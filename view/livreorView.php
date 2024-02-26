@@ -12,9 +12,11 @@
 </head>
 
 <body>
+
     <header>
         <h1>LIVRE D'OR</h1>
     </header>
+     <img src="img/email.png" alt="fig1">
     <main>
 
         <?php
@@ -24,7 +26,7 @@
         <?php endif; ?>
 
 
-        <img src="img/email.png" alt="fig1">
+        
         <form action="" method="POST" onsubmit="return submitForm()">
             <div>
                 <h2>Laisse-nous un message</h2>
