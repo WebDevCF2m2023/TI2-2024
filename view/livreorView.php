@@ -71,7 +71,7 @@
             <div>                
                 <p><?= (new DateTime($information["datemessage"]))->format('d/m/Y à H:i')?></p>
                 <p><?= $information["firstname"] ?></p>
-                <p><?= wordwrap($information["message"],100,"\n",true) ?></p>
+                <p><?= wordwrap($information["message"],20,"\n",true) ?></p>
             </div>
             
         </div>

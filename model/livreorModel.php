@@ -23,8 +23,7 @@
 // Chargement des commentaires via la pagination
 function getPaginationComments(PDO $db, int $currentPage, int $commentsByPage): array 
 {
-    $offset = ($currentPage-1)*$commentsByPage;
-    // ajouter ici
+    $offset = ($currentPage-1)*$commentsByPage;    
     $sql = "SELECT * FROM livreor ORDER BY datemessage DESC LIMIT $offset,$commentsByPage";
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
