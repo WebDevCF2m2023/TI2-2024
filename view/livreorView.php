@@ -47,6 +47,7 @@
     <h3 id="listMessages">Messages Précédents - Total de messages <?php echo count($messages); ?></h3>
     <div id="allMessages">
     
+    
     <?php
     if(isset($pagination)) echo "$pagination<br><br>"; 
     ?>
