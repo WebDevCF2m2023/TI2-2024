@@ -18,7 +18,7 @@
     <div id="cadreForm">
         <form action="" method="POST" onsubmit="return submitForm(event)">
             <div>
-                <h2>Laissez nous un message</h2>
+                <h2>Laissez-nous un message</h2>
             </div>    
             <div id="envoi"></div>
             <div>
@@ -47,7 +47,7 @@
     <h3 id="listMessages">Messages Précédents - Total de messages <?php echo count($messages); ?></h3>
     <div id="allMessages">
     
-    
+
     <?php
     if(isset($pagination)) echo "$pagination<br><br>"; 
     ?>
