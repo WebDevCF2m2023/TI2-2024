@@ -36,7 +36,7 @@ function submitForm(e) {
     }else if(message.length === 0){
         errorMessage ="Veuillez écrire un message" ;
       
-    }else if(/@/.test(email) && /\./.test(email) == false){
+    }else if(/@/.test(email) && /\./.test(email)){
         errorMessage= "L'adresse e-mail est invalide.";
      
     }else{
