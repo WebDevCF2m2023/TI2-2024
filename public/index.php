@@ -28,7 +28,7 @@ try{
 if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['message']) ){
     $insert = addLivreOr($db, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
     if ($insert === true){
-        header("Location: /");
+        header("Location: ./");
         exit();
     }else{
         $message = $insert;
