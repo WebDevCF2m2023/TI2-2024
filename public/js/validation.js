@@ -1,7 +1,7 @@
 function checkFistName() {
-    var firstName = document.getElementById('#prenom').value;
-    var lastName = document.getElementById('#prenom').value;
-    var email = document.getElementById('#email').value;
+    var firstName = document.getElementById('prenom').value;
+    var lastName = document.getElementById('prenom').value;
+    var email = document.getElementById('email').value;
 
     var validFirstName = firstName.length <= 100;
     var validLastName = lastName.length <= 100;
