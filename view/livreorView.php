@@ -16,8 +16,8 @@
     </header>
     <main id="livreor">
     <?php 
-                        if (isset($success)) {
-                            if ($success === true) {
+                        if (isset($valide)) {
+                            if ($valide === true) {
                                 echo '<img id="alien" src="img/istockphoto-1173828830-612x612-removebg-preview-removebg-preview(1).png" alt="" > </div>';
                             } else {
                                 echo '<div class="message" >'.$message.'</div>';
@@ -33,8 +33,8 @@
                 <form id="myForm" action="" method="POST">
                     <h3>Laissez-nous un message</h3>
                     <?php 
-                        if (isset($success)) {
-                            if ($success === true) {
+                        if (isset($valide)) {
+                            if ($valide === true) {
                                 echo '<div class="message" id="welkom" >Merci le message à bien été réceptionné  '.$firstname.' '.$lastname.' </div>';
                             } else {
                                 echo '<div class="message" >'.$message.'</div>';
@@ -68,8 +68,8 @@
                     <h3><?php if (empty($livreor)) echo "Pas encore de message" ?></h3>
                     <h3>Il y a <?= $nbInformations ?> messages écrits</h3>
                     <?php 
-                        if (isset($success)) {
-                            if ($success === true) {
+                        if (isset($valide)) {
+                            if ($valide === true) {
                                 echo '<div class="message" id="messageEnregistre">Le message a été enregistré avec succès.</div>';
                             } else {
                                 echo '<div class="message" id="messageNonEnregistre">Le message n\'a pas été enregistré.</div>';
