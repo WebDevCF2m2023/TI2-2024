@@ -112,7 +112,7 @@ p{
 @media screen 
     and (min-width : 960px){ 
      img{
-        width: 10%;
+        width: 30%;
         float: left;
      }   
      #cadreForm{
