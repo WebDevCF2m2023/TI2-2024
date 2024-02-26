@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  background-color: #19aad6;
+  font-family: monospace;
+  color: white;
+  border-radius: 15px;
+  border: solid rgb(46, 97, 173);
+  text-align: center;
+  font-size: 2rem;
+}
+
+#form {
+  display: block;
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 50px;
+}
+img {
+  width: 200px;
+  margin: 0;
+}
+h2 {
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+#labelNom,
+#labelPrenom,
+#labelEmail,
+#labelMessage {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  font-size: 18px;
+  font-family: monospace;
+}
+#nom,
+#prenom,
+#email {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 350px;
+  height: 20px;
+}
+#message {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 150px;
+  resize: none;
+}
+#Score {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 150px;
+  resize: none;
+}
+
+p {
+  font-size: 18px;
+}
+
+input[type="submit"] {
+  width: 200px;
+  border-radius: 10px;
+  border: 1px solid #161616;
+  background-color: rgb(69, 69, 255);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(13, 63, 71);
+  box-shadow: 3px 3px 5px rgba(22, 22, 22, 0.5);
+}
+
+.pagination {
+  display: inline-block;
+  background-color: aqua;
+  text-decoration-line: none;
+}
+
+.pagination a {
+  color: rgba(235, 238, 40, 0.904);
+  text-decoration-line: none;
+  border: 2px solid rgba(211, 163, 5, 0.904);
+}
+
+.pagination a.active {
+  background-color: #8bff07;
+  border-radius: 10px;
+  color: white;
+}
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+.post1 {
+  border: 2px solid rgb(53, 135, 241);
+  text-align: center;
+  border-radius: 10px;
+  width: 600px;
+}
+
+@media screen and (min-width: 481px) and (max-width: 959px) {
+  #leftsidebar {
+    width: 200px;
+  }
+  #main {
+    margin-left: 216px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+  #container {
+    justify-content: center;
+  }
+  #main {
+    margin-left: 216px;
+  }
+}
