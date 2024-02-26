@@ -6,7 +6,6 @@ function formVerify() {
     let nom = document.querySelector("#form-nom").value;
     let mail = document.querySelector("#form-mail").value;
 
-
     var messageLengthCheck = message.length <= 600;
     var prenomLengthCheck = prenom.length <= 100;
     var nomLengthCheck = nom.length <= 100;
@@ -35,8 +34,6 @@ function formVerify() {
     
 }
 
-
-
 function displayHelper(color, message){
     let helper = document.querySelector("#helper");
     helper.style.display = "block";
@@ -60,13 +57,5 @@ form.addEventListener('submit', function(event) {
     } else {
         event.preventDefault();
     }
-
-
-
-
-
-
-
-
 }); 
 
