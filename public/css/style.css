@@ -123,12 +123,12 @@
   
        .error[aria-live="polite"] {
        /* Style pour le message enregistré (en vert) */
-       color: green;
+       color: rgb(1, 45, 1);
        }
   
        .error:not([aria-live="polite"]) {
        /* Style pour le message non enregistré (en rouge) */
-       color: red;
+       color: rgb(91, 3, 3);
        }
     
        /* Styles spécifiques pour les écrans de moins de 480 pixels de largeur */
