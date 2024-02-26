@@ -18,6 +18,7 @@
     <div id="thatform">
     <img src="img/email.png">
     <form action="" method="POST" name="or" id="form">
+        <fieldset>
             <h2> Laissez nous un message</h2>
             <label>Prenom * </label>
             <input type="text" placeholder="" name="prenom" id="prenom" required>
@@ -30,11 +31,12 @@
             <div id="mailControl"><p>Il manque soit @ ou .</p></div>
             <br>
             <label>Message *</label>
-            <input type="text" name="message" id="message" cols="30" rows="5" maxlength="600" required>
             <div id="msgControl"><p>Doit comporter au minimum 100 characters</p></div>
+            <textarea type= "text" name="message" id="message" cols="30" rows="5" required ></textarea>
             <br>
             <p>(*) Ce champ est obligatoire</p>
-            <button id=submeat type="submit" onclick = checking()>Envoyez</button>
+            <button id="submeat" type="submit" onsubmit = checking()>Envoyez</button>
+            </fieldset>
     </form>
     
     </div>
@@ -65,7 +67,7 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title"><?php echo $commentaire['usermail']; ?> - <?php echo $commentaire['datemessage']; ?></h5>
-                <p class="card-text"><?php echo $commentaire['message']; ?></p>
+                <p class="card-text"><?php echo wordwrap($commentaire['message'],35 , "\n", true) ?></p>
             </div>
         </div>
         <?php
