@@ -40,7 +40,7 @@ function addLivreOr(PDO $db,
                     string $lastname,
                     string $usermail,
                     string $message
-                    ): bool|string
+                    )
 {
     $firstname = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
     $lastname = htmlspecialchars(strip_tags(trim($lastname)), ENT_QUOTES);

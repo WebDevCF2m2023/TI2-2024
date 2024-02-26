@@ -35,7 +35,7 @@ if (isset($_POST['firstname'],$_POST['lastname'] ,$_POST['usermail'], $_POST['me
 
 
  // si l'insertion a réussi
-    if ($insert) {
+    if ($insert === true) { //Contient la fonction d'insertion
         // on redirige vers la page actuelle
         header("Location: ./");
         exit();
