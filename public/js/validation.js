@@ -3,9 +3,6 @@ const minLengthName = 4;
 const maxLengthName = 100;
 const maxHeightComment = 350;
 
-const colorError = "rgb(200, 62, 62)";
-const colorSuccess = "rgb(109, 200, 47)";
-
 const message = document.querySelector("#message");
 const nom = document.querySelector("#nom");
 const prenom = document.querySelector("#prenom");
@@ -27,29 +24,25 @@ const informationMessage = document.querySelector("#information-message");
 
 function validateForm(){
     informationMessage.style.display = "none";
-    messageError.style.display = "none";
-    nomError.style.display = "none";
-    prenomError.style.display = "none";
-    emailError.style.display = "none";
 
     let checkOK = true;
     if(!isValidNomLength(nom.value.trim())){
         checkOK = false;
         nomError.style.display = "block";
-    }
+    } else nomError.style.display = "none";
     if(!isValidPrenomLength(prenom.value.trim())){
         checkOK = false;
         prenomError.style.display = "block";
-    }
+    } else prenomError.style.display = "none";
     const messageLength = getLengthMessage(message.value.trim());
     if(!isValidMessageLength(messageLength)){
         checkOK = false;
         messageError.style.display = "block";
-    }
+    }else messageError.style.display = "none";
     if(!validEmail(email.value.trim())){
         checkOK = false;
         emailError.style.display = "block";
-    }
+    }else emailError.style.display = "none";
     // Si true, le formulaire s'envoie
     // Si false, le formulaire ne s'envoie pas
     if(checkOK) alert(`Bienvenue ${prenom.value} ${nom.value}`);
@@ -73,7 +66,7 @@ nom.addEventListener("input", ()=>{
     if(valid){
         nomError.style.display = "none";
     }
-    setColor(nomLabel, valid);
+    setClassColor(nomLabel, valid);
 });
 
 prenom.addEventListener("input", ()=>{
@@ -81,7 +74,7 @@ prenom.addEventListener("input", ()=>{
     if(valid){
         prenomError.style.display = "none";
     }
-    setColor(prenomLabel, valid);
+    setClassColor(prenomLabel, valid);
 });
 
 email.addEventListener("input", ()=>{
@@ -89,7 +82,7 @@ email.addEventListener("input", ()=>{
     if(valid){
         emailError.style.display = "none";
     }
-    setColor(emailLabel, valid);
+    setClassColor(emailLabel, valid);
 });
 
 message.addEventListener("input", ()=>{
@@ -97,30 +90,27 @@ message.addEventListener("input", ()=>{
     const valid = isValidMessageLength(messageLength);
     infosLengthMessage.textContent = messageLength + " / " + maxLengthMessage;
     if(!valid && !infosLengthMessage.classList.contains("error")){
-        infosLengthMessage.classList.add("error");
-        infosLengthMessage.classList.remove("success");
-        setColor(messageLabel, false);
+        setClassColor(infosLengthMessage, false);
+        setClassColor(messageLabel, false);
     }else if(valid && !infosLengthMessage.classList.contains("success")){
-        infosLengthMessage.classList.add("success");
-        infosLengthMessage.classList.remove("error");
-        setColor(messageLabel, true);
-    }
-    if(valid){
         messageError.style.display = "none";
+        setClassColor(infosLengthMessage, true);
+        setClassColor(messageLabel, true);
     }
 });
 
 /**
  * 
- * @param {HTMLLabelElement} label 
- * @param {boolean} success 
+ * @param {HTMLElement} htmlElement 
+ * @param {boolean} success
  */
-function setColor(label, success){
-    label.style.color = success ? colorSuccess : colorError;
+function setClassColor(htmlElement, success){
     if(success){
-        label.style.textShadow = "";
+        htmlElement.classList.add("success");
+        htmlElement.classList.remove("error");
     }else{
-        label.style.textShadow = "1px 1px 3px black";
+        htmlElement.classList.add("error");
+        htmlElement.classList.remove("success");
     }
 }
 

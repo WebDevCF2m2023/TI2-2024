@@ -32,10 +32,10 @@
                     }
                     ?>
                     <p id="information-message" style="<?=$class === "" ? "display: none;" : ""?>" class="<?= $class ?>"><?= $message ?></p>
-                    <p id="prenom-error" class="error">* Le prénom doit avoir minimum 4 caractère et maximum 100.</p>
-                    <p id="nom-error" class="error">* Le nom doit avoir minimum 4 caractère et maximum 100.</p>
-                    <p id="email-error" class="error">* L'email n'est pas valide.</p>
-                    <p id="message-error" class="error">* Le message ne peut pas être vide et ne doit pas dépasser 600 caractère</p>
+                    <p id="prenom-error" class="error error-validation">* Le prénom doit avoir minimum 4 caractère et maximum 100.</p>
+                    <p id="nom-error" class="error error-validation">* Le nom doit avoir minimum 4 caractère et maximum 100.</p>
+                    <p id="email-error" class="error error-validation">* L'email n'est pas valide.</p>
+                    <p id="message-error" class="error error-validation">* Le message ne peut pas être vide et ne doit pas dépasser 600 caractère</p>
                     <div>
                         <label for="prenom">Prénom *</label>
                         <input type="text" name="prenom" id="prenom" required>
