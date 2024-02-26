@@ -15,9 +15,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `ti2web2024`
 --
-DROP DATABASE IF EXISTS `ti2web2024`;
-CREATE DATABASE IF NOT EXISTS `ti2web2024` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `ti2web2024`;
+use `2024_web_emrah`
 
 -- --------------------------------------------------------
 

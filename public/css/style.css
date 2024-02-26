@@ -72,10 +72,12 @@ form{
 
 
 fieldset {
+    height: 550px;
     background-color: rgb(30, 125, 233);
     margin-right: 10%;
     position: relative;
     left: 10%;
+  
 }
 
 label {
@@ -95,6 +97,7 @@ input {
     width: 20%;
     left: 40%;
     top: 3px;
+    height: 20px;
 }
 
 #message {
@@ -136,6 +139,7 @@ img {
 form {
     top: -20vh;
     position: relative;
+    
 }
 
 #firstname, #lastname, #usermail, #message {
@@ -155,7 +159,6 @@ form {
 
     #sub {
         width: 30%;
-        left: 35%;
     }
 
     img {
@@ -182,5 +185,9 @@ form {
     left: 190px;
     position: relative;
 }
-/* j'ai quand meme pris mon temp et j'en ai fait 1 :) j'espere que tu seras content */ 
-/* j'aurais pue tres bien aller prendre un template deja tout pret */
+button{
+    position: sticky;
+}
+.error, #error-message{
+    color: red;
+}

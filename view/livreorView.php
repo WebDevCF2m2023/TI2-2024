@@ -20,28 +20,29 @@
         <img src="img/email.png" alt="">
             <fieldset>
                 <h2>Laissez-nous un message</h2>
-                <p id="error-nom" class="error">* Le prenom et le nom doit faire au moins 5 caractères</p>
+                <p id="error-prenom" class="error">* Veuillez entrer un prenom valide</p>
                 <div>
                     <label for="prenom">prenom * </label>
-                    <input type="text" name="firstname" id="firstname" required>
+                    <input type="text" name="firstname" id="firstname">
                 </div>
+                <p id="error-nom" class="error">* Veuillez entrer un nom valide</p>
                 <div>
                     <label for="nom">Nom : </label>
-                    <input type="text" name="lastname" id="lastname" required>
+                    <input type="text" name="lastname" id="lastname">
                 </div>
 
-            <p id="error-email" class="error">* L'email doit avoir un @ et un .</p>
+            <p id="error-email" class="error">* Veuillez entrer un email valide votre mail doit avoir un @ et un .</p>
             <div>
                 <label for="email">Votre email *</label>
-                <input type="email" name="usermail" id="usermail" required>
+                <input type="email" name="usermail" id="usermail">
             </div>
-            <p>* Le message ne doit pas être vide</p>
+            <p id="error-message">* Le message ne doit pas être vide</p>
             <label for="message" id="msg">Message *</label>
-            <textarea name="message" id="message" maxlength="2050" required></textarea>
+            <textarea name="message" id="message" maxlength="2050"></textarea>
             <div>
                 <input type="submit" value="Envoyer" id="sub">
-            </div>
-        </form>
+                </div>
+            </form>
         </fieldset>
         <section id="livreor">
         <?php
