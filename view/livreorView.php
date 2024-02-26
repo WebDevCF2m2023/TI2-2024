@@ -25,13 +25,11 @@
             <p><?php echo $message; ?></p>
         <?php endif; ?>
 
-
-        
         <form action="" method="POST" onsubmit="return submitForm()">
             <div>
                 <h2>Laisse-nous un message</h2>
-                <label for="password">Password : </label>
-                <input type="password" name="thepassword" id="password" required>
+                <label for="password">Prénom : </label>
+                <input type="text" name="thepassword" id="password" required>
             </div>
             <p id="error-nom" class="error"></p>
             <div>
@@ -44,6 +42,7 @@
                 <input type="email" name="themail" id="email" required>
             </div>
             <p id="error-themessage" class="error"></p>
+            <label for="message">Message : </label>
             <textarea name="themessage" id="themessage" maxlength="2050" required></textarea>
             <div>
                 <input type="submit" value="Envoyer">
@@ -51,14 +50,25 @@
         </form>
     </main>
 
-    <h3><?php if (empty($commentaires)) echo "Pas encore de message"; ?></h3>
+    <h3>Message<?=$nbInformations > 1 ? "s" : ""?> Précédent<?=$nbInformations > 1 ? "s" : ""?> : <?php
+
+        if($nbInformations > 1){
+            $m = "Il y a $nbInformations messages écrits.";
+        }else if($nbInformations == 1){
+            $m = "Il y a 1 message écrit.";
+        }else {
+            $m = "Pas encore de message";
+        }
+    
+        echo $m;
+    ?></h3>
     
     <?php
         if (isset($pagination)) echo "<p>$pagination</p>";
     ?>
 
     <?php
-
+    
     foreach ($informations as $commentaire) :
     ?>
 
@@ -68,6 +78,8 @@
         </div>
     <?php
     endforeach;
+
+
     // var_dump($_POST);
     ?>
 
