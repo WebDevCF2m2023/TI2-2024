@@ -63,6 +63,7 @@
        
     <section id="informations"> 
         <h1>Messages Précédents</h1>
+        <h2><?php if(empty($informations)) echo "Il n'y a pas de message" ?></h2>
         <h2>Il y a <?=$nbComments ?> message(s)</h2>
         <?php 
             foreach($informations as $information):

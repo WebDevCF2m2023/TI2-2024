@@ -17,6 +17,8 @@ function check(){
         alert("Votre mail doit avoir '.'");
     }else if(message.length > 600){
         alert("Votre message doit avoir maximum 600 caractères");
+    }else if(message.trim().length === 0){
+        alert("Vous pouvez pas remplir le section message");
     }else {
         alert("Bienvenue " + prenom +" "+ nom);
         return true;
