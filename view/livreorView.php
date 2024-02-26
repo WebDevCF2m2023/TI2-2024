@@ -41,11 +41,17 @@
         <div id="envoi">
             <input type="submit" value="Envoyer">
         </div>
-        <p id="insertmessage"></p>
+        <?php if(isset($message) && $insert){
+            ?>
+        <div id="insertmessage"> 
+        <?php  echo $message;?></div>
+        <?php
+        }
+        ?>
     </form>  
     <div>
         <?php
-        if (isset($message)) {
+        if (isset($message) && !$insert) {
             ?>
             <div class="alert alert-danger" role="alert">
                 <?php echo $message; ?>

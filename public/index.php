@@ -10,7 +10,7 @@
 require_once "../config.php";
 // chargement du modèle de la table livreor
 require_once "../model/livreorModel.php";
-require_once "../Model/PaginationModel.php";
+require_once "../model/PaginationModel.php";
 /*
  * Connexion à la base de données en utilisant PDO
  * Avec un try catch pour gérer les erreurs de connexion
@@ -31,11 +31,10 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['usermail'], $_POST['m
     // si l'insertion a réussi
     if ($insert) {
     // on redirige vers la page actuelle
-    header("Location: ./");
-    exit();
+    $message = "Insertion réussi";
     // sinon, on affiche un message d'erreur
     } else {
-        $message = "Erreur lors de l'insertion";
+    $message = "Erreur lors de l'insertion";
     }
 }
 
