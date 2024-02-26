@@ -11,11 +11,11 @@
  */
 function getAllLivreOr(PDO $db): array
 {
-    $sql = "SELECT * FROM livreor";
-    $query = $db->query($sql);
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    $query->closeCursor();
-    return $result; // retourne un tableau
+    $sql = "SELECT * FROM livreor"; /*Selectionne le tableau livreor */
+    $query = $db->query($sql); /* Prépare et Exécute une requête SQL*/ 
+    $result = $query->fetchAll(PDO::FETCH_ASSOC); /*Récupère la ligne suivante d'un ensemble de résultats sous forme de tableau associatif*/
+    $query->closeCursor(); /*Ferme le curseur, permettant à la requête d'être de nouveau exécutée*/
+    return $result; /*J'ai bloqué pendant plusieurs heures a cause d'une erreur dans mon code a cet endroit (return [];) qui retournait un tableau vide*/
 }
 
 /**
@@ -51,4 +51,4 @@ function addLivreOr(PDO $db, string $firstname, string $lastname, string $userma
          return $e->getMessage();  // sinon, on renvoie le message d'erreur
      }
     return false;
-}
+    }

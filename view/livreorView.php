@@ -14,7 +14,7 @@
     <h1 id="firstTitle">Livre d'or</h1>
 <div id='superior'>
 <div id ="logo">
-<img src="../img/shichan.png" alt="form">
+<img src="img/shichan.png" alt="form">
 </div>
 
 <form action="./" method="POST" id="myForm">
@@ -66,7 +66,7 @@
                 <p><?= $add["firstname"] ?></p>
                 <p><?=(new DateTime($add["datemessage"]))->format('d-m-Y à H\hi')?></p>
             </div>
-            <p><?= wordwrap($add["message"], 100, "\r\n", true ) ?></p>
+            <p><?= wordwrap($add["message"], 30, "\r\n", true ) ?></p>
         </div>
         <?php
             endforeach;
