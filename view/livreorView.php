@@ -16,7 +16,7 @@
         <img src="img/email.png">
     </div>
     <div id="cadreForm">
-        <form action="" method="POST">
+        <form action="" method="POST" onsubmit="return submitForm(event)">
             <div>
                 <h2>Laissez nous un message</h2>
             </div>    
@@ -40,7 +40,7 @@
             </div>
             <p id="champObligatoire">(*) Ce champ est obligatoire</p>
             <div>
-            <input type="submit" value="Envoyer" id="envoyer" onclick="return submitForm(event)">
+            <input type="submit" value="Envoyer" id="envoyer">
             </div>
         </form>
     </div>
@@ -52,7 +52,7 @@
     ?>
         <?php 
         foreach ($messagesByPage as $commentaires):?>
-            <p class="post1"><?= $commentaires["firstname"]?> a envoyé ce message le <?=(new DateTime($commentaires["datemessage"]))->format('d/m/Y H:i:s')?><br><?= nl2br($commentaires["message"])?></p><br>
+            <p class="post1"><?= $commentaires["firstname"]?> a envoyé ce message le <?=(new DateTime($commentaires["datemessage"]))->format('d/m/Y H:i')?><br><?= nl2br($commentaires["message"])?></p><br>
         <?php endforeach; 
         ?>
     <?php
