@@ -1,19 +1,29 @@
 const formContainer = document.getElementById("form");
-    
-formContainer.addEventListener("submit"), function(event) {
-    event.preventDefault()
+
+formContainer.addEventListener("submit", function(event) {
+    event.preventDefault();
+checking();   
+
+}); 
 
     function checking () {
-        var names = document.getElementById("nom");
+      
+        
+        
+        var firstName = document.getElementById("prenom").value;
+        var secondName = document.getElementById("nom").value;
+        var mail = document.getElementById("email").value;
+        var msg = document.getElementById("message").value;
 
-        var lengthCheck = names.lenght === 8;
-        var funnyCharCheck = /[@+-*/"'()§!&^?]/.test(names);
-
-        if (names === true) {
-            alert("Bienvenue !")
-            window.location.replace("")
+        if (firstName.length >= 1 && secondName.length >= 1 && msg.length >= 1 && /@/.test(mail) && /\./.test(mail)) {
+            alert("Yes.");
+        } else {
+            alert("Nope.");
+            return;
         }
+        
+        
+        formContainer.submit(); 
     }
 
-   
-}
+    
