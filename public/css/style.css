@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FAFAFA;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1{
+    color: #417397;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+main#livreor{
+    width: clamp(960px, 100%, 1200px);
+    margin: auto;
+}
+
+#formSection{
+    display: flex;
+}
+
+#formSection > div:not(:first-child){
+    background-color: #417397;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+#formSection h3{
+    text-align: center;
+    color: #f3f4d8;
+    margin: .5rem 0;
+}
+
+#formSection form div:nth-child(3){
+    margin-top: 40px;
+}
+
+#formSection label{
+    color: #202020;
+    display: inline-block;
+    width: 15%;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+#formSection label[for='message']{
+    position: relative;
+    bottom: 70px;
+}
+
+#formSection input, #formSection textarea{
+    background-color: #f3f4d8;
+    width: 82%;
+    border: 1px solid grey;
+    padding: .25rem .5rem;
+    margin: 0.8rem 0;
+}
+
+#formSection textarea{
+    height: 125px;
+    margin-bottom: 0;
+    resize: none;
+}
+
+#formSection input[type='submit']{
+    border: 1px solid grey;
+    color: #161616;
+    width: 180px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 2px 0;
+    cursor: pointer;
+}
+
+#containerSubmit{
+    text-align: center;
+}
+
+#tips{
+    color: white;
+    font-size: .8rem;
+    font-style: italic;
+    text-align: center;
+    margin: .5rem 0;
+}
+
+h2{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    margin-left: .3rem;
+    margin-top: .5rem;
+}
+
+.pagination{
+    padding-left: 20px;
+    font-size: 1.25rem;
+    margin: 1rem;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pagination a{
+    color: #417397;
+}
+
+.currentPage{
+    color: #161616;
+    font-weight: bold;
+}
+
+.comment{
+    border: 2px solid black;
+    border-radius: .5rem;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.7);
+    margin: 0 1rem;
+    padding: 1rem .5rem;
+    margin-bottom: 1rem;
+    max-height: 350px;
+    overflow-wrap: break-word;
+}
+
+.scrollY{
+    overflow-y: scroll;
+}
+
+.comment p:first-child{
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.name{
+    color: #3161ff;
+    text-decoration: underline;
+}
+
+@media screen and (480px < width < 960px){
+    #formSection{
+        flex-direction: column;
+    }
+    #formSection div:first-child{
+        text-align: center;
+    }
+    main#livreor{
+        margin: 0 0 0 10px;
+        width: 97.5%;
+    }
+    #formSection > div:not(:first-child){
+        margin-right: 0px;
+    }
+    
+}
+
+/* Resize page a la main pour pas que les labels se cassent */
+@media screen and (480px < width < 620px){
+    label{
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (width <= 480px){
+    #formSection{
+        flex-direction: column;
+    }
+    #formSection div:first-child{
+        text-align: center;
+    }
+    main#livreor{
+        margin: 0;
+        width: 100%;
+    }
+    #formSection > div:not(:first-child){
+        margin-right: 0px;
+    }
+    #formSection label{
+        padding: 0;
+        width: 100%;
+    }
+    
+    #formSection label[for='message']{
+        position: static;
+    }
+    
+    #formSection input{
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+
+    #formSection textarea{
+        width: 100%;
+        margin: 0;
+    }
+
+    #formSection input[type='submit']{
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    #formSection > div:not(:first-child){
+        padding: 1rem;
+    }
+}

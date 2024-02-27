@@ -1,0 +1,41 @@
+/*
+    CSS pour les erreurs ou succès du formulaire
+*/
+.error{
+    color: rgb(255, 62, 62) !important;
+}
+
+.error-validation{
+    margin: .2rem 0;
+    padding-left: 10px;
+    display: none;
+}
+
+.success{
+    color: rgb(109, 255, 47) !important;
+}
+
+.error, .success{
+    text-shadow: 1px 1px 3px black;
+    font-weight: bold;
+}
+
+#information-message{
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+
+#infosLengthMessage{
+    display: block;
+    text-align: right;
+    padding-right: 50px;
+    font-size: 1rem;
+    margin: 0;
+}
+
+@media screen and (width <= 480px){
+    #infosLengthMessage{
+        padding-right: 20px;
+    }
+}
