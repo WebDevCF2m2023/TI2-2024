@@ -8,16 +8,42 @@
  */
 // chargement de configuration
 require_once "../config.php";
+require_once "../model/livreorModel.php";
+require_once "../model/PaginationModel.php";
 // chargement du modèle de la table livreor
-
 /*
  * Connexion à la base de données en utilisant PDO
  * Avec un try catch pour gérer les erreurs de connexion
  */
-
+try {
+    // création d'une instance de PDO - Connexion à la base de données
+    $db = new PDO(DB_DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET . ";port=" . DB_PORT, DB_LOGIN, DB_PWD);
+} catch (Exception $e) {
+    die($e->getMessage());
+}
 /*
  * Si le formulaire a été soumis
  */
+
+ if (isset($_POST['nom'], $_POST['prenom'],$_POST['email'],$_POST['message'])) {
+    // on appelle la fonction d'insertion dans la DB
+    $valide = addLivreOr($db, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
+    $error = false;
+    $message = "Le message a bien été envoyé";
+    // Si une erreur s'est produite
+    if($valide !== true){
+        $error = true;
+        $message = "Le message n'a pas pu être envoyé";
+        // Si une erreur côté PDO s'est produite
+        // On affichera l'erreur SQL
+        if(gettype($valide) === "string")
+            $message = $valide;
+    }else{
+        $firstname = htmlspecialchars(strip_tags(trim($_POST['prenom'])), ENT_QUOTES);
+        $lastname = htmlspecialchars(strip_tags(trim($_POST['nom'])), ENT_QUOTES);
+    }
+    
+}
 
     // on appelle la fonction d'insertion dans la DB (addLivreOr())
 
@@ -31,10 +57,24 @@ require_once "../config.php";
  * On récupère les messages du livre d'or
  */
 
+ // on veut une pagination
+if(!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])){
+    $page = (int) $_GET[PAGINATION_GET_NAME];
+}else{
+    $page = 1;
+}
+
+$nbInformations = getNbInformations($db);
+// on récupère toutes les entrées de la table
+// `informations` avec Pagination
+$livreor = getPaginationInformations($db,$page,PAGINATION_NB_PAGE);
+
+
+$pagination = PaginationModel("./",PAGINATION_GET_NAME,$nbInformations,$page,PAGINATION_NB_PAGE);
+
 // on appelle la fonction de récupération de la DB (getAllLivreOr())
-
 // fermeture de la connexion
-
+$db = null;
 // Appel de la vue
 
 include "../view/livreorView.php";
