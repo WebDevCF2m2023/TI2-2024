@@ -9,7 +9,7 @@ body {
   text-align: center;
   padding: 20px;
   font-size: 5em;
-  color: #0079be;
+  color: #be3900;
 }
 
 /* Content Wrapper - Main Sections */
@@ -24,7 +24,7 @@ body {
 
 /* Main Container - Form & Messages */
 .main-container {
-  background-color: #0079be;
+  background-color: #555c61;
   border-radius: 5px;
   padding: 20px;
   width: calc(100% / 3); /* Equal size for all columns
@@ -133,7 +133,7 @@ textarea {
 Scroll to bottom
 
 Copy Link to Shar
-}
+
 
 /* Submit Button - Form Submission */
 #submit-form {

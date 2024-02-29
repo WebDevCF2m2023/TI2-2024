@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="form-field">
-                        <label for="lastname">Nom <span class="required-field">*</span></label>
+                        <label for="lastname">Nom </label>
                         <input maxlength="100" type="text" name="lastname" id="Nom" required>
                     </div>
 
@@ -42,6 +42,9 @@
         </div>
     </div>
 
+
+    
+
     <div class="message-container">
     <?php
 $results = getAllLivreOr($db);
@@ -52,15 +55,19 @@ $results = getAllLivreOr($db);
     
     ?>
 <div class="prevMessages">
-    <h3 id="prevMessHead">Messages précédents <?php if (isset($messageCount)) echo $messageCount?></h3>
+    <h3 id="prevMessHead">Messages précédents : <?php 
+    
+    if ($nbMessages > 1)$m="Il y a $nbMessages messages écrits ";
+    elseif ($nbMessages == 1)$m="Il y a un message écrit";
+    else $m="Pas encore de messages";
+    echo $m;  
+    
+    ?></h3>
     <?php foreach ($messages as $mess) : ?>
         <div class="messageHolder">
-            <h4><span class="italic"><?= $mess["firstname"] ?></span> à envoyé ce message le <?= $mess["datemessage"] ?></h4>
+            <h4><span class="italic"><?= $mess["firstname"] ?></span> a envoyé ce message le <?= $mess["datemessage"] ?></h4>
             <p><?= nl2br($mess["message"]) ?></p>
-            <?php
-    if(isset($pagination)) echo "<hr>$pagination"; 
-    
-    ?>
+  
         </div>
     <?php endforeach; ?>
 </div>
