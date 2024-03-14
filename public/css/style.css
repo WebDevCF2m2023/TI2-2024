@@ -1,96 +1,60 @@
 *{
     margin: 0;
     padding: 0;
-
 }
 h1{
-    margin: .5em 2em;
+    margin: 1em 2em;
     font-weight: 900;
     font-size: 3em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     color: #427CA0;
 } 
-img{
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+table{
+    margin-left: 100px;
+    margin-right: 50px;
     margin: auto;
-}
-#cadreForm{
-    margin: 2em;
-    background-color: #427CA0;
-    padding: 2em;
-    width: auto; 
-}
-
-h2{
-    text-align: center;
-    color: #F5F5DC;
-    font-size: large;
-    margin-bottom:  1.2em;
-}
-#envoi{
-    font-size: 18px;
-    color: darkgreen;
-    text-align: center;
-    height: 30px;
-    width: auto;    
-}
-#labelPrenom, #labelNom, #labelEmail, #labelMessage{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    margin-top: 0.5em;
 
 }
-#message{
-    resize: none;
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse; /*pour fusionner les bordures*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-#prenom, #nom, #email, #message{
-    background-color: #fafacf;
-    margin-bottom: .5em;
-    width: 100%;
+th, td{
+    padding: 5px;
 }
-p{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(0, 0, 0);
-    margin: 1em;
+td{
+   color: #427CA0; 
 }
-#champObligatoire{
-    color: white;
-}
-#envoyer{
-    background-color: #fafacf;
-    width: 100%;
-    font-weight: 400;
-    height: 3em;    
-}
-#listMessages{
-    text-align: center;
-    margin-left: 20px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 300;
-    color: #427CA0;
-}
-
-.post1{
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+.nomPays{
+    font-variant: small-caps;
     font-weight: bold;
-    color: rgb(0, 0, 0);
-    text-align: left;
-    border: 2px solid black;
-    padding: 2em;
-    border-radius: 1em;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.42);
-    background-color: #d3eeff;
 }
+.codeIso, .continent, .capitale{
+    text-align: center;
+}
+.population, .superficie, .popuCap, .altitude{
+    text-align: right;
+}
+.capitale{
+    font-weight: bold;
+    font-variant: small-caps;
+}
+tr:nth-child(even){background-color: #8ee2fc;
+}
+footer{
+    height: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:#c5f0f8;
+    margin-top: 100px;
+    text-align: center;
+    p{
+        padding: 40px;
+        font-weight: bold;
 
+    }
+}
 @media screen 
     and (min-width : 480px) 
     and (max-width : 959px) { 

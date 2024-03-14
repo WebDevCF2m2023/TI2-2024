@@ -1,6 +1,6 @@
 <?php
 /*
- * Front Controller de la gestion du livre d'or
+ * Front Controller de la liste de pays
  */
 
 /*
@@ -8,9 +8,9 @@
  */
 // chargement de configuration
 require_once ("../config.php");
-require_once ("../model/livreorModel.php");
-require_once ("../model/modelPagination.php");
-// chargement du modèle de la table livreor
+
+// chargement du modèle de la liste de pays
+require_once ("../model/paysModel.php");
 
 /*
  * Connexion à la base de données en utilisant PDO
@@ -21,64 +21,17 @@ try{
 }catch(Exception $e){
     die($e->getMessage());
 }
-/*
- * Si le formulaire a été soumis
- */
+// on recupere les donn"es des pays
 
-if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['message']) ){
-    $insert = addLivreOr($db, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
-    if ($insert === true){
-        header("Location: ./");
-        exit();
-    }else{
-        $message = $insert;
-        echo $message;
-    }
-}
-    // on appelle la fonction d'insertion dans la DB (addLivreOr())
+// on appelle la fonction d'insertion dans la DB (addLivreOr())
+//$countries = getAllCountries($db);
 
-    // si l'insertion a réussi
-
-    // on redirige vers la page actuelle
-
-    // sinon, on affiche un message d'erreur
-
-/*
- * On récupère les messages du livre d'or
- */
-
-// on appelle la fonction de récupération de la DB (getAllLivreOr())
-$messages= getAllLivreOr($db);
-
-
-$nbMessages = getNumberMessages($db);
-
-/* si il existe une variable $_GET nommée comme MY_PAGINATION_GET et qu'elle
-est un string contenant que les symboles numériques 0123456789 [0-9]* 
-*/
-
-
-if(!empty($_GET[MY_PAGINATION_GET]) && ctype_digit($_GET[MY_PAGINATION_GET])){
-    $page = (int) $_GET[MY_PAGINATION_GET];
-}else{
-    $page = 1;
-}
-
-
-$pagination = ModelPagination("index.php",MY_PAGINATION_GET,$nbMessages,$page,MY_PAGINATION_BY_PAGE);
-
-
-// requête sur la DB (se trouve dans le dossier model car gestion de données)
-// A remplacer par getCountriesByPage
-//$allCountries = getAllCountries($db); // remplacement par getCountriesByPage
-
-$messagesByPage = getMessagesByPage($db,$page,MY_PAGINATION_BY_PAGE);
-
-
-
+$countries = getAllCountriesAndFlags($db);
 
 // fermeture de la connexion
 $db = null;
 // Appel de la vue
 
-include "../view/livreorView.php";
+//include "../view/paysView.php";
+
+include "../view/paysDrapeauView.php";
