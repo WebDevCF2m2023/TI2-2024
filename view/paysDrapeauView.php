@@ -26,7 +26,7 @@
         </tr>
         <!--eme ligne -->
         <?php
-         foreach($countries as $country){
+         foreach($capitals as $country){
         ?>
         <tr>
             <td class="nomPays"><?= $country['nom'];?></td>
@@ -37,7 +37,7 @@
             <td class="capitale"><?= $country['capitale'];?></td>
             <td class="popuCap"><?= $country['popu_cap'];?></td>
             <td class="altitude"><?= $country['altitude'];?></td>
-            <td class="drapeau"><img src="public/img/svg/<?=$country['url'];?>" alt="<?= $country['nom'];?>"></td>
+            <td class="drapeau"><img src="../public/img/<?=$country['url'];?>" alt="<?= $country['nom'];?>"></td>
         </tr>
         <?php 
          }

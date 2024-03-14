@@ -26,6 +26,8 @@ th, td{
 }
 td{
    color: #427CA0; 
+   width: 5%;
+
 }
 .nomPays{
     font-variant: small-caps;
@@ -43,6 +45,12 @@ td{
 }
 tr:nth-child(even){background-color: #8ee2fc;
 }
+img{
+    width: 10%;
+    float: left;
+    margin-left: 10px;
+}
+
 footer{
     height: 100px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -58,7 +66,11 @@ footer{
 @media screen 
     and (min-width : 480px) 
     and (max-width : 959px) { 
-    
+    img{
+        width: 10%;
+        float: left;
+        margin-left: 10px;
+    }
 
     h2{
         font-size: 1.5em;
@@ -77,10 +89,13 @@ footer{
 }
 @media screen 
     and (min-width : 960px){ 
-     img{
+    .drapeau{
         width: 20%;
+    }
+     img{
+        width: 10%;
         float: left;
-        margin-left: 20px;
+        margin-left: 10px;
      }   
      #cadreForm{
         width: 700px;

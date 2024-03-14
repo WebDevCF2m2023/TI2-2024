@@ -25,7 +25,7 @@
         </tr>
         <!--eme ligne -->
         <?php
-         foreach($countries as $country){
+         foreach($capitals as $country){
         ?>
         <tr>
             <td class="nomPays"><?= $country['nom'];?></td>

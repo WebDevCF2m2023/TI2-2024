@@ -24,9 +24,9 @@ try{
 // on recupere les donn"es des pays
 
 // on appelle la fonction d'insertion dans la DB (addLivreOr())
-//$countries = getAllCountries($db);
+//$capitals = getAllcapitals($db);
 
-$countries = getAllCountriesAndFlags($db);
+$capitals = getAllFlags($db);
 
 // fermeture de la connexion
 $db = null;
