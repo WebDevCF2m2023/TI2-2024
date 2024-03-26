@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin: 1em 2em;
+    font-weight: 900;
+    font-size: 3em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: #427CA0;
+} 
+table{
+    margin-left: 100px;
+    margin-right: 50px;
+    margin: auto;
+
+}
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse; /*pour fusionner les bordures*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+th, td{
+    padding: 5px;
+}
+td{
+   color: #427CA0; 
+   width: 5%;
+
+}
+.nomPays{
+    font-variant: small-caps;
+    font-weight: bold;
+}
+.codeIso, .continent, .capitale{
+    text-align: center;
+}
+.population, .superficie, .popuCap, .altitude{
+    text-align: right;
+}
+.capitale{
+    font-weight: bold;
+    font-variant: small-caps;
+}
+tr:nth-child(even){background-color: #8ee2fc;
+}
+img{
+    width: 10%;
+    float: left;
+    margin-left: 10px;
+}
+
+footer{
+    height: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:#c5f0f8;
+    margin-top: 100px;
+    text-align: center;
+    p{
+        padding: 40px;
+        font-weight: bold;
+
+    }
+}
+@media screen 
+    and (min-width : 480px) 
+    and (max-width : 959px) { 
+    img{
+        width: 10%;
+        float: left;
+        margin-left: 10px;
+    }
+
+    h2{
+        font-size: 1.5em;
+    }
+    #cadreForm{
+      width: auto;  
+    }
+    #labelPrenom, #labelNom, #labelEmail, #labelMessage{
+       display: inline-block;
+       width: 15%;
+    }
+    #prenom, #nom, #email, #message{
+        width: 80%;
+    }  
+
+}
+@media screen 
+    and (min-width : 960px){ 
+    .drapeau{
+        width: 20%;
+    }
+     img{
+        width: 10%;
+        float: left;
+        margin-left: 10px;
+     }   
+     #cadreForm{
+        width: 700px;
+        margin-left: 30% ;
+        margin-right: 5em;
+     }
+     p{
+        font-size: 1.2em;
+     }
+     h2{
+        font-size: 1.5em;
+     }
+     #labelPrenom, #labelNom, #labelEmail, #labelMessage{
+        display: inline-block;
+        width: 15%;
+     }
+     #prenom, #nom, #email, #message{
+         width: 80%;
+     }  
+
+    }
+
+
+
+
+
+
+
