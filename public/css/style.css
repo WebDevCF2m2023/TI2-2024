@@ -1,0 +1,234 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Header - Title */
+.title {
+  text-align: center;
+  padding: 20px;
+  font-size: 5em;
+  color: #be3900;
+}
+
+/* Content Wrapper - Main Sections */
+.content-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main Container - Form & Messages */
+.main-container {
+  background-color: #555c61;
+  border-radius: 5px;
+  padding: 20px;
+  width: calc(100% / 3); /* Equal size for all columns
+  (100% / number of columns) */
+  box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.4);
+  width: 50%;
+  
+}
+
+/* Image - Optional Mail Icon */
+.image-mail {
+  width: 100px;
+  max-width: 150px;
+  width: auto; /* Allow proportional scaling */
+  margin: 0 auto 20px; /* Center & maintain margin on wider screens */
+}
+
+/* Form Container - Contact Form */
+.form-container input[type="text"],
+.form-container input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Form Heading */
+#top-form-message {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.h4  {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px black;
+}
+
+/* Submit Button */
+#obligatoire {
+  color: red;
+  font-size: 0.8em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Input Groups - Form Fields */
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+label {
+  order: -1;
+  flex: 1 1 auto;
+  font-size: larger;
+  padding: auto;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1em;
+}
+
+/* Form Textarea */
+.form-container textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  height: 150px;
+}
+
+.messageHolder p  {
+  word-break: break-word;
+  font-size: 1.2em; /* Use relative units for better accessibility */
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  padding: 1rem; /* Use rem units for consistent spacing */
+  margin-bottom: 1rem;
+  color: #333;
+  border-radius: 0.5rem;
+  max-width: 70vw;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Add a subtle box-shadow */
+}
+
+
+
+Scroll to bottom
+
+Copy Link to Shar
+
+
+/* Submit Button - Form Submission */
+#submit-form {
+  background-color: #768286;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+  float: right;
+}
+
+
+
+/* Responsive Styles (Optional Media Queries) */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  .main-container {
+    width: 100%;
+  }
+  .image-mail {
+    margin: 0 auto;
+  }
+  /* Additional responsive adjustments as needed */
+}
+
+.message-container {
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.message-header,
+.message-body {
+  overflow-wrap: break-word;
+  border: 1px solid black;
+  /* Styles for specific parts within the comment box */
+}
+.comment-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.content-message {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.message-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.message-body {
+  font-size: 1em;
+}
+
+@media screen and (max-width: 480px) {
+
+  #firstName, #lastName, #email {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.1em;
+  }
+
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  * {
+    padding: 0;
+  }
+
+  .messageDiv {
+    width: 95.8%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 960px) {
+
+  #firstName, #lastName, #email, .messageDiv {
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.1em;
+  }
+
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

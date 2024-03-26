@@ -1,17 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TI2 | Livre d'or</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI2 | LIVREoR</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/validation.css">
 </head>
 <body>
-    <h1>TI2 | Livre d'or</h1>
-<script src="js/validation.js"></script>
-</body>
-</html>
+    <h1 class="title">Livre d'or</h1>
+    <div class="content-wrapper">
+        <div class="main-container">
+            <img src="img/email.png" class="image-mail" alt="Image of a woman pointing at a mail">
+            <div class="form-container">
+                <h2 id="top-form-message">Laissez-nous un message</h2>
+                <form action="" id="contact-form" method="post">
+                    <div class="form-field">
+                        <label for="firstname">Prénom <span class="required-field">*</span></label>
+                        <input maxlength="100" type="text" name="firstname" id="Prénom" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="lastname">Nom </label>
+                        <input maxlength="100" type="text" name="lastname" id="Nom" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="usermail">E-mail <span class="required-field">*</span></label>
+                        <input type="text" name="usermail" id="usermail" required>
+                    </div>
+
+                    <div class="form-field textarea-field">
+                        <label for="message">Votre message <span class="required-field">*</span></label>
+                        <textarea rows="6" cols="35" name="message" id="message" required></textarea>
+                    </div>
+
+                    <button class="btn-donate" type="submit" id="subButton" onclick="return validateForm(event)">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="message-container">
+    <?php
+$results = getAllLivreOr($db);
+?>
+
+<?php
+    if(isset($pagination)) echo "$pagination<hr>"; 
+    
+    ?>
+<div class="prevMessages">
+    <h3 id="prevMessHead">Messages précédents : <?php 
+    
+    if ($nbMessages > 1)$m="Il y a $nbMessages messages écrits ";
+    elseif ($nbMessages == 1)$m="Il y a un message écrit";
+    else $m="Pas encore de messages";
+    echo $m;  
+    
+    ?></h3>
+    <?php foreach ($messages as $mess) : ?>
+        <div class="messageHolder">
+            <h4><span class="italic"><?= $mess["firstname"] ?></span> a envoyé ce message le <?= $mess["datemessage"] ?></h4>
+            <p><?= nl2br($mess["message"]) ?></p>
+  
+        </div>
+    <?php endforeach; ?>
+</div>
+<script  src="/js/validation.js"></script>
